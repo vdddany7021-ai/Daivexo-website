@@ -39,7 +39,7 @@ export default function ContactPage() {
             <div>
               <p className="text-sm text-gray-400">Address</p>
               <p>
-                Leernsesteenweg 124A<br />
+                Leernsesteenweg 124 A<br />
                 9800 Deinze<br />
                 België
               </p>
