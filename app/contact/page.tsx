@@ -20,7 +20,6 @@ export default function ContactPage() {
   }
 
   return (
-
     <main className="relative min-h-screen overflow-hidden">
       <img
         src="/gold-bg.png"
@@ -68,10 +67,10 @@ export default function ContactPage() {
                         Email
                       </p>
                       <a
-                        href="mailto:hello@daivexo.com"
+                        href="mailto:info@daivexo.be"
                         className="text-white hover:text-primary transition-colors"
                       >
-                        hello@daivexo.com
+                        info@daivexo.be
                       </a>
                     </div>
                   </div>
@@ -85,10 +84,10 @@ export default function ContactPage() {
                         Phone
                       </p>
                       <a
-                        href="tel:+1234567890"
+                        href="tel:+32480673786"
                         className="text-white hover:text-primary transition-colors"
                       >
-                        +1 (234) 567-890
+                        +32 480 67 37 86
                       </a>
                     </div>
                   </div>
@@ -102,9 +101,11 @@ export default function ContactPage() {
                         Location
                       </p>
                       <p className="text-white">
-                        New York, NY
+                        Leernsesteenweg 124A
                         <br />
-                        United States
+                        9800 Deinze
+                        <br />
+                        België
                       </p>
                     </div>
                   </div>
