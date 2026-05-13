@@ -68,10 +68,10 @@ export default function ContactPage() {
                         Email
                       </p>
                       <a
-                        href="mailto:info@daivexo.be"
+                        href="mailto:hello@daivexo.com"
                         className="text-white hover:text-primary transition-colors"
                       >
-                        info@daivexo.be
+                        hello@daivexo.com
                       </a>
                     </div>
                   </div>
@@ -85,11 +85,10 @@ export default function ContactPage() {
                         Phone
                       </p>
                       <a
-
-                        href="tel:+32480673786"
+                        href="tel:+1234567890"
                         className="text-white hover:text-primary transition-colors"
                       >
-                        +32 480 67 37 86
+                        +1 (234) 567-890
                       </a>
                     </div>
                   </div>
@@ -103,11 +102,9 @@ export default function ContactPage() {
                         Location
                       </p>
                       <p className="text-white">
-                        Leernsesteenweg 124A
+                        New York, NY
                         <br />
-                        9800 Deinze
-                        <br />
-                        België
+                        United States
                       </p>
                     </div>
                   </div>
