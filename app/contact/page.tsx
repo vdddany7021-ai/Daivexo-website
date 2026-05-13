@@ -20,7 +20,6 @@ export default function ContactPage() {
   }
 
   return (
-
     <main className="relative min-h-screen overflow-hidden">
       <img
         src="/gold-bg.png"
@@ -85,7 +84,6 @@ export default function ContactPage() {
                         Phone
                       </p>
                       <a
-
                         href="tel:+32480673786"
                         className="text-white hover:text-primary transition-colors"
                       >
