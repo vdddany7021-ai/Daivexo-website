@@ -62,10 +62,10 @@ export function ContactSection() {
                     Email
                   </p>
                   <a
-                    href="mailto:info@daivexo.be"
+                    href="mailto:hello@daivexo.com"
                     className="text-foreground hover:text-primary transition-colors"
                   >
-                    info@daivexo.be
+                    hello@daivexo.com
                   </a>
                 </div>
               </div>
@@ -79,10 +79,10 @@ export function ContactSection() {
                     Phone
                   </p>
                   <a
-                    href="tel:+32 480 67 37 86"
+                    href="tel:+1234567890"
                     className="text-foreground hover:text-primary transition-colors"
                   >
-                    +32 480 67 37 86
+                    +1 (234) 567-890
                   </a>
                 </div>
               </div>
@@ -96,9 +96,9 @@ export function ContactSection() {
                     Location
                   </p>
                   <p className="text-foreground">
-                    Deinze, Belgium
+                    New York, NY
                     <br />
-                    
+                    United States
                   </p>
                 </div>
               </div>
