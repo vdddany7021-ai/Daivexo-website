@@ -23,7 +23,7 @@ const artworks = [
     artist: "Dany Van den Driessche",
     year: "2026",
     category: "Original Painting",
-    image: "/images/fusion x abstract met rode volle cirkel",
+    image: "/images/fusion x abstract met rode volle cirkel.jpeg",
   },
 
   {
@@ -32,7 +32,7 @@ const artworks = [
     artist: "Dany Van den Driessche",
     year: "2026",
     category: "Original Painting",
-    image: "/images/fusion x abstract roze geel en rode stip",
+    image: "/images/fusion x abstract roze geel en rode stip.jpeg",
   },
 
   {
@@ -41,7 +41,7 @@ const artworks = [
     artist: "Dany Van den Driessche",
     year: "2026",
     category: "Original Painting",
-    image: "/images/fusion x wit geel blauw",
+    image: "/images/fusion x wit geel blauw.jpeg",
   },
 
   {
@@ -50,7 +50,7 @@ const artworks = [
     artist: "Dany Van den Driessche",
     year: "2026",
     category: "Original Painting",
-    image: "/images/fusion x wit zwart",
+    image: "/images/fusion x wit zwart.jpeg",
   },
 
   {
@@ -59,7 +59,7 @@ const artworks = [
     artist: "Dany Van den Driessche",
     year: "2026",
     category: "Original Painting",
-    image: "/images/fusion x zwart geel blauw",
+    image: "/images/fusion x zwart geel blauw.jpeg",
   },
 ]
 
