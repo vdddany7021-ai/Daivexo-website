@@ -14,6 +14,7 @@ const artworks = [
     artist: "Elena Voss",
     year: "2024",
     category: "Digital Art",
+    image: "/artwork-1.jpg",
   },
   {
     id: 2,
@@ -21,6 +22,7 @@ const artworks = [
     artist: "Marcus Chen",
     year: "2024",
     category: "Photography",
+    image: "/artwork-2.jpg",
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ const artworks = [
     artist: "Aria Nakamura",
     year: "2023",
     category: "Abstract",
+    image: "/artwork-3.jpg",
   },
   {
     id: 4,
@@ -35,6 +38,7 @@ const artworks = [
     artist: "Dimitri Volkov",
     year: "2024",
     category: "Mixed Media",
+    image: "/artwork-4.jpg",
   },
   {
     id: 5,
@@ -42,6 +46,7 @@ const artworks = [
     artist: "Luna Blackwood",
     year: "2023",
     category: "Digital Art",
+    image: "/artwork-5.jpg",
   },
   {
     id: 6,
@@ -49,6 +54,7 @@ const artworks = [
     artist: "James Sterling",
     year: "2024",
     category: "Photography",
+    image: "/artwork-6.jpg",
   },
 ]
 
@@ -61,10 +67,9 @@ export default function GalleryPage() {
     <main className="relative min-h-screen">
       <PageBackground />
       <Header />
-      
+
       <section className="min-h-screen flex items-center justify-center px-6 py-32">
         <div className="max-w-7xl mx-auto w-full">
-          {/* Section header */}
           <div className="text-center mb-20">
             <span className="text-primary text-sm tracking-[0.3em] uppercase">
               Exclusive
@@ -83,7 +88,6 @@ export default function GalleryPage() {
             </p>
           </div>
 
-          {/* Gallery grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {artworks.map((artwork) => (
               <button
@@ -91,45 +95,32 @@ export default function GalleryPage() {
                 onClick={() => setSelectedArtwork(artwork)}
                 className="group relative aspect-[4/5] bg-card/80 backdrop-blur-sm border border-border hover:border-primary/50 transition-all duration-500 overflow-hidden text-left"
               >
-                {/* Placeholder art background */}
-                <div
-                  className="absolute inset-0 bg-gradient-to-br from-muted via-card to-muted"
-                  style={{
-                    backgroundImage: `
-                      linear-gradient(135deg, transparent 40%, rgba(212, 175, 55, 0.05) 50%, transparent 60%),
-                      radial-gradient(circle at ${30 + artwork.id * 10}% ${20 + artwork.id * 8}%, rgba(212, 175, 55, 0.08) 0%, transparent 50%)
-                    `,
-                  }}
+                <img
+                  src={artwork.image}
+                  alt={artwork.title}
+                  className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700"
                 />
 
-                {/* Abstract shapes for visual interest */}
-                <div
-                  className="absolute opacity-10"
-                  style={{
-                    top: `${10 + artwork.id * 5}%`,
-                    left: `${15 + artwork.id * 8}%`,
-                    width: `${40 + artwork.id * 3}%`,
-                    height: `${30 + artwork.id * 5}%`,
-                    border: "1px solid currentColor",
-                    transform: `rotate(${artwork.id * 15}deg)`,
-                  }}
-                />
+                <div className="absolute inset-0 bg-black/35 group-hover:bg-black/65 transition-all duration-500" />
 
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-background/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center p-6">
-                  <span className="text-primary text-xs tracking-[0.3em] uppercase mb-2">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <span className="text-primary text-xs tracking-[0.3em] uppercase mb-2 block">
                     {artwork.category}
                   </span>
-                  <h3 className="font-serif text-2xl text-center mb-2">
+                  <h3 className="font-serif text-2xl mb-2 text-white">
                     {artwork.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm">
+                  <p className="text-white/70 text-sm">
                     {artwork.artist}, {artwork.year}
                   </p>
-                  <ExternalLink className="h-5 w-5 text-primary mt-6" />
                 </div>
 
-                {/* Corner accents */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                  <ExternalLink className="h-7 w-7 text-primary" />
+                </div>
+
                 <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/30 group-hover:border-primary transition-colors duration-500" />
                 <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/30 group-hover:border-primary transition-colors duration-500" />
               </button>
@@ -138,7 +129,6 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Lightbox */}
       {selectedArtwork && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-background/95 backdrop-blur-sm"
@@ -155,6 +145,12 @@ export default function GalleryPage() {
               <X className="h-6 w-6" />
             </button>
 
+            <img
+              src={selectedArtwork.image}
+              alt={selectedArtwork.title}
+              className="w-full max-h-[520px] object-cover mb-8 border border-primary/20"
+            />
+
             <div className="text-center">
               <span className="text-primary text-xs tracking-[0.3em] uppercase">
                 {selectedArtwork.category}
@@ -164,17 +160,6 @@ export default function GalleryPage() {
               </h3>
               <p className="text-muted-foreground">
                 {selectedArtwork.artist}, {selectedArtwork.year}
-              </p>
-
-              <div className="flex items-center justify-center gap-4 my-8">
-                <div className="h-px w-16 bg-primary" />
-                <div className="h-2 w-2 rotate-45 bg-primary" />
-                <div className="h-px w-16 bg-primary" />
-              </div>
-
-              <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed">
-                This exclusive piece is authenticated via DAIVEXO QR technology,
-                ensuring provenance and ownership verification for collectors.
               </p>
 
               <Link
