@@ -14,7 +14,7 @@ const artworks = [
     artist: "Elena Voss",
     year: "2024",
     category: "Digital Art",
-    image: "/artwork-1.jpg",
+    image: "/images/fusionx1.jpeg",
   },
   {
     id: 2,
