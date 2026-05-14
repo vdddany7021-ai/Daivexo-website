@@ -16,7 +16,7 @@ const artworks = [
     category: "Original Painting",
     image: "/images/fusionx1.jpeg",
   },
-]
+
 
   {
     id: 2,
