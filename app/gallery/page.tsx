@@ -16,51 +16,45 @@ const artworks = [
     category: "Original Painting",
     image: "/images/fusionx1.jpeg",
   },
-
-
   {
     id: 2,
     title: "Fusion X Red Circle",
     artist: "Dany Van den Driessche",
     year: "2026",
     category: "Original Painting",
-    image: "/images/fusion x abstract met rode volle cirkel.jpeg",
+    image: "/images/fusion%20x%20abstract%20met%20rode%20volle%20cirkel.jpeg",
   },
-
   {
     id: 3,
     title: "Fusion X Yellow Red",
     artist: "Dany Van den Driessche",
     year: "2026",
     category: "Original Painting",
-    image: "/images/fusion x abstract roze geel en rode stip.jpeg",
+    image: "/images/fusion%20x%20abstract%20roze%20geel%20en%20rode%20stip.jpeg",
   },
-
   {
     id: 4,
     title: "Fusion X Blue Grey",
     artist: "Dany Van den Driessche",
     year: "2026",
     category: "Original Painting",
-    image: "/images/fusion x wit geel blauw.jpeg",
+    image: "/images/fusion%20x%20wit%20geel%20blauw.jpeg",
   },
-
   {
     id: 5,
     title: "Fusion X Black White",
     artist: "Dany Van den Driessche",
     year: "2026",
     category: "Original Painting",
-    image: "/images/fusion x wit zwart.jpeg",
+    image: "/images/fusion%20x%20wit%20zwart.jpeg",
   },
-
   {
     id: 6,
     title: "Fusion X Gold Blue",
     artist: "Dany Van den Driessche",
     year: "2026",
     category: "Original Painting",
-    image: "/images/fusion x zwart geel blauw.jpeg",
+    image: "/images/fusion%20x%20zwart%20geel%20blauw.jpeg",
   },
 ]
 
