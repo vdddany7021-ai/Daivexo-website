@@ -6,45 +6,51 @@ import { X, ExternalLink } from "lucide-react"
 const artworks = [
   {
     id: 1,
-    title: "Golden Cipher",
-    artist: "Elena Voss",
-    year: "2024",
-    category: "Digital Art",
+    title: "Fusion X #1",
+    artist: "Dany Van den Driessche",
+    year: "2026",
+    category: "Original Painting",
+    image: "/images/fusionx1.jpeg",
   },
   {
     id: 2,
-    title: "Nocturnal Fragment",
-    artist: "Marcus Chen",
-    year: "2024",
-    category: "Photography",
+    title: "Fusion X Red Circle",
+    artist: "Dany Van den Driessche",
+    year: "2026",
+    category: "Original Painting",
+    image: "/images/fusion%20x%20abstract%20met%20rode%20volle%20cirkel.jpeg",
   },
   {
     id: 3,
-    title: "Ethereal Geometry",
-    artist: "Aria Nakamura",
-    year: "2023",
-    category: "Abstract",
+    title: "Fusion X Yellow Red",
+    artist: "Dany Van den Driessche",
+    year: "2026",
+    category: "Original Painting",
+    image: "/images/fusion%20x%20abstract%20roze%20geel%20en%20rode%20stip.jpeg",
   },
   {
     id: 4,
-    title: "Silent Resonance",
-    artist: "Dimitri Volkov",
-    year: "2024",
-    category: "Mixed Media",
+    title: "Fusion X Blue Grey",
+    artist: "Dany Van den Driessche",
+    year: "2026",
+    category: "Original Painting",
+    image: "/images/fusion%20x%20wit%20geel%20blauw.jpeg",
   },
   {
     id: 5,
-    title: "Obsidian Dreams",
-    artist: "Luna Blackwood",
-    year: "2023",
-    category: "Digital Art",
+    title: "Fusion X Black White",
+    artist: "Dany Van den Driessche",
+    year: "2026",
+    category: "Original Painting",
+    image: "/images/fusion%20x%20wit%20zwart.jpeg",
   },
   {
     id: 6,
-    title: "Temporal Shift",
-    artist: "James Sterling",
-    year: "2024",
-    category: "Photography",
+    title: "Fusion X Gold Blue",
+    artist: "Dany Van den Driessche",
+    year: "2026",
+    category: "Original Painting",
+    image: "/images/fusion%20x%20zwart%20geel%20blauw.jpeg",
   },
 ]
 
@@ -55,30 +61,30 @@ export function GallerySection() {
 
   return (
     <section id="gallery" className="py-32 bg-secondary/30 relative">
-      {/* Section divider */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-primary to-transparent" />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Section header */}
         <div className="text-center mb-20">
           <span className="text-primary text-sm tracking-[0.3em] uppercase">
-            Exclusive
+            Fusion X Collection
           </span>
+
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mt-4 mb-6">
             Art Gallery
           </h2>
+
           <div className="flex items-center justify-center gap-4">
             <div className="h-px w-16 bg-primary" />
             <div className="h-2 w-2 rotate-45 bg-primary" />
             <div className="h-px w-16 bg-primary" />
           </div>
+
           <p className="text-muted-foreground mt-8 max-w-2xl mx-auto text-lg leading-relaxed">
-            Curated collection of exclusive artworks, each authenticated and
-            connected through our QR technology.
+            Original Fusion X paintings by Dany Van den Driessche, presented in
+            a modern luxury style and ready for DAIVEXO QR authentication.
           </p>
         </div>
 
-        {/* Gallery grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {artworks.map((artwork) => (
             <button
@@ -86,45 +92,32 @@ export function GallerySection() {
               onClick={() => setSelectedArtwork(artwork)}
               className="group relative aspect-[4/5] bg-card border border-border hover:border-primary/50 transition-all duration-500 overflow-hidden text-left"
             >
-              {/* Placeholder art background */}
-              <div
-                className="absolute inset-0 bg-gradient-to-br from-muted via-card to-muted"
-                style={{
-                  backgroundImage: `
-                    linear-gradient(135deg, transparent 40%, rgba(212, 175, 55, 0.05) 50%, transparent 60%),
-                    radial-gradient(circle at ${30 + artwork.id * 10}% ${20 + artwork.id * 8}%, rgba(212, 175, 55, 0.08) 0%, transparent 50%)
-                  `,
-                }}
+              <img
+                src={artwork.image}
+                alt={artwork.title}
+                className="absolute inset-0 h-full w-full object-cover opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700"
               />
 
-              {/* Abstract shapes for visual interest */}
-              <div
-                className="absolute opacity-10"
-                style={{
-                  top: `${10 + artwork.id * 5}%`,
-                  left: `${15 + artwork.id * 8}%`,
-                  width: `${40 + artwork.id * 3}%`,
-                  height: `${30 + artwork.id * 5}%`,
-                  border: "1px solid currentColor",
-                  transform: `rotate(${artwork.id * 15}deg)`,
-                }}
-              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
 
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-background/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center p-6">
-                <span className="text-primary text-xs tracking-[0.3em] uppercase mb-2">
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <span className="text-primary text-xs tracking-[0.3em] uppercase mb-2 block">
                   {artwork.category}
                 </span>
-                <h3 className="font-serif text-2xl text-center mb-2">
+
+                <h3 className="font-serif text-2xl mb-2 text-white">
                   {artwork.title}
                 </h3>
-                <p className="text-muted-foreground text-sm">
+
+                <p className="text-white/70 text-sm">
                   {artwork.artist}, {artwork.year}
                 </p>
-                <ExternalLink className="h-5 w-5 text-primary mt-6" />
               </div>
 
-              {/* Corner accents */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                <ExternalLink className="h-7 w-7 text-primary" />
+              </div>
+
               <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/30 group-hover:border-primary transition-colors duration-500" />
               <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/30 group-hover:border-primary transition-colors duration-500" />
             </button>
@@ -132,7 +125,6 @@ export function GallerySection() {
         </div>
       </div>
 
-      {/* Lightbox */}
       {selectedArtwork && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-background/95 backdrop-blur-sm"
@@ -149,26 +141,28 @@ export function GallerySection() {
               <X className="h-6 w-6" />
             </button>
 
+            <img
+              src={selectedArtwork.image}
+              alt={selectedArtwork.title}
+              className="w-full max-h-[520px] object-cover mb-8 border border-primary/20"
+            />
+
             <div className="text-center">
               <span className="text-primary text-xs tracking-[0.3em] uppercase">
                 {selectedArtwork.category}
               </span>
+
               <h3 className="font-serif text-4xl mt-4 mb-4">
                 {selectedArtwork.title}
               </h3>
+
               <p className="text-muted-foreground">
                 {selectedArtwork.artist}, {selectedArtwork.year}
               </p>
 
-              <div className="flex items-center justify-center gap-4 my-8">
-                <div className="h-px w-16 bg-primary" />
-                <div className="h-2 w-2 rotate-45 bg-primary" />
-                <div className="h-px w-16 bg-primary" />
-              </div>
-
-              <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed">
-                This exclusive piece is authenticated via DAIVEXO QR technology,
-                ensuring provenance and ownership verification for collectors.
+              <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed mt-8">
+                This original Fusion X artwork can be connected with DAIVEXO QR
+                technology for provenance, ownership and collector information.
               </p>
 
               <a
