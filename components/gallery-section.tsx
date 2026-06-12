@@ -144,7 +144,7 @@ export function GallerySection() {
             <img
               src={selectedArtwork.image}
               alt={selectedArtwork.title}
-              className="w-full max-h-[520px] object-cover mb-8 border border-primary/20"
+              className="w-full max-h-[70vh] object-contain mb-8 border border-primary/20 bg-black rounded-lg"
             />
 
             <div className="text-center">
