@@ -11,6 +11,7 @@ const artworks = [
     year: "2026",
     category: "Original Painting",
     image: "/images/fusionx1.jpeg",
+    detailImage: "/images/fusionx1-detail.jpeg",
   },
   {
     id: 2,
@@ -19,6 +20,7 @@ const artworks = [
     year: "2026",
     category: "Original Painting",
     image: "/images/fusionx2.jpeg",
+    detailImage: "/images/fusionx2-detail.jpeg",
   },
   {
     id: 3,
@@ -27,6 +29,7 @@ const artworks = [
     year: "2026",
     category: "Original Painting",
     image: "/images/fusionx3.jpeg",
+    detailImage: "/images/fusionx3-detail.jpeg",
   },
   {
     id: 4,
@@ -35,6 +38,7 @@ const artworks = [
     year: "2026",
     category: "Original Painting",
     image: "/images/fusionx4.jpeg",
+    detailImage: "/images/fusionx4-detail.jpeg",
   },
   {
     id: 5,
@@ -43,6 +47,7 @@ const artworks = [
     year: "2026",
     category: "Original Painting",
     image: "/images/fusionx5.jpeg",
+    detailImage: "/images/fusionx5-detail.jpeg",
   },
   {
     id: 6,
@@ -51,6 +56,7 @@ const artworks = [
     year: "2026",
     category: "Original Painting",
     image: "/images/fusionx6.jpeg",
+    detailImage: "/images/fusionx6-detail.jpeg",
   },
 ]
 
@@ -142,9 +148,9 @@ export function GallerySection() {
             </button>
 
             <img
-              src={selectedArtwork.image}
+              src={selectedArtwork.detailImage}
               alt={selectedArtwork.title}
-              className="w-full max-h-[520px] object-cover mb-8 border border-primary/20"
+              className="w-full max-h-[70vh] object-contain mb-8 border border-primary/20 bg-black rounded-lg"
             />
 
             <div className="text-center">
