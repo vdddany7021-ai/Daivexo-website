@@ -23,22 +23,22 @@ const features = [
     icon: Shield,
     title: "Veilig & betrouwbaar",
     description:
-      "Ontworpen voor verloren voorwerpen zoals sleutels, boekentassen, koffers, rugzakken en waardevolle spullen.",
+      "Ontworpen voor verloren voorwerpen zoals sleutels, boekentassen, koffers, rugzakken, drinkflessen en waardevolle spullen.",
   },
 ]
 
 const visuals = [
   {
     title: "SCANMIJ QR Sticker",
-    image: "/images/scanmij-sticker.jpeg",
+    image: "/images/scanmij/scanmij-sticker.jpeg.png",
   },
   {
     title: "SCANMIJ Flyer",
-    image: "/images/scanmij-flyer.jpeg",
+    image: "/images/scanmij/scanmij-flyer.jpeg.png",
   },
   {
-    title: "QR Scanvoorbeeld",
-    image: "/images/scanmij-qr-example.jpeg",
+    title: "SCANMIJ in gebruik",
+    image: "/images/scanmij/scanmij-in-use.jpeg",
   },
 ]
 
