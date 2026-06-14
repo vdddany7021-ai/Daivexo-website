@@ -13,19 +13,15 @@ export function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
     console.log("Form submitted:", formState)
-    // Reset form
     setFormState({ name: "", email: "", subject: "", message: "" })
   }
 
   return (
     <section id="contact" className="py-32 relative">
-      {/* Section divider */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-primary to-transparent" />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Section header */}
         <div className="text-center mb-20">
           <span className="text-primary text-sm tracking-[0.3em] uppercase">
             Get in Touch
@@ -41,15 +37,14 @@ export function ContactSection() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Contact Info */}
           <div>
             <h3 className="font-serif text-2xl mb-8">
               Let&apos;s Create Something Extraordinary
             </h3>
             <p className="text-muted-foreground leading-relaxed mb-12">
-              Whether you&apos;re interested in our premium QR labels, looking to
-              authenticate your collection, or wish to inquire about our
-              exclusive artworks, we&apos;d love to hear from you.
+              Whether you&apos;re interested in DAIVEXO QR labels, looking to
+              authenticate your collection, or wish to inquire about exclusive
+              Fusion X artworks, feel free to contact us.
             </p>
 
             <div className="space-y-6">
@@ -62,10 +57,10 @@ export function ContactSection() {
                     Email
                   </p>
                   <a
-                    href="mailto:hello@daivexo.com"
+                    href="mailto:info@daivexo.be"
                     className="text-foreground hover:text-primary transition-colors"
                   >
-                    hello@daivexo.com
+                    info@daivexo.be
                   </a>
                 </div>
               </div>
@@ -79,10 +74,10 @@ export function ContactSection() {
                     Phone
                   </p>
                   <a
-                    href="tel:+1234567890"
+                    href="tel:+32480673786"
                     className="text-foreground hover:text-primary transition-colors"
                   >
-                    +1 (234) 567-890
+                    +32 480 67 37 86
                   </a>
                 </div>
               </div>
@@ -96,16 +91,15 @@ export function ContactSection() {
                     Location
                   </p>
                   <p className="text-foreground">
-                    New York, NY
+                    Deinze
                     <br />
-                    United States
+                    België
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Contact Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid sm:grid-cols-2 gap-6">
               <div>
@@ -127,6 +121,7 @@ export function ContactSection() {
                   required
                 />
               </div>
+
               <div>
                 <label
                   htmlFor="email"
