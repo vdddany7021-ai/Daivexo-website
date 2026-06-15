@@ -89,12 +89,14 @@ export default function QRLabelsPage() {
                 key={visual.title}
                 className="group bg-card border border-primary/20 hover:border-primary/60 transition-all duration-500 overflow-hidden"
               >
-                <div className="aspect-[4/5] bg-black overflow-hidden">
-                  <img
-                    src={visual.image}
-                    alt={visual.title}
-                    className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
+                <div className="aspect-[4/5] bg-black overflow-hidden flex items-center justify-center">
+                  <picture>
+                    <img
+                      src={visual.image}
+                      alt={visual.title}
+                      className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </picture>
                 </div>
 
                 <div className="p-6 text-center">
