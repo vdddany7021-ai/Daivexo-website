@@ -5,25 +5,25 @@ const features = [
     icon: QrCode,
     title: "Unieke QR-code",
     description:
-      "Elk label bevat een unieke QR-code die gekoppeld kan worden aan de eigenaar van het voorwerp.",
+      "Elk SCANMIJ-label bevat een unieke QR-code die gekoppeld wordt aan de eigenaar van het voorwerp. Een vinder hoeft enkel te scannen om onmiddellijk de juiste contactmogelijkheden te zien. Ideaal voor sleutels, boekentassen, drinkflessen, koffers, portefeuilles en andere waardevolle spullen.",
   },
   {
     icon: Scan,
     title: "Snel scannen",
     description:
-      "Een vinder scant het label met de smartphone en krijgt onmiddellijk de juiste contactmogelijkheden.",
+      "De QR-code kan eenvoudig gescand worden met elke smartphone. De scanpagina opent direct in de browser, zonder moeilijke stappen. Zo kan een eerlijk vinder snel contact opnemen en het verloren voorwerp veilig terugbezorgen aan de eigenaar.",
   },
   {
     icon: Smartphone,
     title: "Geen app nodig",
     description:
-      "SCANMIJ werkt gewoon via de browser. De vinder hoeft niets te installeren.",
+      "SCANMIJ werkt volledig zonder app, zonder account en zonder registratie voor de vinder. Alles gebeurt via de gewone browser van de smartphone. Dat maakt het systeem eenvoudig, laagdrempelig en bruikbaar voor jong en oud.",
   },
   {
     icon: Shield,
     title: "Veilig & betrouwbaar",
     description:
-      "Ontworpen voor verloren voorwerpen zoals sleutels, boekentassen, koffers, rugzakken, drinkflessen en waardevolle spullen.",
+      "SCANMIJ is ontworpen met aandacht voor eenvoud, vertrouwen en professioneel gebruik. De labels ogen stijlvol, zijn duidelijk herkenbaar en helpen verloren voorwerpen sneller terug te brengen, thuis, op school, op reis of onderweg.",
   },
 ]
 
@@ -63,7 +63,7 @@ export function QRLabelsSection() {
             <div className="h-px w-16 bg-primary" />
           </div>
 
-          <p className="text-muted-foreground mt-8 max-w-3xl mx-auto text-lg leading-relaxed">
+          <p className="text-white/85 mt-8 max-w-3xl mx-auto text-lg leading-8">
             SCANMIJ QR-labels helpen verloren voorwerpen snel terug bij de
             eigenaar te brengen. Scan de code, neem contact op en bezorg het
             voorwerp veilig terug.
@@ -85,7 +85,9 @@ export function QRLabelsSection() {
               </div>
 
               <div className="p-6 text-center">
-                <h3 className="font-serif text-xl">{visual.title}</h3>
+                <h3 className="font-serif text-xl text-white">
+                  {visual.title}
+                </h3>
               </div>
             </div>
           ))}
@@ -102,11 +104,13 @@ export function QRLabelsSection() {
               <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              <feature.icon className="h-10 w-10 text-primary mb-6" />
+              <feature.icon className="h-14 w-14 text-primary mb-6 drop-shadow-lg" />
 
-              <h3 className="font-serif text-xl mb-4">{feature.title}</h3>
+              <h3 className="font-serif text-2xl text-white mb-5">
+                {feature.title}
+              </h3>
 
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <p className="text-white/90 text-base leading-8">
                 {feature.description}
               </p>
             </div>
