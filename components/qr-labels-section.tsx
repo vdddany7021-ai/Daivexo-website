@@ -30,15 +30,15 @@ const features = [
 const visuals = [
   {
     title: "SCANMIJ QR Sticker",
-    image: "/images/scanmij/scanmij-sticker.jpeg.png",
+    image: "/images/scanmij-sticker.jpeg",
   },
   {
     title: "SCANMIJ Flyer",
-    image: "/images/scanmij/scanmij-flyer.jpeg.png",
+    image: "/images/scanmij-flyer.jpeg",
   },
   {
     title: "SCANMIJ in gebruik",
-    image: "/images/scanmij/scanmij-in-use.jpeg",
+    image: "/images/scanmij-in-use.jpeg",
   },
 ]
 
