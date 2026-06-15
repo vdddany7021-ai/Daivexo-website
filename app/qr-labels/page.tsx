@@ -14,15 +14,15 @@ export const metadata: Metadata = {
 const visuals = [
   {
     title: "SCANMIJ QR Sticker",
-    image: "/images/scanmij-sticker.jpeg",
+    image: "https://www.daivexo.com/images/scanmij-sticker.jpeg",
   },
   {
     title: "SCANMIJ Flyer",
-    image: "/images/scanmij-flyer.jpeg",
+    image: "https://www.daivexo.com/images/scanmij-flyer.jpeg",
   },
   {
     title: "SCANMIJ in gebruik",
-    image: "/images/scanmij-in-use.jpeg",
+    image: "https://www.daivexo.com/images/scanmij-in-use.jpeg",
   },
 ]
 
