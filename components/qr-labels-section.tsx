@@ -41,6 +41,7 @@ const visuals = [
     image: "/images/scanmij-in-use.jpeg",
   },
 ]
+
 export function QRLabelsSection() {
   return (
     <section id="qr-labels" className="py-32 relative">
@@ -76,18 +77,12 @@ export function QRLabelsSection() {
               className="group bg-card border border-border hover:border-primary/50 transition-all duration-500 overflow-hidden"
             >
               <div className="relative h-full w-full">
-  <img
-    src={visual.image}
-    alt={visual.title}
-    className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
-  />
-
-  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-    <span className="text-primary/25 text-4xl md:text-5xl font-bold rotate-[-35deg] tracking-widest">
-      SCANMIJ DEMO
-    </span>
-  </div>
-</div>
+                <img
+                  src={visual.image}
+                  alt={visual.title}
+                  className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
 
               <div className="p-6 text-center">
                 <h3 className="font-serif text-xl">{visual.title}</h3>
