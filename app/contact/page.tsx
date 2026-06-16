@@ -13,24 +13,32 @@ export default function ContactPage() {
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    const mailSubject = encodeURIComponent(
-      formState.subject || "Aanvraag via DAIVEXO website"
-    )
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formState),
+      })
 
-    const mailBody = encodeURIComponent(
-      `Naam: ${formState.name}
-E-mail: ${formState.email}
+      alert(
+        "Uw aanvraag werd verzonden. Wij nemen zo snel mogelijk contact met u op."
+      )
 
-Bericht:
-${formState.message}`
-    )
-
-    window.location.href = `mailto:info@daivexo.com?subject=${mailSubject}&body=${mailBody}`
-
-    setFormState({ name: "", email: "", subject: "", message: "" })
+      setFormState({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      })
+    } catch (error) {
+      alert("Er is een fout opgetreden. Probeer opnieuw.")
+      console.error(error)
+    }
   }
 
   return (
