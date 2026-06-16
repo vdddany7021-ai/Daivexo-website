@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { Mail, MapPin, Phone, Send } from "lucide-react"
+import { Mail, Send } from "lucide-react"
 
 export default function ContactPage() {
   const [formState, setFormState] = useState({
@@ -15,12 +15,25 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Form submitted:", formState)
+
+    const mailSubject = encodeURIComponent(
+      formState.subject || "Aanvraag via DAIVEXO website"
+    )
+
+    const mailBody = encodeURIComponent(
+      `Naam: ${formState.name}
+E-mail: ${formState.email}
+
+Bericht:
+${formState.message}`
+    )
+
+    window.location.href = `mailto:info@daivexo.com?subject=${mailSubject}&body=${mailBody}`
+
     setFormState({ name: "", email: "", subject: "", message: "" })
   }
 
   return (
-
     <main className="relative min-h-screen overflow-hidden">
       <img
         src="/gold-bg.png"
@@ -35,11 +48,13 @@ export default function ContactPage() {
           <div className="max-w-7xl mx-auto w-full">
             <div className="text-center mb-20">
               <span className="text-primary text-sm tracking-[0.3em] uppercase">
-                Get in Touch
-              </span>
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl mt-4 mb-6 text-white">
                 Contact
+              </span>
+
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl mt-4 mb-6 text-white">
+                Meer info of pakket aanvragen
               </h1>
+
               <div className="flex items-center justify-center gap-4">
                 <div className="h-px w-16 bg-primary" />
                 <div className="h-2 w-2 rotate-45 bg-primary" />
@@ -50,63 +65,31 @@ export default function ContactPage() {
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               <div className="border border-primary/30 p-8 lg:p-12 bg-black/20">
                 <h3 className="font-serif text-2xl mb-8 text-white">
-                  Let&apos;s Create Something Extraordinary
+                  Vraag vrijblijvend meer informatie aan
                 </h3>
-                <p className="text-white/80 leading-relaxed mb-12">
-                  Whether you&apos;re interested in our premium QR labels, looking to
-                  authenticate your collection, or wish to inquire about our
-                  exclusive artworks, we&apos;d love to hear from you.
+
+                <p className="text-white/85 leading-8 mb-12">
+                  Wil je meer weten over SCANMIJ QR-labels of een pakket
+                  aankopen? Laat je gegevens achter en we nemen zo snel mogelijk
+                  contact met je op.
                 </p>
 
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 border border-primary/30">
-                      <Mail className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-white/70 uppercase tracking-widest mb-1">
-                        Email
-                      </p>
-                      <a
-                        href="mailto:hello@daivexo.com"
-                        className="text-white hover:text-primary transition-colors"
-                      >
-                        hello@daivexo.com
-                      </a>
-                    </div>
+                <div className="flex items-start gap-4">
+                  <div className="p-3 border border-primary/30">
+                    <Mail className="h-5 w-5 text-primary" />
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 border border-primary/30">
-                      <Phone className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-white/70 uppercase tracking-widest mb-1">
-                        Phone
-                      </p>
-                      <a
-                        href="tel:+1234567890"
-                        className="text-white hover:text-primary transition-colors"
-                      >
-                        +1 (234) 567-890
-                      </a>
-                    </div>
-                  </div>
+                  <div>
+                    <p className="text-sm text-white/70 uppercase tracking-widest mb-1">
+                      Email
+                    </p>
 
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 border border-primary/30">
-                      <MapPin className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-white/70 uppercase tracking-widest mb-1">
-                        Location
-                      </p>
-                      <p className="text-white">
-                        New York, NY
-                        <br />
-                        United States
-                      </p>
-                    </div>
+                    <a
+                      href="mailto:info@daivexo.com"
+                      className="text-white hover:text-primary transition-colors"
+                    >
+                      info@daivexo.com
+                    </a>
                   </div>
                 </div>
               </div>
@@ -121,8 +104,9 @@ export default function ContactPage() {
                       htmlFor="name"
                       className="block text-sm uppercase tracking-widest text-white/70 mb-3"
                     >
-                      Name
+                      Naam
                     </label>
+
                     <input
                       type="text"
                       id="name"
@@ -131,17 +115,19 @@ export default function ContactPage() {
                         setFormState({ ...formState, name: e.target.value })
                       }
                       className="w-full bg-black/30 border border-primary/20 px-4 py-3 text-white placeholder:text-white/50 focus:border-primary focus:outline-none transition-colors"
-                      placeholder="Your name"
+                      placeholder="Uw naam"
                       required
                     />
                   </div>
+
                   <div>
                     <label
                       htmlFor="email"
                       className="block text-sm uppercase tracking-widest text-white/70 mb-3"
                     >
-                      Email
+                      E-mail
                     </label>
+
                     <input
                       type="email"
                       id="email"
@@ -150,7 +136,7 @@ export default function ContactPage() {
                         setFormState({ ...formState, email: e.target.value })
                       }
                       className="w-full bg-black/30 border border-primary/20 px-4 py-3 text-white placeholder:text-white/50 focus:border-primary focus:outline-none transition-colors"
-                      placeholder="your@email.com"
+                      placeholder="uw@email.com"
                       required
                     />
                   </div>
@@ -161,8 +147,9 @@ export default function ContactPage() {
                     htmlFor="subject"
                     className="block text-sm uppercase tracking-widest text-white/70 mb-3"
                   >
-                    Subject
+                    Onderwerp
                   </label>
+
                   <input
                     type="text"
                     id="subject"
@@ -171,7 +158,7 @@ export default function ContactPage() {
                       setFormState({ ...formState, subject: e.target.value })
                     }
                     className="w-full bg-black/30 border border-primary/20 px-4 py-3 text-white placeholder:text-white/50 focus:border-primary focus:outline-none transition-colors"
-                    placeholder="How can we help?"
+                    placeholder="Info of pakket aanvragen"
                     required
                   />
                 </div>
@@ -181,8 +168,9 @@ export default function ContactPage() {
                     htmlFor="message"
                     className="block text-sm uppercase tracking-widest text-white/70 mb-3"
                   >
-                    Message
+                    Bericht
                   </label>
+
                   <textarea
                     id="message"
                     rows={6}
@@ -191,7 +179,7 @@ export default function ContactPage() {
                       setFormState({ ...formState, message: e.target.value })
                     }
                     className="w-full bg-black/30 border border-primary/20 px-4 py-3 text-white placeholder:text-white/50 focus:border-primary focus:outline-none transition-colors resize-none"
-                    placeholder="Tell us about your project..."
+                    placeholder="Ik wil graag meer info over..."
                     required
                   />
                 </div>
@@ -201,7 +189,7 @@ export default function ContactPage() {
                   className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 tracking-widest uppercase text-sm"
                 >
                   <Send className="h-4 w-4" />
-                  Send Message
+                  Verstuur aanvraag
                 </button>
               </form>
             </div>
