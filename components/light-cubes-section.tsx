@@ -104,7 +104,7 @@ export function LightCubesSection() {
               <span className="text-stone-300 text-base md:text-lg tracking-wide">per Cube</span>
               <div className="mt-6 h-px w-12 bg-primary/30" />
               <p className="mt-6 text-base md:text-lg text-stone-300 leading-relaxed">Waarborg: €150 per Cube</p>
-              <p className="mt-2 text-base md:text-lg text-stone-300 leading-relaxed">Vrijdag levering – maandag ophaling</p>
+              <p className="mt-2 text-base md:text-lg text-stone-300 leading-relaxed whitespace-nowrap">Vrijdag levering – maandag ophaling</p>
               <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/50" />
               <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/50" />
             </div>
