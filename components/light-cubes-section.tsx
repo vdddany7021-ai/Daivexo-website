@@ -88,9 +88,9 @@ export function LightCubesSection() {
               <div className="mt-6 mb-2">
                 <span className="font-serif text-5xl lg:text-6xl text-primary">€45</span>
               </div>
-              <span className="text-muted-foreground text-sm tracking-wide">per Cube</span>
+              <span className="text-stone-300 text-base md:text-lg tracking-wide">per Cube</span>
               <div className="mt-6 h-px w-12 bg-primary/30" />
-              <p className="mt-6 text-sm text-muted-foreground">Waarborg: €100 per Cube</p>
+              <p className="mt-6 text-base md:text-lg text-stone-300 leading-relaxed">Waarborg: €100 per Cube</p>
               <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/30" />
               <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/30" />
             </div>
@@ -101,10 +101,10 @@ export function LightCubesSection() {
               <div className="mt-6 mb-2">
                 <span className="font-serif text-5xl lg:text-6xl text-primary">€75</span>
               </div>
-              <span className="text-muted-foreground text-sm tracking-wide">per Cube</span>
+              <span className="text-stone-300 text-base md:text-lg tracking-wide">per Cube</span>
               <div className="mt-6 h-px w-12 bg-primary/30" />
-              <p className="mt-6 text-sm text-muted-foreground">Waarborg: €150 per Cube</p>
-              <p className="mt-2 text-sm text-muted-foreground">Vrijdag levering – maandag ophaling</p>
+              <p className="mt-6 text-base md:text-lg text-stone-300 leading-relaxed">Waarborg: €150 per Cube</p>
+              <p className="mt-2 text-base md:text-lg text-stone-300 leading-relaxed">Vrijdag levering – maandag ophaling</p>
               <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/50" />
               <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/50" />
             </div>
@@ -115,7 +115,7 @@ export function LightCubesSection() {
               <div className="mt-6 mb-2">
                 <span className="font-serif text-5xl lg:text-6xl text-primary">€350</span>
               </div>
-              <span className="text-muted-foreground text-sm tracking-wide">per Cube</span>
+              <span className="text-stone-300 text-base md:text-lg tracking-wide">per Cube</span>
               <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/30" />
               <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/30" />
             </div>
@@ -137,7 +137,7 @@ export function LightCubesSection() {
                 "Zwarte HDPE-bovenplaat inbegrepen",
                 "Gebruiksklaar geleverd",
               ].map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground leading-relaxed">
+                <li key={item} className="flex items-start gap-3 text-base md:text-lg text-stone-300 leading-relaxed">
                   <span className="mt-1.5 h-1.5 w-1.5 rotate-45 bg-primary shrink-0" />
                   <span>{item}</span>
                 </li>
@@ -155,15 +155,15 @@ export function LightCubesSection() {
             <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto text-center">
               <div>
                 <p className="text-primary font-serif text-lg">0–25 km</p>
-                <p className="mt-2 text-sm text-muted-foreground">Levering &amp; ophaling inbegrepen</p>
+                <p className="mt-2 text-base md:text-lg text-stone-300 leading-relaxed">Levering &amp; ophaling inbegrepen</p>
               </div>
               <div className="sm:border-x sm:border-primary/20 sm:px-6">
                 <p className="text-primary font-serif text-lg">26–50 km</p>
-                <p className="mt-2 text-sm text-muted-foreground">€30 transporttoeslag</p>
+                <p className="mt-2 text-base md:text-lg text-stone-300 leading-relaxed">€30 transporttoeslag</p>
               </div>
               <div>
                 <p className="text-primary font-serif text-lg">Meer dan 50 km</p>
-                <p className="mt-2 text-sm text-muted-foreground">Prijs op aanvraag</p>
+                <p className="mt-2 text-base md:text-lg text-stone-300 leading-relaxed">Prijs op aanvraag</p>
               </div>
             </div>
             <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/30" />
@@ -171,7 +171,7 @@ export function LightCubesSection() {
           </div>
 
           {/* Fine print */}
-          <p className="mt-10 text-center text-xs text-muted-foreground/70 max-w-3xl mx-auto leading-relaxed">
+          <p className="mt-10 text-center text-base text-stone-400 max-w-3xl mx-auto leading-relaxed">
             De klant voorziet een geschikt 230V-stopcontact binnen bereik. De waarborg wordt na ophaling en controle
             terugbetaald indien de Cube en alle meegeleverde materialen volledig en onbeschadigd worden terugbezorgd.
           </p>
