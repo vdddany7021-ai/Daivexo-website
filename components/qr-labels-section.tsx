@@ -11,7 +11,7 @@ const features = [
     icon: Scan,
     title: "Snel scannen",
     description:
-      "De QR-code kan eenvoudig gescand worden met elke smartphone. De scanpagina opent direct in de browser, zonder moeilijke stappen. Zo kan een eerlijk vinder snel contact opnemen en het verloren voorwerp veilig terugbezorgen aan de eigenaar.",
+      "De QR-code kan eenvoudig gescand worden met elke smartphone. De scanpagina opent direct in de browser, zonder moeilijke stappen. Zo kan een eerlijke vinder snel contact opnemen en het verloren voorwerp veilig terugbezorgen aan de eigenaar.",
   },
   {
     icon: Smartphone,
@@ -29,31 +29,34 @@ const features = [
 
 const visuals = [
   {
-    title: "SCANMIJ QR Sticker",
-    image: "/images/scanmij-sticker.jpeg",
+    title: "SCANMIJ op brooddoos",
+    image: "/images/Brooddoos met scanmij qr code.png",
   },
   {
-    title: "SCANMIJ Flyer",
-    image: "/images/scanmij-flyer.jpeg",
+    title: "SCANMIJ op drinkfles",
+    image: "/images/Drinkfles met scanmij sticker.png",
   },
   {
-    title: "SCANMIJ in gebruik",
-    image: "/images/scanmij-in-use.jpeg",
+    title: "SCANMIJ op laptop",
+    image: "/images/Laptop met scanmij sticker.png",
+  },
+  {
+    title: "SCANMIJ QR-code",
+    image: "/images/Luxe moderne qr code afbeelding.png",
   },
 ]
 
 export function QRLabelsSection() {
   return (
-    <section id="qr-labels" className="py-32 relative">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-primary to-transparent" />
-
+    <section id="qr-labels" className="relative bg-black py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="text-center mb-20">
+        {/* Titel */}
+        <div className="mb-20 text-center">
           <span className="text-primary text-sm tracking-[0.3em] uppercase">
             SCANMIJ by DAIVEXO
           </span>
 
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mt-4 mb-6">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mt-4 mb-6 text-white">
             QR Labels
           </h2>
 
@@ -70,13 +73,14 @@ export function QRLabelsSection() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-20">
+        {/* Nieuwe SCANMIJ-afbeeldingen */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
           {visuals.map((visual) => (
             <div
               key={visual.title}
-              className="group bg-card border border-border hover:border-primary/50 transition-all duration-500 overflow-hidden"
+              className="group overflow-hidden bg-card border border-primary/25 hover:border-primary/70 transition-all duration-500"
             >
-              <div className="relative h-full w-full">
+              <div className="relative aspect-[4/3] overflow-hidden">
                 <img
                   src={visual.image}
                   alt={visual.title}
@@ -85,7 +89,7 @@ export function QRLabelsSection() {
               </div>
 
               <div className="p-6 text-center">
-                <h3 className="font-serif text-xl text-white">
+                <h3 className="font-serif text-xl md:text-2xl text-white">
                   {visual.title}
                 </h3>
               </div>
@@ -93,30 +97,36 @@ export function QRLabelsSection() {
           ))}
         </div>
 
+        {/* Eigenschappen */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="group relative p-8 bg-card border border-border hover:border-primary/50 transition-all duration-500"
-            >
-              <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          {features.map((feature, index) => {
+            const Icon = feature.icon
 
-              <feature.icon className="h-14 w-14 text-primary mb-6 drop-shadow-lg" />
+            return (
+              <div
+                key={index}
+                className="group relative p-8 bg-card border border-border hover:border-primary/50 transition-all duration-500"
+              >
+                <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              <h3 className="font-serif text-2xl text-white mb-5">
-                {feature.title}
-              </h3>
+                <Icon className="h-14 w-14 text-primary mb-6 drop-shadow-lg" />
 
-              <p className="text-white/90 text-base leading-8">
-                {feature.description}
-              </p>
-            </div>
-          ))}
+                <h3 className="font-serif text-2xl text-white mb-5">
+                  {feature.title}
+                </h3>
+
+                <p className="text-white/90 text-base leading-8">
+                  {feature.description}
+                </p>
+              </div>
+            )
+          })}
         </div>
 
+        {/* Contactknop */}
         <div className="text-center mt-16">
           <a
             href="#contact"
