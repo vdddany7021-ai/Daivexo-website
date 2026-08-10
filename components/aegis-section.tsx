@@ -388,15 +388,11 @@ export function AegisSection() {
               className="max-h-[82vh] max-w-[95vw] object-contain border border-primary/40 shadow-[0_0_40px_rgba(212,175,55,0.18)]"
             />
 
-            <div className="pt-5 text-center">
-              <h3 className="font-serif text-2xl md:text-3xl text-white">
-                {selectedImage.title}
-              </h3>
-
-              <p className="mt-2 text-sm text-white/60">
-                Klik buiten de afbeelding of op × om te sluiten
-              </p>
-            </div>
+            <div className="pt-4 text-center">
+  <p className="text-sm text-white/60">
+    Klik buiten de afbeelding of op × om te sluiten
+  </p>
+</div>
           </div>
         </div>
       )}
