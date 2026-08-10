@@ -11,6 +11,11 @@ import {
   ZoomIn,
 } from "lucide-react"
 
+const premiumImage = {
+  title: "DAIVEXO AEGIS — Protection engineered with purpose",
+  image: "/images/daivexo-aegis-premium.png",
+}
+
 const aegisImages = [
   {
     title: "DAIVEXO AEGIS — vooraanzicht",
@@ -21,9 +26,9 @@ const aegisImages = [
     image: "/images/20260624_084255.jpg",
   },
   {
-  title: "UV-test van het prototype",
-  image: "/images/daivexo-aegis-uv-test.jpeg",
-},
+    title: "UV-test van het prototype",
+    image: "/images/daivexo-aegis-uv-test.jpeg",
+  },
   {
     title: "Het verhaal in Het Laatste Nieuws",
     image: "/images/Voorpagina HLN UV werend gezichtsbescherming.jpeg",
@@ -87,53 +92,52 @@ export function AegisSection() {
         id="aegis"
         className="relative overflow-hidden bg-black py-24 md:py-32"
       >
-        {/* Subtiele achtergrondgloed */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-primary/5 blur-[140px]"
+          className="pointer-events-none absolute left-1/2 top-1/3 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-primary/5 blur-[150px]"
         />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           {/* Titel */}
           <div className="mb-16 text-center">
-            <span className="text-primary text-sm tracking-[0.35em] uppercase">
+            <span className="text-primary text-sm md:text-base tracking-[0.35em] uppercase">
               Protection • Innovation • Purpose
             </span>
 
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mt-4 mb-5 text-white">
+            <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl mt-5 mb-5 text-white">
               DAIVEXO AEGIS
             </h2>
 
-            <p className="font-serif text-xl md:text-2xl text-primary/90 italic">
+            <p className="font-serif text-2xl md:text-3xl text-primary/90 italic">
               Born from necessity. Designed to protect.
             </p>
 
-            <div className="mt-7 flex items-center justify-center gap-4">
-              <div className="h-px w-16 bg-primary" />
-              <div className="h-2 w-2 rotate-45 bg-primary" />
-              <div className="h-px w-16 bg-primary" />
+            <div className="mt-8 flex items-center justify-center gap-4">
+              <div className="h-px w-20 bg-primary" />
+              <div className="h-2.5 w-2.5 rotate-45 bg-primary" />
+              <div className="h-px w-20 bg-primary" />
             </div>
           </div>
 
           {/* Introverhaal */}
-          <div className="mx-auto mb-20 max-w-4xl text-center">
-            <p className="text-lg md:text-xl leading-9 text-stone-200">
+          <div className="mx-auto mb-16 max-w-5xl text-center">
+            <p className="text-2xl md:text-3xl lg:text-4xl leading-[1.45] font-semibold text-white">
               Sommige ontwerpen beginnen met een idee.{" "}
               <span className="text-primary">
                 DAIVEXO AEGIS begon met iemand die bescherming nodig had.
               </span>
             </p>
 
-            <p className="mt-7 text-base md:text-lg leading-8 text-stone-300">
-              Het eerste prototype werd speciaal ontwikkeld voor Nora, een
-              jong meisje met Xeroderma Pigmentosum (XP). Door deze zeldzame
+            <p className="mt-10 text-lg md:text-xl lg:text-2xl leading-9 md:leading-10 text-stone-100">
+              Het eerste prototype werd speciaal ontwikkeld voor Nora, een jong
+              meisje met Xeroderma Pigmentosum (XP). Door deze zeldzame
               aandoening kan blootstelling aan UV-straling bijzonder gevaarlijk
               zijn. Gewoon buiten spelen — iets wat voor de meeste kinderen
               vanzelfsprekend is — vraagt daardoor om uitzonderlijke
               bescherming.
             </p>
 
-            <p className="mt-6 text-base md:text-lg leading-8 text-stone-300">
+            <p className="mt-7 text-lg md:text-xl lg:text-2xl leading-9 md:leading-10 text-stone-100">
               Toen bleek dat bestaande oplossingen niet voldeden aan alle
               praktische behoeften, ontstond de uitdaging om zelf een nieuwe
               oplossing te ontwikkelen. Zo groeide stap voor stap een
@@ -143,7 +147,48 @@ export function AegisSection() {
             </p>
           </div>
 
-          {/* Foto's */}
+          {/* Premium hoofdafbeelding */}
+          <div className="mb-24">
+            <button
+              type="button"
+              onClick={() => setSelectedImage(premiumImage)}
+              className="group block w-full overflow-hidden border border-primary/50 bg-card cursor-zoom-in"
+              aria-label="Vergroot DAIVEXO AEGIS premium afbeelding"
+            >
+              <div className="relative overflow-hidden bg-black">
+                <img
+                  src={premiumImage.image}
+                  alt={premiumImage.title}
+                  className="w-full max-h-[950px] object-contain group-hover:scale-[1.015] transition-transform duration-700"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+
+                <div className="absolute top-5 right-5 flex h-12 w-12 items-center justify-center border border-primary/70 bg-black/75 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <ZoomIn className="h-6 w-6" />
+                </div>
+
+                <div className="absolute top-5 left-5 w-8 h-8 border-t border-l border-primary/50" />
+                <div className="absolute bottom-5 right-5 w-8 h-8 border-b border-r border-primary/50" />
+              </div>
+
+              <div className="px-6 py-7 text-center">
+                <h3 className="font-serif text-2xl md:text-3xl text-white">
+                  DAIVEXO AEGIS
+                </h3>
+
+                <p className="mt-2 font-serif text-lg md:text-xl italic text-primary">
+                  Protection engineered with purpose.
+                </p>
+
+                <p className="mt-3 text-xs uppercase tracking-[0.22em] text-primary/80">
+                  Klik om te vergroten
+                </p>
+              </div>
+            </button>
+          </div>
+
+          {/* Vier foto's */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
             {aegisImages.map((item) => (
               <button
