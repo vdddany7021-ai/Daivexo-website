@@ -139,8 +139,8 @@ export function LightCubesSection() {
                   <ZoomIn className="h-5 w-5" />
                 </div>
 
-                <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/30 group-hover:border-primary transition-colors duration-500" />
-                <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/30 group-hover:border-primary transition-colors duration-500" />
+                <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/40 group-hover:border-primary transition-colors duration-500" />
+                <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/40 group-hover:border-primary transition-colors duration-500" />
               </button>
             ))}
           </div>
@@ -168,9 +168,15 @@ export function LightCubesSection() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-3 gap-6 md:items-stretch">
               {/* 1 DAG */}
-              <div className="relative bg-card border border-border p-10 flex flex-col items-center text-center transition-all duration-500 hover:border-primary/60">
+              <div
+                className="relative bg-black border border-primary/80 p-10 flex flex-col items-center text-center transition-all duration-500 hover:border-primary"
+                style={{
+                  boxShadow:
+                    "0 0 8px rgba(212,175,55,0.10), inset 0 0 10px rgba(212,175,55,0.03)",
+                }}
+              >
                 <span className="text-primary text-xs tracking-[0.3em] uppercase">
                   1 Dag
                 </span>
@@ -185,61 +191,67 @@ export function LightCubesSection() {
                   per Cube
                 </span>
 
-                <div className="mt-6 h-px w-12 bg-primary/30" />
+                <div className="mt-6 h-px w-12 bg-primary/40" />
 
                 <p className="mt-6 text-base md:text-lg text-stone-300 leading-relaxed">
                   Waarborg: €100 per Cube
                 </p>
 
-                <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/30" />
-                <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/30" />
+                <div className="absolute top-4 left-4 w-7 h-7 border-t-2 border-l-2 border-primary" />
+                <div className="absolute bottom-4 right-4 w-7 h-7 border-b-2 border-r-2 border-primary" />
               </div>
 
               {/* WEEKEND */}
               <div
-                className="relative bg-card border border-primary/70 p-10 flex flex-col items-center text-center transition-all duration-500 hover:border-primary"
+                className="relative bg-black border-2 border-primary p-12 flex flex-col items-center text-center transition-all duration-500 md:-mt-4 md:mb-[-4px]"
                 style={{
                   boxShadow:
-                    "0 0 32px -14px rgba(212,175,55,0.42), inset 0 0 40px -30px rgba(212,175,55,0.28)",
+                    "0 0 12px rgba(212,175,55,0.20), inset 0 0 14px rgba(212,175,55,0.04)",
                 }}
               >
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-black border border-primary/60 px-5 py-2">
-                  <span className="inline-flex items-center gap-2 text-primary text-[10px] tracking-[0.25em] uppercase whitespace-nowrap">
-                    <Sparkles className="h-3.5 w-3.5" />
+                <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-primary px-8 py-3 border border-primary min-w-[210px]">
+                  <span className="inline-flex items-center justify-center gap-2 text-black text-xs md:text-sm font-semibold tracking-[0.22em] uppercase whitespace-nowrap">
+                    <Sparkles className="h-4 w-4 text-black" />
                     Meest gekozen
                   </span>
                 </div>
 
-                <span className="text-primary text-xs tracking-[0.3em] uppercase">
+                <span className="text-primary text-sm tracking-[0.32em] uppercase mt-1">
                   Weekend
                 </span>
 
                 <div className="mt-6 mb-2">
-                  <span className="font-serif text-5xl lg:text-6xl text-primary">
+                  <span className="font-serif text-6xl lg:text-7xl text-primary">
                     €75
                   </span>
                 </div>
 
-                <span className="text-stone-300 text-base md:text-lg tracking-wide">
+                <span className="text-stone-200 text-base md:text-lg tracking-wide">
                   per Cube
                 </span>
 
-                <div className="mt-6 h-px w-12 bg-primary/30" />
+                <div className="mt-6 h-px w-14 bg-primary/60" />
 
-                <p className="mt-6 text-base md:text-lg text-stone-300 leading-relaxed">
+                <p className="mt-6 text-base md:text-lg text-white leading-relaxed">
                   Waarborg: €150 per Cube
                 </p>
 
-                <p className="mt-2 text-base md:text-lg text-stone-300 leading-relaxed">
+                <p className="mt-2 text-base md:text-lg text-stone-200 leading-relaxed">
                   Vrijdag levering – maandag ophaling
                 </p>
 
-                <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/50" />
-                <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/50" />
+                <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-primary" />
+                <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-primary" />
               </div>
 
               {/* KOPEN */}
-              <div className="relative bg-card border border-border p-10 flex flex-col items-center text-center transition-all duration-500 hover:border-primary/60">
+              <div
+                className="relative bg-black border border-primary/80 p-10 flex flex-col items-center text-center transition-all duration-500 hover:border-primary"
+                style={{
+                  boxShadow:
+                    "0 0 8px rgba(212,175,55,0.10), inset 0 0 10px rgba(212,175,55,0.03)",
+                }}
+              >
                 <span className="text-primary text-xs tracking-[0.3em] uppercase">
                   Kopen
                 </span>
@@ -254,19 +266,25 @@ export function LightCubesSection() {
                   per Cube
                 </span>
 
-                <div className="mt-6 h-px w-12 bg-primary/30" />
+                <div className="mt-6 h-px w-12 bg-primary/40" />
 
-                <p className="mt-6 text-base md:text-lg text-stone-400 leading-relaxed">
+                <p className="mt-6 text-base md:text-lg text-stone-300 leading-relaxed">
                   Inclusief LED-verlichting en HDPE-bovenplaat
                 </p>
 
-                <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/30" />
-                <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/30" />
+                <div className="absolute top-4 left-4 w-7 h-7 border-t-2 border-l-2 border-primary" />
+                <div className="absolute bottom-4 right-4 w-7 h-7 border-b-2 border-r-2 border-primary" />
               </div>
             </div>
 
             {/* INBEGREPEN BIJ VERHUUR */}
-            <div className="mt-8 relative bg-card border border-border p-8 md:p-10 lg:p-12">
+            <div
+              className="mt-10 relative bg-black border border-primary p-8 md:p-10 lg:p-12"
+              style={{
+                boxShadow:
+                  "0 0 8px rgba(212,175,55,0.10), inset 0 0 10px rgba(212,175,55,0.025)",
+              }}
+            >
               <div className="text-center mb-9">
                 <span className="text-primary text-xs tracking-[0.3em] uppercase">
                   Inbegrepen bij verhuur
@@ -281,26 +299,32 @@ export function LightCubesSection() {
                 {includedItems.map((item) => (
                   <div
                     key={item}
-                    className="flex items-start gap-3 border border-primary/15 bg-black/30 p-4"
+                    className="flex items-start gap-3 border border-primary/45 bg-black p-4 transition-colors duration-300 hover:border-primary"
                   >
                     <Check
                       className="h-5 w-5 text-primary mt-0.5 shrink-0"
                       strokeWidth={1.6}
                     />
 
-                    <span className="text-sm md:text-base text-stone-300 leading-6">
+                    <span className="text-sm md:text-base text-stone-200 leading-6">
                       {item}
                     </span>
                   </div>
                 ))}
               </div>
 
-              <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/30" />
-              <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/30" />
+              <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-primary" />
+              <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-primary" />
             </div>
 
             {/* TRANSPORT */}
-            <div className="mt-8 relative bg-card border border-border p-10 lg:p-14">
+            <div
+              className="mt-10 relative bg-black border border-primary p-10 lg:p-14"
+              style={{
+                boxShadow:
+                  "0 0 8px rgba(212,175,55,0.10), inset 0 0 10px rgba(212,175,55,0.025)",
+              }}
+            >
               <div className="text-center mb-10">
                 <span className="text-primary text-xs tracking-[0.3em] uppercase">
                   Transport
@@ -317,17 +341,17 @@ export function LightCubesSection() {
                     0–25 km
                   </p>
 
-                  <p className="mt-2 text-base md:text-lg text-stone-300 leading-relaxed">
+                  <p className="mt-2 text-base md:text-lg text-stone-200 leading-relaxed">
                     Levering &amp; ophaling inbegrepen
                   </p>
                 </div>
 
-                <div className="px-6 py-4 sm:border-x sm:border-primary/20">
+                <div className="px-6 py-4 sm:border-x sm:border-primary/40">
                   <p className="text-primary font-serif text-xl">
                     26–50 km
                   </p>
 
-                  <p className="mt-2 text-base md:text-lg text-stone-300 leading-relaxed">
+                  <p className="mt-2 text-base md:text-lg text-stone-200 leading-relaxed">
                     €30 transporttoeslag
                   </p>
                 </div>
@@ -337,14 +361,14 @@ export function LightCubesSection() {
                     Meer dan 50 km
                   </p>
 
-                  <p className="mt-2 text-base md:text-lg text-stone-300 leading-relaxed">
+                  <p className="mt-2 text-base md:text-lg text-stone-200 leading-relaxed">
                     Prijs op aanvraag
                   </p>
                 </div>
               </div>
 
-              <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/30" />
-              <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/30" />
+              <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-primary" />
+              <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-primary" />
             </div>
 
             {/* Fine print */}
