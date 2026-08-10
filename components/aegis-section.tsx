@@ -172,19 +172,7 @@ export function AegisSection() {
                 <div className="absolute bottom-5 right-5 w-8 h-8 border-b border-r border-primary/50" />
               </div>
 
-              <div className="px-6 py-7 text-center">
-                <h3 className="font-serif text-2xl md:text-3xl text-white">
-                  DAIVEXO AEGIS
-                </h3>
-
-                <p className="mt-2 font-serif text-lg md:text-xl italic text-primary">
-                  Protection engineered with purpose.
-                </p>
-
-                <p className="mt-3 text-xs uppercase tracking-[0.22em] text-primary/80">
-                  Klik om te vergroten
-                </p>
-              </div>
+             
             </button>
           </div>
 
