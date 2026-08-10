@@ -13,7 +13,7 @@ import {
 
 const premiumImage = {
   title: "DAIVEXO AEGIS — Protection engineered with purpose",
-  image: "/images/daivexo-aegis-premium.png",
+  image: "/images/daivexo-aegis-premium-new.png",
 }
 
 const aegisImages = [
