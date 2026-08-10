@@ -1,29 +1,40 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { X, ZoomIn } from "lucide-react"
+import { Check, Sparkles, X, ZoomIn } from "lucide-react"
 
 const lightCubes = [
   {
     id: 1,
-    color: "Green",
+    color: "GREEN",
     image: "/images/light-cube-green.jpeg",
   },
   {
     id: 2,
-    color: "Yellow",
+    color: "YELLOW",
     image: "/images/light-cube-yellow.jpeg",
   },
   {
     id: 3,
-    color: "Blue",
+    color: "BLUE",
     image: "/images/light-cube-blue.jpeg",
   },
   {
     id: 4,
-    color: "Warm White",
+    color: "WARM WHITE",
     image: "/images/light-cube-warm-white.jpeg",
   },
+]
+
+const includedItems = [
+  "Levering én ophaling binnen een straal van 25 km",
+  "50 meter verlengkabel",
+  "RGBW LED-verlichting",
+  "Zwarte HDPE-bovenplaat",
+  "Afstand berekend via Google Maps vanaf DAIVEXO",
+  "3-voudige stekkerdoos",
+  "Afstandsbediening",
+  "Gebruiksklaar geleverd",
 ]
 
 export function LightCubesSection() {
@@ -54,23 +65,45 @@ export function LightCubesSection() {
     <>
       <section
         id="light-cubes"
-        className="relative bg-black py-24 md:py-32"
+        className="relative overflow-hidden bg-black py-24 md:py-32"
       >
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <span className="text-primary text-sm tracking-[0.3em] uppercase">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute left-1/2 top-40 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-primary/5 blur-[150px]"
+        />
+
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+          {/* Intro */}
+          <div className="mx-auto max-w-5xl text-center mb-20">
+            <span className="text-primary text-sm md:text-base tracking-[0.35em] uppercase">
               Illuminated IBC Event Furniture
             </span>
 
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mt-4 mb-6">
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mt-4 mb-5 text-white">
               DAIVEXO Light Cubes
             </h2>
 
-            <div className="flex items-center justify-center gap-4">
+            <p className="font-serif text-2xl md:text-3xl text-primary/90 italic">
+              Licht. Sfeer. Een ontmoetingspunt dat opvalt.
+            </p>
+
+            <div className="flex items-center justify-center gap-4 mt-7">
               <div className="h-px w-16 bg-primary" />
               <div className="h-2 w-2 rotate-45 bg-primary" />
               <div className="h-px w-16 bg-primary" />
             </div>
+
+            <p className="mt-9 mx-auto max-w-3xl text-lg md:text-xl leading-8 text-stone-200">
+              DAIVEXO Light Cubes combineren sfeer, verlichting en functionaliteit
+              in één opvallend eventmeubel. Ideaal als statafel, ontmoetingspunt
+              of visuele blikvanger tijdens feesten, bedrijfsevents, horeca en
+              evenementen.
+            </p>
+
+            <p className="mt-5 mx-auto max-w-3xl text-base md:text-lg leading-8 text-stone-400">
+              Elke Cube is voorzien van RGBW LED-verlichting en een zwarte
+              HDPE-bovenplaat en wordt gebruiksklaar geleverd.
+            </p>
           </div>
 
           {/* Klikbare Light Cube afbeeldingen */}
@@ -80,20 +113,20 @@ export function LightCubesSection() {
                 type="button"
                 key={cube.id}
                 onClick={() => setSelectedCube(cube)}
-                className="group relative aspect-[4/3] bg-card border border-border hover:border-primary/60 transition-all duration-500 overflow-hidden cursor-zoom-in text-left"
+                className="group relative aspect-[4/3] bg-card border border-primary/20 hover:border-primary/70 transition-all duration-500 overflow-hidden cursor-zoom-in text-left"
                 aria-label={`Vergroot DAIVEXO Light Cube ${cube.color}`}
               >
                 <img
                   src={cube.image}
-                  alt={`DAIVEXO Light Cube - ${cube.color} LED`}
+                  alt={`DAIVEXO Light Cube - ${cube.color}`}
                   className="absolute inset-0 h-full w-full object-cover opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent" />
 
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <span className="text-primary text-xs tracking-[0.3em] uppercase block">
-                    {cube.color} LED
+                  <span className="text-primary text-xs tracking-[0.32em] uppercase block">
+                    DAIVEXO LIGHT CUBE — {cube.color}
                   </span>
 
                   <span className="mt-2 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -107,7 +140,6 @@ export function LightCubesSection() {
                 </div>
 
                 <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/30 group-hover:border-primary transition-colors duration-500" />
-
                 <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/30 group-hover:border-primary transition-colors duration-500" />
               </button>
             ))}
@@ -120,7 +152,7 @@ export function LightCubesSection() {
                 Tarieven
               </span>
 
-              <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl mt-4">
+              <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl mt-4 text-white">
                 Prijzen &amp; Verhuur
               </h3>
 
@@ -129,11 +161,16 @@ export function LightCubesSection() {
                 <div className="h-2 w-2 rotate-45 bg-primary" />
                 <div className="h-px w-16 bg-primary" />
               </div>
+
+              <p className="mt-7 text-base md:text-lg text-stone-400 max-w-2xl mx-auto leading-8">
+                Kies voor één dag, een volledig weekend of aankoop van een
+                DAIVEXO Light Cube.
+              </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
               {/* 1 DAG */}
-              <div className="relative bg-card border border-border p-10 flex flex-col items-center text-center transition-colors duration-500 hover:border-primary/50">
+              <div className="relative bg-card border border-border p-10 flex flex-col items-center text-center transition-all duration-500 hover:border-primary/60">
                 <span className="text-primary text-xs tracking-[0.3em] uppercase">
                   1 Dag
                 </span>
@@ -159,7 +196,20 @@ export function LightCubesSection() {
               </div>
 
               {/* WEEKEND */}
-              <div className="relative bg-card border border-primary/40 p-10 flex flex-col items-center text-center transition-colors duration-500 hover:border-primary">
+              <div
+                className="relative bg-card border border-primary/70 p-10 flex flex-col items-center text-center transition-all duration-500 hover:border-primary"
+                style={{
+                  boxShadow:
+                    "0 0 32px -14px rgba(212,175,55,0.42), inset 0 0 40px -30px rgba(212,175,55,0.28)",
+                }}
+              >
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-black border border-primary/60 px-5 py-2">
+                  <span className="inline-flex items-center gap-2 text-primary text-[10px] tracking-[0.25em] uppercase whitespace-nowrap">
+                    <Sparkles className="h-3.5 w-3.5" />
+                    Meest gekozen
+                  </span>
+                </div>
+
                 <span className="text-primary text-xs tracking-[0.3em] uppercase">
                   Weekend
                 </span>
@@ -180,7 +230,7 @@ export function LightCubesSection() {
                   Waarborg: €150 per Cube
                 </p>
 
-                <p className="mt-2 text-base md:text-lg text-stone-300 leading-relaxed whitespace-nowrap">
+                <p className="mt-2 text-base md:text-lg text-stone-300 leading-relaxed">
                   Vrijdag levering – maandag ophaling
                 </p>
 
@@ -189,7 +239,7 @@ export function LightCubesSection() {
               </div>
 
               {/* KOPEN */}
-              <div className="relative bg-card border border-border p-10 flex flex-col items-center text-center transition-colors duration-500 hover:border-primary/50">
+              <div className="relative bg-card border border-border p-10 flex flex-col items-center text-center transition-all duration-500 hover:border-primary/60">
                 <span className="text-primary text-xs tracking-[0.3em] uppercase">
                   Kopen
                 </span>
@@ -204,55 +254,66 @@ export function LightCubesSection() {
                   per Cube
                 </span>
 
+                <div className="mt-6 h-px w-12 bg-primary/30" />
+
+                <p className="mt-6 text-base md:text-lg text-stone-400 leading-relaxed">
+                  Inclusief LED-verlichting en HDPE-bovenplaat
+                </p>
+
                 <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/30" />
                 <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/30" />
               </div>
             </div>
 
             {/* INBEGREPEN BIJ VERHUUR */}
-            <div className="mt-6 relative bg-card border border-border p-10 lg:p-14">
-              <div className="text-center mb-10">
+            <div className="mt-8 relative bg-card border border-border p-8 md:p-10 lg:p-12">
+              <div className="text-center mb-9">
                 <span className="text-primary text-xs tracking-[0.3em] uppercase">
                   Inbegrepen bij verhuur
                 </span>
+
+                <h4 className="font-serif text-2xl md:text-3xl mt-3 text-white">
+                  Gebruiksklaar geleverd
+                </h4>
               </div>
 
-              <ul className="grid sm:grid-cols-2 gap-x-12 gap-y-4 max-w-3xl mx-auto">
-                {[
-                  "Levering én ophaling binnen een straal van 25 km inbegrepen",
-                  "Afstand berekend via Google Maps vanaf DAIVEXO",
-                  "50 meter verlengkabel inbegrepen",
-                  "3-voudige stekkerdoos inbegrepen",
-                  "RGBW LED-verlichting inbegrepen",
-                  "Afstandsbediening inbegrepen",
-                  "Zwarte HDPE-bovenplaat inbegrepen",
-                  "Gebruiksklaar geleverd",
-                ].map((item) => (
-                  <li
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {includedItems.map((item) => (
+                  <div
                     key={item}
-                    className="flex items-start gap-3 text-base md:text-lg text-stone-300 leading-relaxed"
+                    className="flex items-start gap-3 border border-primary/15 bg-black/30 p-4"
                   >
-                    <span className="mt-1.5 h-1.5 w-1.5 rotate-45 bg-primary shrink-0" />
-                    <span>{item}</span>
-                  </li>
+                    <Check
+                      className="h-5 w-5 text-primary mt-0.5 shrink-0"
+                      strokeWidth={1.6}
+                    />
+
+                    <span className="text-sm md:text-base text-stone-300 leading-6">
+                      {item}
+                    </span>
+                  </div>
                 ))}
-              </ul>
+              </div>
 
               <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/30" />
               <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/30" />
             </div>
 
             {/* TRANSPORT */}
-            <div className="mt-6 relative bg-card border border-border p-10 lg:p-14">
+            <div className="mt-8 relative bg-card border border-border p-10 lg:p-14">
               <div className="text-center mb-10">
                 <span className="text-primary text-xs tracking-[0.3em] uppercase">
                   Transport
                 </span>
+
+                <h4 className="font-serif text-2xl md:text-3xl mt-3 text-white">
+                  Levering &amp; ophaling
+                </h4>
               </div>
 
-              <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto text-center">
-                <div>
-                  <p className="text-primary font-serif text-lg">
+              <div className="grid sm:grid-cols-3 gap-0 max-w-4xl mx-auto text-center">
+                <div className="px-6 py-4">
+                  <p className="text-primary font-serif text-xl">
                     0–25 km
                   </p>
 
@@ -261,8 +322,8 @@ export function LightCubesSection() {
                   </p>
                 </div>
 
-                <div className="sm:border-x sm:border-primary/20 sm:px-6">
-                  <p className="text-primary font-serif text-lg">
+                <div className="px-6 py-4 sm:border-x sm:border-primary/20">
+                  <p className="text-primary font-serif text-xl">
                     26–50 km
                   </p>
 
@@ -271,8 +332,8 @@ export function LightCubesSection() {
                   </p>
                 </div>
 
-                <div>
-                  <p className="text-primary font-serif text-lg">
+                <div className="px-6 py-4">
+                  <p className="text-primary font-serif text-xl">
                     Meer dan 50 km
                   </p>
 
@@ -287,7 +348,7 @@ export function LightCubesSection() {
             </div>
 
             {/* Fine print */}
-            <p className="mt-10 text-center text-base text-stone-400 max-w-3xl mx-auto leading-relaxed">
+            <p className="mt-10 text-center text-sm md:text-base text-stone-400 max-w-3xl mx-auto leading-relaxed">
               De klant voorziet een geschikt 230V-stopcontact binnen bereik.
               De waarborg wordt na ophaling en controle terugbetaald indien de
               Cube en alle meegeleverde materialen volledig en onbeschadigd
@@ -321,13 +382,13 @@ export function LightCubesSection() {
           >
             <img
               src={selectedCube.image}
-              alt={`DAIVEXO Light Cube - ${selectedCube.color} LED`}
+              alt={`DAIVEXO Light Cube - ${selectedCube.color}`}
               className="max-h-[82vh] max-w-[95vw] object-contain border border-primary/40 shadow-[0_0_40px_rgba(212,175,55,0.18)]"
             />
 
             <div className="pt-5 text-center">
               <h3 className="font-serif text-2xl md:text-3xl text-white">
-                DAIVEXO Light Cube — {selectedCube.color} LED
+                DAIVEXO Light Cube — {selectedCube.color}
               </h3>
 
               <p className="mt-2 text-sm text-white/60">
