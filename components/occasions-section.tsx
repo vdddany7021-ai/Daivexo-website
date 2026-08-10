@@ -1,4 +1,9 @@
-import { PartyPopper, Briefcase, Martini, Lightbulb } from "lucide-react"
+import {
+  PartyPopper,
+  Briefcase,
+  Martini,
+  Lightbulb,
+} from "lucide-react"
 
 const occasions = [
   {
@@ -25,12 +30,14 @@ const occasions = [
 
 export function OccasionsSection() {
   return (
-    <section id="occasions" className="py-32 bg-background relative">
+    <section className="relative bg-black py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <span className="text-primary text-sm tracking-[0.3em] uppercase">Voor elke gelegenheid</span>
+        <div className="text-center mb-16">
+          <span className="text-primary text-sm tracking-[0.35em] uppercase">
+            Voor elke gelegenheid
+          </span>
 
-          <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl mt-4 mb-6 text-balance">
+          <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl mt-4 mb-6 text-white text-balance">
             Een blikvanger voor elk event
           </h2>
 
@@ -45,30 +52,32 @@ export function OccasionsSection() {
           {occasions.map(({ title, description, Icon }) => (
             <div
               key={title}
-              className="group relative bg-card border border-primary/60 rounded-sm p-12 lg:p-14 flex flex-col items-center text-center transition-all duration-500 hover:border-primary"
+              className="group relative bg-black border border-primary p-10 lg:p-12 flex flex-col items-center text-center transition-all duration-500 hover:border-primary"
               style={{
                 boxShadow:
-                  "0 0 0 1px oklch(0.78 0.12 85 / 0.2), 0 0 26px -2px oklch(0.78 0.12 85 / 0.3), inset 0 0 34px -12px oklch(0.78 0.12 85 / 0.4)",
+                  "0 0 8px rgba(212,175,55,0.10), inset 0 0 10px rgba(212,175,55,0.025)",
               }}
             >
               {/* Icon */}
               <Icon
                 className="h-12 w-12 text-primary mb-8 transition-transform duration-500 group-hover:scale-105"
-                strokeWidth={1}
+                strokeWidth={1.2}
                 aria-hidden="true"
               />
 
-              <h3 className="text-primary text-base tracking-[0.3em] uppercase">{title}</h3>
-              <div className="mt-6 h-px w-14 bg-primary/40" />
-              <p className="mt-6 text-lg text-stone-200 leading-relaxed">{description}</p>
+              <h3 className="text-primary text-base tracking-[0.3em] uppercase">
+                {title}
+              </h3>
 
-              {/* Bright light accents on the border */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 h-px w-16 bg-gradient-to-r from-transparent via-primary to-transparent opacity-80" />
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-px w-16 bg-gradient-to-r from-transparent via-primary to-transparent opacity-60" />
+              <div className="mt-6 h-px w-14 bg-primary/50" />
 
-              {/* Elegant gold corner details */}
-              <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/70 transition-colors duration-500 group-hover:border-primary" />
-              <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/70 transition-colors duration-500 group-hover:border-primary" />
+              <p className="mt-6 text-lg text-stone-100 leading-relaxed">
+                {description}
+              </p>
+
+              {/* Scherpe gouden hoekdetails */}
+              <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-primary" />
+              <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-primary" />
             </div>
           ))}
         </div>
