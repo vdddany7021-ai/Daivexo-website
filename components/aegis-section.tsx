@@ -320,8 +320,13 @@ export function AegisSection() {
                 <div className="absolute bottom-4 left-4 w-6 h-6 border-b border-l border-primary/30 group-hover:border-primary transition-colors duration-300" />
               </a>
 
-              {/* VTM */}
-              <div className="relative border border-primary/40 bg-black p-9 md:p-10">
+              {/* VTM NIEUWS */}
+              <a
+                href="https://www.hln.be/video/productie/vtm-nieuws-kijker-maakt-beschermend-masker-voor-kleine-nora-die-allergisch-is-aan-uv-licht-13746285"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative border border-primary/40 bg-black p-9 md:p-10 transition-all duration-500 hover:border-primary hover:shadow-[0_0_35px_-12px_rgba(212,175,55,0.5)]"
+              >
                 <div className="flex items-center gap-4">
                   <div className="flex h-14 w-14 items-center justify-center border border-primary/50 text-primary">
                     <Tv className="h-7 w-7" strokeWidth={1.4} />
@@ -339,18 +344,19 @@ export function AegisSection() {
                 </div>
 
                 <p className="mt-7 text-base md:text-lg leading-8 text-stone-300">
-                  Het verhaal achter het eerste DAIVEXO AEGIS-prototype werd
-                  ook gebracht in VTM NIEUWS en kreeg zo nationale
-                  zichtbaarheid.
+                  Bekijk de VTM NIEUWS-reportage over het eerste DAIVEXO
+                  AEGIS-prototype en het bijzondere verhaal achter de
+                  ontwikkeling voor Nora.
                 </p>
 
-                <div className="mt-8 text-primary text-sm tracking-[0.2em] uppercase">
-                  Reportage uitgezonden op VTM NIEUWS
+                <div className="mt-8 inline-flex items-center gap-3 text-primary text-sm tracking-[0.2em] uppercase">
+                  Bekijk de volledige reportage
+                  <ExternalLink className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </div>
 
-                <div className="absolute top-4 right-4 w-6 h-6 border-t border-r border-primary/30" />
-                <div className="absolute bottom-4 left-4 w-6 h-6 border-b border-l border-primary/30" />
-              </div>
+                <div className="absolute top-4 right-4 w-6 h-6 border-t border-r border-primary/30 group-hover:border-primary transition-colors duration-300" />
+                <div className="absolute bottom-4 left-4 w-6 h-6 border-b border-l border-primary/30 group-hover:border-primary transition-colors duration-300" />
+              </a>
             </div>
           </div>
 
