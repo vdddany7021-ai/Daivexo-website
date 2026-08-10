@@ -14,19 +14,19 @@ import {
 const aegisImages = [
   {
     title: "DAIVEXO AEGIS — vooraanzicht",
-    image: "/images/20260624_084215(1).jpg",
+    image: "/images/20260624_084215.jpg",
   },
   {
     title: "DAIVEXO AEGIS — zijaanzicht",
-    image: "/images/20260624_084244.jpg",
+    image: "/images/20260624_084255.jpg",
   },
   {
     title: "UV-test van het prototype",
-    image: "/images/20260714_111801.jpg",
+    image: "/images/HLN UV werende test 100% geslaagd.jpeg",
   },
   {
     title: "Het verhaal in Het Laatste Nieuws",
-    image: "/images/20260714_111710.jpg",
+    image: "/images/Voorpagina HLN UV werend gezichtsbescherming.jpeg",
   },
 ]
 
