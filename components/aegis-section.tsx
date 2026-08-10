@@ -21,9 +21,9 @@ const aegisImages = [
     image: "/images/20260624_084255.jpg",
   },
   {
-    title: "UV-test van het prototype",
-    image: "/images/HLN UV werende test 100% geslaagd.jpeg",
-  },
+  title: "UV-test van het prototype",
+  image: "/images/daivexo-aegis-uv-test.jpeg",
+},
   {
     title: "Het verhaal in Het Laatste Nieuws",
     image: "/images/Voorpagina HLN UV werend gezichtsbescherming.jpeg",
