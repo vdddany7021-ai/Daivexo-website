@@ -20,11 +20,11 @@ const premiumImage = {
 const aegisImages = [
   {
     title: "DAIVEXO AEGIS — vooraanzicht",
-    image: "/images/daivexo-aegis-front-premium.png",
+    image: "/images/daivexo-aegis-front-premium.png.png",
   },
   {
     title: "DAIVEXO AEGIS — zijaanzicht",
-    image: "/images/daivexo-aegis-side-premium.png",
+    image: "/images/daivexo-aegis-side-premium.png.png",
   },
 ]
 
