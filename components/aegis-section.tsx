@@ -9,6 +9,7 @@ import {
   Tv,
   X,
   ZoomIn,
+  ExternalLink,
 } from "lucide-react"
 
 const premiumImage = {
@@ -24,14 +25,6 @@ const aegisImages = [
   {
     title: "DAIVEXO AEGIS — zijaanzicht",
     image: "/images/20260624_084255.jpg",
-  },
-  {
-    title: "UV-test van het prototype",
-    image: "/images/daivexo-aegis-uv-test.jpeg",
-  },
-  {
-    title: "Het verhaal in Het Laatste Nieuws",
-    image: "/images/Voorpagina HLN UV werend gezichtsbescherming.jpeg",
   },
 ]
 
@@ -171,12 +164,10 @@ export function AegisSection() {
                 <div className="absolute top-5 left-5 w-8 h-8 border-t border-l border-primary/50" />
                 <div className="absolute bottom-5 right-5 w-8 h-8 border-b border-r border-primary/50" />
               </div>
-
-             
             </button>
           </div>
 
-          {/* Vier foto's */}
+          {/* Echte prototypefoto's */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
             {aegisImages.map((item) => (
               <button
@@ -246,45 +237,119 @@ export function AegisSection() {
             })}
           </div>
 
-          {/* Media */}
-          <div className="relative mb-24 overflow-hidden border border-primary/30 bg-card p-10 md:p-14">
-            <div className="absolute top-4 left-4 w-7 h-7 border-t border-l border-primary/50" />
-            <div className="absolute bottom-4 right-4 w-7 h-7 border-b border-r border-primary/50" />
+          {/* IN THE MEDIA */}
+          <div className="relative mb-24 overflow-hidden border border-primary/40 bg-card p-8 md:p-12 lg:p-16">
+            <div className="absolute top-4 left-4 w-8 h-8 border-t border-l border-primary/60" />
+            <div className="absolute bottom-4 right-4 w-8 h-8 border-b border-r border-primary/60" />
 
-            <div className="text-center">
-              <span className="text-primary text-xs tracking-[0.35em] uppercase">
-                Van prototype naar nationaal nieuws
+            <div className="text-center max-w-4xl mx-auto">
+              <span className="text-primary text-sm tracking-[0.35em] uppercase">
+                DAIVEXO AEGIS — In the Media
               </span>
 
-              <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl mt-4 text-white">
-                Een verhaal dat verder ging dan het ontwerp
+              <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl mt-5 text-white leading-tight">
+                Van een persoonlijke uitdaging naar een verhaal dat Vlaanderen
+                bereikte.
               </h3>
 
-              <div className="flex items-center justify-center gap-4 mt-6">
-                <div className="h-px w-12 bg-primary" />
+              <div className="flex items-center justify-center gap-4 mt-7">
+                <div className="h-px w-16 bg-primary" />
                 <div className="h-2 w-2 rotate-45 bg-primary" />
-                <div className="h-px w-12 bg-primary" />
+                <div className="h-px w-16 bg-primary" />
               </div>
 
-              <p className="mt-8 mx-auto max-w-3xl text-base md:text-lg leading-8 text-stone-300">
-                Het verhaal achter het eerste AEGIS-prototype werd opgepikt
-                door <span className="text-white">VTM NIEUWS</span> en{" "}
-                <span className="text-white">Het Laatste Nieuws (HLN)</span>.
-                De media-aandacht bracht niet alleen het ontwerp in beeld, maar
-                vooral de reden waarom het werd gemaakt: een kind opnieuw meer
-                vrijheid geven om buiten te kunnen zijn.
+              <p className="mt-9 text-lg md:text-xl leading-9 text-stone-200">
+                DAIVEXO AEGIS ontstond vanuit één concrete vraag: hoe kan een
+                kind met Xeroderma Pigmentosum beter worden beschermd tegen
+                UV-straling, zonder de vrijheid om buiten te zijn volledig te
+                verliezen?
               </p>
 
-              <div className="mt-10 flex flex-col sm:flex-row justify-center gap-5">
-                <div className="inline-flex items-center justify-center gap-3 border border-primary/40 px-7 py-4 text-stone-200">
-                  <Tv className="h-5 w-5 text-primary" />
-                  VTM NIEUWS
+              <p className="mt-6 text-base md:text-lg leading-8 text-stone-300">
+                Het eerste op maat gemaakte prototype trok de aandacht van de
+                nationale media. Het verhaal achter de ontwikkeling werd
+                gebracht door Het Laatste Nieuws en VTM NIEUWS, waarbij niet
+                alleen het ontwerp centraal stond, maar vooral de reden waarom
+                het werd gemaakt.
+              </p>
+
+              <p className="mt-6 text-base md:text-lg leading-8 text-stone-300">
+                Wat begon als één oplossing voor één kind, vormt vandaag de
+                basis voor de verdere ontwikkeling van DAIVEXO AEGIS:
+                maatwerk waarbij bescherming, draagbaarheid en individuele
+                behoeften samenkomen.
+              </p>
+            </div>
+
+            {/* Media kaarten */}
+            <div className="grid md:grid-cols-2 gap-8 mt-14">
+              {/* HLN */}
+              <a
+                href="https://www.hln.be/rumst/dany-53-maakt-speciaal-masker-voor-maankindje-nora-5-uit-rumst-nu-kan-ze-eindelijk-ook-overdag-buitenspelen~af9710a5/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative border border-primary/40 bg-black p-9 md:p-10 transition-all duration-500 hover:border-primary hover:shadow-[0_0_35px_-12px_rgba(212,175,55,0.5)]"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="flex h-14 w-14 items-center justify-center border border-primary/50 text-primary">
+                    <Newspaper className="h-7 w-7" strokeWidth={1.4} />
+                  </div>
+
+                  <div>
+                    <span className="text-primary text-xs tracking-[0.3em] uppercase">
+                      Publicatie
+                    </span>
+
+                    <h4 className="font-serif text-2xl md:text-3xl text-white mt-1">
+                      Het Laatste Nieuws
+                    </h4>
+                  </div>
                 </div>
 
-                <div className="inline-flex items-center justify-center gap-3 border border-primary/40 px-7 py-4 text-stone-200">
-                  <Newspaper className="h-5 w-5 text-primary" />
-                  HET LAATSTE NIEUWS
+                <p className="mt-7 text-base md:text-lg leading-8 text-stone-300">
+                  Lees het oorspronkelijke HLN-artikel over het speciaal
+                  ontwikkelde gezichtssysteem en het verhaal achter Nora.
+                </p>
+
+                <div className="mt-8 inline-flex items-center gap-3 text-primary text-sm tracking-[0.2em] uppercase">
+                  Lees het volledige artikel
+                  <ExternalLink className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </div>
+
+                <div className="absolute top-4 right-4 w-6 h-6 border-t border-r border-primary/30 group-hover:border-primary transition-colors duration-300" />
+                <div className="absolute bottom-4 left-4 w-6 h-6 border-b border-l border-primary/30 group-hover:border-primary transition-colors duration-300" />
+              </a>
+
+              {/* VTM */}
+              <div className="relative border border-primary/40 bg-black p-9 md:p-10">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-14 w-14 items-center justify-center border border-primary/50 text-primary">
+                    <Tv className="h-7 w-7" strokeWidth={1.4} />
+                  </div>
+
+                  <div>
+                    <span className="text-primary text-xs tracking-[0.3em] uppercase">
+                      Televisiereportage
+                    </span>
+
+                    <h4 className="font-serif text-2xl md:text-3xl text-white mt-1">
+                      VTM NIEUWS
+                    </h4>
+                  </div>
+                </div>
+
+                <p className="mt-7 text-base md:text-lg leading-8 text-stone-300">
+                  Het verhaal achter het eerste DAIVEXO AEGIS-prototype werd
+                  ook gebracht in VTM NIEUWS en kreeg zo nationale
+                  zichtbaarheid.
+                </p>
+
+                <div className="mt-8 text-primary text-sm tracking-[0.2em] uppercase">
+                  Reportage uitgezonden op VTM NIEUWS
+                </div>
+
+                <div className="absolute top-4 right-4 w-6 h-6 border-t border-r border-primary/30" />
+                <div className="absolute bottom-4 left-4 w-6 h-6 border-b border-l border-primary/30" />
               </div>
             </div>
           </div>
@@ -345,9 +410,10 @@ export function AegisSection() {
           {/* CTA */}
           <div className="text-center">
             <p className="mx-auto max-w-3xl text-sm md:text-base leading-7 text-stone-400">
-              AEGIS is een ontwikkelings- en maatwerkconcept. Beschermingsniveau,
-              materiaalprestaties en geschiktheid moeten per uiteindelijke
-              uitvoering en toepassing worden beoordeeld en getest.
+              AEGIS is een ontwikkelings- en maatwerkconcept.
+              Beschermingsniveau, materiaalprestaties en geschiktheid moeten
+              per uiteindelijke uitvoering en toepassing worden beoordeeld en
+              getest.
             </p>
 
             <a
@@ -389,10 +455,10 @@ export function AegisSection() {
             />
 
             <div className="pt-4 text-center">
-  <p className="text-sm text-white/60">
-    Klik buiten de afbeelding of op × om te sluiten
-  </p>
-</div>
+              <p className="text-sm text-white/60">
+                Klik buiten de afbeelding of op × om te sluiten
+              </p>
+            </div>
           </div>
         </div>
       )}
