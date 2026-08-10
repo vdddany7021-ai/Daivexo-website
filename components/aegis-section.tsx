@@ -20,11 +20,11 @@ const premiumImage = {
 const aegisImages = [
   {
     title: "DAIVEXO AEGIS — vooraanzicht",
-    image: "/images/20260624_084215.jpg",
+    image: "/images/daivexo-aegis-front-premium.png",
   },
   {
     title: "DAIVEXO AEGIS — zijaanzicht",
-    image: "/images/20260624_084255.jpg",
+    image: "/images/daivexo-aegis-side-premium.png",
   },
 ]
 
@@ -167,7 +167,7 @@ export function AegisSection() {
             </button>
           </div>
 
-          {/* Echte prototypefoto's */}
+          {/* Nieuwe premium voor- en zijaanzichten */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
             {aegisImages.map((item) => (
               <button
