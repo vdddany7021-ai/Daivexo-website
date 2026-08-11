@@ -25,7 +25,7 @@ export default function Home() {
 
         <AegisSection />
 
-        <GallerySection />
+       
 
         <ContactSection />
       </main>
