@@ -9,7 +9,6 @@ const navLinks = [
   { href: "#light-cubes", label: "Light Cubes" },
   { href: "#qr-labels", label: "QR Labels" },
   { href: "#aegis", label: "DAIVEXO AEGIS" },
-  { href: "#gallery", label: "Art Gallery" },
   { href: "#contact", label: "Contact" },
 ]
 
@@ -17,13 +16,13 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-border/50">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/95 border-b border-border/50 backdrop-blur-sm">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link
             href="#home"
-            className="font-serif text-2xl tracking-[0.3em] text-primary"
+            className="font-serif text-xl md:text-2xl tracking-[0.3em] text-primary"
           >
             DAIVEXO
           </Link>
