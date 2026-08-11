@@ -194,7 +194,7 @@ Verstuurd via www.daivexo.com
                 htmlFor="onderwerp"
                 className="block text-sm uppercase tracking-widest text-muted-foreground mb-3"
               >
-                Subject
+                Onderwerp
               </label>
 
               <input
