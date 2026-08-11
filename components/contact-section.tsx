@@ -191,7 +191,7 @@ Verstuurd via www.daivexo.com
 
             <div>
               <label
-                htmlFor="subject"
+                htmlFor="onderwerp"
                 className="block text-sm uppercase tracking-widest text-muted-foreground mb-3"
               >
                 Subject
@@ -208,7 +208,7 @@ Verstuurd via www.daivexo.com
                   })
                 }
                 className="w-full bg-card border border-border px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none transition-colors"
-                placeholder="How can we help?"
+                placeholder="Waarover gaat je bericht?"
                 required
               />
             </div>
