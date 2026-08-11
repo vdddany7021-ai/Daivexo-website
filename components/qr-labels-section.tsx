@@ -84,16 +84,16 @@ export function QRLabelsSection() {
     <>
       <section
         id="qr-labels"
-        className="relative bg-black py-24 md:py-32"
+        className="relative overflow-hidden bg-black py-24 md:py-32"
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           {/* Titel */}
-          <div className="mb-20 text-center">
-            <span className="text-primary text-sm tracking-[0.3em] uppercase">
-              SCANMIJ by DAIVEXO
+          <div className="text-center mb-20">
+            <span className="text-primary text-lg md:text-xl font-semibold tracking-[0.28em] uppercase">
+              GEVONDEN? SCAN MIJ.
             </span>
 
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mt-4 mb-6 text-white">
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mt-5 mb-6 text-white">
               QR Labels
             </h2>
 
@@ -103,10 +103,17 @@ export function QRLabelsSection() {
               <div className="h-px w-16 bg-primary" />
             </div>
 
-            <p className="text-white/85 mt-8 max-w-3xl mx-auto text-lg leading-8">
-              SCANMIJ QR-labels helpen verloren voorwerpen snel terug bij de
-              eigenaar te brengen. Scan de code, neem contact op en bezorg het
-              voorwerp veilig terug.
+            <p className="mt-9 max-w-4xl mx-auto text-xl md:text-2xl font-semibold leading-9 text-white">
+              Slimme QR-labels die verloren spullen sneller terugbrengen bij hun
+              eigenaar.
+            </p>
+
+            <p className="mt-6 max-w-4xl mx-auto text-base md:text-lg lg:text-xl leading-8 md:leading-9 text-stone-300">
+              Bevestig een SCANMIJ-label op bijvoorbeeld een brooddoos,
+              drinkfles, rugzak, sleutelbos, koffer of ander persoonlijk
+              voorwerp. Wordt het voorwerp gevonden? De vinder scant eenvoudig
+              de QR-code en kan rechtstreeks contact opnemen met de eigenaar —
+              zonder app.
             </p>
           </div>
 
