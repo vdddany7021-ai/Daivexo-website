@@ -89,26 +89,26 @@ export function QRLabelsSection() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           {/* Titel */}
           <div className="text-center mb-20">
-            <span className="text-primary text-lg md:text-xl font-semibold tracking-[0.28em] uppercase">
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary tracking-wide uppercase">
               GEVONDEN? SCAN MIJ.
-            </span>
-
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mt-5 mb-6 text-white">
-              QR Labels
             </h2>
 
-            <div className="flex items-center justify-center gap-4">
+            <p className="font-serif text-2xl md:text-3xl lg:text-4xl mt-5 text-white">
+              QR Labels
+            </p>
+
+            <div className="flex items-center justify-center gap-4 mt-7">
               <div className="h-px w-16 bg-primary" />
               <div className="h-2 w-2 rotate-45 bg-primary" />
               <div className="h-px w-16 bg-primary" />
             </div>
 
-            <p className="mt-9 max-w-4xl mx-auto text-xl md:text-2xl font-semibold leading-9 text-white">
-              Slimme QR-labels die verloren spullen sneller terugbrengen bij hun
-              eigenaar.
+            <p className="mt-10 max-w-5xl mx-auto text-2xl md:text-3xl lg:text-4xl font-semibold leading-[1.4] text-white">
+              Slimme QR-labels die verloren spullen sneller terugbrengen bij
+              hun eigenaar.
             </p>
 
-            <p className="mt-6 max-w-4xl mx-auto text-base md:text-lg lg:text-xl leading-8 md:leading-9 text-stone-300">
+            <p className="mt-8 max-w-5xl mx-auto text-lg md:text-xl lg:text-2xl leading-9 md:leading-10 text-white">
               Bevestig een SCANMIJ-label op bijvoorbeeld een brooddoos,
               drinkfles, rugzak, sleutelbos, koffer of ander persoonlijk
               voorwerp. Wordt het voorwerp gevonden? De vinder scant eenvoudig
@@ -191,6 +191,18 @@ export function QRLabelsSection() {
             >
               Vraag info aan
             </a>
+          </div>
+
+          {/* Brede projectscheiding */}
+          <div
+            aria-hidden="true"
+            className="mx-auto mt-28 flex w-full max-w-5xl items-center justify-center gap-5"
+          >
+            <div className="h-px flex-1 bg-primary" />
+
+            <div className="h-3 w-3 rotate-45 bg-primary" />
+
+            <div className="h-px flex-1 bg-primary" />
           </div>
         </div>
       </section>
