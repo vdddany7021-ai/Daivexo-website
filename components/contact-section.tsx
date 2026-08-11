@@ -79,12 +79,14 @@ Verstuurd via www.daivexo.com
                     Email
                   </p>
 
-                  <a
-                    href="mailto:info@daivexo.com"
-                    className="text-foreground hover:text-primary transition-colors"
-                  >
-                    info@daivexo.com
-                  </a>
+                 <a
+  href="mailto:info@daivexo.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-foreground hover:text-primary transition-colors"
+>
+  info@daivexo.com
+</a>
                 </div>
               </div>
 
