@@ -216,10 +216,22 @@ Aanvraag verstuurd via www.daivexo.com
                 </button>
               </div>
 
-              <p className="mt-10 text-base md:text-lg text-stone-400 leading-relaxed">
+                    <p className="mt-10 text-base md:text-lg text-stone-400 leading-relaxed">
                 Meerdere Cubes nodig? Vraag vrijblijvend naar de mogelijkheden.
               </p>
             </div>
+          </div>
+
+          {/* Brede gouden projectscheiding */}
+          <div
+            aria-hidden="true"
+            className="mx-auto mt-24 flex w-full max-w-5xl items-center justify-center gap-5"
+          >
+            <div className="h-px flex-1 bg-primary" />
+
+            <div className="h-3 w-3 rotate-45 bg-primary" />
+
+            <div className="h-px flex-1 bg-primary" />
           </div>
         </div>
       </section>
