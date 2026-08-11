@@ -47,7 +47,7 @@ Verstuurd via www.daivexo.com
         {/* Titel */}
         <div className="text-center mb-20">
           <span className="text-primary text-sm tracking-[0.3em] uppercase">
-            Get in Touch
+            Neem contact op
           </span>
 
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mt-4 mb-6 text-white">
@@ -65,7 +65,7 @@ Verstuurd via www.daivexo.com
           {/* Contactgegevens */}
           <div>
             <h3 className="font-serif text-2xl md:text-3xl mb-8 text-white">
-              Let&apos;s Create Something Extraordinary
+              Samen maken we iets bijzonders
             </h3>
 
             <p className="text-base md:text-lg text-stone-300 leading-8 mb-12">
@@ -76,7 +76,7 @@ Verstuurd via www.daivexo.com
             </p>
 
             <div className="space-y-6">
-              {/* Email */}
+              {/* E-mail */}
               <div className="flex items-start gap-4">
                 <div className="p-3 border border-primary/40">
                   <Mail className="h-5 w-5 text-primary" />
@@ -84,7 +84,7 @@ Verstuurd via www.daivexo.com
 
                 <div>
                   <p className="text-sm text-muted-foreground uppercase tracking-widest mb-1">
-                    Email
+                    E-mail
                   </p>
 
                   <a
@@ -104,7 +104,7 @@ Verstuurd via www.daivexo.com
 
                 <div>
                   <p className="text-sm text-muted-foreground uppercase tracking-widest mb-1">
-                    Phone
+                    Telefoon
                   </p>
 
                   <a
@@ -124,7 +124,7 @@ Verstuurd via www.daivexo.com
 
                 <div>
                   <p className="text-sm text-muted-foreground uppercase tracking-widest mb-1">
-                    Location
+                    Locatie
                   </p>
 
                   <p className="text-white">
@@ -140,12 +140,13 @@ Verstuurd via www.daivexo.com
           {/* Contactformulier */}
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid sm:grid-cols-2 gap-6">
+              {/* Naam */}
               <div>
                 <label
                   htmlFor="name"
                   className="block text-sm uppercase tracking-widest text-muted-foreground mb-3"
                 >
-                  Name
+                  Naam
                 </label>
 
                 <input
@@ -159,17 +160,18 @@ Verstuurd via www.daivexo.com
                     })
                   }
                   className="w-full bg-card border border-border px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none transition-colors"
-                  placeholder="Your name"
+                  placeholder="Je naam"
                   required
                 />
               </div>
 
+              {/* E-mail */}
               <div>
                 <label
                   htmlFor="email"
                   className="block text-sm uppercase tracking-widest text-muted-foreground mb-3"
                 >
-                  Email
+                  E-mail
                 </label>
 
                 <input
@@ -183,15 +185,16 @@ Verstuurd via www.daivexo.com
                     })
                   }
                   className="w-full bg-card border border-border px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none transition-colors"
-                  placeholder="your@email.com"
+                  placeholder="jouw@email.com"
                   required
                 />
               </div>
             </div>
 
+            {/* Onderwerp */}
             <div>
               <label
-                htmlFor="onderwerp"
+                htmlFor="subject"
                 className="block text-sm uppercase tracking-widest text-muted-foreground mb-3"
               >
                 Onderwerp
@@ -213,12 +216,13 @@ Verstuurd via www.daivexo.com
               />
             </div>
 
+            {/* Bericht */}
             <div>
               <label
                 htmlFor="message"
                 className="block text-sm uppercase tracking-widest text-muted-foreground mb-3"
               >
-                Message
+                Bericht
               </label>
 
               <textarea
@@ -232,17 +236,18 @@ Verstuurd via www.daivexo.com
                   })
                 }
                 className="w-full bg-card border border-border px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none transition-colors resize-none"
-                placeholder="Tell us about your project..."
+                placeholder="Vertel ons waarmee we je kunnen helpen..."
                 required
               />
             </div>
 
+            {/* Verstuurknop */}
             <button
               type="submit"
               className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-black hover:brightness-110 transition-all duration-300 tracking-widest uppercase text-sm"
             >
               <Send className="h-4 w-4" />
-              Send Message
+              Bericht versturen
             </button>
           </form>
         </div>
