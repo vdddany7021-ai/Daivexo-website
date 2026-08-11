@@ -15,8 +15,13 @@ export function ContactSection() {
     e.preventDefault()
 
     const body = `
+DAIVEXO CONTACTAANVRAAG
+
 Naam: ${formState.name}
 E-mail: ${formState.email}
+
+Onderwerp:
+${formState.subject}
 
 Bericht:
 ${formState.message}
@@ -39,6 +44,7 @@ Verstuurd via www.daivexo.com
       className="relative overflow-hidden bg-black py-24 md:py-32"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Titel */}
         <div className="text-center mb-20">
           <span className="text-primary text-sm tracking-[0.3em] uppercase">
             Get in Touch
@@ -56,12 +62,13 @@ Verstuurd via www.daivexo.com
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Contactgegevens */}
           <div>
-            <h3 className="font-serif text-2xl mb-8 text-white">
+            <h3 className="font-serif text-2xl md:text-3xl mb-8 text-white">
               Let&apos;s Create Something Extraordinary
             </h3>
 
-            <p className="text-muted-foreground leading-relaxed mb-12">
+            <p className="text-base md:text-lg text-stone-300 leading-8 mb-12">
               Heb je interesse in DAIVEXO Light Cubes, SCANMIJ QR-labels,
               DAIVEXO AEGIS of een ander maatwerkproject? Neem gerust contact
               op voor meer informatie, beschikbaarheid of een vrijblijvende
@@ -69,8 +76,9 @@ Verstuurd via www.daivexo.com
             </p>
 
             <div className="space-y-6">
+              {/* Email */}
               <div className="flex items-start gap-4">
-                <div className="p-3 border border-primary/30">
+                <div className="p-3 border border-primary/40">
                   <Mail className="h-5 w-5 text-primary" />
                 </div>
 
@@ -79,19 +87,18 @@ Verstuurd via www.daivexo.com
                     Email
                   </p>
 
-                 <a
-  href="mailto:info@daivexo.com"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="text-foreground hover:text-primary transition-colors"
->
-  info@daivexo.com
-</a>
+                  <a
+                    href="mailto:info@daivexo.com"
+                    className="text-white hover:text-primary transition-colors"
+                  >
+                    info@daivexo.com
+                  </a>
                 </div>
               </div>
 
+              {/* Telefoon */}
               <div className="flex items-start gap-4">
-                <div className="p-3 border border-primary/30">
+                <div className="p-3 border border-primary/40">
                   <Phone className="h-5 w-5 text-primary" />
                 </div>
 
@@ -102,15 +109,16 @@ Verstuurd via www.daivexo.com
 
                   <a
                     href="tel:+32480673786"
-                    className="text-foreground hover:text-primary transition-colors"
+                    className="text-white hover:text-primary transition-colors"
                   >
                     +32 480 67 37 86
                   </a>
                 </div>
               </div>
 
+              {/* Locatie */}
               <div className="flex items-start gap-4">
-                <div className="p-3 border border-primary/30">
+                <div className="p-3 border border-primary/40">
                   <MapPin className="h-5 w-5 text-primary" />
                 </div>
 
@@ -119,7 +127,7 @@ Verstuurd via www.daivexo.com
                     Location
                   </p>
 
-                  <p className="text-foreground">
+                  <p className="text-white">
                     Deinze
                     <br />
                     België
@@ -129,6 +137,7 @@ Verstuurd via www.daivexo.com
             </div>
           </div>
 
+          {/* Contactformulier */}
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid sm:grid-cols-2 gap-6">
               <div>
@@ -144,7 +153,10 @@ Verstuurd via www.daivexo.com
                   id="name"
                   value={formState.name}
                   onChange={(e) =>
-                    setFormState({ ...formState, name: e.target.value })
+                    setFormState({
+                      ...formState,
+                      name: e.target.value,
+                    })
                   }
                   className="w-full bg-card border border-border px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none transition-colors"
                   placeholder="Your name"
@@ -165,7 +177,10 @@ Verstuurd via www.daivexo.com
                   id="email"
                   value={formState.email}
                   onChange={(e) =>
-                    setFormState({ ...formState, email: e.target.value })
+                    setFormState({
+                      ...formState,
+                      email: e.target.value,
+                    })
                   }
                   className="w-full bg-card border border-border px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none transition-colors"
                   placeholder="your@email.com"
@@ -187,7 +202,10 @@ Verstuurd via www.daivexo.com
                 id="subject"
                 value={formState.subject}
                 onChange={(e) =>
-                  setFormState({ ...formState, subject: e.target.value })
+                  setFormState({
+                    ...formState,
+                    subject: e.target.value,
+                  })
                 }
                 className="w-full bg-card border border-border px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none transition-colors"
                 placeholder="How can we help?"
@@ -208,7 +226,10 @@ Verstuurd via www.daivexo.com
                 rows={6}
                 value={formState.message}
                 onChange={(e) =>
-                  setFormState({ ...formState, message: e.target.value })
+                  setFormState({
+                    ...formState,
+                    message: e.target.value,
+                  })
                 }
                 className="w-full bg-card border border-border px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none transition-colors resize-none"
                 placeholder="Tell us about your project..."
@@ -218,7 +239,7 @@ Verstuurd via www.daivexo.com
 
             <button
               type="submit"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 tracking-widest uppercase text-sm"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-black hover:brightness-110 transition-all duration-300 tracking-widest uppercase text-sm"
             >
               <Send className="h-4 w-4" />
               Send Message
