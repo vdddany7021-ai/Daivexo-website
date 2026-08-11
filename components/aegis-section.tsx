@@ -1,0 +1,473 @@
+"use client"
+
+import { useEffect, useState } from "react"
+import {
+  Heart,
+  Newspaper,
+  Ruler,
+  ShieldCheck,
+  Tv,
+  X,
+  ZoomIn,
+  ExternalLink,
+} from "lucide-react"
+
+const premiumImage = {
+  title: "DAIVEXO AEGIS — Protection engineered with purpose",
+  image: "/images/daivexo-aegis-premium-new.png",
+}
+
+const aegisImages = [
+  {
+    title: "DAIVEXO AEGIS — vooraanzicht",
+    image: "/images/daivexo-aegis-front-premium.png.png",
+  },
+  {
+    title: "DAIVEXO AEGIS — zijaanzicht",
+    image: "/images/daivexo-aegis-side-premium.png.png",
+  },
+]
+
+const highlights = [
+  {
+    icon: Heart,
+    title: "Ontstaan uit een echte nood",
+    description:
+      "DAIVEXO AEGIS ontstond niet als een gewoon productidee. Het eerste prototype werd ontwikkeld voor Nora, een jong meisje met Xeroderma Pigmentosum (XP), voor wie blootstelling aan UV-straling een bijzonder ernstig risico vormt.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Bescherming als uitgangspunt",
+    description:
+      "Het ontwerp combineert een transparant gezichtsscherm met beschermende materialen rond hoofd, hals en nek. De constructie werd stap voor stap opgebouwd met bescherming, draagbaarheid en praktisch gebruik als centrale uitgangspunten.",
+  },
+  {
+    icon: Ruler,
+    title: "Op maat ontwikkeld",
+    description:
+      "Geen persoon of toepassing is exact hetzelfde. Daarom kan een AEGIS-oplossing worden afgestemd op afmetingen, pasvorm, bevestiging, beschermende delen en materiaalkeuze. Maatwerk staat centraal in het ontwikkelingsproces.",
+  },
+  {
+    icon: Newspaper,
+    title: "Nationaal in de aandacht",
+    description:
+      "Het bijzondere verhaal achter het prototype kreeg nationale aandacht via VTM NIEUWS en Het Laatste Nieuws. Daarbij werd niet alleen het persoonlijke verhaal verteld, maar ook getoond hoe het prototype in de praktijk werd getest.",
+  },
+]
+
+export function AegisSection() {
+  const [selectedImage, setSelectedImage] = useState<{
+    title: string
+    image: string
+  } | null>(null)
+
+  useEffect(() => {
+    if (!selectedImage) return
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setSelectedImage(null)
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown)
+    document.body.style.overflow = "hidden"
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown)
+      document.body.style.overflow = ""
+    }
+  }, [selectedImage])
+
+  return (
+    <>
+      <section
+        id="aegis"
+        className="relative overflow-hidden bg-black py-24 md:py-32"
+      >
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute left-1/2 top-1/3 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-primary/5 blur-[150px]"
+        />
+
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+          {/* Titel */}
+          <div className="mb-16 text-center">
+            <span className="text-primary text-sm md:text-base tracking-[0.35em] uppercase">
+              Protection • Innovation • Purpose
+            </span>
+
+            <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl mt-5 mb-5 text-white">
+              DAIVEXO AEGIS
+            </h2>
+
+            <p className="font-serif text-2xl md:text-3xl text-primary/90 italic">
+              Born from necessity. Designed to protect.
+            </p>
+
+            <div className="mt-8 flex items-center justify-center gap-4">
+              <div className="h-px w-20 bg-primary" />
+              <div className="h-2.5 w-2.5 rotate-45 bg-primary" />
+              <div className="h-px w-20 bg-primary" />
+            </div>
+          </div>
+
+          {/* Introverhaal */}
+          <div className="mx-auto mb-16 max-w-5xl text-center">
+            <p className="text-2xl md:text-3xl lg:text-4xl leading-[1.45] font-semibold text-white">
+              Sommige ontwerpen beginnen met een idee.{" "}
+              <span className="text-primary">
+                DAIVEXO AEGIS begon met iemand die bescherming nodig had.
+              </span>
+            </p>
+
+            <p className="mt-10 text-lg md:text-xl lg:text-2xl leading-9 md:leading-10 text-stone-100">
+              Het eerste prototype werd speciaal ontwikkeld voor Nora, een jong
+              meisje met Xeroderma Pigmentosum (XP). Door deze zeldzame
+              aandoening kan blootstelling aan UV-straling bijzonder gevaarlijk
+              zijn. Gewoon buiten spelen — iets wat voor de meeste kinderen
+              vanzelfsprekend is — vraagt daardoor om uitzonderlijke
+              bescherming.
+            </p>
+
+            <p className="mt-7 text-lg md:text-xl lg:text-2xl leading-9 md:leading-10 text-stone-100">
+              Toen bleek dat bestaande oplossingen niet voldeden aan alle
+              praktische behoeften, ontstond de uitdaging om zelf een nieuwe
+              oplossing te ontwikkelen. Zo groeide stap voor stap een
+              beschermend gezichtssysteem waarin een transparant scherm,
+              beschermende materialen en een aangepaste constructie samen één
+              geheel vormen.
+            </p>
+          </div>
+
+          {/* Premium hoofdafbeelding */}
+          <div className="mb-24">
+            <button
+              type="button"
+              onClick={() => setSelectedImage(premiumImage)}
+              className="group block w-full overflow-hidden border border-primary/50 bg-card cursor-zoom-in"
+              aria-label="Vergroot DAIVEXO AEGIS premium afbeelding"
+            >
+              <div className="relative overflow-hidden bg-black">
+                <img
+                  src={premiumImage.image}
+                  alt={premiumImage.title}
+                  className="w-full max-h-[950px] object-contain group-hover:scale-[1.015] transition-transform duration-700"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+
+                <div className="absolute top-5 right-5 flex h-12 w-12 items-center justify-center border border-primary/70 bg-black/75 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <ZoomIn className="h-6 w-6" />
+                </div>
+
+                <div className="absolute top-5 left-5 w-8 h-8 border-t border-l border-primary/50" />
+                <div className="absolute bottom-5 right-5 w-8 h-8 border-b border-r border-primary/50" />
+              </div>
+            </button>
+          </div>
+
+          {/* Nieuwe premium voor- en zijaanzichten */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+            {aegisImages.map((item) => (
+              <button
+                type="button"
+                key={item.title}
+                onClick={() => setSelectedImage(item)}
+                className="group overflow-hidden bg-card border border-primary/25 hover:border-primary/80 transition-all duration-500 cursor-zoom-in text-left"
+                aria-label={`Vergroot ${item.title}`}
+              >
+                <div className="relative aspect-[4/3] overflow-hidden bg-black">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+
+                  <div className="absolute top-4 right-4 flex h-11 w-11 items-center justify-center border border-primary/60 bg-black/70 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <ZoomIn className="h-5 w-5" />
+                  </div>
+
+                  <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/40 group-hover:border-primary transition-colors duration-300" />
+                  <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/40 group-hover:border-primary transition-colors duration-300" />
+                </div>
+
+                <div className="p-6 text-center">
+                  <h3 className="font-serif text-xl md:text-2xl text-white">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-2 text-xs uppercase tracking-[0.2em] text-primary/80">
+                    Klik om te vergroten
+                  </p>
+                </div>
+              </button>
+            ))}
+          </div>
+
+          {/* Vier kernpunten */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-7 mb-24">
+            {highlights.map((item) => {
+              const Icon = item.icon
+
+              return (
+                <div
+                  key={item.title}
+                  className="group relative bg-card border border-border hover:border-primary/60 p-8 transition-all duration-500"
+                >
+                  <div className="absolute top-4 left-4 w-5 h-5 border-t border-l border-primary/30 group-hover:border-primary transition-colors duration-300" />
+                  <div className="absolute bottom-4 right-4 w-5 h-5 border-b border-r border-primary/30 group-hover:border-primary transition-colors duration-300" />
+
+                  <Icon
+                    className="h-12 w-12 text-primary mb-6"
+                    strokeWidth={1.4}
+                  />
+
+                  <h3 className="font-serif text-xl md:text-2xl text-white mb-4">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-stone-300 leading-7">
+                    {item.description}
+                  </p>
+                </div>
+              )
+            })}
+          </div>
+
+          {/* IN THE MEDIA */}
+          <div className="relative mb-24 overflow-hidden border border-primary/40 bg-card p-8 md:p-12 lg:p-16">
+            <div className="absolute top-4 left-4 w-8 h-8 border-t border-l border-primary/60" />
+            <div className="absolute bottom-4 right-4 w-8 h-8 border-b border-r border-primary/60" />
+
+            <div className="text-center max-w-4xl mx-auto">
+              <span className="text-primary text-sm tracking-[0.35em] uppercase">
+                DAIVEXO AEGIS — In the Media
+              </span>
+
+              <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl mt-5 text-white leading-tight">
+                Van een persoonlijke uitdaging naar een verhaal dat Vlaanderen
+                bereikte.
+              </h3>
+
+              <div className="flex items-center justify-center gap-4 mt-7">
+                <div className="h-px w-16 bg-primary" />
+                <div className="h-2 w-2 rotate-45 bg-primary" />
+                <div className="h-px w-16 bg-primary" />
+              </div>
+
+              <p className="mt-9 text-lg md:text-xl leading-9 text-stone-200">
+                DAIVEXO AEGIS ontstond vanuit één concrete vraag: hoe kan een
+                kind met Xeroderma Pigmentosum beter worden beschermd tegen
+                UV-straling, zonder de vrijheid om buiten te zijn volledig te
+                verliezen?
+              </p>
+
+              <p className="mt-6 text-base md:text-lg leading-8 text-stone-300">
+                Het eerste op maat gemaakte prototype trok de aandacht van de
+                nationale media. Het verhaal achter de ontwikkeling werd
+                gebracht door Het Laatste Nieuws en VTM NIEUWS, waarbij niet
+                alleen het ontwerp centraal stond, maar vooral de reden waarom
+                het werd gemaakt.
+              </p>
+
+              <p className="mt-6 text-base md:text-lg leading-8 text-stone-300">
+                Wat begon als één oplossing voor één kind, vormt vandaag de
+                basis voor de verdere ontwikkeling van DAIVEXO AEGIS:
+                maatwerk waarbij bescherming, draagbaarheid en individuele
+                behoeften samenkomen.
+              </p>
+            </div>
+
+            {/* Media kaarten */}
+            <div className="grid md:grid-cols-2 gap-8 mt-14">
+              {/* HLN */}
+              <a
+                href="https://www.hln.be/rumst/dany-53-maakt-speciaal-masker-voor-maankindje-nora-5-uit-rumst-nu-kan-ze-eindelijk-ook-overdag-buitenspelen~af9710a5/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative border border-primary/40 bg-black p-9 md:p-10 transition-all duration-500 hover:border-primary hover:shadow-[0_0_35px_-12px_rgba(212,175,55,0.5)]"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="flex h-14 w-14 items-center justify-center border border-primary/50 text-primary">
+                    <Newspaper className="h-7 w-7" strokeWidth={1.4} />
+                  </div>
+
+                  <div>
+                    <span className="text-primary text-xs tracking-[0.3em] uppercase">
+                      Publicatie
+                    </span>
+
+                    <h4 className="font-serif text-2xl md:text-3xl text-white mt-1">
+                      Het Laatste Nieuws
+                    </h4>
+                  </div>
+                </div>
+
+                <p className="mt-7 text-base md:text-lg leading-8 text-stone-300">
+                  Lees het oorspronkelijke HLN-artikel over het speciaal
+                  ontwikkelde gezichtssysteem en het verhaal achter Nora.
+                </p>
+
+                <div className="mt-8 inline-flex items-center gap-3 text-primary text-sm tracking-[0.2em] uppercase">
+                  Lees het volledige artikel
+                  <ExternalLink className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </div>
+
+                <div className="absolute top-4 right-4 w-6 h-6 border-t border-r border-primary/30 group-hover:border-primary transition-colors duration-300" />
+                <div className="absolute bottom-4 left-4 w-6 h-6 border-b border-l border-primary/30 group-hover:border-primary transition-colors duration-300" />
+              </a>
+
+              {/* VTM NIEUWS */}
+              <a
+                href="https://www.hln.be/video/productie/vtm-nieuws-kijker-maakt-beschermend-masker-voor-kleine-nora-die-allergisch-is-aan-uv-licht-13746285"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative border border-primary/40 bg-black p-9 md:p-10 transition-all duration-500 hover:border-primary hover:shadow-[0_0_35px_-12px_rgba(212,175,55,0.5)]"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="flex h-14 w-14 items-center justify-center border border-primary/50 text-primary">
+                    <Tv className="h-7 w-7" strokeWidth={1.4} />
+                  </div>
+
+                  <div>
+                    <span className="text-primary text-xs tracking-[0.3em] uppercase">
+                      Televisiereportage
+                    </span>
+
+                    <h4 className="font-serif text-2xl md:text-3xl text-white mt-1">
+                      VTM NIEUWS
+                    </h4>
+                  </div>
+                </div>
+
+                <p className="mt-7 text-base md:text-lg leading-8 text-stone-300">
+                  Bekijk de VTM NIEUWS-reportage over het eerste DAIVEXO
+                  AEGIS-prototype en het bijzondere verhaal achter de
+                  ontwikkeling voor Nora.
+                </p>
+
+                <div className="mt-8 inline-flex items-center gap-3 text-primary text-sm tracking-[0.2em] uppercase">
+                  Bekijk de volledige reportage
+                  <ExternalLink className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </div>
+
+                <div className="absolute top-4 right-4 w-6 h-6 border-t border-r border-primary/30 group-hover:border-primary transition-colors duration-300" />
+                <div className="absolute bottom-4 left-4 w-6 h-6 border-b border-l border-primary/30 group-hover:border-primary transition-colors duration-300" />
+              </a>
+            </div>
+          </div>
+
+          {/* Maatwerk */}
+          <div className="grid lg:grid-cols-2 gap-10 items-stretch mb-20">
+            <div className="relative border border-border bg-card p-10 md:p-12">
+              <span className="text-primary text-xs tracking-[0.3em] uppercase">
+                Geen standaardoplossing
+              </span>
+
+              <h3 className="font-serif text-3xl md:text-4xl mt-4 text-white">
+                Op maat ontwikkeld
+              </h3>
+
+              <p className="mt-6 text-base md:text-lg leading-8 text-stone-300">
+                DAIVEXO AEGIS is ontstaan vanuit maatwerk. Afmetingen,
+                pasvorm, beschermende zones, bevestiging en materiaalkeuze
+                kunnen worden afgestemd op de persoon en de specifieke
+                toepassing.
+              </p>
+
+              <p className="mt-5 text-base md:text-lg leading-8 text-stone-300">
+                Het doel is niet om één universeel masker te maken, maar om
+                vanuit een concrete behoefte een passende oplossing te
+                ontwikkelen.
+              </p>
+
+              <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/30" />
+              <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/30" />
+            </div>
+
+            <div
+              className="relative flex items-center justify-center border border-primary/50 bg-black p-10 md:p-12 text-center"
+              style={{
+                boxShadow:
+                  "0 0 35px -10px rgba(212,175,55,0.30), inset 0 0 50px -30px rgba(212,175,55,0.35)",
+              }}
+            >
+              <div>
+                <span className="text-primary text-xs tracking-[0.35em] uppercase">
+                  DAIVEXO AEGIS
+                </span>
+
+                <p className="font-serif text-3xl md:text-4xl lg:text-5xl text-white mt-5 leading-tight">
+                  Bescherming begint niet
+                  <br />
+                  bij een product.
+                  <br />
+                  <span className="text-primary">
+                    Ze begint bij een behoefte.
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="text-center">
+            <p className="mx-auto max-w-3xl text-sm md:text-base leading-7 text-stone-400">
+              AEGIS is een ontwikkelings- en maatwerkconcept.
+              Beschermingsniveau, materiaalprestaties en geschiktheid moeten
+              per uiteindelijke uitvoering en toepassing worden beoordeeld en
+              getest.
+            </p>
+
+            <a
+              href="#contact"
+              className="mt-9 inline-flex items-center justify-center px-10 py-5 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 tracking-[0.2em] uppercase text-sm"
+            >
+              Informeer naar maatwerk
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Lightbox */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 p-4 md:p-8"
+          onClick={() => setSelectedImage(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={selectedImage.title}
+        >
+          <button
+            type="button"
+            onClick={() => setSelectedImage(null)}
+            className="absolute right-5 top-5 md:right-8 md:top-8 z-10 flex h-12 w-12 items-center justify-center border border-primary/70 bg-black/80 text-primary hover:bg-primary hover:text-black transition-colors duration-300"
+            aria-label="Afbeelding sluiten"
+          >
+            <X className="h-6 w-6" />
+          </button>
+
+          <div
+            className="relative max-h-[92vh] max-w-[95vw]"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <img
+              src={selectedImage.image}
+              alt={selectedImage.title}
+              className="max-h-[82vh] max-w-[95vw] object-contain border border-primary/40 shadow-[0_0_40px_rgba(212,175,55,0.18)]"
+            />
+
+            <div className="pt-4 text-center">
+              <p className="text-sm text-white/60">
+                Klik buiten de afbeelding of op × om te sluiten
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  )
+}

@@ -13,22 +13,47 @@ export function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Form submitted:", formState)
-    setFormState({ name: "", email: "", subject: "", message: "" })
+
+    const body = `
+DAIVEXO CONTACTAANVRAAG
+
+Naam: ${formState.name}
+E-mail: ${formState.email}
+
+Onderwerp:
+${formState.subject}
+
+Bericht:
+${formState.message}
+
+---
+Verstuurd via www.daivexo.com
+    `.trim()
+
+    const mailtoLink =
+      `mailto:info@daivexo.com` +
+      `?subject=${encodeURIComponent(formState.subject)}` +
+      `&body=${encodeURIComponent(body)}`
+
+    window.location.href = mailtoLink
   }
 
   return (
-    <section id="contact" className="py-32 relative">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-primary to-transparent" />
-
+    <section
+      id="contact"
+      className="relative overflow-hidden bg-black py-24 md:py-32"
+    >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Titel */}
         <div className="text-center mb-20">
           <span className="text-primary text-sm tracking-[0.3em] uppercase">
             Get in Touch
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mt-4 mb-6">
+
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mt-4 mb-6 text-white">
             Contact
           </h2>
+
           <div className="flex items-center justify-center gap-4">
             <div className="h-px w-16 bg-primary" />
             <div className="h-2 w-2 rotate-45 bg-primary" />
@@ -37,60 +62,72 @@ export function ContactSection() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Contactgegevens */}
           <div>
-            <h3 className="font-serif text-2xl mb-8">
+            <h3 className="font-serif text-2xl md:text-3xl mb-8 text-white">
               Let&apos;s Create Something Extraordinary
             </h3>
-            <p className="text-muted-foreground leading-relaxed mb-12">
-              Whether you&apos;re interested in DAIVEXO QR labels, looking to
-              authenticate your collection, or wish to inquire about exclusive
-              Fusion X artworks, feel free to contact us.
+
+            <p className="text-base md:text-lg text-stone-300 leading-8 mb-12">
+              Heb je interesse in DAIVEXO Light Cubes, SCANMIJ QR-labels,
+              DAIVEXO AEGIS of een ander maatwerkproject? Neem gerust contact
+              op voor meer informatie, beschikbaarheid of een vrijblijvende
+              aanvraag.
             </p>
 
             <div className="space-y-6">
+              {/* Email */}
               <div className="flex items-start gap-4">
-                <div className="p-3 border border-primary/30">
+                <div className="p-3 border border-primary/40">
                   <Mail className="h-5 w-5 text-primary" />
                 </div>
+
                 <div>
                   <p className="text-sm text-muted-foreground uppercase tracking-widest mb-1">
                     Email
                   </p>
+
                   <a
-                    href="mailto:info@daivexo.be"
-                    className="text-foreground hover:text-primary transition-colors"
+                    href="mailto:info@daivexo.com"
+                    className="text-white hover:text-primary transition-colors"
                   >
-                    info@daivexo.be
+                    info@daivexo.com
                   </a>
                 </div>
               </div>
 
+              {/* Telefoon */}
               <div className="flex items-start gap-4">
-                <div className="p-3 border border-primary/30">
+                <div className="p-3 border border-primary/40">
                   <Phone className="h-5 w-5 text-primary" />
                 </div>
+
                 <div>
                   <p className="text-sm text-muted-foreground uppercase tracking-widest mb-1">
                     Phone
                   </p>
+
                   <a
                     href="tel:+32480673786"
-                    className="text-foreground hover:text-primary transition-colors"
+                    className="text-white hover:text-primary transition-colors"
                   >
                     +32 480 67 37 86
                   </a>
                 </div>
               </div>
 
+              {/* Locatie */}
               <div className="flex items-start gap-4">
-                <div className="p-3 border border-primary/30">
+                <div className="p-3 border border-primary/40">
                   <MapPin className="h-5 w-5 text-primary" />
                 </div>
+
                 <div>
                   <p className="text-sm text-muted-foreground uppercase tracking-widest mb-1">
                     Location
                   </p>
-                  <p className="text-foreground">
+
+                  <p className="text-white">
                     Deinze
                     <br />
                     België
@@ -100,6 +137,7 @@ export function ContactSection() {
             </div>
           </div>
 
+          {/* Contactformulier */}
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid sm:grid-cols-2 gap-6">
               <div>
@@ -109,12 +147,16 @@ export function ContactSection() {
                 >
                   Name
                 </label>
+
                 <input
                   type="text"
                   id="name"
                   value={formState.name}
                   onChange={(e) =>
-                    setFormState({ ...formState, name: e.target.value })
+                    setFormState({
+                      ...formState,
+                      name: e.target.value,
+                    })
                   }
                   className="w-full bg-card border border-border px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none transition-colors"
                   placeholder="Your name"
@@ -129,12 +171,16 @@ export function ContactSection() {
                 >
                   Email
                 </label>
+
                 <input
                   type="email"
                   id="email"
                   value={formState.email}
                   onChange={(e) =>
-                    setFormState({ ...formState, email: e.target.value })
+                    setFormState({
+                      ...formState,
+                      email: e.target.value,
+                    })
                   }
                   className="w-full bg-card border border-border px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none transition-colors"
                   placeholder="your@email.com"
@@ -150,12 +196,16 @@ export function ContactSection() {
               >
                 Subject
               </label>
+
               <input
                 type="text"
                 id="subject"
                 value={formState.subject}
                 onChange={(e) =>
-                  setFormState({ ...formState, subject: e.target.value })
+                  setFormState({
+                    ...formState,
+                    subject: e.target.value,
+                  })
                 }
                 className="w-full bg-card border border-border px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none transition-colors"
                 placeholder="How can we help?"
@@ -170,12 +220,16 @@ export function ContactSection() {
               >
                 Message
               </label>
+
               <textarea
                 id="message"
                 rows={6}
                 value={formState.message}
                 onChange={(e) =>
-                  setFormState({ ...formState, message: e.target.value })
+                  setFormState({
+                    ...formState,
+                    message: e.target.value,
+                  })
                 }
                 className="w-full bg-card border border-border px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none transition-colors resize-none"
                 placeholder="Tell us about your project..."
@@ -185,7 +239,7 @@ export function ContactSection() {
 
             <button
               type="submit"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 tracking-widest uppercase text-sm"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-black hover:brightness-110 transition-all duration-300 tracking-widest uppercase text-sm"
             >
               <Send className="h-4 w-4" />
               Send Message
