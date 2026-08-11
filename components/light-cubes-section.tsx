@@ -379,17 +379,7 @@ export function LightCubesSection() {
   worden terugbezorgd.
 </p>
 
-{/* Brede projectscheiding */}
-<div
-  aria-hidden="true"
-  className="mx-auto mt-28 flex w-full max-w-5xl items-center justify-center gap-5"
->
-  <div className="h-px flex-1 bg-primary" />
 
-  <div className="h-3 w-3 rotate-45 bg-primary" />
-
-  <div className="h-px flex-1 bg-primary" />
-</div>
           </div>
         </div>
       </section>
