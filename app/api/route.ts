@@ -12,12 +12,7 @@ export async function POST(req: Request) {
       source,
     } = data
 
-    if (
-      !name ||
-      !email ||
-      !subject ||
-      !message
-    ) {
+    if (!name || !email || !subject || !message) {
       return NextResponse.json(
         {
           success: false,
@@ -30,36 +25,31 @@ export async function POST(req: Request) {
     const apiKey = process.env.RESEND_API_KEY
 
     if (!apiKey) {
-      console.error(
-        "RESEND_API_KEY ontbreekt in de Vercel environment variables."
-      )
+      console.error("RESEND_API_KEY ontbreekt.")
 
       return NextResponse.json(
         {
           success: false,
-          error: "De mailservice is niet correct geconfigureerd.",
+          error: "RESEND_API_KEY ontbreekt.",
         },
         { status: 500 }
       )
     }
 
-    const response = await fetch(
+    const resendResponse = await fetch(
       "https://api.resend.com/emails",
       {
         method: "POST",
         headers: {
           Authorization: `Bearer ${apiKey}`,
           "Content-Type": "application/json",
+          "User-Agent": "DAIVEXO-Website/1.0",
         },
-
         body: JSON.stringify({
           from: "DAIVEXO <info@daivexo.com>",
           to: ["info@daivexo.com"],
-
           reply_to: email,
-
           subject,
-
           text: `
 ${source ? `${source}\n\n` : ""}${message}
 
@@ -71,21 +61,23 @@ E-mail: ${email}
       }
     )
 
-    const result = await response.json()
+    const result = await resendResponse.json()
 
-    if (!response.ok) {
-      console.error(
-        "Resend fout:",
-        result
-      )
+    if (!resendResponse.ok) {
+      console.error("Resend API fout:", {
+        status: resendResponse.status,
+        result,
+      })
 
       return NextResponse.json(
         {
           success: false,
           error:
-            "De e-mail kon niet worden verzonden.",
+            result?.message ||
+            result?.error ||
+            `Resend fout (${resendResponse.status})`,
         },
-        { status: 500 }
+        { status: resendResponse.status }
       )
     }
 
@@ -94,16 +86,12 @@ E-mail: ${email}
       id: result.id,
     })
   } catch (error) {
-    console.error(
-      "Contact API fout:",
-      error
-    )
+    console.error("Contact API fout:", error)
 
     return NextResponse.json(
       {
         success: false,
-        error:
-          "Er is een onverwachte fout opgetreden.",
+        error: "Er is een onverwachte fout opgetreden.",
       },
       { status: 500 }
     )
