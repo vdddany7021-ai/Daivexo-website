@@ -371,13 +371,25 @@ export function LightCubesSection() {
               <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-primary" />
             </div>
 
-         {/* Fine print */}
+ {/* Fine print */}
 <p className="mt-10 text-center text-sm md:text-base text-stone-400 max-w-3xl mx-auto leading-relaxed">
   De klant voorziet een geschikt 230V-stopcontact binnen bereik.
   De waarborg wordt na ophaling en controle terugbetaald indien de
   Cube en alle meegeleverde materialen volledig en onbeschadigd
   worden terugbezorgd.
 </p>
+
+{/* Brede projectscheiding */}
+<div
+  aria-hidden="true"
+  className="mx-auto mt-28 flex w-full max-w-5xl items-center justify-center gap-5"
+>
+  <div className="h-px flex-1 bg-primary" />
+
+  <div className="h-3 w-3 rotate-45 bg-primary" />
+
+  <div className="h-px flex-1 bg-primary" />
+</div>
           </div>
         </div>
       </section>
