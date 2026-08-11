@@ -13,22 +13,41 @@ export function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Form submitted:", formState)
-    setFormState({ name: "", email: "", subject: "", message: "" })
+
+    const body = `
+Naam: ${formState.name}
+E-mail: ${formState.email}
+
+Bericht:
+${formState.message}
+
+---
+Verstuurd via www.daivexo.com
+    `.trim()
+
+    const mailtoLink =
+      `mailto:info@daivexo.com` +
+      `?subject=${encodeURIComponent(formState.subject)}` +
+      `&body=${encodeURIComponent(body)}`
+
+    window.location.href = mailtoLink
   }
 
   return (
-    <section id="contact" className="py-32 relative">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-primary to-transparent" />
-
+    <section
+      id="contact"
+      className="relative overflow-hidden bg-black py-24 md:py-32"
+    >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center mb-20">
           <span className="text-primary text-sm tracking-[0.3em] uppercase">
             Get in Touch
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mt-4 mb-6">
+
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mt-4 mb-6 text-white">
             Contact
           </h2>
+
           <div className="flex items-center justify-center gap-4">
             <div className="h-px w-16 bg-primary" />
             <div className="h-2 w-2 rotate-45 bg-primary" />
@@ -38,13 +57,15 @@ export function ContactSection() {
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
-            <h3 className="font-serif text-2xl mb-8">
+            <h3 className="font-serif text-2xl mb-8 text-white">
               Let&apos;s Create Something Extraordinary
             </h3>
+
             <p className="text-muted-foreground leading-relaxed mb-12">
-              Whether you&apos;re interested in DAIVEXO QR labels, looking to
-              authenticate your collection, or wish to inquire about exclusive
-              Fusion X artworks, feel free to contact us.
+              Heb je interesse in DAIVEXO Light Cubes, SCANMIJ QR-labels,
+              DAIVEXO AEGIS of een ander maatwerkproject? Neem gerust contact
+              op voor meer informatie, beschikbaarheid of een vrijblijvende
+              aanvraag.
             </p>
 
             <div className="space-y-6">
@@ -52,15 +73,17 @@ export function ContactSection() {
                 <div className="p-3 border border-primary/30">
                   <Mail className="h-5 w-5 text-primary" />
                 </div>
+
                 <div>
                   <p className="text-sm text-muted-foreground uppercase tracking-widest mb-1">
                     Email
                   </p>
+
                   <a
-                    href="mailto:info@daivexo.be"
+                    href="mailto:info@daivexo.com"
                     className="text-foreground hover:text-primary transition-colors"
                   >
-                    info@daivexo.be
+                    info@daivexo.com
                   </a>
                 </div>
               </div>
@@ -69,10 +92,12 @@ export function ContactSection() {
                 <div className="p-3 border border-primary/30">
                   <Phone className="h-5 w-5 text-primary" />
                 </div>
+
                 <div>
                   <p className="text-sm text-muted-foreground uppercase tracking-widest mb-1">
                     Phone
                   </p>
+
                   <a
                     href="tel:+32480673786"
                     className="text-foreground hover:text-primary transition-colors"
@@ -86,10 +111,12 @@ export function ContactSection() {
                 <div className="p-3 border border-primary/30">
                   <MapPin className="h-5 w-5 text-primary" />
                 </div>
+
                 <div>
                   <p className="text-sm text-muted-foreground uppercase tracking-widest mb-1">
                     Location
                   </p>
+
                   <p className="text-foreground">
                     Deinze
                     <br />
@@ -109,6 +136,7 @@ export function ContactSection() {
                 >
                   Name
                 </label>
+
                 <input
                   type="text"
                   id="name"
@@ -129,6 +157,7 @@ export function ContactSection() {
                 >
                   Email
                 </label>
+
                 <input
                   type="email"
                   id="email"
@@ -150,6 +179,7 @@ export function ContactSection() {
               >
                 Subject
               </label>
+
               <input
                 type="text"
                 id="subject"
@@ -170,6 +200,7 @@ export function ContactSection() {
               >
                 Message
               </label>
+
               <textarea
                 id="message"
                 rows={6}
