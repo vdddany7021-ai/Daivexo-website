@@ -258,7 +258,7 @@ export function LightCubesSection() {
 
                 <div className="mt-6 mb-2">
                   <span className="font-serif text-5xl lg:text-6xl text-primary">
-                    €350
+                    €699,95
                   </span>
                 </div>
 
