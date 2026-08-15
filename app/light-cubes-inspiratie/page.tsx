@@ -1,22 +1,98 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { ArrowLeft, X, ZoomIn } from "lucide-react"
+import {
+  ArrowLeft,
+  ChevronLeft,
+  ChevronRight,
+  X,
+  ZoomIn,
+} from "lucide-react"
 
-type SelectedImage = {
-  src: string
-  alt: string
-} | null
+const galleryImages = [
+  {
+    src: "/images/light-cubes-inspiratie/bar-warmwit-blauw.jpg",
+    alt: "DAIVEXO Light Cube Bar warm wit met diepblauwe achterwand",
+  },
+  {
+    src: "/images/light-cubes-inspiratie/bar-blauw-wit.jpg",
+    alt: "DAIVEXO Light Cube Bar blauw met witte achterwand",
+  },
+  {
+    src: "/images/light-cubes-inspiratie/bar-wit-rood.jpg",
+    alt: "DAIVEXO Light Cube Bar wit met rode achterwand",
+  },
+  {
+    src: "/images/light-cubes-inspiratie/dj-warmwit.jpg",
+    alt: "DAIVEXO Light Cube DJ Booth warm wit",
+  },
+  {
+    src: "/images/light-cubes-inspiratie/dj-blauw.jpg",
+    alt: "DAIVEXO Light Cube DJ Booth blauw",
+  },
+  {
+    src: "/images/light-cubes-inspiratie/dj-geel.jpg",
+    alt: "DAIVEXO Light Cube DJ Booth geel",
+  },
+  {
+    src: "/images/light-cubes-inspiratie/lightwall-multicolor.jpg",
+    alt: "DAIVEXO Light Wall in verschillende RGBW kleuren",
+  },
+  {
+    src: "/images/light-cubes-inspiratie/lightwall-blauw.jpg",
+    alt: "DAIVEXO Light Wall volledig blauw verlicht",
+  },
+  {
+    src: "/images/light-cubes-inspiratie/lightwall-groen.jpg",
+    alt: "DAIVEXO Light Wall volledig groen verlicht",
+  },
+]
 
 export default function LightCubesInspiratiePage() {
-  const [selectedImage, setSelectedImage] = useState<SelectedImage>(null)
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
+
+  const openImage = (index: number) => {
+    setSelectedIndex(index)
+  }
+
+  const closeImage = () => {
+    setSelectedIndex(null)
+  }
+
+  const showPreviousImage = () => {
+    setSelectedIndex((current) => {
+      if (current === null) return null
+
+      return current === 0
+        ? galleryImages.length - 1
+        : current - 1
+    })
+  }
+
+  const showNextImage = () => {
+    setSelectedIndex((current) => {
+      if (current === null) return null
+
+      return current === galleryImages.length - 1
+        ? 0
+        : current + 1
+    })
+  }
 
   useEffect(() => {
-    if (!selectedImage) return
+    if (selectedIndex === null) return
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setSelectedImage(null)
+        closeImage()
+      }
+
+      if (event.key === "ArrowLeft") {
+        showPreviousImage()
+      }
+
+      if (event.key === "ArrowRight") {
+        showNextImage()
       }
     }
 
@@ -27,11 +103,10 @@ export default function LightCubesInspiratiePage() {
       document.removeEventListener("keydown", handleKeyDown)
       document.body.style.overflow = ""
     }
-  }, [selectedImage])
+  }, [selectedIndex])
 
-  const openImage = (src: string, alt: string) => {
-    setSelectedImage({ src, alt })
-  }
+  const selectedImage =
+    selectedIndex !== null ? galleryImages[selectedIndex] : null
 
   return (
     <>
@@ -71,13 +146,14 @@ export default function LightCubesInspiratiePage() {
 
               <p className="mt-10 mx-auto max-w-3xl text-lg md:text-xl leading-8 text-stone-300">
                 Van stijlvolle statafels en complete bars tot DJ-booths en
-                indrukwekkende verlichte wanden. Met DAIVEXO Light Cubes kunnen
-                uiteenlopende eventopstellingen worden gecreëerd.
+                indrukwekkende verlichte wanden. Met DAIVEXO Light Cubes
+                kunnen uiteenlopende eventopstellingen worden gecreëerd.
               </p>
 
               <p className="mt-5 mx-auto max-w-3xl text-base md:text-lg leading-8 text-stone-500">
-                Ontdek verschillende mogelijke opstellingen, kleurcombinaties en
-                toepassingen voor feesten, bedrijfsevents, horeca en evenementen.
+                Ontdek verschillende mogelijke opstellingen,
+                kleurcombinaties en toepassingen voor feesten,
+                bedrijfsevents, horeca en evenementen.
               </p>
             </div>
           </div>
@@ -109,18 +185,12 @@ export default function LightCubesInspiratiePage() {
               {/* HOOFDBEELD BAR */}
               <button
                 type="button"
-                onClick={() =>
-                  openImage(
-                    "/images/light-cubes-inspiratie/bar-warmwit-blauw.jpg",
-                    "DAIVEXO Light Cube Bar warm wit met diepblauwe achterwand"
-                  )
-                }
+                onClick={() => openImage(0)}
                 className="group relative block w-full overflow-hidden border border-primary/60 bg-black text-left cursor-zoom-in"
-                aria-label="Vergroot Light Cube Bar warm wit en diepblauw"
               >
                 <img
-                  src="/images/light-cubes-inspiratie/bar-warmwit-blauw.jpg"
-                  alt="DAIVEXO Light Cube Bar warm wit met diepblauwe achterwand"
+                  src={galleryImages[0].src}
+                  alt={galleryImages[0].alt}
                   className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.015]"
                 />
 
@@ -134,8 +204,8 @@ export default function LightCubesInspiratiePage() {
                   </h3>
 
                   <p className="mt-3 max-w-2xl text-sm md:text-base text-stone-300 leading-7">
-                    Een stijlvolle combinatie met een warme, uitnodigende bar en
-                    een krachtige blauwe achterwand.
+                    Een stijlvolle combinatie met een warme,
+                    uitnodigende bar en een krachtige blauwe achterwand.
                   </p>
                 </div>
 
@@ -151,17 +221,12 @@ export default function LightCubesInspiratiePage() {
               <div className="mt-8 grid gap-8 md:grid-cols-2">
                 <button
                   type="button"
-                  onClick={() =>
-                    openImage(
-                      "/images/light-cubes-inspiratie/bar-blauw-wit.jpg",
-                      "DAIVEXO Light Cube Bar blauw met witte achterwand"
-                    )
-                  }
+                  onClick={() => openImage(1)}
                   className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
                 >
                   <img
-                    src="/images/light-cubes-inspiratie/bar-blauw-wit.jpg"
-                    alt="DAIVEXO Light Cube Bar blauw met witte achterwand"
+                    src={galleryImages[1].src}
+                    alt={galleryImages[1].alt}
                     className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
@@ -182,17 +247,12 @@ export default function LightCubesInspiratiePage() {
 
                 <button
                   type="button"
-                  onClick={() =>
-                    openImage(
-                      "/images/light-cubes-inspiratie/bar-wit-rood.jpg",
-                      "DAIVEXO Light Cube Bar wit met rode achterwand"
-                    )
-                  }
+                  onClick={() => openImage(2)}
                   className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
                 >
                   <img
-                    src="/images/light-cubes-inspiratie/bar-wit-rood.jpg"
-                    alt="DAIVEXO Light Cube Bar wit met rode achterwand"
+                    src={galleryImages[2].src}
+                    alt={galleryImages[2].alt}
                     className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
@@ -235,25 +295,21 @@ export default function LightCubesInspiratiePage() {
 
                 <p className="mt-5 max-w-3xl text-base md:text-lg text-stone-400 leading-8">
                   Maak van de DJ zelf een onderdeel van de lichtbeleving.
-                  Verschillende Cubes vormen samen een opvallende DJ-booth die
-                  volledig kan worden afgestemd op de gewenste sfeer.
+                  Verschillende Cubes vormen samen een opvallende
+                  DJ-booth die volledig kan worden afgestemd op de gewenste
+                  sfeer.
                 </p>
               </div>
 
               {/* HOOFDBEELD DJ */}
               <button
                 type="button"
-                onClick={() =>
-                  openImage(
-                    "/images/light-cubes-inspiratie/dj-warmwit.jpg",
-                    "DAIVEXO Light Cube DJ Booth warm wit"
-                  )
-                }
+                onClick={() => openImage(3)}
                 className="group relative block w-full overflow-hidden border border-primary/60 bg-black text-left cursor-zoom-in"
               >
                 <img
-                  src="/images/light-cubes-inspiratie/dj-warmwit.jpg"
-                  alt="DAIVEXO Light Cube DJ Booth warm wit"
+                  src={galleryImages[3].src}
+                  alt={galleryImages[3].alt}
                   className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.015]"
                 />
 
@@ -267,8 +323,9 @@ export default function LightCubesInspiratiePage() {
                   </h3>
 
                   <p className="mt-3 max-w-2xl text-sm md:text-base text-stone-300 leading-7">
-                    Een elegante en warme uitvoering die bijzonder goed past bij
-                    stijlvolle feesten, recepties en avondconcepten.
+                    Een elegante en warme uitvoering die bijzonder goed
+                    past bij stijlvolle feesten, recepties en
+                    avondconcepten.
                   </p>
                 </div>
 
@@ -280,21 +337,16 @@ export default function LightCubesInspiratiePage() {
                 <div className="absolute bottom-4 right-4 w-9 h-9 border-b-2 border-r-2 border-primary" />
               </button>
 
-              {/* TWEE AANVULLENDE DJ BEELDEN */}
+              {/* TWEE AANVULLENDE DJ'S */}
               <div className="mt-8 grid gap-8 md:grid-cols-2">
                 <button
                   type="button"
-                  onClick={() =>
-                    openImage(
-                      "/images/light-cubes-inspiratie/dj-blauw.jpg",
-                      "DAIVEXO Light Cube DJ Booth blauw"
-                    )
-                  }
+                  onClick={() => openImage(4)}
                   className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
                 >
                   <img
-                    src="/images/light-cubes-inspiratie/dj-blauw.jpg"
-                    alt="DAIVEXO Light Cube DJ Booth blauw"
+                    src={galleryImages[4].src}
+                    alt={galleryImages[4].alt}
                     className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
@@ -315,17 +367,12 @@ export default function LightCubesInspiratiePage() {
 
                 <button
                   type="button"
-                  onClick={() =>
-                    openImage(
-                      "/images/light-cubes-inspiratie/dj-geel.jpg",
-                      "DAIVEXO Light Cube DJ Booth geel"
-                    )
-                  }
+                  onClick={() => openImage(5)}
                   className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
                 >
                   <img
-                    src="/images/light-cubes-inspiratie/dj-geel.jpg"
-                    alt="DAIVEXO Light Cube DJ Booth geel"
+                    src={galleryImages[5].src}
+                    alt={galleryImages[5].alt}
                     className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
@@ -368,25 +415,20 @@ export default function LightCubesInspiratiePage() {
 
                 <p className="mt-5 max-w-3xl text-base md:text-lg text-stone-400 leading-8">
                   Stapel meerdere Light Cubes tot een grote verlichte wand.
-                  Ideaal als decoratieve blikvanger, achtergrond, afscherming of
-                  onderdeel van een complete eventsetting.
+                  Ideaal als decoratieve blikvanger, achtergrond,
+                  afscherming of onderdeel van een complete eventsetting.
                 </p>
               </div>
 
               {/* HOOFDBEELD WALL */}
               <button
                 type="button"
-                onClick={() =>
-                  openImage(
-                    "/images/light-cubes-inspiratie/lightwall-multicolor.jpg",
-                    "DAIVEXO Light Wall in verschillende RGBW kleuren"
-                  )
-                }
+                onClick={() => openImage(6)}
                 className="group relative block w-full overflow-hidden border border-primary/60 bg-black text-left cursor-zoom-in"
               >
                 <img
-                  src="/images/light-cubes-inspiratie/lightwall-multicolor.jpg"
-                  alt="DAIVEXO Light Wall in verschillende RGBW kleuren"
+                  src={galleryImages[6].src}
+                  alt={galleryImages[6].alt}
                   className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.015]"
                 />
 
@@ -400,9 +442,9 @@ export default function LightCubesInspiratiePage() {
                   </h3>
 
                   <p className="mt-3 max-w-2xl text-sm md:text-base text-stone-300 leading-7">
-                    Meerdere kleuren in één opstelling creëren een indrukwekkend
-                    lichtspektakel en laten de mogelijkheden van RGBW-verlichting
-                    maximaal tot hun recht komen.
+                    Meerdere kleuren in één opstelling creëren een
+                    indrukwekkend lichtspektakel en laten de mogelijkheden
+                    van RGBW-verlichting maximaal tot hun recht komen.
                   </p>
                 </div>
 
@@ -418,17 +460,12 @@ export default function LightCubesInspiratiePage() {
               <div className="mt-8 grid gap-8 md:grid-cols-2">
                 <button
                   type="button"
-                  onClick={() =>
-                    openImage(
-                      "/images/light-cubes-inspiratie/lightwall-blauw.jpg",
-                      "DAIVEXO Light Wall volledig blauw verlicht"
-                    )
-                  }
+                  onClick={() => openImage(7)}
                   className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
                 >
                   <img
-                    src="/images/light-cubes-inspiratie/lightwall-blauw.jpg"
-                    alt="DAIVEXO Light Wall volledig blauw verlicht"
+                    src={galleryImages[7].src}
+                    alt={galleryImages[7].alt}
                     className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
@@ -449,17 +486,12 @@ export default function LightCubesInspiratiePage() {
 
                 <button
                   type="button"
-                  onClick={() =>
-                    openImage(
-                      "/images/light-cubes-inspiratie/lightwall-groen.jpg",
-                      "DAIVEXO Light Wall volledig groen verlicht"
-                    )
-                  }
+                  onClick={() => openImage(8)}
                   className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
                 >
                   <img
-                    src="/images/light-cubes-inspiratie/lightwall-groen.jpg"
-                    alt="DAIVEXO Light Wall volledig groen verlicht"
+                    src={galleryImages[8].src}
+                    alt={galleryImages[8].alt}
                     className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
@@ -480,9 +512,7 @@ export default function LightCubesInspiratiePage() {
               </div>
             </section>
 
-            {/* ===================================================== */}
             {/* SLOT CTA */}
-            {/* ===================================================== */}
             <div className="mt-28 border border-primary/50 bg-black px-6 py-14 md:px-12 md:py-16 text-center">
               <span className="text-primary text-xs tracking-[0.3em] uppercase">
                 Opstelling op maat
@@ -494,9 +524,9 @@ export default function LightCubesInspiratiePage() {
 
               <p className="mt-6 mx-auto max-w-3xl text-base md:text-lg text-stone-400 leading-8">
                 Van enkele Light Cubes tot een volledige bar, DJ-booth of
-                indrukwekkende lichtwand. De opstelling kan worden afgestemd op
-                het type evenement, de beschikbare ruimte en de gewenste
-                kleurbeleving.
+                indrukwekkende lichtwand. De opstelling kan worden
+                afgestemd op het type evenement, de beschikbare ruimte en
+                de gewenste kleurbeleving.
               </p>
 
               <a
@@ -510,43 +540,82 @@ export default function LightCubesInspiratiePage() {
             {/* DISCLAIMER */}
             <div className="mt-14 text-center">
               <p className="text-sm md:text-base text-stone-500 max-w-3xl mx-auto leading-7">
-                De getoonde beelden zijn conceptvisualisaties ter illustratie van
-                mogelijke toepassingen. Definitieve opstelling, kleuren,
-                aantallen en beschikbaarheid kunnen variëren.
+                De getoonde beelden zijn conceptvisualisaties ter
+                illustratie van mogelijke toepassingen. Definitieve
+                opstelling, kleuren, aantallen en beschikbaarheid kunnen
+                variëren.
               </p>
             </div>
           </div>
         </section>
       </main>
 
-      {/* FULLSCREEN LIGHTBOX */}
-      {selectedImage && (
+      {/* FULLSCREEN GALERIJ */}
+      {selectedImage && selectedIndex !== null && (
         <div
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 p-4 md:p-8"
-          onClick={() => setSelectedImage(null)}
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 p-3 md:p-8"
+          onClick={closeImage}
           role="dialog"
           aria-modal="true"
-          aria-label="Vergrote DAIVEXO Light Cube afbeelding"
+          aria-label="DAIVEXO Light Cubes fotogalerij"
         >
           {/* SLUITEN */}
           <button
             type="button"
-            onClick={() => setSelectedImage(null)}
-            className="absolute right-5 top-5 md:right-8 md:top-8 z-20 flex h-14 w-14 items-center justify-center border-2 border-primary bg-black text-primary shadow-[0_0_25px_rgba(212,175,55,0.35)] transition-all duration-300 hover:bg-primary hover:text-black"
+            onClick={(event) => {
+              event.stopPropagation()
+              closeImage()
+            }}
+            className="absolute right-4 top-4 md:right-8 md:top-8 z-30 flex h-14 w-14 items-center justify-center border-2 border-primary bg-black text-primary shadow-[0_0_25px_rgba(212,175,55,0.35)] transition-all duration-300 hover:bg-primary hover:text-black"
             aria-label="Afbeelding sluiten"
           >
             <X className="h-8 w-8" strokeWidth={1.8} />
           </button>
 
+          {/* VORIGE */}
+          <button
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation()
+              showPreviousImage()
+            }}
+            className="absolute left-3 md:left-8 top-1/2 z-30 flex h-14 w-14 md:h-16 md:w-16 -translate-y-1/2 items-center justify-center border-2 border-primary bg-black/85 text-primary shadow-[0_0_25px_rgba(212,175,55,0.25)] transition-all duration-300 hover:bg-primary hover:text-black"
+            aria-label="Vorige afbeelding"
+          >
+            <ChevronLeft className="h-8 w-8 md:h-10 md:w-10" />
+          </button>
+
+          {/* VOLGENDE */}
+          <button
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation()
+              showNextImage()
+            }}
+            className="absolute right-3 md:right-8 top-1/2 z-30 flex h-14 w-14 md:h-16 md:w-16 -translate-y-1/2 items-center justify-center border-2 border-primary bg-black/85 text-primary shadow-[0_0_25px_rgba(212,175,55,0.25)] transition-all duration-300 hover:bg-primary hover:text-black"
+            aria-label="Volgende afbeelding"
+          >
+            <ChevronRight className="h-8 w-8 md:h-10 md:w-10" />
+          </button>
+
+          {/* AFBEELDING */}
           <div
-            className="relative flex h-full w-full items-center justify-center"
+            className="relative flex h-full w-full items-center justify-center px-14 md:px-24"
             onClick={(event) => event.stopPropagation()}
           >
             <img
               src={selectedImage.src}
               alt={selectedImage.alt}
-              className="max-h-[94vh] max-w-[96vw] object-contain border border-primary/40 shadow-[0_0_50px_rgba(212,175,55,0.18)]"
+              className="max-h-[90vh] max-w-[92vw] object-contain border border-primary/40 shadow-[0_0_50px_rgba(212,175,55,0.18)]"
             />
+          </div>
+
+          {/* TELLER */}
+          <div
+            className="absolute bottom-5 left-1/2 z-30 -translate-x-1/2 border border-primary/60 bg-black/85 px-5 py-2 text-sm md:text-base font-semibold tracking-[0.18em] text-primary"
+            onClick={(event) => event.stopPropagation()}
+          >
+            {selectedIndex + 1} / {galleryImages.length}
           </div>
         </div>
       )}
