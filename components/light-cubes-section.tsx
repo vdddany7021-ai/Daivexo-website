@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Check, Sparkles, X, ZoomIn } from "lucide-react"
+import { Check, Sparkles, X, ZoomIn, ArrowRight } from "lucide-react"
 
 const lightCubes = [
   {
@@ -143,6 +143,30 @@ export function LightCubesSection() {
                 <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/40 group-hover:border-primary transition-colors duration-500" />
               </button>
             ))}
+          </div>
+
+          {/* Inspiratie CTA */}
+          <div className="mt-16 flex flex-col items-center text-center">
+            <span className="text-primary text-xs tracking-[0.32em] uppercase">
+              Meer dan een statafel
+            </span>
+
+            <h3 className="mt-4 font-serif text-3xl md:text-4xl text-white">
+              Ontdek wat er mogelijk is met Light Cubes
+            </h3>
+
+            <p className="mt-4 max-w-2xl text-base md:text-lg leading-8 text-stone-400">
+              Van complete bars en DJ-booths tot indrukwekkende lichtwanden en
+              volledige eventopstellingen.
+            </p>
+
+            <a
+              href="/light-cubes-inspiratie"
+              className="group mt-8 inline-flex items-center justify-center gap-3 border border-primary bg-primary px-8 py-4 text-sm font-semibold uppercase tracking-[0.22em] text-black transition-all duration-300 hover:bg-black hover:text-primary"
+            >
+              Ontdek de mogelijkheden
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </a>
           </div>
 
           {/* Pricing */}
