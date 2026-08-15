@@ -30,7 +30,7 @@ const includedItems = [
   "Levering én ophaling binnen een straal van 25 km",
   "50 meter verlengkabel",
   "RGBW LED-verlichting",
-  "Zwarte HDPE-bovenplaat",
+  "Zwarte HPL-bovenplaat van 6 mm",
   "Afstand berekend via Google Maps vanaf DAIVEXO",
   "3-voudige stekkerdoos",
   "Afstandsbediening",
@@ -102,7 +102,7 @@ export function LightCubesSection() {
 
             <p className="mt-5 mx-auto max-w-3xl text-base md:text-lg leading-8 text-stone-400">
               Elke Cube is voorzien van RGBW LED-verlichting en een zwarte
-              HDPE-bovenplaat en wordt gebruiksklaar geleverd.
+              HPL-bovenplaat van 6 mm en wordt gebruiksklaar geleverd.
             </p>
           </div>
 
@@ -277,7 +277,7 @@ export function LightCubesSection() {
                 <div className="mt-6 h-px w-12 bg-primary/40" />
 
                 <p className="mt-6 text-base md:text-lg text-stone-300 leading-relaxed">
-                  Inclusief LED-verlichting en HDPE-bovenplaat
+                  Inclusief RGBW LED-verlichting en zwarte HPL-bovenplaat van 6 mm
                 </p>
 
                 <div className="absolute top-4 left-4 w-7 h-7 border-t-2 border-l-2 border-primary" />
