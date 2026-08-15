@@ -169,37 +169,88 @@ export function LightCubesSection() {
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 md:items-stretch">
-              {/* 1 DAG */}
-              <div
-                className="relative bg-black border border-primary/80 p-10 flex flex-col items-center text-center transition-all duration-500 hover:border-primary"
-                style={{
-                  boxShadow:
-                    "0 0 8px rgba(212,175,55,0.10), inset 0 0 10px rgba(212,175,55,0.03)",
-                }}
-              >
-                <span className="text-primary text-xs tracking-[0.3em] uppercase">
-                  1 Dag
-                </span>
+ {/* 1 DAG */}
+<div
+  className="relative bg-black border border-primary/80 p-10 flex flex-col items-center text-center transition-all duration-500 hover:border-primary"
+  style={{
+    boxShadow:
+      "0 0 8px rgba(212,175,55,0.10), inset 0 0 10px rgba(212,175,55,0.03)",
+  }}
+>
+  <span className="text-primary text-xs tracking-[0.3em] uppercase">
+    1 Dag
+  </span>
 
-                <div className="mt-6 mb-2">
-                  <span className="font-serif text-5xl lg:text-6xl text-primary">
-                    €45
-                  </span>
-                </div>
+  <div className="mt-6 mb-2">
+    <span className="font-serif text-5xl lg:text-6xl text-primary">
+      €59,95
+    </span>
+  </div>
 
-                <span className="text-stone-300 text-base md:text-lg tracking-wide">
-                  per Cube
-                </span>
+  <span className="text-stone-300 text-base md:text-lg tracking-wide">
+    per Cube
+  </span>
 
-                <div className="mt-6 h-px w-12 bg-primary/40" />
+  <div className="mt-6 h-px w-12 bg-primary/40" />
 
-                <p className="mt-6 text-base md:text-lg text-stone-300 leading-relaxed">
-                  Waarborg: €100 per Cube
-                </p>
+  <p className="mt-6 text-base md:text-lg text-stone-300 leading-relaxed">
+    Waarborg: €150 per Cube
+  </p>
 
-                <div className="absolute top-4 left-4 w-7 h-7 border-t-2 border-l-2 border-primary" />
-                <div className="absolute bottom-4 right-4 w-7 h-7 border-b-2 border-r-2 border-primary" />
-              </div>
+  <p className="mt-2 text-sm md:text-base text-stone-400 leading-relaxed">
+    Elke extra dag: €12,50 per Cube
+  </p>
+
+  <div className="absolute top-4 left-4 w-7 h-7 border-t-2 border-l-2 border-primary" />
+  <div className="absolute bottom-4 right-4 w-7 h-7 border-b-2 border-r-2 border-primary" />
+</div>
+
+{/* WEEKEND */}
+<div
+  className="relative bg-black border-2 border-primary p-12 flex flex-col items-center text-center transition-all duration-500 md:-mt-4 md:mb-[-4px]"
+  style={{
+    boxShadow:
+      "0 0 12px rgba(212,175,55,0.20), inset 0 0 14px rgba(212,175,55,0.04)",
+  }}
+>
+  <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-primary px-8 py-3 border border-primary min-w-[210px]">
+    <span className="inline-flex items-center justify-center gap-2 text-black text-xs md:text-sm font-semibold tracking-[0.22em] uppercase whitespace-nowrap">
+      <Sparkles className="h-4 w-4 text-black" />
+      Meest gekozen
+    </span>
+  </div>
+
+  <span className="text-primary text-sm tracking-[0.32em] uppercase mt-1">
+    Weekend
+  </span>
+
+  <div className="mt-6 mb-2">
+    <span className="font-serif text-6xl lg:text-7xl text-primary">
+      €79,95
+    </span>
+  </div>
+
+  <span className="text-stone-200 text-base md:text-lg tracking-wide">
+    per Cube
+  </span>
+
+  <div className="mt-6 h-px w-14 bg-primary/60" />
+
+  <p className="mt-6 text-base md:text-lg text-white leading-relaxed">
+    Waarborg: €150 per Cube
+  </p>
+
+  <p className="mt-2 text-base md:text-lg text-stone-200 leading-relaxed">
+    Zaterdag levering – maandag ophaling
+  </p>
+
+  <p className="mt-2 text-sm md:text-base text-stone-400 leading-relaxed">
+    Elke extra dag: €12,50 per Cube
+  </p>
+
+  <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-primary" />
+  <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-primary" />
+</div>
 
               {/* WEEKEND */}
               <div
