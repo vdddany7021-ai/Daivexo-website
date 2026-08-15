@@ -194,7 +194,7 @@ export function LightCubesSection() {
   <div className="mt-6 h-px w-12 bg-primary/40" />
 
   <p className="mt-6 text-base md:text-lg text-stone-300 leading-relaxed">
-    Waarborg: €150 per Cube
+    Waarborg: €100 per Cube
   </p>
 
   <p className="mt-2 text-sm md:text-base text-stone-400 leading-relaxed">
