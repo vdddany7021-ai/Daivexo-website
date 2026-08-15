@@ -146,26 +146,26 @@ export function LightCubesSection() {
           </div>
 
           {/* Inspiratie CTA */}
-          <div className="mt-16 flex flex-col items-center text-center">
-            <span className="text-primary text-xs tracking-[0.32em] uppercase">
+          <div className="mt-20 flex flex-col items-center text-center">
+            <span className="text-primary text-sm tracking-[0.32em] uppercase">
               Meer dan een statafel
             </span>
 
-            <h3 className="mt-4 font-serif text-3xl md:text-4xl text-white">
+            <h3 className="mt-5 font-serif text-3xl md:text-4xl lg:text-5xl text-white">
               Ontdek wat er mogelijk is met Light Cubes
             </h3>
 
-            <p className="mt-4 max-w-2xl text-base md:text-lg leading-8 text-stone-400">
+            <p className="mt-5 max-w-3xl text-base md:text-lg leading-8 text-stone-400">
               Van complete bars en DJ-booths tot indrukwekkende lichtwanden en
               volledige eventopstellingen.
             </p>
 
             <a
               href="/light-cubes-inspiratie"
-              className="group mt-8 inline-flex items-center justify-center gap-3 border border-primary bg-primary px-8 py-4 text-sm font-semibold uppercase tracking-[0.22em] text-black transition-all duration-300 hover:bg-black hover:text-primary"
+              className="group mt-10 inline-flex w-full max-w-[620px] items-center justify-center gap-4 border-2 border-primary bg-primary px-8 md:px-12 py-6 md:py-7 text-base md:text-xl font-bold uppercase tracking-[0.16em] text-black shadow-[0_0_30px_rgba(212,175,55,0.35)] transition-all duration-300 hover:bg-black hover:text-primary hover:shadow-[0_0_50px_rgba(212,175,55,0.55)]"
             >
               Ontdek de mogelijkheden
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className="h-6 w-6 md:h-7 md:w-7 shrink-0 transition-transform duration-300 group-hover:translate-x-2" />
             </a>
           </div>
 
