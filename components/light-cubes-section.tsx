@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Check, Sparkles, X, ZoomIn } from "lucide-react"
+import { Check, Sparkles, X, ZoomIn, ArrowRight } from "lucide-react"
 
 const lightCubes = [
   {
@@ -30,7 +30,7 @@ const includedItems = [
   "Levering én ophaling binnen een straal van 25 km",
   "50 meter verlengkabel",
   "RGBW LED-verlichting",
-  "Zwarte HDPE-bovenplaat",
+  "Zwarte HPL-bovenplaat van 6 mm",
   "Afstand berekend via Google Maps vanaf DAIVEXO",
   "3-voudige stekkerdoos",
   "Afstandsbediening",
@@ -102,7 +102,7 @@ export function LightCubesSection() {
 
             <p className="mt-5 mx-auto max-w-3xl text-base md:text-lg leading-8 text-stone-400">
               Elke Cube is voorzien van RGBW LED-verlichting en een zwarte
-              HDPE-bovenplaat en wordt gebruiksklaar geleverd.
+              HPL-bovenplaat van 6 mm en wordt gebruiksklaar geleverd.
             </p>
           </div>
 
@@ -145,6 +145,30 @@ export function LightCubesSection() {
             ))}
           </div>
 
+          {/* Inspiratie CTA */}
+          <div className="mt-20 flex flex-col items-center text-center">
+            <span className="text-primary text-sm tracking-[0.32em] uppercase">
+              Meer dan een statafel
+            </span>
+
+            <h3 className="mt-5 font-serif text-3xl md:text-4xl lg:text-5xl text-white">
+              Ontdek wat er mogelijk is met Light Cubes
+            </h3>
+
+            <p className="mt-5 max-w-3xl text-base md:text-lg leading-8 text-stone-400">
+              Van complete bars en DJ-booths tot indrukwekkende lichtwanden en
+              volledige eventopstellingen.
+            </p>
+
+            <a
+              href="/light-cubes-inspiratie"
+              className="group mt-10 inline-flex w-full max-w-[620px] items-center justify-center gap-4 border-2 border-primary bg-primary px-8 md:px-12 py-6 md:py-7 text-base md:text-xl font-bold uppercase tracking-[0.16em] text-black shadow-[0_0_30px_rgba(212,175,55,0.35)] transition-all duration-300 hover:bg-black hover:text-primary hover:shadow-[0_0_50px_rgba(212,175,55,0.55)]"
+            >
+              Ontdek de mogelijkheden
+              <ArrowRight className="h-6 w-6 md:h-7 md:w-7 shrink-0 transition-transform duration-300 group-hover:translate-x-2" />
+            </a>
+          </div>
+
           {/* Pricing */}
           <div className="mt-28">
             <div className="text-center mb-16">
@@ -183,7 +207,7 @@ export function LightCubesSection() {
 
                 <div className="mt-6 mb-2">
                   <span className="font-serif text-5xl lg:text-6xl text-primary">
-                    €45
+                    €59,95
                   </span>
                 </div>
 
@@ -194,7 +218,11 @@ export function LightCubesSection() {
                 <div className="mt-6 h-px w-12 bg-primary/40" />
 
                 <p className="mt-6 text-base md:text-lg text-stone-300 leading-relaxed">
-                  Waarborg: €100 per Cube
+                  Waarborg: €25 per Cube
+                </p>
+
+                <p className="mt-2 text-sm md:text-base text-stone-400 leading-relaxed">
+                  Elke extra dag: €12,50 per Cube
                 </p>
 
                 <div className="absolute top-4 left-4 w-7 h-7 border-t-2 border-l-2 border-primary" />
@@ -222,7 +250,7 @@ export function LightCubesSection() {
 
                 <div className="mt-6 mb-2">
                   <span className="font-serif text-6xl lg:text-7xl text-primary">
-                    €75
+                    €79,95
                   </span>
                 </div>
 
@@ -233,11 +261,15 @@ export function LightCubesSection() {
                 <div className="mt-6 h-px w-14 bg-primary/60" />
 
                 <p className="mt-6 text-base md:text-lg text-white leading-relaxed">
-                  Waarborg: €150 per Cube
+                  Waarborg: €25 per Cube
                 </p>
 
                 <p className="mt-2 text-base md:text-lg text-stone-200 leading-relaxed">
-                  Vrijdag levering – maandag ophaling
+                  Zaterdag levering – maandag ophaling
+                </p>
+
+                <p className="mt-2 text-sm md:text-base text-stone-400 leading-relaxed">
+                  Elke extra dag: €12,50 per Cube
                 </p>
 
                 <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-primary" />
@@ -269,7 +301,7 @@ export function LightCubesSection() {
                 <div className="mt-6 h-px w-12 bg-primary/40" />
 
                 <p className="mt-6 text-base md:text-lg text-stone-300 leading-relaxed">
-                  Inclusief LED-verlichting en HDPE-bovenplaat
+                  Inclusief RGBW LED-verlichting en zwarte HPL-bovenplaat van 6 mm
                 </p>
 
                 <div className="absolute top-4 left-4 w-7 h-7 border-t-2 border-l-2 border-primary" />
@@ -371,15 +403,13 @@ export function LightCubesSection() {
               <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-primary" />
             </div>
 
- {/* Fine print */}
-<p className="mt-10 text-center text-sm md:text-base text-stone-400 max-w-3xl mx-auto leading-relaxed">
-  De klant voorziet een geschikt 230V-stopcontact binnen bereik.
-  De waarborg wordt na ophaling en controle terugbetaald indien de
-  Cube en alle meegeleverde materialen volledig en onbeschadigd
-  worden terugbezorgd.
-</p>
-
-
+            {/* Fine print */}
+            <p className="mt-10 text-center text-sm md:text-base text-stone-400 max-w-3xl mx-auto leading-relaxed">
+              De klant voorziet een geschikt 230V-stopcontact binnen bereik.
+              De waarborg wordt na ophaling en controle terugbetaald indien de
+              Cube en alle meegeleverde materialen volledig en onbeschadigd
+              worden terugbezorgd.
+            </p>
           </div>
         </div>
       </section>
