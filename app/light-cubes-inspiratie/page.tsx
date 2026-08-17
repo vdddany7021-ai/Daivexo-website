@@ -10,6 +10,21 @@ import {
 } from "lucide-react"
 
 const galleryImages = [
+  // STATAFELS
+  {
+    src: "/images/light-cube-yellow.jpeg",
+    alt: "DAIVEXO Light Cube statafel geel",
+  },
+  {
+    src: "/images/light-cube-blue.jpeg",
+    alt: "DAIVEXO Light Cube statafel blauw",
+  },
+  {
+    src: "/images/light-cube-warm-white.jpeg",
+    alt: "DAIVEXO Light Cube statafel warm wit",
+  },
+
+  // BARS
   {
     src: "/images/light-cubes-inspiratie/bar-warmwit-blauw.jpg",
     alt: "DAIVEXO Light Cube Bar warm wit met diepblauwe achterwand",
@@ -22,6 +37,8 @@ const galleryImages = [
     src: "/images/light-cubes-inspiratie/bar-wit-rood.jpg",
     alt: "DAIVEXO Light Cube Bar wit met rode achterwand",
   },
+
+  // DJ BOOTHS
   {
     src: "/images/light-cubes-inspiratie/dj-warmwit.jpg",
     alt: "DAIVEXO Light Cube DJ Booth warm wit",
@@ -34,6 +51,8 @@ const galleryImages = [
     src: "/images/light-cubes-inspiratie/dj-geel.jpg",
     alt: "DAIVEXO Light Cube DJ Booth geel",
   },
+
+  // LIGHT WALLS
   {
     src: "/images/light-cubes-inspiratie/lightwall-multicolor.jpg",
     alt: "DAIVEXO Light Wall in verschillende RGBW kleuren",
@@ -161,6 +180,126 @@ export default function LightCubesInspiratiePage() {
 
         <section className="px-6 pb-24 md:pb-32">
           <div className="mx-auto max-w-7xl">
+
+            {/* ===================================================== */}
+            {/* STATAFELS */}
+            {/* ===================================================== */}
+            <section>
+              <div className="mb-10">
+                <span className="text-primary text-xs tracking-[0.3em] uppercase">
+                  Statafels
+                </span>
+
+                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mt-4">
+                  Light Cube Statafels
+                </h2>
+
+                <p className="mt-5 max-w-3xl text-base md:text-lg text-stone-400 leading-8">
+                  Gebruik individuele Light Cubes als opvallende statafels en
+                  ontmoetingspunten. Dankzij de RGBW-verlichting kan de kleur
+                  worden afgestemd op de sfeer, huisstijl of het thema van het
+                  evenement.
+                </p>
+              </div>
+
+              {/* HOOFDBEELD STATAFEL */}
+              <button
+                type="button"
+                onClick={() => openImage(0)}
+                className="group relative block w-full overflow-hidden border border-primary/60 bg-black text-left cursor-zoom-in"
+              >
+                <img
+                  src={galleryImages[0].src}
+                  alt={galleryImages[0].alt}
+                  className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.015]"
+                />
+
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/65 to-transparent px-6 pb-7 pt-28 md:px-10 md:pb-10 md:pt-40">
+                  <span className="text-primary text-xs tracking-[0.3em] uppercase">
+                    Light Cube Statafel
+                  </span>
+
+                  <h3 className="font-serif text-2xl md:text-4xl mt-2">
+                    Helder geel
+                  </h3>
+
+                  <p className="mt-3 max-w-2xl text-sm md:text-base text-stone-300 leading-7">
+                    Een warme en opvallende kleur die meteen sfeer brengt en
+                    de Light Cube tot een herkenbaar ontmoetingspunt maakt.
+                  </p>
+                </div>
+
+                <div className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center border border-primary bg-black/75 text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                  <ZoomIn className="h-5 w-5" />
+                </div>
+
+                <div className="absolute top-4 left-4 w-9 h-9 border-t-2 border-l-2 border-primary" />
+                <div className="absolute bottom-4 right-4 w-9 h-9 border-b-2 border-r-2 border-primary" />
+              </button>
+
+              {/* TWEE AANVULLENDE STATAFELS */}
+              <div className="mt-8 grid gap-8 md:grid-cols-2">
+                <button
+                  type="button"
+                  onClick={() => openImage(1)}
+                  className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
+                >
+                  <img
+                    src={galleryImages[1].src}
+                    alt={galleryImages[1].alt}
+                    className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent px-6 pb-6 pt-20">
+                    <span className="text-primary text-xs tracking-[0.25em] uppercase">
+                      Light Cube Statafel
+                    </span>
+
+                    <h3 className="font-serif text-2xl md:text-3xl mt-2">
+                      Intens blauw
+                    </h3>
+                  </div>
+
+                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                    <ZoomIn className="h-5 w-5" />
+                  </div>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => openImage(2)}
+                  className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
+                >
+                  <img
+                    src={galleryImages[2].src}
+                    alt={galleryImages[2].alt}
+                    className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent px-6 pb-6 pt-20">
+                    <span className="text-primary text-xs tracking-[0.25em] uppercase">
+                      Light Cube Statafel
+                    </span>
+
+                    <h3 className="font-serif text-2xl md:text-3xl mt-2">
+                      Warm wit
+                    </h3>
+                  </div>
+
+                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                    <ZoomIn className="h-5 w-5" />
+                  </div>
+                </button>
+              </div>
+            </section>
+
+            {/* SCHEIDING */}
+            <div className="my-24 flex items-center justify-center gap-4">
+              <div className="h-px w-24 bg-primary/40" />
+              <div className="h-2 w-2 rotate-45 bg-primary" />
+              <div className="h-px w-24 bg-primary/40" />
+            </div>
+
             {/* ===================================================== */}
             {/* LIGHT CUBE BARS */}
             {/* ===================================================== */}
@@ -185,12 +324,12 @@ export default function LightCubesInspiratiePage() {
               {/* HOOFDBEELD BAR */}
               <button
                 type="button"
-                onClick={() => openImage(0)}
+                onClick={() => openImage(3)}
                 className="group relative block w-full overflow-hidden border border-primary/60 bg-black text-left cursor-zoom-in"
               >
                 <img
-                  src={galleryImages[0].src}
-                  alt={galleryImages[0].alt}
+                  src={galleryImages[3].src}
+                  alt={galleryImages[3].alt}
                   className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.015]"
                 />
 
@@ -221,12 +360,12 @@ export default function LightCubesInspiratiePage() {
               <div className="mt-8 grid gap-8 md:grid-cols-2">
                 <button
                   type="button"
-                  onClick={() => openImage(1)}
+                  onClick={() => openImage(4)}
                   className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
                 >
                   <img
-                    src={galleryImages[1].src}
-                    alt={galleryImages[1].alt}
+                    src={galleryImages[4].src}
+                    alt={galleryImages[4].alt}
                     className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
@@ -247,12 +386,12 @@ export default function LightCubesInspiratiePage() {
 
                 <button
                   type="button"
-                  onClick={() => openImage(2)}
+                  onClick={() => openImage(5)}
                   className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
                 >
                   <img
-                    src={galleryImages[2].src}
-                    alt={galleryImages[2].alt}
+                    src={galleryImages[5].src}
+                    alt={galleryImages[5].alt}
                     className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
@@ -304,12 +443,12 @@ export default function LightCubesInspiratiePage() {
               {/* HOOFDBEELD DJ */}
               <button
                 type="button"
-                onClick={() => openImage(3)}
+                onClick={() => openImage(6)}
                 className="group relative block w-full overflow-hidden border border-primary/60 bg-black text-left cursor-zoom-in"
               >
                 <img
-                  src={galleryImages[3].src}
-                  alt={galleryImages[3].alt}
+                  src={galleryImages[6].src}
+                  alt={galleryImages[6].alt}
                   className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.015]"
                 />
 
@@ -341,12 +480,12 @@ export default function LightCubesInspiratiePage() {
               <div className="mt-8 grid gap-8 md:grid-cols-2">
                 <button
                   type="button"
-                  onClick={() => openImage(4)}
+                  onClick={() => openImage(7)}
                   className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
                 >
                   <img
-                    src={galleryImages[4].src}
-                    alt={galleryImages[4].alt}
+                    src={galleryImages[7].src}
+                    alt={galleryImages[7].alt}
                     className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
@@ -367,12 +506,12 @@ export default function LightCubesInspiratiePage() {
 
                 <button
                   type="button"
-                  onClick={() => openImage(5)}
+                  onClick={() => openImage(8)}
                   className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
                 >
                   <img
-                    src={galleryImages[5].src}
-                    alt={galleryImages[5].alt}
+                    src={galleryImages[8].src}
+                    alt={galleryImages[8].alt}
                     className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
@@ -423,12 +562,12 @@ export default function LightCubesInspiratiePage() {
               {/* HOOFDBEELD WALL */}
               <button
                 type="button"
-                onClick={() => openImage(6)}
+                onClick={() => openImage(9)}
                 className="group relative block w-full overflow-hidden border border-primary/60 bg-black text-left cursor-zoom-in"
               >
                 <img
-                  src={galleryImages[6].src}
-                  alt={galleryImages[6].alt}
+                  src={galleryImages[9].src}
+                  alt={galleryImages[9].alt}
                   className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.015]"
                 />
 
@@ -460,12 +599,12 @@ export default function LightCubesInspiratiePage() {
               <div className="mt-8 grid gap-8 md:grid-cols-2">
                 <button
                   type="button"
-                  onClick={() => openImage(7)}
+                  onClick={() => openImage(10)}
                   className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
                 >
                   <img
-                    src={galleryImages[7].src}
-                    alt={galleryImages[7].alt}
+                    src={galleryImages[10].src}
+                    alt={galleryImages[10].alt}
                     className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
@@ -486,12 +625,12 @@ export default function LightCubesInspiratiePage() {
 
                 <button
                   type="button"
-                  onClick={() => openImage(8)}
+                  onClick={() => openImage(11)}
                   className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
                 >
                   <img
-                    src={galleryImages[8].src}
-                    alt={galleryImages[8].alt}
+                    src={galleryImages[11].src}
+                    alt={galleryImages[11].alt}
                     className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
