@@ -38,7 +38,7 @@ const includedItems = [
   "Afstand berekend via Google Maps vanaf DAIVEXO",
   "3-voudige waterbestendige stekkerdoos",
  "Bediening via afstandsbediening én app", 
-  "Gebruiksklaar geleverd",
+  "LED-verlichting vooraf gemonteerd",
 ]
 
 export function LightCubesSection() {
