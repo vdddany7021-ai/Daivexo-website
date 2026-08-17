@@ -186,8 +186,8 @@ export function QRLabelsSection() {
           {/* Contactknop */}
           <div className="text-center mt-16">
             <a
-              href="#contact"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 tracking-widest uppercase text-sm"
+               href="/#contact"
+           className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 tracking-widest uppercase text-sm"
             >
               Vraag info aan
             </a>
