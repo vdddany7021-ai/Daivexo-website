@@ -314,9 +314,7 @@ export function LightCubesSection() {
                <p className="mt-6 text-base md:text-lg text-stone-300 leading-relaxed">
  Volledig afgewerkte DAIVEXO Light Cube inclusief RGBW LED-verlichting, zwarte HPL-bovenplaat van 6 mm en bediening via afstandsbediening én app.
 </p>
-<p className="mt-6 text-base md:text-lg text-stone-300 leading-relaxed">
-  Volledig afgewerkte DAIVEXO Light Cube inclusief RGBW LED-verlichting, zwarte HPL-bovenplaat van 6 mm en bediening via afstandsbediening én app.
-</p>
+
                 <div className="absolute top-4 left-4 w-7 h-7 border-t-2 border-l-2 border-primary" />
                 <div className="absolute bottom-4 right-4 w-7 h-7 border-b-2 border-r-2 border-primary" />
               </div>
