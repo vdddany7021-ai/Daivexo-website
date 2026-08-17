@@ -36,9 +36,9 @@ const includedItems = [
   "RGBW LED-verlichting",
   "Zwarte HPL-bovenplaat van 6 mm",
   "Afstand berekend via Google Maps vanaf DAIVEXO",
-  "3-voudige stekkerdoos",
-  "Afstandsbediening",
-  "Gebruiksklaar geleverd",
+  "3-voudige waterbestendige stekkerdoos",
+ "Bediening via afstandsbediening én app", 
+  "LED-verlichting vooraf gemonteerd",
 ]
 
 export function LightCubesSection() {
@@ -219,7 +219,9 @@ export function LightCubesSection() {
                 <span className="text-stone-300 text-base md:text-lg tracking-wide">
                   per Cube
                 </span>
-
+<span className="mt-1 text-sm text-stone-400">
+  incl. 21% btw
+</span>
                 <div className="mt-6 h-px w-12 bg-primary/40" />
 
                 <p className="mt-6 text-base md:text-lg text-stone-300 leading-relaxed">
@@ -262,7 +264,9 @@ export function LightCubesSection() {
                 <span className="text-stone-200 text-base md:text-lg tracking-wide">
                   per Cube
                 </span>
-
+<span className="mt-1 text-sm text-stone-400">
+  incl. 21% btw
+</span>
                 <div className="mt-6 h-px w-14 bg-primary/60" />
 
                 <p className="mt-6 text-base md:text-lg text-white leading-relaxed">
@@ -295,20 +299,26 @@ export function LightCubesSection() {
 
                 <div className="mt-6 mb-2">
                   <span className="font-serif text-5xl lg:text-6xl text-primary">
-                    €699,95
+                    €999,95
                   </span>
                 </div>
 
                 <span className="text-stone-300 text-base md:text-lg tracking-wide">
                   per Cube
                 </span>
-
+<span className="mt-1 text-sm text-stone-400">
+  incl. 21% btw
+</span>
                 <div className="mt-6 h-px w-12 bg-primary/40" />
 
-                <p className="mt-6 text-base md:text-lg text-stone-300 leading-relaxed">
-                  Inclusief RGBW LED-verlichting en zwarte HPL-bovenplaat van 6 mm
-                </p>
-
+               <p className="mt-6 text-base md:text-lg text-stone-300 leading-relaxed">
+Volledig afgewerkte DAIVEXO Light Cube
+<br />
+RGBW LED-verlichting met afstandsbediening en app, voorzien van een zwarte HPL-bovenplaat van 6 mm.
+</p>
+<p className="mt-3 text-base md:text-lg text-white font-semibold">
+  Gebruiksklaar geleverd
+</p>
                 <div className="absolute top-4 left-4 w-7 h-7 border-t-2 border-l-2 border-primary" />
                 <div className="absolute bottom-4 right-4 w-7 h-7 border-b-2 border-r-2 border-primary" />
               </div>
