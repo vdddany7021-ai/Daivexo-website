@@ -36,8 +36,8 @@ const includedItems = [
   "RGBW LED-verlichting",
   "Zwarte HPL-bovenplaat van 6 mm",
   "Afstand berekend via Google Maps vanaf DAIVEXO",
-  "3-voudige stekkerdoos",
-  "Afstandsbediening",
+  "3-voudige waterbestendige stekkerdoos",
+ "Bediening via afstandsbediening én app", 
   "Gebruiksklaar geleverd",
 ]
 
@@ -312,7 +312,9 @@ export function LightCubesSection() {
                 <div className="mt-6 h-px w-12 bg-primary/40" />
 
                <p className="mt-6 text-base md:text-lg text-stone-300 leading-relaxed">
- Volledig afgewerkte DAIVEXO Light Cube inclusief RGBW LED-verlichting, zwarte HPL-bovenplaat van 6 mm en bediening via afstandsbediening én app.
+Volledig afgewerkte DAIVEXO Light Cube
+<br />
+RGBW LED-verlichting met afstandsbediening en app, voorzien van een zwarte HPL-bovenplaat van 6 mm.
 </p>
 <p className="mt-3 text-base md:text-lg text-white font-semibold">
   Gebruiksklaar geleverd
