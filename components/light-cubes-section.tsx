@@ -219,7 +219,9 @@ export function LightCubesSection() {
                 <span className="text-stone-300 text-base md:text-lg tracking-wide">
                   per Cube
                 </span>
-
+<span className="mt-1 text-sm text-stone-400">
+  incl. 21% btw
+</span>
                 <div className="mt-6 h-px w-12 bg-primary/40" />
 
                 <p className="mt-6 text-base md:text-lg text-stone-300 leading-relaxed">
@@ -262,7 +264,9 @@ export function LightCubesSection() {
                 <span className="text-stone-200 text-base md:text-lg tracking-wide">
                   per Cube
                 </span>
-
+<span className="mt-1 text-sm text-stone-400">
+  incl. 21% btw
+</span>
                 <div className="mt-6 h-px w-14 bg-primary/60" />
 
                 <p className="mt-6 text-base md:text-lg text-white leading-relaxed">
@@ -295,14 +299,16 @@ export function LightCubesSection() {
 
                 <div className="mt-6 mb-2">
                   <span className="font-serif text-5xl lg:text-6xl text-primary">
-                    €699,95
+                    €999,95
                   </span>
                 </div>
 
                 <span className="text-stone-300 text-base md:text-lg tracking-wide">
                   per Cube
                 </span>
-
+<span className="mt-1 text-sm text-stone-400">
+  incl. 21% btw
+</span>
                 <div className="mt-6 h-px w-12 bg-primary/40" />
 
                 <p className="mt-6 text-base md:text-lg text-stone-300 leading-relaxed">
