@@ -6,23 +6,27 @@ import { Check, Sparkles, X, ZoomIn, ArrowRight } from "lucide-react"
 const lightCubes = [
   {
     id: 1,
-    color: "GREEN",
+    title: "STATAFEL",
     image: "/images/light-cube-green.jpeg",
+    alt: "DAIVEXO Light Cube statafel groen",
   },
   {
     id: 2,
-    color: "YELLOW",
-    image: "/images/light-cube-yellow.jpeg",
+    title: "LIGHT CUBE BAR",
+    image: "/images/light-cubes-inspiratie/bar-warmwit-blauw.jpg",
+    alt: "DAIVEXO Light Cube Bar warm wit met diepblauwe achterwand",
   },
   {
     id: 3,
-    color: "BLUE",
-    image: "/images/light-cube-blue.jpeg",
+    title: "DJ BOOTH",
+    image: "/images/light-cubes-inspiratie/dj-warmwit.jpg",
+    alt: "DAIVEXO Light Cube DJ Booth warm wit",
   },
   {
     id: 4,
-    color: "WARM WHITE",
-    image: "/images/light-cube-warm-white.jpeg",
+    title: "LIGHT WALL",
+    image: "/images/light-cubes-inspiratie/lightwall-multicolor.jpg",
+    alt: "DAIVEXO Light Wall multicolor",
   },
 ]
 
@@ -39,8 +43,9 @@ const includedItems = [
 
 export function LightCubesSection() {
   const [selectedCube, setSelectedCube] = useState<{
-    color: string
+    title: string
     image: string
+    alt: string
   } | null>(null)
 
   useEffect(() => {
@@ -106,7 +111,7 @@ export function LightCubesSection() {
             </p>
           </div>
 
-          {/* Klikbare Light Cube afbeeldingen */}
+          {/* Vier toepassingen */}
           <div className="grid md:grid-cols-2 gap-6">
             {lightCubes.map((cube) => (
               <button
@@ -114,19 +119,19 @@ export function LightCubesSection() {
                 key={cube.id}
                 onClick={() => setSelectedCube(cube)}
                 className="group relative aspect-[4/3] bg-card border border-primary/20 hover:border-primary/70 transition-all duration-500 overflow-hidden cursor-zoom-in text-left"
-                aria-label={`Vergroot DAIVEXO Light Cube ${cube.color}`}
+                aria-label={`Vergroot ${cube.title}`}
               >
                 <img
                   src={cube.image}
-                  alt={`DAIVEXO Light Cube - ${cube.color}`}
+                  alt={cube.alt}
                   className="absolute inset-0 h-full w-full object-cover opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent" />
 
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <span className="text-primary text-xs tracking-[0.32em] uppercase block">
-                    DAIVEXO LIGHT CUBE — {cube.color}
+                  <span className="text-primary text-xs md:text-sm tracking-[0.32em] uppercase block">
+                    DAIVEXO — {cube.title}
                   </span>
 
                   <span className="mt-2 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -156,8 +161,8 @@ export function LightCubesSection() {
             </h3>
 
             <p className="mt-5 max-w-3xl text-base md:text-lg leading-8 text-stone-400">
-              Van complete bars en DJ-booths tot indrukwekkende lichtwanden en
-              volledige eventopstellingen.
+              Van individuele statafels en complete bars tot DJ-booths,
+              indrukwekkende lichtwanden en volledige eventopstellingen.
             </p>
 
             <a
@@ -421,7 +426,7 @@ export function LightCubesSection() {
           onClick={() => setSelectedCube(null)}
           role="dialog"
           aria-modal="true"
-          aria-label={`DAIVEXO Light Cube ${selectedCube.color}`}
+          aria-label={selectedCube.alt}
         >
           <button
             type="button"
@@ -438,13 +443,13 @@ export function LightCubesSection() {
           >
             <img
               src={selectedCube.image}
-              alt={`DAIVEXO Light Cube - ${selectedCube.color}`}
+              alt={selectedCube.alt}
               className="max-h-[82vh] max-w-[95vw] object-contain border border-primary/40 shadow-[0_0_40px_rgba(212,175,55,0.18)]"
             />
 
             <div className="pt-5 text-center">
               <h3 className="font-serif text-2xl md:text-3xl text-white">
-                DAIVEXO Light Cube — {selectedCube.color}
+                DAIVEXO — {selectedCube.title}
               </h3>
 
               <p className="mt-2 text-sm text-white/60">
