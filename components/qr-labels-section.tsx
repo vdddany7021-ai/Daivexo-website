@@ -86,29 +86,34 @@ export function QRLabelsSection() {
         id="qr-labels"
         className="relative overflow-hidden bg-black py-24 md:py-32"
       >
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute left-1/2 top-40 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-primary/5 blur-[150px]"
+        />
+
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           {/* Titel */}
-          <div className="text-center mb-20">
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary tracking-wide uppercase">
+          <div className="mx-auto mb-20 max-w-6xl text-center">
+            <span className="text-sm tracking-[0.35em] text-primary uppercase md:text-base">
               GEVONDEN? SCAN MIJ.
+            </span>
+
+            <h2 className="mt-5 font-serif text-4xl text-white md:text-5xl lg:text-6xl">
+              QR Labels
             </h2>
 
-            <p className="font-serif text-2xl md:text-3xl lg:text-4xl mt-5 text-white">
-              QR Labels
-            </p>
-
-            <div className="flex items-center justify-center gap-4 mt-7">
+            <div className="mt-7 flex items-center justify-center gap-4">
               <div className="h-px w-16 bg-primary" />
               <div className="h-2 w-2 rotate-45 bg-primary" />
               <div className="h-px w-16 bg-primary" />
             </div>
 
-            <p className="mt-10 max-w-5xl mx-auto text-2xl md:text-3xl lg:text-4xl font-semibold leading-[1.4] text-white">
+            <p className="mx-auto mt-10 max-w-5xl text-2xl font-semibold leading-[1.4] text-white md:text-3xl lg:text-4xl">
               Slimme QR-labels die verloren spullen sneller terugbrengen bij
               hun eigenaar.
             </p>
 
-            <p className="mt-8 max-w-5xl mx-auto text-lg md:text-xl lg:text-2xl leading-9 md:leading-10 text-white">
+            <p className="mx-auto mt-8 max-w-5xl text-lg leading-9 text-white md:text-xl md:leading-10 lg:text-2xl">
               Bevestig een SCANMIJ-label op bijvoorbeeld een brooddoos,
               drinkfles, rugzak, sleutelbos, koffer of ander persoonlijk
               voorwerp. Wordt het voorwerp gevonden? De vinder scant eenvoudig
@@ -118,35 +123,38 @@ export function QRLabelsSection() {
           </div>
 
           {/* Klikbare SCANMIJ-afbeeldingen */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+          <div className="mb-24 grid grid-cols-1 gap-8 md:grid-cols-2">
             {visuals.map((visual) => (
               <button
                 type="button"
                 key={visual.title}
                 onClick={() => setSelectedImage(visual)}
-                className="group text-left overflow-hidden bg-card border border-primary/25 hover:border-primary/80 transition-all duration-500 cursor-zoom-in"
+                className="group cursor-zoom-in overflow-hidden border border-primary/25 bg-card text-left transition-all duration-500 hover:border-primary/80"
                 aria-label={`Vergroot ${visual.title}`}
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
                     src={visual.image}
                     alt={visual.title}
-                    className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                  <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/20" />
 
-                  <div className="absolute top-4 right-4 flex h-11 w-11 items-center justify-center border border-primary/60 bg-black/70 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute top-4 right-4 flex h-11 w-11 items-center justify-center border border-primary/60 bg-black/70 text-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     <ZoomIn className="h-5 w-5" />
                   </div>
+
+                  <div className="absolute top-4 left-4 h-7 w-7 border-t border-l border-primary/60" />
+                  <div className="absolute right-4 bottom-4 h-7 w-7 border-r border-b border-primary/60" />
                 </div>
 
                 <div className="p-6 text-center">
-                  <h3 className="font-serif text-xl md:text-2xl text-white">
+                  <h3 className="font-serif text-xl text-white md:text-2xl">
                     {visual.title}
                   </h3>
 
-                  <p className="mt-2 text-xs uppercase tracking-[0.2em] text-primary/80">
+                  <p className="mt-2 text-xs tracking-[0.2em] text-primary/80 uppercase">
                     Klik om te vergroten
                   </p>
                 </div>
@@ -155,27 +163,27 @@ export function QRLabelsSection() {
           </div>
 
           {/* Eigenschappen */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => {
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {features.map((feature) => {
               const Icon = feature.icon
 
               return (
                 <div
-                  key={index}
-                  className="group relative p-8 bg-card border border-border hover:border-primary/50 transition-all duration-500"
+                  key={feature.title}
+                  className="group relative border border-border bg-card p-8 transition-all duration-500 hover:border-primary/50"
                 >
-                  <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute top-0 left-0 h-4 w-4 border-t border-l border-primary opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  <div className="absolute top-0 right-0 h-4 w-4 border-t border-r border-primary opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  <div className="absolute bottom-0 left-0 h-4 w-4 border-b border-l border-primary opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  <div className="absolute right-0 bottom-0 h-4 w-4 border-r border-b border-primary opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-                  <Icon className="h-14 w-14 text-primary mb-6 drop-shadow-lg" />
+                  <Icon className="mb-6 h-14 w-14 text-primary drop-shadow-lg" />
 
-                  <h3 className="font-serif text-2xl text-white mb-5">
+                  <h3 className="mb-5 font-serif text-2xl text-white">
                     {feature.title}
                   </h3>
 
-                  <p className="text-white/90 text-base leading-8">
+                  <p className="text-base leading-8 text-white/90">
                     {feature.description}
                   </p>
                 </div>
@@ -184,10 +192,10 @@ export function QRLabelsSection() {
           </div>
 
           {/* Contactknop */}
-          <div className="text-center mt-16">
+          <div className="mt-16 text-center">
             <a
-              href="#contact"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 tracking-widest uppercase text-sm"
+              href="/#contact"
+              className="inline-flex items-center justify-center gap-3 bg-primary px-10 py-5 text-sm font-semibold tracking-[0.2em] text-black uppercase transition-all duration-300 hover:brightness-110"
             >
               Vraag info aan
             </a>
@@ -199,9 +207,7 @@ export function QRLabelsSection() {
             className="mx-auto mt-28 flex w-full max-w-5xl items-center justify-center gap-5"
           >
             <div className="h-px flex-1 bg-primary" />
-
             <div className="h-3 w-3 rotate-45 bg-primary" />
-
             <div className="h-px flex-1 bg-primary" />
           </div>
         </div>
@@ -219,7 +225,7 @@ export function QRLabelsSection() {
           <button
             type="button"
             onClick={() => setSelectedImage(null)}
-            className="absolute right-5 top-5 md:right-8 md:top-8 z-10 flex h-12 w-12 items-center justify-center border border-primary/70 bg-black/80 text-primary hover:bg-primary hover:text-black transition-colors duration-300"
+            className="absolute top-5 right-5 z-10 flex h-12 w-12 items-center justify-center border border-primary/70 bg-black/80 text-primary transition-colors duration-300 hover:bg-primary hover:text-black md:top-8 md:right-8"
             aria-label="Afbeelding sluiten"
           >
             <X className="h-6 w-6" />
@@ -232,11 +238,11 @@ export function QRLabelsSection() {
             <img
               src={selectedImage.image}
               alt={selectedImage.title}
-              className="max-h-[82vh] max-w-[95vw] object-contain border border-primary/40 shadow-[0_0_40px_rgba(212,175,55,0.18)]"
+              className="max-h-[82vh] max-w-[95vw] border border-primary/40 object-contain shadow-[0_0_40px_rgba(212,175,55,0.18)]"
             />
 
             <div className="pt-5 text-center">
-              <h3 className="font-serif text-2xl md:text-3xl text-white">
+              <h3 className="font-serif text-2xl text-white md:text-3xl">
                 {selectedImage.title}
               </h3>
 

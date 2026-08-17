@@ -167,7 +167,7 @@ export function AegisSection() {
             </button>
           </div>
 
-          {/* Nieuwe premium voor- en zijaanzichten */}
+          {/* Premium voor- en zijaanzichten */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
             {aegisImages.map((item) => (
               <button
@@ -423,7 +423,7 @@ export function AegisSection() {
             </p>
 
             <a
-              href="#contact"
+              href="/#contact"
               className="mt-9 inline-flex items-center justify-center px-10 py-5 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 tracking-[0.2em] uppercase text-sm"
             >
               Informeer naar maatwerk
