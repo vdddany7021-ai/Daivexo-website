@@ -580,30 +580,27 @@ Aanvraag verstuurd via www.daivexo.com
                         }
                         className={inputClass}
                       >
-                        <option value="">
-                          Maak een keuze
-                        </option>
+<option value="">Maak een keuze</option>
 
-                        <option value="1 dag">
+<option value="1 dag">
   1 dag — €59,95 per Cube
 </option>
 
 <option value="Meerdere dagen">
-  Meerdere dagen — vanaf €59,95 per Cube
+  Meerdere dagen — €59,95 eerste dag + €12,50 per bijkomende dag
 </option>
 
 <option value="Weekend">
-  Weekend — €79,95 per Cube
+  Weekend (za–ma) — €79,95 per Cube
 </option>
 
-                        {formType === "quote" && (
-                          <>
-                            <option value="Aankoop">
-                              Aankoop
-                            </option>
-                            <option value="Offerte op maat">
-                              Offerte op maat
-                            </option>
+<option value="Aankoop">
+  Aankoop
+</option>
+
+<option value="Offerte op maat">
+  Offerte op maat
+</option>
                           </>
                         )}
                       </select>
