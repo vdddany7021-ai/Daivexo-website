@@ -35,10 +35,10 @@ const includedItems = [
   "50 meter verlengkabel",
   "RGBW LED-verlichting",
   "Zwarte HPL-bovenplaat van 6 mm",
-  "Afstand berekend via Google Maps vanaf DAIVEXO",
   "3-voudige waterbestendige stekkerdoos",
- "Bediening via afstandsbediening én app", 
+  "Bediening via afstandsbediening én app",
   "LED-verlichting vooraf gemonteerd",
+  "Gebruiksklaar geleverd",
 ]
 
 export function LightCubesSection() {
@@ -191,10 +191,13 @@ export function LightCubesSection() {
                 <div className="h-px w-16 bg-primary" />
               </div>
 
-              <p className="mt-7 text-base md:text-lg text-stone-400 max-w-2xl mx-auto leading-8">
-                Kies voor één dag, een volledig weekend of aankoop van een
-                DAIVEXO Light Cube.
-              </p>
+<p className="mt-7 text-base md:text-lg text-stone-400 whitespace-nowrap">
+  Kies voor één dag, meerdere dagen, een volledig weekend of aankoop van een DAIVEXO Light Cube.
+</p>
+
+             <p className="mt-4 text-base md:text-lg font-semibold text-primary">
+  Alle vermelde prijzen zijn inclusief 21% btw.
+</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 md:items-stretch">
@@ -219,9 +222,7 @@ export function LightCubesSection() {
                 <span className="text-stone-300 text-base md:text-lg tracking-wide">
                   per Cube
                 </span>
-<span className="mt-1 text-sm text-stone-400">
-  incl. 21% btw
-</span>
+
                 <div className="mt-6 h-px w-12 bg-primary/40" />
 
                 <p className="mt-6 text-base md:text-lg text-stone-300 leading-relaxed">
@@ -264,9 +265,7 @@ export function LightCubesSection() {
                 <span className="text-stone-200 text-base md:text-lg tracking-wide">
                   per Cube
                 </span>
-<span className="mt-1 text-sm text-stone-400">
-  incl. 21% btw
-</span>
+
                 <div className="mt-6 h-px w-14 bg-primary/60" />
 
                 <p className="mt-6 text-base md:text-lg text-white leading-relaxed">
@@ -306,19 +305,20 @@ export function LightCubesSection() {
                 <span className="text-stone-300 text-base md:text-lg tracking-wide">
                   per Cube
                 </span>
-<span className="mt-1 text-sm text-stone-400">
-  incl. 21% btw
-</span>
+
                 <div className="mt-6 h-px w-12 bg-primary/40" />
 
-               <p className="mt-6 text-base md:text-lg text-stone-300 leading-relaxed">
-Volledig afgewerkte DAIVEXO Light Cube
-<br />
-RGBW LED-verlichting met afstandsbediening en app, voorzien van een zwarte HPL-bovenplaat van 6 mm.
-</p>
-<p className="mt-3 text-base md:text-lg text-white font-semibold">
-  Gebruiksklaar geleverd
-</p>
+                <p className="mt-6 text-base md:text-lg text-stone-300 leading-relaxed">
+                  Volledig afgewerkte DAIVEXO Light Cube
+                  <br />
+                  RGBW LED-verlichting met afstandsbediening en app, voorzien
+                  van een zwarte HPL-bovenplaat van 6 mm.
+                </p>
+
+                <p className="mt-3 text-base md:text-lg text-white font-semibold">
+                  Gebruiksklaar geleverd
+                </p>
+
                 <div className="absolute top-4 left-4 w-7 h-7 border-t-2 border-l-2 border-primary" />
                 <div className="absolute bottom-4 right-4 w-7 h-7 border-b-2 border-r-2 border-primary" />
               </div>
@@ -385,7 +385,7 @@ RGBW LED-verlichting met afstandsbediening en app, voorzien van een zwarte HPL-b
               <div className="grid sm:grid-cols-3 gap-0 max-w-4xl mx-auto text-center">
                 <div className="px-6 py-4">
                   <p className="text-primary font-serif text-xl">
-                    0–25 km
+                    0–25 km heen &amp; terug
                   </p>
 
                   <p className="mt-2 text-base md:text-lg text-stone-200 leading-relaxed">
@@ -395,17 +395,17 @@ RGBW LED-verlichting met afstandsbediening en app, voorzien van een zwarte HPL-b
 
                 <div className="px-6 py-4 sm:border-x sm:border-primary/40">
                   <p className="text-primary font-serif text-xl">
-                    26–50 km
+                    26–50 km heen &amp; terug
                   </p>
 
                   <p className="mt-2 text-base md:text-lg text-stone-200 leading-relaxed">
-                    €30 transporttoeslag
+                    €35 transporttoeslag
                   </p>
                 </div>
 
                 <div className="px-6 py-4">
                   <p className="text-primary font-serif text-xl">
-                    Meer dan 50 km
+                    Meer dan 50 km heen &amp; terug
                   </p>
 
                   <p className="mt-2 text-base md:text-lg text-stone-200 leading-relaxed">
@@ -413,6 +413,11 @@ RGBW LED-verlichting met afstandsbediening en app, voorzien van een zwarte HPL-b
                   </p>
                 </div>
               </div>
+
+              <p className="mt-8 text-center text-sm md:text-base text-stone-400">
+                De afstand wordt berekend via Google Maps vanaf DAIVEXO naar
+                het afleveradres en terug.
+              </p>
 
               <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-primary" />
               <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-primary" />
