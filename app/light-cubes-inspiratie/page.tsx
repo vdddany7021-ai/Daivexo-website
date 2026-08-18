@@ -65,6 +65,19 @@ const galleryImages = [
     src: "/images/light-cubes-inspiratie/lightwall-groen.jpg",
     alt: "DAIVEXO Light Wall volledig groen verlicht",
   },
+    // TUIN & OUTDOOR
+  {
+    src: "/images/light-cubes-inspiratie/light-cubes-luxe-tuin-leie-blauw.jpg",
+    alt: "DAIVEXO Light Cubes in blauw in een luxe moderne tuin aan de Leie",
+  },
+  {
+    src: "/images/light-cubes-inspiratie/light-cubes-luxe-tuin-geel.jpg",
+    alt: "DAIVEXO Light Cubes in geel in een exclusieve moderne tuin",
+  },
+  {
+    src: "/images/light-cubes-inspiratie/light-cubes-tuin-standbeelden-warm-wit.jpg",
+    alt: "DAIVEXO Light Cubes warm wit naast standbeelden in een luxe tuin",
+  },
 ]
 
 export default function LightCubesInspiratiePage() {

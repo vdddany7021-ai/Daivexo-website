@@ -21,6 +21,7 @@ type FormData = {
   postalCode: string
   city: string
   eventDate: string
+  endDate: string
   eventType: string
   rentalType: string
   quantity: string
@@ -40,6 +41,7 @@ const initialFormData: FormData = {
   postalCode: "",
   city: "",
   eventDate: "",
+  endDate: "",
   eventType: "",
   rentalType: "",
   quantity: "1",
@@ -49,6 +51,16 @@ const initialFormData: FormData = {
   remarks: "",
   accessConfirmed: false,
   powerConfirmed: false,
+}
+
+const formatDate = (date: string) => {
+  if (!date) return ""
+
+  const [year, month, day] = date.split("-")
+
+  if (!year || !month || !day) return date
+
+  return `${day}/${month}/${year}`
 }
 
 export function LightCubesCtaSection() {
@@ -83,6 +95,17 @@ export function LightCubesCtaSection() {
     setFormData((previous) => ({
       ...previous,
       [field]: value,
+    }))
+  }
+
+  const updateRentalType = (value: string) => {
+    setFormData((previous) => ({
+      ...previous,
+      rentalType: value,
+      endDate:
+        value === "Meerdere dagen"
+          ? previous.endDate
+          : "",
     }))
   }
 
@@ -134,7 +157,8 @@ Postcode: ${formData.postalCode}
 Gemeente: ${formData.city}
 
 EVENT
-Datum evenement: ${formData.eventDate}
+Startdatum: ${formatDate(formData.eventDate)}
+${formData.rentalType === "Meerdere dagen" ? `Einddatum: ${formatDate(formData.endDate)}` : ""}
 Type evenement: ${formData.eventType || "Niet opgegeven"}
 
 LIGHT CUBES
@@ -520,12 +544,19 @@ Aanvraag verstuurd via www.daivexo.com
                         required
                         type="date"
                         value={formData.eventDate}
-                        onChange={(e) =>
-                          updateField(
-                            "eventDate",
-                            e.target.value
-                          )
-                        }
+                        onChange={(e) => {
+                          const newStartDate = e.target.value
+
+                          setFormData((previous) => ({
+                            ...previous,
+                            eventDate: newStartDate,
+                            endDate:
+                              previous.endDate &&
+                              previous.endDate < newStartDate
+                                ? ""
+                                : previous.endDate,
+                          }))
+                        }}
                         className={inputClass}
                       />
                     </FormField>
@@ -569,46 +600,61 @@ Aanvraag verstuurd via www.daivexo.com
                           : "Gewenste formule *"
                       }
                     >
- <select
-  required
-  value={formData.rentalType}
-  onChange={(e) =>
-    updateField(
-      "rentalType",
-      e.target.value
-    )
-  }
-  className={inputClass}
->
-  <option value="">
-    Maak een keuze
-  </option>
+                      <select
+                        required
+                        value={formData.rentalType}
+                        onChange={(e) =>
+                          updateRentalType(e.target.value)
+                        }
+                        className={inputClass}
+                      >
+                        <option value="">
+                          Maak een keuze
+                        </option>
 
-  <option value="1 dag">
-    1 dag — €59,95 per Cube
-  </option>
+                        <option value="1 dag">
+                          1 dag — €59,95 per Cube
+                        </option>
 
- <option value="Meerdere dagen">
-  Meerdere dagen — €59,95 + €12,50 per extra dag
-</option>
+                        <option value="Meerdere dagen">
+                          Meerdere dagen — €59,95 + €12,50 per extra dag
+                        </option>
 
-  <option value="Weekend">
-    Weekend (za–ma) — €79,95 per Cube
-  </option>
+                        <option value="Weekend">
+                          Weekend (za–ma) — €79,95 per Cube
+                        </option>
 
-  {formType === "quote" && (
-    <>
-      <option value="Aankoop">
-        Aankoop
-      </option>
+                        {formType === "quote" && (
+                          <>
+                            <option value="Aankoop">
+                              Aankoop
+                            </option>
 
-      <option value="Offerte op maat">
-        Offerte op maat
-      </option>
-    </>
-  )}
-</select>
+                            <option value="Offerte op maat">
+                              Offerte op maat
+                            </option>
+                          </>
+                        )}
+                      </select>
                     </FormField>
+
+                    {formData.rentalType === "Meerdere dagen" && (
+                      <FormField label="Einddatum huur *">
+                        <input
+                          required
+                          type="date"
+                          min={formData.eventDate || undefined}
+                          value={formData.endDate}
+                          onChange={(e) =>
+                            updateField(
+                              "endDate",
+                              e.target.value
+                            )
+                          }
+                          className={inputClass}
+                        />
+                      </FormField>
+                    )}
 
                     <FormField label="Aantal Cubes *">
                       <input
@@ -708,9 +754,7 @@ Aanvraag verstuurd via www.daivexo.com
                     <input
                       required
                       type="checkbox"
-                      checked={
-                        formData.accessConfirmed
-                      }
+                      checked={formData.accessConfirmed}
                       onChange={(e) =>
                         updateField(
                           "accessConfirmed",
