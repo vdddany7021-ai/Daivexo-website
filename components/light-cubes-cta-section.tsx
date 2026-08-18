@@ -569,41 +569,45 @@ Aanvraag verstuurd via www.daivexo.com
                           : "Gewenste formule *"
                       }
                     >
-                      <select
-                        required
-                        value={formData.rentalType}
-                        onChange={(e) =>
-                          updateField(
-                            "rentalType",
-                            e.target.value
-                          )
-                        }
-                        className={inputClass}
-                      >
-<option value="">Maak een keuze</option>
+ <select
+  required
+  value={formData.rentalType}
+  onChange={(e) =>
+    updateField(
+      "rentalType",
+      e.target.value
+    )
+  }
+  className={inputClass}
+>
+  <option value="">
+    Maak een keuze
+  </option>
 
-<option value="1 dag">
-  1 dag — €59,95 per Cube
-</option>
+  <option value="1 dag">
+    1 dag — €59,95 per Cube
+  </option>
 
-<option value="Meerdere dagen">
-  Meerdere dagen — €59,95 eerste dag + €12,50 per bijkomende dag
-</option>
+  <option value="Meerdere dagen">
+    Meerdere dagen — €59,95 eerste dag + €12,50 per bijkomende dag
+  </option>
 
-<option value="Weekend">
-  Weekend (za–ma) — €79,95 per Cube
-</option>
+  <option value="Weekend">
+    Weekend (za–ma) — €79,95 per Cube
+  </option>
 
-<option value="Aankoop">
-  Aankoop
-</option>
+  {formType === "quote" && (
+    <>
+      <option value="Aankoop">
+        Aankoop
+      </option>
 
-<option value="Offerte op maat">
-  Offerte op maat
-</option>
-                          </>
-                        )}
-                      </select>
+      <option value="Offerte op maat">
+        Offerte op maat
+      </option>
+    </>
+  )}
+</select>
                     </FormField>
 
                     <FormField label="Aantal Cubes *">
