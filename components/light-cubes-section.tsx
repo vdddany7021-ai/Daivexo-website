@@ -191,10 +191,9 @@ export function LightCubesSection() {
                 <div className="h-px w-16 bg-primary" />
               </div>
 
-              <p className="mt-7 text-base md:text-lg text-stone-400 max-w-2xl mx-auto leading-8">
-                Kies voor één dag, een volledig weekend of aankoop van een
-                DAIVEXO Light Cube.
-              </p>
+             <p className="mt-7 text-base md:text-lg text-stone-400 whitespace-nowrap">
+  Kies voor één dag, een volledig weekend of aankoop van een DAIVEXO Light Cube.
+</p>
 
              <p className="mt-4 text-base md:text-lg font-semibold text-primary">
   Alle vermelde prijzen zijn inclusief 21% btw.
