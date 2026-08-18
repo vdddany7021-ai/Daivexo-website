@@ -201,7 +201,7 @@ export default function LightCubesInspiratiePage() {
             {/* ===================================================== */}
             <section>
               <div className="mb-10">
-                <span className="text-primary text-xs tracking-[0.3em] uppercase">
+                <span className="text-primary text-sm md:text-base tracking-[0.3em] uppercase font-semibold">
                   Statafels
                 </span>
 
@@ -217,7 +217,6 @@ export default function LightCubesInspiratiePage() {
                 </p>
               </div>
 
-              {/* HOOFDBEELD STATAFEL */}
               <button
                 type="button"
                 onClick={() => openImage(0)}
@@ -252,7 +251,6 @@ export default function LightCubesInspiratiePage() {
                 <div className="absolute bottom-4 right-4 w-9 h-9 border-b-2 border-r-2 border-primary" />
               </button>
 
-              {/* TWEE AANVULLENDE STATAFELS */}
               <div className="mt-8 grid gap-8 md:grid-cols-2">
                 <button
                   type="button"
@@ -308,19 +306,16 @@ export default function LightCubesInspiratiePage() {
               </div>
             </section>
 
-            {/* SCHEIDING */}
             <div className="my-24 flex items-center justify-center gap-4">
               <div className="h-px w-24 bg-primary/40" />
               <div className="h-2 w-2 rotate-45 bg-primary" />
               <div className="h-px w-24 bg-primary/40" />
             </div>
 
-            {/* ===================================================== */}
-            {/* LIGHT CUBE BARS */}
-            {/* ===================================================== */}
+            {/* BARS */}
             <section>
               <div className="mb-10">
-                <span className="text-primary text-xs tracking-[0.3em] uppercase">
+                <span className="text-primary text-sm md:text-base tracking-[0.3em] uppercase font-semibold">
                   Bars
                 </span>
 
@@ -336,7 +331,6 @@ export default function LightCubesInspiratiePage() {
                 </p>
               </div>
 
-              {/* HOOFDBEELD BAR */}
               <button
                 type="button"
                 onClick={() => openImage(3)}
@@ -371,7 +365,6 @@ export default function LightCubesInspiratiePage() {
                 <div className="absolute bottom-4 right-4 w-9 h-9 border-b-2 border-r-2 border-primary" />
               </button>
 
-              {/* TWEE AANVULLENDE BARS */}
               <div className="mt-8 grid gap-8 md:grid-cols-2">
                 <button
                   type="button"
@@ -427,19 +420,16 @@ export default function LightCubesInspiratiePage() {
               </div>
             </section>
 
-            {/* SCHEIDING */}
             <div className="my-24 flex items-center justify-center gap-4">
               <div className="h-px w-24 bg-primary/40" />
               <div className="h-2 w-2 rotate-45 bg-primary" />
               <div className="h-px w-24 bg-primary/40" />
             </div>
 
-            {/* ===================================================== */}
-            {/* DJ BOOTHS */}
-            {/* ===================================================== */}
+            {/* DJ */}
             <section>
               <div className="mb-10">
-                <span className="text-primary text-xs tracking-[0.3em] uppercase">
+                <span className="text-primary text-sm md:text-base tracking-[0.3em] uppercase font-semibold">
                   DJ
                 </span>
 
@@ -455,7 +445,6 @@ export default function LightCubesInspiratiePage() {
                 </p>
               </div>
 
-              {/* HOOFDBEELD DJ */}
               <button
                 type="button"
                 onClick={() => openImage(6)}
@@ -491,7 +480,6 @@ export default function LightCubesInspiratiePage() {
                 <div className="absolute bottom-4 right-4 w-9 h-9 border-b-2 border-r-2 border-primary" />
               </button>
 
-              {/* TWEE AANVULLENDE DJ'S */}
               <div className="mt-8 grid gap-8 md:grid-cols-2">
                 <button
                   type="button"
@@ -547,19 +535,16 @@ export default function LightCubesInspiratiePage() {
               </div>
             </section>
 
-            {/* SCHEIDING */}
             <div className="my-24 flex items-center justify-center gap-4">
               <div className="h-px w-24 bg-primary/40" />
               <div className="h-2 w-2 rotate-45 bg-primary" />
               <div className="h-px w-24 bg-primary/40" />
             </div>
 
-            {/* ===================================================== */}
-            {/* LIGHT WALLS */}
-            {/* ===================================================== */}
+            {/* WALLS */}
             <section>
               <div className="mb-10">
-                <span className="text-primary text-xs tracking-[0.3em] uppercase">
+                <span className="text-primary text-sm md:text-base tracking-[0.3em] uppercase font-semibold">
                   Walls
                 </span>
 
@@ -574,7 +559,6 @@ export default function LightCubesInspiratiePage() {
                 </p>
               </div>
 
-              {/* HOOFDBEELD WALL */}
               <button
                 type="button"
                 onClick={() => openImage(9)}
@@ -610,7 +594,6 @@ export default function LightCubesInspiratiePage() {
                 <div className="absolute bottom-4 right-4 w-9 h-9 border-b-2 border-r-2 border-primary" />
               </button>
 
-              {/* TWEE AANVULLENDE WALLS */}
               <div className="mt-8 grid gap-8 md:grid-cols-2">
                 <button
                   type="button"
@@ -666,16 +649,13 @@ export default function LightCubesInspiratiePage() {
               </div>
             </section>
 
-            {/* SCHEIDING */}
             <div className="my-24 flex items-center justify-center gap-4">
               <div className="h-px w-24 bg-primary/40" />
               <div className="h-2 w-2 rotate-45 bg-primary" />
               <div className="h-px w-24 bg-primary/40" />
             </div>
 
-            {/* ===================================================== */}
             {/* TUIN & OUTDOOR */}
-            {/* ===================================================== */}
             <section>
               <div className="mb-10">
                 <span className="text-primary text-sm md:text-base tracking-[0.3em] uppercase font-semibold">
@@ -686,21 +666,21 @@ export default function LightCubesInspiratiePage() {
                   Light Cubes voor buiten
                 </h2>
 
-                <p className="mt-5 max-w-3xl text-base md:text-lg text-stone-400 leading-8">
-                  DAIVEXO Light Cubes zijn niet alleen geschikt voor events.
-                  Ook in een exclusieve tuin, langs een terras, bij een
-                  wandelpad of aan het water vormen ze een opvallend
-                  lichtobject met een moderne architecturale uitstraling.
-                </p>
+                <p className="mt-5 max-w-3xl text-base md:text-lg text-stone-300 leading-8">
+  DAIVEXO Light Cubes zijn niet alleen geschikt voor events.
+  Ook in een exclusieve tuin, langs een terras, bij een
+  wandelpad of aan het water vormen ze een opvallend
+  lichtobject met een moderne architecturale uitstraling.
+</p>
 
-                <p className="mt-4 max-w-3xl text-base md:text-lg text-stone-500 leading-8">
+                <p className="mt-4 max-w-3xl text-base md:text-lg text-stone-300 leading-8">
                   Deze toepassingen tonen hoe Light Cubes permanent kunnen
-                  worden geïntegreerd in een buitenomgeving. De Cubes zijn ook
-                  afzonderlijk verkrijgbaar voor aankoop.
+                  worden geïntegreerd in een buitenomgeving. Ook verkrijgbaar
+                  voor aankoop en permanente plaatsing in tuin, terras of
+                  buitenruimte.
                 </p>
               </div>
 
-              {/* HOOFDBEELD TUIN */}
               <button
                 type="button"
                 onClick={() => openImage(12)}
@@ -736,7 +716,6 @@ export default function LightCubesInspiratiePage() {
                 <div className="absolute bottom-4 right-4 w-9 h-9 border-b-2 border-r-2 border-primary" />
               </button>
 
-              {/* TWEE AANVULLENDE TUINBEELDEN */}
               <div className="mt-8 grid gap-8 md:grid-cols-2">
                 <button
                   type="button"
@@ -859,7 +838,6 @@ export default function LightCubesInspiratiePage() {
           aria-modal="true"
           aria-label="DAIVEXO Light Cubes fotogalerij"
         >
-          {/* SLUITEN */}
           <button
             type="button"
             onClick={(event) => {
@@ -872,7 +850,6 @@ export default function LightCubesInspiratiePage() {
             <X className="h-8 w-8" strokeWidth={1.8} />
           </button>
 
-          {/* VORIGE */}
           <button
             type="button"
             onClick={(event) => {
@@ -885,7 +862,6 @@ export default function LightCubesInspiratiePage() {
             <ChevronLeft className="h-8 w-8 md:h-10 md:w-10" />
           </button>
 
-          {/* VOLGENDE */}
           <button
             type="button"
             onClick={(event) => {
@@ -898,7 +874,6 @@ export default function LightCubesInspiratiePage() {
             <ChevronRight className="h-8 w-8 md:h-10 md:w-10" />
           </button>
 
-          {/* AFBEELDING */}
           <div
             className="relative flex h-full w-full items-center justify-center px-14 md:px-24"
             onClick={(event) => event.stopPropagation()}
@@ -910,7 +885,6 @@ export default function LightCubesInspiratiePage() {
             />
           </div>
 
-          {/* TELLER */}
           <div
             className="absolute bottom-5 left-1/2 z-30 -translate-x-1/2 border border-primary/60 bg-black/85 px-5 py-2 text-sm md:text-base font-semibold tracking-[0.18em] text-primary"
             onClick={(event) => event.stopPropagation()}
