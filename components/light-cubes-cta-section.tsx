@@ -585,12 +585,16 @@ Aanvraag verstuurd via www.daivexo.com
                         </option>
 
                         <option value="1 dag">
-                          1 dag — €45 per Cube
-                        </option>
+  1 dag — €59,95 per Cube
+</option>
 
-                        <option value="Weekend">
-                          Weekend — €75 per Cube
-                        </option>
+<option value="Meerdere dagen">
+  Meerdere dagen — vanaf €59,95 per Cube
+</option>
+
+<option value="Weekend">
+  Weekend — €79,95 per Cube
+</option>
 
                         {formType === "quote" && (
                           <>
