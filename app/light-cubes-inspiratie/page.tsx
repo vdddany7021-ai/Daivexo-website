@@ -678,7 +678,7 @@ export default function LightCubesInspiratiePage() {
             {/* ===================================================== */}
             <section>
               <div className="mb-10">
-                <span className="text-primary text-xs tracking-[0.3em] uppercase">
+                <span className="text-primary text-sm md:text-base tracking-[0.3em] uppercase font-semibold">
                   Tuin &amp; Outdoor
                 </span>
 
