@@ -65,6 +65,20 @@ const galleryImages = [
     src: "/images/light-cubes-inspiratie/lightwall-groen.jpg",
     alt: "DAIVEXO Light Wall volledig groen verlicht",
   },
+
+  // TUIN & OUTDOOR
+  {
+    src: "/images/light-cubes-inspiratie/light-cubes-luxe-tuin-leie-blauw.jpg",
+    alt: "DAIVEXO Light Cubes in blauw in een luxe moderne tuin aan de Leie",
+  },
+  {
+    src: "/images/light-cubes-inspiratie/light-cubes-luxe-tuin-geel.jpg",
+    alt: "DAIVEXO Light Cubes in geel in een exclusieve moderne tuin",
+  },
+  {
+    src: "/images/light-cubes-inspiratie/light-cubes-tuin-standbeelden-warm-wit.jpg",
+    alt: "DAIVEXO Light Cubes warm wit naast standbeelden in een luxe tuin",
+  },
 ]
 
 export default function LightCubesInspiratiePage() {
@@ -164,15 +178,16 @@ export default function LightCubesInspiratiePage() {
               </div>
 
               <p className="mt-10 mx-auto max-w-3xl text-lg md:text-xl leading-8 text-stone-300">
-                Van stijlvolle statafels en complete bars tot DJ-booths en
-                indrukwekkende verlichte wanden. Met DAIVEXO Light Cubes
-                kunnen uiteenlopende eventopstellingen worden gecreëerd.
+                Van stijlvolle statafels en complete bars tot DJ-booths,
+                indrukwekkende verlichte wanden en exclusieve toepassingen in
+                tuin en buitenruimte. Met DAIVEXO Light Cubes creëer je sfeer,
+                structuur en licht op maat van iedere setting.
               </p>
 
               <p className="mt-5 mx-auto max-w-3xl text-base md:text-lg leading-8 text-stone-500">
-                Ontdek verschillende mogelijke opstellingen,
-                kleurcombinaties en toepassingen voor feesten,
-                bedrijfsevents, horeca en evenementen.
+                Ontdek verschillende opstellingen, kleurcombinaties en
+                toepassingen voor feesten, bedrijfsevents, horeca én
+                permanente plaatsing in een moderne tuin of buitenomgeving.
               </p>
             </div>
           </div>
@@ -651,6 +666,152 @@ export default function LightCubesInspiratiePage() {
               </div>
             </section>
 
+            {/* SCHEIDING */}
+            <div className="my-24 flex items-center justify-center gap-4">
+              <div className="h-px w-24 bg-primary/40" />
+              <div className="h-2 w-2 rotate-45 bg-primary" />
+              <div className="h-px w-24 bg-primary/40" />
+            </div>
+
+            {/* ===================================================== */}
+            {/* TUIN & OUTDOOR */}
+            {/* ===================================================== */}
+            <section>
+              <div className="mb-10">
+                <span className="text-primary text-sm md:text-base tracking-[0.3em] uppercase font-semibold">
+                  Tuin &amp; Outdoor
+                </span>
+
+                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mt-4">
+                  Light Cubes voor buiten
+                </h2>
+
+                <p className="mt-5 max-w-3xl text-base md:text-lg text-stone-400 leading-8">
+                  DAIVEXO Light Cubes zijn niet alleen geschikt voor events.
+                  Ook in een exclusieve tuin, langs een terras, bij een
+                  wandelpad of aan het water vormen ze een opvallend
+                  lichtobject met een moderne architecturale uitstraling.
+                </p>
+
+                <p className="mt-4 max-w-3xl text-base md:text-lg text-stone-500 leading-8">
+                  Deze toepassingen tonen hoe Light Cubes permanent kunnen
+                  worden geïntegreerd in een buitenomgeving. De Cubes zijn ook
+                  afzonderlijk verkrijgbaar voor aankoop.
+                </p>
+              </div>
+
+              {/* HOOFDBEELD TUIN */}
+              <button
+                type="button"
+                onClick={() => openImage(12)}
+                className="group relative block w-full overflow-hidden border border-primary/60 bg-black text-left cursor-zoom-in"
+              >
+                <img
+                  src={galleryImages[12].src}
+                  alt={galleryImages[12].alt}
+                  className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.015]"
+                />
+
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/65 to-transparent px-6 pb-7 pt-28 md:px-10 md:pb-10 md:pt-40">
+                  <span className="text-primary text-xs tracking-[0.3em] uppercase">
+                    Tuin &amp; Outdoor
+                  </span>
+
+                  <h3 className="font-serif text-2xl md:text-4xl mt-2">
+                    Luxe tuin aan het water
+                  </h3>
+
+                  <p className="mt-3 max-w-2xl text-sm md:text-base text-stone-300 leading-7">
+                    Blauwe Light Cubes creëren een krachtig contrast met de
+                    warme tuinverlichting en geven een exclusieve buitenruimte
+                    een moderne, luxueuze uitstraling.
+                  </p>
+                </div>
+
+                <div className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center border border-primary bg-black/75 text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                  <ZoomIn className="h-5 w-5" />
+                </div>
+
+                <div className="absolute top-4 left-4 w-9 h-9 border-t-2 border-l-2 border-primary" />
+                <div className="absolute bottom-4 right-4 w-9 h-9 border-b-2 border-r-2 border-primary" />
+              </button>
+
+              {/* TWEE AANVULLENDE TUINBEELDEN */}
+              <div className="mt-8 grid gap-8 md:grid-cols-2">
+                <button
+                  type="button"
+                  onClick={() => openImage(13)}
+                  className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
+                >
+                  <img
+                    src={galleryImages[13].src}
+                    alt={galleryImages[13].alt}
+                    className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent px-6 pb-6 pt-20">
+                    <span className="text-primary text-xs tracking-[0.25em] uppercase">
+                      Tuin &amp; Outdoor
+                    </span>
+
+                    <h3 className="font-serif text-2xl md:text-3xl mt-2">
+                      Exclusief geel
+                    </h3>
+
+                    <p className="mt-3 text-sm md:text-base text-stone-300 leading-7">
+                      Een warme, uitgesproken kleur voor moderne tuinen,
+                      terrassen en architecturale buitenruimtes.
+                    </p>
+                  </div>
+
+                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                    <ZoomIn className="h-5 w-5" />
+                  </div>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => openImage(14)}
+                  className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
+                >
+                  <img
+                    src={galleryImages[14].src}
+                    alt={galleryImages[14].alt}
+                    className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent px-6 pb-6 pt-20">
+                    <span className="text-primary text-xs tracking-[0.25em] uppercase">
+                      Tuin &amp; Outdoor
+                    </span>
+
+                    <h3 className="font-serif text-2xl md:text-3xl mt-2">
+                      Warm wit &amp; kunst
+                    </h3>
+
+                    <p className="mt-3 text-sm md:text-base text-stone-300 leading-7">
+                      Warm wit licht laat kunstobjecten, sculpturen en
+                      bijzondere tuinelementen extra tot hun recht komen.
+                    </p>
+                  </div>
+
+                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                    <ZoomIn className="h-5 w-5" />
+                  </div>
+                </button>
+              </div>
+
+              <div className="mt-10 border border-primary/35 bg-primary/[0.03] px-6 py-7 md:px-8">
+                <p className="text-center text-base md:text-lg text-stone-300 leading-8">
+                  <span className="font-semibold text-primary">
+                    Ook te koop voor permanente plaatsing.
+                  </span>{" "}
+                  Vraag naar de mogelijkheden voor jouw tuin, terras,
+                  buitenruimte of project.
+                </p>
+              </div>
+            </section>
+
             {/* SLOT CTA */}
             <div className="mt-28 border border-primary/50 bg-black px-6 py-14 md:px-12 md:py-16 text-center">
               <span className="text-primary text-xs tracking-[0.3em] uppercase">
@@ -662,17 +823,17 @@ export default function LightCubesInspiratiePage() {
               </h2>
 
               <p className="mt-6 mx-auto max-w-3xl text-base md:text-lg text-stone-400 leading-8">
-                Van enkele Light Cubes tot een volledige bar, DJ-booth of
-                indrukwekkende lichtwand. De opstelling kan worden
-                afgestemd op het type evenement, de beschikbare ruimte en
-                de gewenste kleurbeleving.
+                Van enkele Light Cubes tot een volledige bar, DJ-booth,
+                indrukwekkende lichtwand of permanente toepassing in tuin en
+                buitenruimte. Huur en aankoop kunnen worden afgestemd op jouw
+                project, beschikbare ruimte en gewenste kleurbeleving.
               </p>
 
               <a
                 href="/#contact"
                 className="mt-9 inline-flex items-center justify-center border-2 border-primary bg-primary px-10 py-5 text-base md:text-lg font-bold uppercase tracking-[0.16em] text-black transition-all duration-300 hover:bg-black hover:text-primary"
               >
-                Vraag uw opstelling aan
+                Vraag uw Light Cubes aan
               </a>
             </div>
 
