@@ -38,6 +38,7 @@ const includedItems = [
   "3-voudige waterbestendige stekkerdoos",
   "Bediening via afstandsbediening én app",
   "LED-verlichting vooraf gemonteerd",
+  "Gebruiksklaar geleverd",
 ]
 
 export function LightCubesSection() {
@@ -195,9 +196,9 @@ export function LightCubesSection() {
                 DAIVEXO Light Cube.
               </p>
 
-              <p className="mt-3 text-sm md:text-base text-stone-300">
-                Alle vermelde prijzen zijn inclusief 21% btw.
-              </p>
+             <p className="mt-4 text-base md:text-lg font-semibold text-primary">
+  Alle vermelde prijzen zijn inclusief 21% btw.
+</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 md:items-stretch">
