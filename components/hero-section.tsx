@@ -181,7 +181,7 @@ export function HeroSection() {
             className="group relative min-h-[360px] overflow-hidden rounded-[26px] border border-white/10 bg-zinc-950"
           >
             <Image
-              src="/images/light-cubes-inspiratie/dj-blauw.jpg"
+              src="/images/light-cubes-inspiratie/dj-geel.jpg"
               alt="DAIVEXO verlichte DJ Booth"
               fill
               className="object-cover transition duration-700 group-hover:scale-[1.04]"
@@ -207,7 +207,7 @@ export function HeroSection() {
             className="group relative min-h-[360px] overflow-hidden rounded-[26px] border border-white/10 bg-zinc-950"
           >
             <Image
-              src="/images/light-cubes-inspiratie/lightwall-multicolor.jpg"
+              src="/images/light-cubes-inspiratie/lightwall-rode-piramide.png"
               alt="Multicolor DAIVEXO Light Wall"
               fill
               className="object-cover transition duration-700 group-hover:scale-[1.04]"
