@@ -9,17 +9,16 @@ export function HeroSection() {
       id="home"
       className="relative overflow-hidden bg-black text-white"
     >
-      {/* Subtiele luxe achtergrond */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(184,134,55,0.14),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(37,99,235,0.10),transparent_30%)]" />
 
       <div className="relative mx-auto max-w-7xl px-5 pb-20 pt-28 sm:px-8 lg:px-10 lg:pt-32">
-        
-        {/* BOVENSTE HERO */}
-        <div className="grid items-center gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
-          
-          {/* Logo */}
+
+        {/* HERO */}
+        <div className="grid items-center gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-16">
+
+          {/* DAIVEXO LOGO */}
           <div className="flex justify-center lg:justify-start">
-            <div className="relative w-full max-w-[440px]">
+            <div className="relative w-full max-w-[380px]">
               <Image
                 src="/images/hero-bg.png"
                 alt="DAIVEXO - Forever Modern. Forever Secure."
@@ -31,7 +30,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Hoofdtekst */}
+          {/* HERO TEXT */}
           <div className="text-center lg:text-left">
             <p className="mb-4 text-xs font-medium uppercase tracking-[0.38em] text-amber-400 sm:text-sm">
               Premium illuminated event furniture
@@ -70,7 +69,7 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* INTRO COLLECTIE */}
+        {/* COLLECTIE TITEL */}
         <div className="mb-8 mt-20 text-center lg:mt-28">
           <p className="text-xs uppercase tracking-[0.36em] text-amber-400">
             The DAIVEXO Collection
@@ -81,17 +80,17 @@ export function HeroSection() {
           </h2>
         </div>
 
-        {/* TWEE HOOFDBEELDEN */}
+        {/* HOOFDBEELDEN */}
         <div className="grid gap-5 lg:grid-cols-2">
-          
-          {/* Losse Light Cube */}
+
+          {/* LIGHT CUBE */}
           <a
             href="#light-cubes"
             className="group relative min-h-[430px] overflow-hidden rounded-[28px] border border-white/10 bg-zinc-950 sm:min-h-[520px]"
           >
             <Image
               src="/images/light-cube-green.jpeg"
-              alt="DAIVEXO verlichte Light Cube als LED statafel op een evenement"
+              alt="Groene DAIVEXO Light Cube als lichtgevende statafel"
               fill
               className="object-cover transition duration-700 group-hover:scale-[1.035]"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -103,9 +102,11 @@ export function HeroSection() {
               <p className="text-xs uppercase tracking-[0.3em] text-amber-300">
                 Individueel te huren
               </p>
+
               <h3 className="mt-2 text-3xl font-semibold">
                 Light Cube
               </h3>
+
               <p className="mt-2 max-w-md text-sm leading-6 text-zinc-300">
                 Een volwaardige lichtgevende statafel voor recepties,
                 feesten en events.
@@ -113,14 +114,14 @@ export function HeroSection() {
             </div>
           </a>
 
-          {/* Meerdere Cubes */}
+          {/* MEERDERE LIGHT CUBES */}
           <a
             href="#light-cubes"
             className="group relative min-h-[430px] overflow-hidden rounded-[28px] border border-white/10 bg-zinc-950 sm:min-h-[520px]"
           >
             <Image
-              src="/images/light-cubes-luxe-tuin-leie-blauw.jpg"
-              alt="Meerdere blauwe DAIVEXO LED Light Cubes op een luxe evenementlocatie"
+              src="/images/light-cubes-inspiratie/light-cubes-luxe-tuin-leie-blauw.jpg"
+              alt="Meerdere blauwe DAIVEXO Light Cubes op luxe eventlocatie"
               fill
               className="object-cover transition duration-700 group-hover:scale-[1.035]"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -132,9 +133,11 @@ export function HeroSection() {
               <p className="text-xs uppercase tracking-[0.3em] text-amber-300">
                 Combineer & creëer
               </p>
+
               <h3 className="mt-2 text-3xl font-semibold">
                 Light Cube Collection
               </h3>
+
               <p className="mt-2 max-w-md text-sm leading-6 text-zinc-300">
                 Meerdere verlichte statafels combineren voor een krachtige
                 en exclusieve eventsfeer.
@@ -145,73 +148,79 @@ export function HeroSection() {
 
         {/* BAR / DJ / WALL */}
         <div className="mt-5 grid gap-5 md:grid-cols-3">
-          
-          {/* Light Bar */}
+
+          {/* LIGHT BAR */}
           <a
             href="#light-cubes"
             className="group relative min-h-[360px] overflow-hidden rounded-[26px] border border-white/10 bg-zinc-950"
           >
             <Image
-              src="/images/bar-blauw-wit.jpg"
-              alt="DAIVEXO verlichte LED bar opgebouwd met Light Cubes"
+              src="/images/light-cubes-inspiratie/bar-blauw-wit.jpg"
+              alt="DAIVEXO verlichte Light Bar"
               fill
               className="object-cover transition duration-700 group-hover:scale-[1.04]"
               sizes="(max-width: 768px) 100vw, 33vw"
             />
+
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/5 to-transparent" />
 
             <div className="absolute bottom-0 left-0 p-6">
               <p className="text-xs uppercase tracking-[0.28em] text-amber-300">
                 Hospitality
               </p>
+
               <h3 className="mt-2 text-2xl font-semibold">
                 Light Bar
               </h3>
             </div>
           </a>
 
-          {/* DJ Booth */}
+          {/* DJ BOOTH */}
           <a
             href="#light-cubes"
             className="group relative min-h-[360px] overflow-hidden rounded-[26px] border border-white/10 bg-zinc-950"
           >
             <Image
-              src="/images/dj-rood.jpg"
-              alt="Rode DAIVEXO verlichte DJ Booth voor evenementen"
+              src="/images/light-cubes-inspiratie/dj-blauw.jpg"
+              alt="DAIVEXO verlichte DJ Booth"
               fill
               className="object-cover transition duration-700 group-hover:scale-[1.04]"
               sizes="(max-width: 768px) 100vw, 33vw"
             />
+
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/5 to-transparent" />
 
             <div className="absolute bottom-0 left-0 p-6">
               <p className="text-xs uppercase tracking-[0.28em] text-amber-300">
                 Entertainment
               </p>
+
               <h3 className="mt-2 text-2xl font-semibold">
                 DJ Booth
               </h3>
             </div>
           </a>
 
-          {/* Light Wall */}
+          {/* LIGHT WALL */}
           <a
             href="#light-cubes"
             className="group relative min-h-[360px] overflow-hidden rounded-[26px] border border-white/10 bg-zinc-950"
           >
             <Image
-              src="/images/lightwall-multicolor.png"
-              alt="Multicolor DAIVEXO LED Light Wall voor feesten en evenementen"
+              src="/images/light-cubes-inspiratie/lightwall-multicolor.jpg"
+              alt="Multicolor DAIVEXO Light Wall"
               fill
               className="object-cover transition duration-700 group-hover:scale-[1.04]"
               sizes="(max-width: 768px) 100vw, 33vw"
             />
+
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/5 to-transparent" />
 
             <div className="absolute bottom-0 left-0 p-6">
               <p className="text-xs uppercase tracking-[0.28em] text-amber-300">
-                Visual impact
+                Visual Impact
               </p>
+
               <h3 className="mt-2 text-2xl font-semibold">
                 Light Wall
               </h3>
@@ -219,7 +228,7 @@ export function HeroSection() {
           </a>
         </div>
 
-        {/* KORTE SEO / POSITIONERING */}
+        {/* SEO TEKST */}
         <div className="mx-auto mt-16 max-w-4xl border-t border-white/10 pt-10 text-center">
           <p className="text-sm leading-7 text-zinc-400 sm:text-base">
             DAIVEXO creëert premium{" "}
@@ -233,13 +242,15 @@ export function HeroSection() {
           </p>
         </div>
 
-        {/* Scroll indicator */}
+        {/* SCROLL */}
         <div className="mt-14 flex flex-col items-center gap-2">
           <span className="text-[10px] uppercase tracking-[0.32em] text-zinc-600">
             Ontdek meer
           </span>
+
           <ArrowDown className="h-4 w-4 animate-bounce text-amber-400" />
         </div>
+
       </div>
     </section>
   )
