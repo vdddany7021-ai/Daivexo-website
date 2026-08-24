@@ -97,10 +97,9 @@ export function QRLabelsSection() {
         />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-
           {/* TITEL & SEO INTRO */}
           <div className="mx-auto mb-20 max-w-6xl text-center">
-            <span className="text-sm tracking-[0.35em] text-primary uppercase md:text-base">
+            <span className="text-sm uppercase tracking-[0.35em] text-primary md:text-base">
               GEVONDEN? SCAN MIJ.
             </span>
 
@@ -153,12 +152,12 @@ export function QRLabelsSection() {
 
                   <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/20" />
 
-                  <div className="absolute top-4 right-4 flex h-11 w-11 items-center justify-center border border-primary/60 bg-black/70 text-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary/60 bg-black/70 text-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     <ZoomIn className="h-5 w-5" />
                   </div>
 
-                  <div className="absolute top-4 left-4 h-7 w-7 border-t border-l border-primary/60" />
-                  <div className="absolute right-4 bottom-4 h-7 w-7 border-r border-b border-primary/60" />
+                  <div className="absolute left-4 top-4 h-7 w-7 border-l border-t border-primary/60" />
+                  <div className="absolute bottom-4 right-4 h-7 w-7 border-b border-r border-primary/60" />
                 </div>
 
                 <div className="p-6 text-center">
@@ -166,7 +165,7 @@ export function QRLabelsSection() {
                     {visual.title}
                   </h3>
 
-                  <p className="mt-2 text-xs tracking-[0.2em] text-primary/80 uppercase">
+                  <p className="mt-2 text-xs uppercase tracking-[0.2em] text-primary/80">
                     Klik om te vergroten
                   </p>
                 </div>
@@ -184,10 +183,10 @@ export function QRLabelsSection() {
                   key={feature.title}
                   className="group relative border border-border bg-card p-8 transition-all duration-500 hover:border-primary/50"
                 >
-                  <div className="absolute top-0 left-0 h-4 w-4 border-t border-l border-primary opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                  <div className="absolute top-0 right-0 h-4 w-4 border-t border-r border-primary opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  <div className="absolute left-0 top-0 h-4 w-4 border-l border-t border-primary opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  <div className="absolute right-0 top-0 h-4 w-4 border-r border-t border-primary opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   <div className="absolute bottom-0 left-0 h-4 w-4 border-b border-l border-primary opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                  <div className="absolute right-0 bottom-0 h-4 w-4 border-r border-b border-primary opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  <div className="absolute bottom-0 right-0 h-4 w-4 border-b border-r border-primary opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
                   <Icon className="mb-6 h-14 w-14 text-primary drop-shadow-lg" />
 
@@ -226,7 +225,7 @@ export function QRLabelsSection() {
 
             <a
               href="/#contact"
-              className="inline-flex items-center justify-center gap-3 bg-primary px-10 py-5 text-sm font-semibold tracking-[0.2em] text-black uppercase transition-all duration-300 hover:brightness-110"
+              className="inline-flex items-center justify-center gap-3 bg-primary px-10 py-5 text-sm font-semibold uppercase tracking-[0.2em] text-black transition-all duration-300 hover:brightness-110"
             >
               Vraag info aan
             </a>
@@ -256,7 +255,7 @@ export function QRLabelsSection() {
           <button
             type="button"
             onClick={() => setSelectedImage(null)}
-            className="absolute top-5 right-5 z-10 flex h-12 w-12 items-center justify-center border border-primary/70 bg-black/80 text-primary transition-colors duration-300 hover:bg-primary hover:text-black md:top-8 md:right-8"
+            className="absolute right-5 top-5 z-10 flex h-12 w-12 items-center justify-center border border-primary/70 bg-black/80 text-primary transition-colors duration-300 hover:bg-primary hover:text-black md:right-8 md:top-8"
             aria-label="Afbeelding sluiten"
           >
             <X className="h-6 w-6" />
