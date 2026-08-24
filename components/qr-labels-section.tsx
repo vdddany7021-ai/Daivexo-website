@@ -15,44 +15,48 @@ const features = [
     icon: QrCode,
     title: "Unieke QR-code",
     description:
-      "Elk SCANMIJ-label bevat een unieke QR-code die gekoppeld wordt aan de eigenaar van het voorwerp. Een vinder hoeft enkel te scannen om onmiddellijk de juiste contactmogelijkheden te zien. Ideaal voor sleutels, boekentassen, drinkflessen, koffers, portefeuilles en andere waardevolle spullen.",
+      "Elk SCANMIJ QR-label bevat een unieke QR-code die gekoppeld wordt aan de eigenaar van het voorwerp. Een vinder scant het label en krijgt onmiddellijk de juiste contactmogelijkheden te zien. Ideaal voor brooddozen, drinkflessen, boekentassen, sleutels, koffers en andere persoonlijke spullen.",
   },
   {
     icon: Scan,
-    title: "Snel scannen",
+    title: "Scannen & terugbezorgen",
     description:
-      "De QR-code kan eenvoudig gescand worden met elke smartphone. De scanpagina opent direct in de browser, zonder moeilijke stappen. Zo kan een eerlijke vinder snel contact opnemen en het verloren voorwerp veilig terugbezorgen aan de eigenaar.",
+      "De QR-code kan eenvoudig met vrijwel iedere moderne smartphone worden gescand. De persoonlijke scanpagina opent rechtstreeks in de browser, zodat een eerlijke vinder snel contact kan opnemen en het verloren voorwerp kan terugbezorgen.",
   },
   {
     icon: Smartphone,
     title: "Geen app nodig",
     description:
-      "SCANMIJ werkt volledig zonder app, zonder account en zonder registratie voor de vinder. Alles gebeurt via de gewone browser van de smartphone. Dat maakt het systeem eenvoudig, laagdrempelig en bruikbaar voor jong en oud.",
+      "Voor het scannen van een SCANMIJ QR-sticker hoeft de vinder geen speciale app te installeren. De QR-code opent rechtstreeks via de browser van de smartphone. Snel, eenvoudig en laagdrempelig voor jong en oud.",
   },
   {
     icon: Shield,
-    title: "Veilig & betrouwbaar",
+    title: "Voor thuis, school & onderweg",
     description:
-      "SCANMIJ is ontworpen met aandacht voor eenvoud, vertrouwen en professioneel gebruik. De labels ogen stijlvol, zijn duidelijk herkenbaar en helpen verloren voorwerpen sneller terug te brengen, thuis, op school, op reis of onderweg.",
+      "SCANMIJ QR-labels helpen persoonlijke spullen herkenbaar en terugvindbaar te maken. Gebruik de stickers op schoolspullen, bagage, sleutels, elektronica en andere voorwerpen die gemakkelijk verloren of vergeten kunnen worden.",
   },
 ]
 
 const visuals = [
   {
-    title: "SCANMIJ op brooddoos",
+    title: "QR label voor brooddoos",
     image: "/images/Brooddoos met scanmij qr code.png",
+    alt: "SCANMIJ QR label en QR sticker voor een brooddoos of schoolspullen",
   },
   {
-    title: "SCANMIJ op drinkfles",
+    title: "QR sticker voor drinkfles",
     image: "/images/Drinkfles met scanmij sticker.png",
+    alt: "SCANMIJ QR sticker op drinkfles om verloren spullen terug te vinden",
   },
   {
-    title: "SCANMIJ op laptop",
+    title: "QR label voor laptop",
     image: "/images/Laptop met scanmij sticker.png",
+    alt: "SCANMIJ QR code label op laptop voor verloren voorwerpen",
   },
   {
     title: "SCANMIJ QR-code",
     image: "/images/Luxe moderne qr code afbeelding.png",
+    alt: "SCANMIJ slimme QR code sticker en QR label van DAIVEXO",
   },
 ]
 
@@ -60,6 +64,7 @@ export function QRLabelsSection() {
   const [selectedImage, setSelectedImage] = useState<{
     image: string
     title: string
+    alt: string
   } | null>(null)
 
   useEffect(() => {
@@ -92,14 +97,15 @@ export function QRLabelsSection() {
         />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          {/* Titel */}
+
+          {/* TITEL & SEO INTRO */}
           <div className="mx-auto mb-20 max-w-6xl text-center">
             <span className="text-sm tracking-[0.35em] text-primary uppercase md:text-base">
               GEVONDEN? SCAN MIJ.
             </span>
 
             <h2 className="mt-5 font-serif text-4xl text-white md:text-5xl lg:text-6xl">
-              QR Labels
+              Slimme QR Labels voor verloren voorwerpen
             </h2>
 
             <div className="mt-7 flex items-center justify-center gap-4">
@@ -109,20 +115,25 @@ export function QRLabelsSection() {
             </div>
 
             <p className="mx-auto mt-10 max-w-5xl text-2xl font-semibold leading-[1.4] text-white md:text-3xl lg:text-4xl">
-              Slimme QR-labels die verloren spullen sneller terugbrengen bij
-              hun eigenaar.
+              Eén scan kan een verloren voorwerp weer bij zijn eigenaar brengen.
             </p>
 
             <p className="mx-auto mt-8 max-w-5xl text-lg leading-9 text-white md:text-xl md:leading-10 lg:text-2xl">
-              Bevestig een SCANMIJ-label op bijvoorbeeld een brooddoos,
-              drinkfles, rugzak, sleutelbos, koffer of ander persoonlijk
-              voorwerp. Wordt het voorwerp gevonden? De vinder scant eenvoudig
-              de QR-code en kan rechtstreeks contact opnemen met de eigenaar —
-              zonder app.
+              Bevestig een <strong>SCANMIJ QR-label</strong> op een brooddoos,
+              drinkfles, rugzak, sleutelbos, koffer, laptop of ander persoonlijk
+              voorwerp. Wanneer iemand het terugvindt, hoeft de vinder alleen
+              de QR-code te scannen om rechtstreeks contact te kunnen opnemen
+              met de eigenaar — zonder app.
+            </p>
+
+            <p className="mx-auto mt-6 max-w-4xl text-base leading-8 text-white/75 md:text-lg">
+              Een eenvoudige oplossing voor ouders, kinderen, scholen,
+              reizigers en iedereen die waardevolle of persoonlijke spullen
+              sneller wil terugvinden.
             </p>
           </div>
 
-          {/* Klikbare SCANMIJ-afbeeldingen */}
+          {/* AFBEELDINGEN */}
           <div className="mb-24 grid grid-cols-1 gap-8 md:grid-cols-2">
             {visuals.map((visual) => (
               <button
@@ -135,7 +146,8 @@ export function QRLabelsSection() {
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
                     src={visual.image}
-                    alt={visual.title}
+                    alt={visual.alt}
+                    loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
@@ -162,7 +174,7 @@ export function QRLabelsSection() {
             ))}
           </div>
 
-          {/* Eigenschappen */}
+          {/* VOORDELEN */}
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {features.map((feature) => {
               const Icon = feature.icon
@@ -191,8 +203,27 @@ export function QRLabelsSection() {
             })}
           </div>
 
-          {/* Contactknop */}
+          {/* EXTRA SEO / DOELGROEPEN */}
+          <div className="mx-auto mt-20 max-w-5xl border-y border-primary/20 py-12 text-center">
+            <h3 className="font-serif text-2xl text-white md:text-3xl">
+              QR stickers voor school, thuis, reizen en dagelijks gebruik
+            </h3>
+
+            <p className="mx-auto mt-6 max-w-4xl text-base leading-8 text-white/75 md:text-lg">
+              SCANMIJ QR stickers zijn geschikt voor onder andere
+              schoolspullen, brooddozen, drinkflessen, rugzakken, koffers,
+              sleutels, laptops en andere persoonlijke voorwerpen. Een
+              herkenbaar QR-label maakt het voor een vinder eenvoudig om
+              actie te ondernemen wanneer iets verloren raakt.
+            </p>
+          </div>
+
+          {/* CTA */}
           <div className="mt-16 text-center">
+            <p className="mb-6 text-lg text-white/80">
+              Interesse in SCANMIJ QR-labels voor uzelf, uw gezin of uw school?
+            </p>
+
             <a
               href="/#contact"
               className="inline-flex items-center justify-center gap-3 bg-primary px-10 py-5 text-sm font-semibold tracking-[0.2em] text-black uppercase transition-all duration-300 hover:brightness-110"
@@ -201,7 +232,7 @@ export function QRLabelsSection() {
             </a>
           </div>
 
-          {/* Brede projectscheiding */}
+          {/* PROJECTSCHEIDING */}
           <div
             aria-hidden="true"
             className="mx-auto mt-28 flex w-full max-w-5xl items-center justify-center gap-5"
@@ -213,7 +244,7 @@ export function QRLabelsSection() {
         </div>
       </section>
 
-      {/* Lightbox */}
+      {/* LIGHTBOX */}
       {selectedImage && (
         <div
           className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 p-4 md:p-8"
@@ -237,7 +268,7 @@ export function QRLabelsSection() {
           >
             <img
               src={selectedImage.image}
-              alt={selectedImage.title}
+              alt={selectedImage.alt}
               className="max-h-[82vh] max-w-[95vw] border border-primary/40 object-contain shadow-[0_0_40px_rgba(212,175,55,0.18)]"
             />
 
