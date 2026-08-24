@@ -97,7 +97,6 @@ export function QRLabelsSection() {
         />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          {/* TITEL & SEO INTRO */}
           <div className="mx-auto mb-20 max-w-6xl text-center">
             <span className="text-sm uppercase tracking-[0.35em] text-primary md:text-base">
               GEVONDEN? SCAN MIJ.
@@ -132,7 +131,6 @@ export function QRLabelsSection() {
             </p>
           </div>
 
-          {/* AFBEELDINGEN */}
           <div className="mb-24 grid grid-cols-1 gap-8 md:grid-cols-2">
             {visuals.map((visual) => (
               <button
@@ -173,7 +171,6 @@ export function QRLabelsSection() {
             ))}
           </div>
 
-          {/* VOORDELEN */}
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {features.map((feature) => {
               const Icon = feature.icon
@@ -202,7 +199,6 @@ export function QRLabelsSection() {
             })}
           </div>
 
-          {/* EXTRA SEO / DOELGROEPEN */}
           <div className="mx-auto mt-20 max-w-5xl border-y border-primary/20 py-12 text-center">
             <h3 className="font-serif text-2xl text-white md:text-3xl">
               QR stickers voor school, thuis, reizen en dagelijks gebruik
@@ -217,7 +213,6 @@ export function QRLabelsSection() {
             </p>
           </div>
 
-          {/* CTA */}
           <div className="mt-16 text-center">
             <p className="mb-6 text-lg text-white/80">
               Interesse in SCANMIJ QR-labels voor uzelf, uw gezin of uw school?
@@ -231,7 +226,6 @@ export function QRLabelsSection() {
             </a>
           </div>
 
-          {/* PROJECTSCHEIDING */}
           <div
             aria-hidden="true"
             className="mx-auto mt-28 flex w-full max-w-5xl items-center justify-center gap-5"
@@ -243,7 +237,6 @@ export function QRLabelsSection() {
         </div>
       </section>
 
-      {/* LIGHTBOX */}
       {selectedImage && (
         <div
           className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 p-4 md:p-8"
