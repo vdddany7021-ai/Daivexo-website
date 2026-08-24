@@ -19,14 +19,16 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.daivexo.com"),
 
   title: {
-    default: "DAIVEXO | Verlichte statafels, Light Cubes & eventmeubilair",
+    default:
+      "DAIVEXO | Verlichte statafels, Light Cubes & slimme QR labels",
     template: "%s | DAIVEXO",
   },
 
   description:
-    "DAIVEXO creëert en verhuurt premium verlichte statafels, LED Light Cubes, lichtgevende bars, DJ Booths en Light Walls voor feesten, bedrijfsevents, recepties en evenementen in België.",
+    "DAIVEXO creëert premium verlichte statafels, LED Light Cubes, lichtgevende bars, DJ Booths en Light Walls voor events, én slimme QR labels en QR stickers voor verloren voorwerpen.",
 
   keywords: [
+    // LIGHT CUBES / EVENTMEUBILAIR
     "verlichte statafel",
     "verlichte statafels",
     "lichtgevende statafel",
@@ -57,6 +59,34 @@ export const metadata: Metadata = {
     "eventmeubilair huren België",
     "statafel huren België",
     "event verlichting",
+
+    // QR LABELS / SCANMIJ
+    "QR label",
+    "QR labels",
+    "QR sticker",
+    "QR stickers",
+    "QR code sticker",
+    "QR code label",
+    "slim QR label",
+    "slimme QR labels",
+    "QR label verloren voorwerp",
+    "QR sticker verloren voorwerp",
+    "verloren voorwerpen terugvinden",
+    "gevonden voorwerp QR",
+    "scan QR label",
+    "QR label school",
+    "QR sticker school",
+    "QR label kinderen",
+    "QR sticker kinderen",
+    "QR label brooddoos",
+    "QR label drinkfles",
+    "QR sticker schoolspullen",
+    "naamlabel QR code",
+    "Scanmij",
+    "Scan mij QR",
+    "gevonden scan mij",
+
+    // MERK
     "DAIVEXO",
   ],
 
@@ -69,22 +99,24 @@ export const metadata: Metadata = {
     locale: "nl_BE",
     url: "https://www.daivexo.com",
     siteName: "DAIVEXO",
-    title: "DAIVEXO | Verlichte statafels, Light Cubes & eventmeubilair",
+    title:
+      "DAIVEXO | Verlichte statafels, Light Cubes & slimme QR labels",
     description:
-      "Premium verlichte statafels, LED Light Cubes, Light Bars, DJ Booths en Light Walls voor feesten en evenementen.",
+      "Premium verlichte eventmeubels en slimme QR-oplossingen voor verloren voorwerpen.",
     images: [
       {
         url: "/images/hero-bg.png",
-        alt: "DAIVEXO - premium verlichte eventmeubels en Light Cubes",
+        alt: "DAIVEXO - premium eventmeubilair en slimme QR oplossingen",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "DAIVEXO | Verlichte statafels & Light Cubes",
+    title:
+      "DAIVEXO | Light Cubes, verlichte statafels & slimme QR labels",
     description:
-      "Premium verlichte statafels en eventmeubilair voor feesten, bedrijfsevents en evenementen.",
+      "Premium eventmeubilair en slimme QR labels voor verloren voorwerpen.",
     images: ["/images/hero-bg.png"],
   },
 
@@ -100,7 +132,7 @@ export const metadata: Metadata = {
     },
   },
 
-  category: "Eventmeubilair",
+  category: "Eventmeubilair en slimme QR-oplossingen",
 
   icons: {
     icon: [
