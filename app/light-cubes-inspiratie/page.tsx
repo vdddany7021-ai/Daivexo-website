@@ -164,8 +164,10 @@ export default function LightCubesInspiratiePage() {
               </span>
 
               <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl mt-5">
-                Ontdek de mogelijkheden
-              </h1>
+               
+  LED Statafels & Staantafels voor Feesten en Events
+</h1>
+              
 
               <p className="mt-6 font-serif text-2xl md:text-3xl text-primary/90 italic">
                 Eén Cube. Eindeloos veel toepassingen.
