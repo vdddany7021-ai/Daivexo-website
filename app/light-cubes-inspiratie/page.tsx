@@ -189,9 +189,11 @@ en kleuren zijn mogelijk voor zowel binnen- als buitenevenementen.
               </p>
 
               <p className="mt-5 mx-auto max-w-3xl text-base md:text-lg leading-8 text-stone-500">
-                Ontdek verschillende opstellingen, kleurcombinaties en
-                toepassingen voor feesten, bedrijfsevents, horeca én
-                permanente plaatsing in een moderne tuin of buitenomgeving.
+                Ontdek de verschillende opstellingen, kleuren en toepassingen van
+DAIVEXO Light Cubes voor feesten, bedrijfsevents, horeca en andere
+evenementen. Onze LED statafels, staantafels en verlicht eventmeubilair
+zijn beschikbaar voor verhuur vanuit Deinze en kunnen worden ingezet
+op evenementen in Oost-Vlaanderen en daarbuiten.
               </p>
             </div>
           </div>
