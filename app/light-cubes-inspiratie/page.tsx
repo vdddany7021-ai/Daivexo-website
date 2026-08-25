@@ -10,75 +10,77 @@ import {
 } from "lucide-react"
 
 const galleryImages = [
+
   // STATAFELS
   {
     src: "/images/light-cube-yellow.jpeg",
-    alt: "DAIVEXO Light Cube statafel geel",
+    alt: "Gele DAIVEXO LED statafel en verlichte staantafel voor feesten en evenementen",
   },
   {
     src: "/images/light-cube-blue.jpeg",
-    alt: "DAIVEXO Light Cube statafel blauw",
+    alt: "Blauwe DAIVEXO LED statafel en lichtgevende staantafel voor evenementen",
   },
   {
     src: "/images/light-cube-warm-white.jpeg",
-    alt: "DAIVEXO Light Cube statafel warm wit",
+    alt: "Warm witte DAIVEXO LED statafel als verlicht eventmeubilair",
   },
 
   // BARS
   {
     src: "/images/light-cubes-inspiratie/bar-warmwit-blauw.jpg",
-    alt: "DAIVEXO Light Cube Bar warm wit met diepblauwe achterwand",
+    alt: "DAIVEXO verlichte eventbar met warm witte Light Cubes en blauwe lichtwand",
   },
   {
     src: "/images/light-cubes-inspiratie/bar-blauw-wit.jpg",
-    alt: "DAIVEXO Light Cube Bar blauw met witte achterwand",
+    alt: "Blauwe DAIVEXO Light Cube bar met witte verlichte achterwand voor evenementen",
   },
   {
     src: "/images/light-cubes-inspiratie/bar-wit-rood.jpg",
-    alt: "DAIVEXO Light Cube Bar wit met rode achterwand",
+    alt: "DAIVEXO verlichte Light Cube eventbar met witte bar en rode lichtwand",
   },
 
   // DJ BOOTHS
   {
     src: "/images/light-cubes-inspiratie/dj-warmwit.jpg",
-    alt: "DAIVEXO Light Cube DJ Booth warm wit",
+    alt: "Warm witte DAIVEXO Light Cube DJ Booth voor feesten en evenementen",
   },
   {
     src: "/images/light-cubes-inspiratie/dj-blauw.jpg",
-    alt: "DAIVEXO Light Cube DJ Booth blauw",
+    alt: "Blauwe verlichte DAIVEXO Light Cube DJ Booth voor evenementen",
   },
   {
     src: "/images/light-cubes-inspiratie/dj-geel.jpg",
-    alt: "DAIVEXO Light Cube DJ Booth geel",
+    alt: "Geel verlichte DAIVEXO Light Cube DJ Booth voor feesten en events",
   },
 
   // LIGHT WALLS
   {
     src: "/images/light-cubes-inspiratie/lightwall-multicolor.jpg",
-    alt: "DAIVEXO Light Wall in verschillende RGBW kleuren",
+    alt: "DAIVEXO Light Wall opgebouwd uit Light Cubes met verschillende RGBW kleuren",
   },
   {
     src: "/images/light-cubes-inspiratie/lightwall-blauw.jpg",
-    alt: "DAIVEXO Light Wall volledig blauw verlicht",
+    alt: "Blauw verlichte DAIVEXO Light Wall voor feesten en evenementen",
   },
   {
     src: "/images/light-cubes-inspiratie/lightwall-groen.jpg",
-    alt: "DAIVEXO Light Wall volledig groen verlicht",
+    alt: "Groen verlichte DAIVEXO Light Wall als decoratie voor evenementen",
   },
 
   // TUIN & OUTDOOR
   {
     src: "/images/light-cubes-inspiratie/light-cubes-luxe-tuin-leie-blauw.jpg",
-    alt: "DAIVEXO Light Cubes in blauw in een luxe moderne tuin aan de Leie",
+    alt: "Blauwe DAIVEXO LED statafels en Light Cubes in moderne tuin aan de Leie",
   },
   {
     src: "/images/light-cubes-inspiratie/light-cubes-luxe-tuin-geel.jpg",
-    alt: "DAIVEXO Light Cubes in geel in een exclusieve moderne tuin",
+    alt: "Gele DAIVEXO LED statafels en Light Cubes voor een exclusief buitenevenement",
   },
   {
     src: "/images/light-cubes-inspiratie/light-cubes-tuin-standbeelden-warm-wit.jpg",
-    alt: "DAIVEXO Light Cubes warm wit naast standbeelden in een luxe tuin",
+    alt: "Warm witte DAIVEXO Light Cubes als verlicht eventmeubilair in luxe tuin",
   },
+
 ]
 
 export default function LightCubesInspiratiePage() {
