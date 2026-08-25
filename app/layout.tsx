@@ -14,8 +14,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'DAIVEXO | Premium QR Labels & Art',
-  description: 'DAIVEXO - Luxury QR labels and exclusive art gallery. Found it? Scan.',
+  title: 'LED Statafels & Staantafels Huren | Light Cubes | DAIVEXO',
+  description: 'Huur unieke LED statafels en lichtgevende staantafels van DAIVEXO voor feesten en evenementen. Light Cubes, verlichte bars, DJ Booths en Light Walls. Ontdek ook SCANMIJ QR-labels voor verloren voorwerpen.',
   generator: 'v0.app',
   icons: {
     icon: [
