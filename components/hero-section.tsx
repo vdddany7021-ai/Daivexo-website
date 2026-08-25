@@ -191,13 +191,11 @@ export function HeroSection() {
 
             {/* RED LIGHT WALL */}
             <article className="group relative min-h-[330px] overflow-hidden rounded-[26px] border border-white/15 bg-neutral-950">
-              <Image
-                src="/images/light-cubes-inspiratie/lightwall-rode-piramide.png"
-                alt="Rode DAIVEXO Light Wall in piramidevorm opgebouwd uit verlichte Light Cubes"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
+            <img
+  src="/images/light-cubes-inspiratie/lightwall-rode-piramide.png"
+  alt="Rode DAIVEXO Light Wall in piramidevorm opgebouwd uit verlichte Light Cubes"
+  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+/>
 
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/5 to-transparent" />
 
