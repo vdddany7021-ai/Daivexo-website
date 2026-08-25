@@ -102,7 +102,7 @@ export default function QRLabelsPage() {
               <div className="h-px w-16 bg-primary" />
             </div>
 
-            <p <p className="text-muted-foreground mt-8 max-w-3xl mx-auto text-lg leading-relaxed">
+            <p className="text-muted-foreground mt-8 max-w-3xl mx-auto text-lg leading-relaxed">
   SCANMIJ QR stickers en QR labels helpen verloren voorwerpen snel terug bij de eigenaar te brengen. Ideaal voor brooddozen, drinkflessen, boekentassen, sleutels, koffers, schoolspullen en andere persoonlijke bezittingen. De vinder scant eenvoudig de QR-code en kan rechtstreeks contact opnemen met de eigenaar.
             </p>
           </div>
