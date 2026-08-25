@@ -180,10 +180,12 @@ export default function LightCubesInspiratiePage() {
               </div>
 
               <p className="mt-10 mx-auto max-w-3xl text-lg md:text-xl leading-8 text-stone-300">
-                Van stijlvolle statafels en complete bars tot DJ-booths,
-                indrukwekkende verlichte wanden en exclusieve toepassingen in
-                tuin en buitenruimte. Met DAIVEXO Light Cubes creëer je sfeer,
-                structuur en licht op maat van iedere setting.
+               Wil je een unieke LED statafel of staantafel huren voor een feest,
+receptie, bedrijfsevent of ander evenement? DAIVEXO Light Cubes
+combineren verlichte statafels en lichtgevend eventmeubilair met
+een exclusieve uitstraling. Van één LED statafel tot complete bars,
+DJ-booths en indrukwekkende Light Walls: verschillende opstellingen
+en kleuren zijn mogelijk voor zowel binnen- als buitenevenementen.
               </p>
 
               <p className="mt-5 mx-auto max-w-3xl text-base md:text-lg leading-8 text-stone-500">
