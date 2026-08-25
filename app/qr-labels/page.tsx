@@ -39,15 +39,15 @@ export const metadata: Metadata = {
 }
 const visuals = [
   {
-    title: "SCANMIJ QR Sticker",
+    title: "SCANMIJ QR Sticker voor Verloren Voorwerpen",
     image: "https://www.daivexo.com/images/scanmij-sticker.jpeg",
   },
   {
-    title: "SCANMIJ Flyer",
+    title: "SCANMIJ QR Labels en QR Stickers voor Schoolspullen",
     image: "https://www.daivexo.com/images/scanmij-flyer.jpeg",
   },
   {
-    title: "SCANMIJ in gebruik",
+    title: "SCANMIJ QR Sticker op Persoonlijke Voorwerpen",
     image: "https://www.daivexo.com/images/scanmij-in-use.jpeg",
   },
 ]
