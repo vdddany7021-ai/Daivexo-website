@@ -6,11 +6,37 @@ import { QrCode, Shield, Scan, Smartphone } from "lucide-react"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "SCANMIJ QR Labels | DAIVEXO",
+  title: "QR Stickers & QR Labels voor Verloren Voorwerpen | SCANMIJ",
   description:
-    "SCANMIJ QR-labels helpen verloren voorwerpen snel terug bij de eigenaar te brengen. Geen app, geen tracking, direct contact.",
+    "SCANMIJ QR stickers en QR labels helpen verloren spullen snel terug te vinden. Voor brooddozen, drinkflessen, boekentassen, sleutels, koffers, schoolspullen en persoonlijke voorwerpen.",
+  keywords: [
+    "QR sticker",
+    "QR stickers",
+    "QR label",
+    "QR labels",
+    "QR code sticker",
+    "QR code stickers",
+    "QR sticker verloren voorwerpen",
+    "QR label verloren voorwerpen",
+    "stickers verloren voorwerpen",
+    "naamlabel QR code",
+    "QR sticker kinderen",
+    "QR stickers school",
+    "QR label brooddoos",
+    "QR label drinkfles",
+    "QR sticker boekentas",
+    "QR sticker koffer",
+    "verloren spullen terugvinden",
+    "SCANMIJ",
+    "DAIVEXO",
+  ],
+  openGraph: {
+    title: "SCANMIJ QR Stickers & QR Labels | DAIVEXO",
+    description:
+      "Slimme QR stickers voor verloren voorwerpen. Scan de QR-code en neem eenvoudig contact op met de eigenaar.",
+    type: "website",
+  },
 }
-
 const visuals = [
   {
     title: "SCANMIJ QR Sticker",
