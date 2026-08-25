@@ -92,9 +92,9 @@ export default function QRLabelsPage() {
               SCANMIJ by DAIVEXO
             </span>
 
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl mt-4 mb-6">
-              QR Labels
-            </h1>
+           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl mt-4 mb-6">
+  QR Stickers & QR Labels voor Verloren Voorwerpen
+</h1>
 
             <div className="flex items-center justify-center gap-4">
               <div className="h-px w-16 bg-primary" />
