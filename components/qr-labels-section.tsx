@@ -109,17 +109,15 @@ export function QRLabelsSection() {
             </div>
 
             <p className="mx-auto mt-10 max-w-5xl text-2xl font-semibold leading-[1.4] text-white md:text-3xl lg:text-4xl">
-              Slimme QR-labels die verloren spullen sneller terugbrengen bij
-              hun eigenaar.
-            </p>
+  Slimme QR-labels die verloren voorwerpen sneller terugbrengen bij hun eigenaar.
+</p>
 
-            <p className="mx-auto mt-8 max-w-5xl text-lg leading-9 text-white md:text-xl md:leading-10 lg:text-2xl">
-              Bevestig een SCANMIJ-label op bijvoorbeeld een brooddoos,
-              drinkfles, rugzak, sleutelbos, koffer of ander persoonlijk
-              voorwerp. Wordt het voorwerp gevonden? De vinder scant eenvoudig
-              de QR-code en kan rechtstreeks contact opnemen met de eigenaar —
-              zonder app.
-            </p>
+<p className="mx-auto mt-8 max-w-5xl text-lg leading-9 text-white md:text-xl md:leading-10 lg:text-2xl">
+  Bevestig een SCANMIJ QR-label op een brooddoos, drinkfles, rugzak, sleutelbos,
+  koffer, laptop of ander persoonlijk voorwerp. Wanneer iemand het voorwerp vindt,
+  volstaat één scan van de QR-code om rechtstreeks contact op te nemen met de eigenaar
+  — zonder app, zonder account en zonder ingewikkelde stappen.
+</p>
           </div>
 
           {/* Klikbare SCANMIJ-afbeeldingen */}
