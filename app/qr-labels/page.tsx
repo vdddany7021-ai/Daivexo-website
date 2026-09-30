@@ -6,9 +6,12 @@ import { QrCode, Shield, Scan, Smartphone } from "lucide-react"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "SCANMIJ QR Labels | DAIVEXO",
+  title: "QR Stickers voor Verloren Voorwerpen | SCANMIJ",
   description:
-    "SCANMIJ QR-labels helpen verloren voorwerpen snel terug bij de eigenaar te brengen. Geen app, geen tracking, direct contact.",
+    "SCANMIJ QR-stickers helpen verloren voorwerpen terug te vinden. Voor schoolspullen, bagage, sleutels en meer. Geen app of tracking nodig.",
+  alternates: {
+    canonical: "https://www.daivexo.com/qr-labels/",
+  },
 }
 
 const visuals = [
@@ -67,7 +70,7 @@ export default function QRLabelsPage() {
             </span>
 
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl mt-4 mb-6">
-              QR Labels
+              SCANMIJ QR-stickers voor verloren voorwerpen
             </h1>
 
             <div className="flex items-center justify-center gap-4">
@@ -76,13 +79,17 @@ export default function QRLabelsPage() {
               <div className="h-px w-16 bg-primary" />
             </div>
 
-            <p className="text-muted-foreground mt-8 max-w-3xl mx-auto text-lg leading-relaxed">
-              SCANMIJ QR-labels helpen verloren voorwerpen snel terug bij de
-              eigenaar te brengen. Scan de code, neem contact op en bezorg het
-              voorwerp veilig terug.
-            </p>
+           <p className="text-muted-foreground mt-8 max-w-3xl mx-auto text-lg leading-relaxed">
+  SCANMIJ QR-stickers helpen verloren voorwerpen snel terug bij de eigenaar
+  te brengen. Ideaal voor schoolspullen, boekentassen, brooddozen,
+  drinkflessen, bagage, sleutels en andere persoonlijke bezittingen.
+  Geen app of tracking nodig: scan de unieke QR-code, neem rechtstreeks
+  contact op met de eigenaar en bezorg het gevonden voorwerp eenvoudig terug.
+</p>
           </div>
-
+<h2 className="font-serif text-3xl md:text-4xl text-center mb-10">
+  Ontdek de SCANMIJ QR-stickers
+</h2>
           <div className="grid lg:grid-cols-3 gap-8 mb-20">
             {visuals.map((visual) => (
               <div
@@ -105,7 +112,9 @@ export default function QRLabelsPage() {
               </div>
             ))}
           </div>
-
+<h2 className="font-serif text-3xl md:text-4xl text-center mb-10">
+  Hoe werken SCANMIJ QR-stickers?
+</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <div
