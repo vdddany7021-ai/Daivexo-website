@@ -186,9 +186,9 @@ export default function GalleryPage() {
               Ontwikkeling en uitvoering
             </span>
 
-            <h2 className="mt-4 font-serif text-3xl leading-tight md:text-4xl">
-              Een oplossing waar geen standaardproduct voor bestond
-            </h2>
+           <h2 className="mt-4 font-serif text-3xl leading-tight md:text-4xl">
+  UV-werend gezichtsmasker op maat voor Xeroderma Pigmentosum
+</h2>
 
             <div className="mt-6 space-y-5 leading-relaxed text-muted-foreground">
               <p>
@@ -256,9 +256,9 @@ export default function GalleryPage() {
               Fotogalerij
             </span>
 
-            <h2 className="mt-4 font-serif text-3xl md:text-5xl">
-              Het ontwerp in detail
-            </h2>
+           <h2 className="mt-4 font-serif text-3xl md:text-5xl">
+  Ontwerp van het UV-werende gezichtsmasker in detail
+</h2>
 
             <p className="mx-auto mt-6 max-w-2xl leading-relaxed text-muted-foreground">
               Bekijk de verschillende onderdelen, de bevestiging en de
@@ -308,7 +308,7 @@ export default function GalleryPage() {
           </span>
 
           <h2 className="mt-4 font-serif text-3xl md:text-4xl">
-            Ontstaan uit betrokkenheid en doorzettingsvermogen
+            Van idee tot UV-werend gezichtsmasker
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl leading-relaxed text-muted-foreground">
