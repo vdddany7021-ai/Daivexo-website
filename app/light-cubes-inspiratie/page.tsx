@@ -164,7 +164,7 @@ export default function LightCubesInspiratiePage() {
               </span>
 
               <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl mt-5">
-                Ontdek de mogelijkheden
+                DAIVEXO Light Cubes – LED statafels voor events
               </h1>
 
               <p className="mt-6 font-serif text-2xl md:text-3xl text-primary/90 italic">
@@ -206,8 +206,8 @@ export default function LightCubesInspiratiePage() {
                 </span>
 
                 <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mt-4">
-                  Light Cube Statafels
-                </h2>
+  LED Light Cube Statafels
+</h2>
 
                 <p className="mt-5 max-w-3xl text-base md:text-lg text-stone-400 leading-8">
                   Gebruik individuele Light Cubes als opvallende statafels en
@@ -320,8 +320,8 @@ export default function LightCubesInspiratiePage() {
                 </span>
 
                 <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mt-4">
-                  Light Cube Bars
-                </h2>
+  LED Light Cube Bars voor Events
+</h2>
 
                 <p className="mt-5 max-w-3xl text-base md:text-lg text-stone-400 leading-8">
                   Van een compacte drankbar tot een volledige professionele
@@ -433,9 +433,9 @@ export default function LightCubesInspiratiePage() {
                   DJ
                 </span>
 
-                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mt-4">
-                  DJ Booths
-                </h2>
+               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mt-4">
+  Verlichte LED DJ Booths
+</h2>
 
                 <p className="mt-5 max-w-3xl text-base md:text-lg text-stone-400 leading-8">
                   Maak van de DJ zelf een onderdeel van de lichtbeleving.
@@ -548,9 +548,9 @@ export default function LightCubesInspiratiePage() {
                   Walls
                 </span>
 
-                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mt-4">
-                  Light Walls
-                </h2>
+               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mt-4">
+  LED Light Walls voor Events
+</h2>
 
                 <p className="mt-5 max-w-3xl text-base md:text-lg text-stone-400 leading-8">
                   Stapel meerdere Light Cubes tot een grote verlichte wand.
@@ -663,8 +663,8 @@ export default function LightCubesInspiratiePage() {
                 </span>
 
                 <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mt-4">
-                  Light Cubes voor buiten
-                </h2>
+  LED Light Cubes voor buiten
+</h2>
 
                 <p className="mt-5 max-w-3xl text-base md:text-lg text-stone-300 leading-8">
   DAIVEXO Light Cubes zijn niet alleen geschikt voor events.
@@ -797,9 +797,9 @@ export default function LightCubesInspiratiePage() {
                 Opstelling op maat
               </span>
 
-              <h2 className="mt-4 font-serif text-3xl md:text-5xl">
-                Een eigen idee in gedachten?
-              </h2>
+            <h2 className="mt-4 font-serif text-3xl md:text-5xl">
+  Een eigen Light Cube opstelling in gedachten?
+</h2>
 
               <p className="mt-6 mx-auto max-w-3xl text-base md:text-lg text-stone-400 leading-8">
                 Van enkele Light Cubes tot een volledige bar, DJ-booth,
