@@ -47,13 +47,13 @@ export function HeroSection() {
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <a
-                href="#daivexo-collection"
-                className="inline-flex items-center justify-center gap-3 rounded-full bg-primary px-8 py-4 text-sm font-semibold text-black transition-all duration-300 hover:brightness-110"
-              >
-                Bekijk onze statafels
-                <ArrowRight className="h-4 w-4" />
-              </a>
+            <a
+  href="/statafel-huren/"
+  className="inline-flex items-center justify-center gap-3 rounded-full bg-primary px-8 py-4 text-sm font-semibold text-black transition-all duration-300 hover:brightness-110"
+>
+  Statafels & staantafels huren
+  <ArrowRight className="h-4 w-4" />
+</a>
 
               <a
                 href="#contact"
