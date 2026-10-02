@@ -6,8 +6,9 @@ import { Menu, X } from "lucide-react"
 
 const navLinks = [
   { href: "/#home", label: "Home" },
+  { href: "/statafel-huren/", label: "Statafels huren" },
   { href: "/#light-cubes", label: "Light Cubes" },
-  { href: "/light-cubes-inspiratie", label: "Inspiratie" },
+  { href: "/light-cubes-inspiratie/", label: "Inspiratie" },
   { href: "/#qr-labels", label: "QR Labels" },
   { href: "/#aegis", label: "DAIVEXO AEGIS" },
   { href: "/#contact", label: "Contact" },
