@@ -13,17 +13,24 @@ export default function ContactPage() {
     message: "",
   })
 
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setIsSubmitting(true)
 
     try {
-      await fetch("/api/contact", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formState),
       })
+
+      if (!response.ok) {
+        throw new Error("Verzenden mislukt")
+      }
 
       alert(
         "Uw aanvraag werd verzonden. Wij nemen zo snel mogelijk contact met u op."
@@ -36,8 +43,12 @@ export default function ContactPage() {
         message: "",
       })
     } catch (error) {
-      alert("Er is een fout opgetreden. Probeer opnieuw.")
+      alert(
+        "Er is een fout opgetreden bij het verzenden. Probeer het opnieuw of mail naar info@daivexo.com."
+      )
       console.error(error)
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
@@ -46,55 +57,69 @@ export default function ContactPage() {
       <img
         src="/gold-bg.png"
         alt=""
-        className="fixed inset-0 w-full h-full object-cover"
+        aria-hidden="true"
+        className="fixed inset-0 h-full w-full object-cover"
       />
 
       <div className="relative z-10">
         <Header />
 
-        <section className="min-h-screen flex items-center justify-center px-6 py-32">
-          <div className="max-w-7xl mx-auto w-full">
-            <div className="text-center mb-20">
-              <span className="text-primary text-sm tracking-[0.3em] uppercase">
-                Contact
-              </span>
+        <section className="min-h-screen px-6 py-32">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-16 text-center">
+              <p className="text-sm uppercase tracking-[0.3em] text-primary">
+                Contact & offerte
+              </p>
 
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl mt-4 mb-6 text-white">
-                Meer info of pakket aanvragen
+              <h1 className="mt-4 mb-6 font-serif text-4xl text-white md:text-5xl lg:text-6xl">
+                Contacteer DAIVEXO
               </h1>
 
-              <div className="flex items-center justify-center gap-4">
+              <p className="mx-auto max-w-3xl text-lg leading-8 text-white/85">
+                Vraag vrijblijvend informatie of een offerte aan voor onze
+                LED statafels, lichtgevende staantafels, Light Cubes,
+                eventmeubilair of SCANMIJ QR-labels.
+              </p>
+
+              <div className="mt-8 flex items-center justify-center gap-4">
                 <div className="h-px w-16 bg-primary" />
                 <div className="h-2 w-2 rotate-45 bg-primary" />
                 <div className="h-px w-16 bg-primary" />
               </div>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div className="border border-primary/30 p-8 lg:p-12 bg-black/20">
-                <h3 className="font-serif text-2xl mb-8 text-white">
-                  Vraag vrijblijvend meer informatie aan
-                </h3>
+            <div className="grid items-start gap-16 lg:grid-cols-2">
+              <div className="border border-primary/30 bg-black/20 p-8 lg:p-12">
+                <h2 className="mb-8 font-serif text-2xl text-white">
+                  Vrijblijvend informatie of offerte aanvragen
+                </h2>
 
-                <p className="text-white/85 leading-8 mb-12">
-                  Wil je meer weten over SCANMIJ QR-labels of een pakket
-                  aankopen? Laat je gegevens achter en we nemen zo snel mogelijk
-                  contact met je op.
+                <p className="mb-6 leading-8 text-white/85">
+                  Wil je een statafel, staantafel of meerdere LED statafels
+                  huren voor een feest, receptie, bedrijfsevent of ander
+                  evenement? Neem contact op met DAIVEXO voor meer informatie
+                  over de mogelijkheden en beschikbaarheid.
+                </p>
+
+                <p className="mb-12 leading-8 text-white/85">
+                  Ook voor vragen over Light Cubes, verlichte bars,
+                  DJ Booths, Light Walls en SCANMIJ QR-labels kun je via
+                  het formulier rechtstreeks contact met ons opnemen.
                 </p>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 border border-primary/30">
+                  <div className="border border-primary/30 p-3">
                     <Mail className="h-5 w-5 text-primary" />
                   </div>
 
                   <div>
-                    <p className="text-sm text-white/70 uppercase tracking-widest mb-1">
-                      Email
+                    <p className="mb-1 text-sm uppercase tracking-widest text-white/70">
+                      E-mail
                     </p>
 
                     <a
                       href="mailto:info@daivexo.com"
-                      className="text-white hover:text-primary transition-colors"
+                      className="text-white transition-colors hover:text-primary"
                     >
                       info@daivexo.com
                     </a>
@@ -104,13 +129,17 @@ export default function ContactPage() {
 
               <form
                 onSubmit={handleSubmit}
-                className="space-y-6 border border-primary/30 p-8 lg:p-12 bg-black/20"
+                className="space-y-6 border border-primary/30 bg-black/20 p-8 lg:p-12"
               >
-                <div className="grid sm:grid-cols-2 gap-6">
+                <h2 className="font-serif text-2xl text-white">
+                  Stuur je aanvraag
+                </h2>
+
+                <div className="grid gap-6 sm:grid-cols-2">
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm uppercase tracking-widest text-white/70 mb-3"
+                      className="mb-3 block text-sm uppercase tracking-widest text-white/70"
                     >
                       Naam
                     </label>
@@ -118,11 +147,16 @@ export default function ContactPage() {
                     <input
                       type="text"
                       id="name"
+                      name="name"
+                      autoComplete="name"
                       value={formState.name}
                       onChange={(e) =>
-                        setFormState({ ...formState, name: e.target.value })
+                        setFormState({
+                          ...formState,
+                          name: e.target.value,
+                        })
                       }
-                      className="w-full bg-black/30 border border-primary/20 px-4 py-3 text-white placeholder:text-white/50 focus:border-primary focus:outline-none transition-colors"
+                      className="w-full border border-primary/20 bg-black/30 px-4 py-3 text-white placeholder:text-white/50 focus:border-primary focus:outline-none"
                       placeholder="Uw naam"
                       required
                     />
@@ -131,7 +165,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm uppercase tracking-widest text-white/70 mb-3"
+                      className="mb-3 block text-sm uppercase tracking-widest text-white/70"
                     >
                       E-mail
                     </label>
@@ -139,11 +173,16 @@ export default function ContactPage() {
                     <input
                       type="email"
                       id="email"
+                      name="email"
+                      autoComplete="email"
                       value={formState.email}
                       onChange={(e) =>
-                        setFormState({ ...formState, email: e.target.value })
+                        setFormState({
+                          ...formState,
+                          email: e.target.value,
+                        })
                       }
-                      className="w-full bg-black/30 border border-primary/20 px-4 py-3 text-white placeholder:text-white/50 focus:border-primary focus:outline-none transition-colors"
+                      className="w-full border border-primary/20 bg-black/30 px-4 py-3 text-white placeholder:text-white/50 focus:border-primary focus:outline-none"
                       placeholder="uw@email.com"
                       required
                     />
@@ -153,7 +192,7 @@ export default function ContactPage() {
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-sm uppercase tracking-widest text-white/70 mb-3"
+                    className="mb-3 block text-sm uppercase tracking-widest text-white/70"
                   >
                     Onderwerp
                   </label>
@@ -161,12 +200,16 @@ export default function ContactPage() {
                   <input
                     type="text"
                     id="subject"
+                    name="subject"
                     value={formState.subject}
                     onChange={(e) =>
-                      setFormState({ ...formState, subject: e.target.value })
+                      setFormState({
+                        ...formState,
+                        subject: e.target.value,
+                      })
                     }
-                    className="w-full bg-black/30 border border-primary/20 px-4 py-3 text-white placeholder:text-white/50 focus:border-primary focus:outline-none transition-colors"
-                    placeholder="Info of pakket aanvragen"
+                    className="w-full border border-primary/20 bg-black/30 px-4 py-3 text-white placeholder:text-white/50 focus:border-primary focus:outline-none"
+                    placeholder="Bijvoorbeeld: offerte LED statafels"
                     required
                   />
                 </div>
@@ -174,30 +217,35 @@ export default function ContactPage() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm uppercase tracking-widest text-white/70 mb-3"
+                    className="mb-3 block text-sm uppercase tracking-widest text-white/70"
                   >
                     Bericht
                   </label>
 
                   <textarea
                     id="message"
+                    name="message"
                     rows={6}
                     value={formState.message}
                     onChange={(e) =>
-                      setFormState({ ...formState, message: e.target.value })
+                      setFormState({
+                        ...formState,
+                        message: e.target.value,
+                      })
                     }
-                    className="w-full bg-black/30 border border-primary/20 px-4 py-3 text-white placeholder:text-white/50 focus:border-primary focus:outline-none transition-colors resize-none"
-                    placeholder="Ik wil graag meer info over..."
+                    className="w-full resize-none border border-primary/20 bg-black/30 px-4 py-3 text-white placeholder:text-white/50 focus:border-primary focus:outline-none"
+                    placeholder="Vertel ons waarvoor je informatie of een offerte wenst..."
                     required
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 tracking-widest uppercase text-sm"
+                  disabled={isSubmitting}
+                  className="inline-flex items-center gap-3 bg-primary px-8 py-4 text-sm uppercase tracking-widest text-primary-foreground transition-all duration-300 hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   <Send className="h-4 w-4" />
-                  Verstuur aanvraag
+                  {isSubmitting ? "Bezig met verzenden..." : "Verstuur aanvraag"}
                 </button>
               </form>
             </div>
