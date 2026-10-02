@@ -1,8 +1,13 @@
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Found It? Scan | DAIVEXO",
-  description: "Premium QR labels that connect the physical to the digital. Discover art. Authenticate ownership. Experience luxury.",
+  title: "SCANMIJ | QR-code scannen",
+  description:
+    "SCANMIJ helpt gevonden voorwerpen eenvoudig terug te bezorgen aan de eigenaar via een unieke QR-code.",
+  robots: {
+    index: false,
+    follow: true,
+  },
 }
 
 export default function ScanPage() {
