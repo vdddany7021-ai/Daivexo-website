@@ -791,30 +791,7 @@ export default function LightCubesInspiratiePage() {
               </div>
             </section>
 
-            {/* SLOT CTA */}
-            <div className="mt-28 border border-primary/50 bg-black px-6 py-14 md:px-12 md:py-16 text-center">
-              <span className="text-primary text-xs tracking-[0.3em] uppercase">
-                Opstelling op maat
-              </span>
-
-            <h2 className="mt-4 font-serif text-3xl md:text-5xl">
-  Een eigen Light Cube opstelling in gedachten?
-</h2>
-
-              <p className="mt-6 mx-auto max-w-3xl text-base md:text-lg text-stone-400 leading-8">
-                Van enkele Light Cubes tot een volledige bar, DJ-booth,
-                indrukwekkende lichtwand of permanente toepassing in tuin en
-                buitenruimte. Huur en aankoop kunnen worden afgestemd op jouw
-                project, beschikbare ruimte en gewenste kleurbeleving.
-              </p>
-
-              <a
-                href="/#contact"
-                className="mt-9 inline-flex items-center justify-center border-2 border-primary bg-primary px-10 py-5 text-base md:text-lg font-bold uppercase tracking-[0.16em] text-black transition-all duration-300 hover:bg-black hover:text-primary"
-              >
-                Vraag uw Light Cubes aan
-              </a>
-            </div>
+       
 
             {/* DISCLAIMER */}
             <div className="mt-14 text-center">
