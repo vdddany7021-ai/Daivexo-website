@@ -121,7 +121,7 @@ export default function StatafelHurenPage() {
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
-                href="/#contact"
+                href="/contact/"
                 className="rounded-full bg-primary px-7 py-4 text-center font-semibold text-black transition hover:brightness-110"
               >
                 Offerte voor statafels aanvragen
@@ -331,7 +331,7 @@ export default function StatafelHurenPage() {
           </p>
 
           <Link
-            href="/#contact"
+            href="/contact/"
             className="mt-8 inline-block rounded-full bg-primary px-8 py-4 font-semibold text-black transition hover:brightness-110"
           >
             Vraag een offerte aan
