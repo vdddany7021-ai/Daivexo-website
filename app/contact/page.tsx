@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { Mail, Send } from "lucide-react"
+import { Send } from "lucide-react"
 
 export default function ContactPage() {
   const [formState, setFormState] = useState({
@@ -76,9 +76,9 @@ export default function ContactPage() {
               </h1>
 
               <p className="mx-auto max-w-3xl text-lg leading-8 text-white/85">
-                Vraag vrijblijvend informatie of een offerte aan voor onze
-                LED statafels, lichtgevende staantafels, Light Cubes,
-                eventmeubilair of SCANMIJ QR-labels.
+                Vraag vrijblijvend informatie of een offerte aan voor onze LED
+                statafels, lichtgevende staantafels, Light Cubes, eventmeubilair
+                of SCANMIJ QR-labels.
               </p>
 
               <div className="mt-8 flex items-center justify-center gap-4">
@@ -89,6 +89,7 @@ export default function ContactPage() {
             </div>
 
             <div className="grid items-start gap-16 lg:grid-cols-2">
+              {/* Contactinformatie */}
               <div className="border border-primary/30 bg-black/20 p-8 lg:p-12">
                 <h2 className="mb-8 font-serif text-2xl text-white">
                   Vrijblijvend informatie of offerte aanvragen
@@ -102,59 +103,64 @@ export default function ContactPage() {
                 </p>
 
                 <p className="mb-12 leading-8 text-white/85">
-                  Ook voor vragen over Light Cubes, verlichte bars,
-                  DJ Booths, Light Walls en SCANMIJ QR-labels kun je via
-                  het formulier rechtstreeks contact met ons opnemen.
+                  Ook voor vragen over Light Cubes, verlichte bars, DJ Booths,
+                  Light Walls en SCANMIJ QR-labels kun je via het formulier
+                  rechtstreeks contact met ons opnemen.
                 </p>
 
-              <div className="space-y-6">
-  {/* Adres */}
-  <div className="flex items-start gap-4">
-    <div>
-      <p className="mb-1 text-sm uppercase tracking-widest text-white/70">
-        Bedrijfsadres
-      </p>
-      <address className="not-italic leading-7 text-white">
-        DAIVEXO
-        <br />
-        Leernsesteenweg 124A
-        <br />
-        9800 Deinze, België
-      </address>
-    </div>
-  </div>
+                <div className="space-y-6">
+                  {/* Adres */}
+                  <div className="flex items-start gap-4">
+                    <div>
+                      <p className="mb-1 text-sm uppercase tracking-widest text-white/70">
+                        Bedrijfsadres
+                      </p>
 
-  {/* Telefoon */}
-  <div className="flex items-start gap-4">
-    <div>
-      <p className="mb-1 text-sm uppercase tracking-widest text-white/70">
-        Telefoon
-      </p>
-      <a
-        href="tel:+32480673786"
-        className="text-white transition-colors hover:text-primary"
-      >
-        +32 480 67 37 86
-      </a>
-    </div>
-  </div>
+                      <address className="not-italic leading-7 text-white">
+                        DAIVEXO
+                        <br />
+                        Leernsesteenweg 124A
+                        <br />
+                        9800 Deinze, België
+                      </address>
+                    </div>
+                  </div>
 
-  {/* E-mail */}
-  <div className="flex items-start gap-4">
-    <div>
-      <p className="mb-1 text-sm uppercase tracking-widest text-white/70">
-        E-mail
-      </p>
-      <a
-        href="mailto:info@daivexo.com"
-        className="text-white transition-colors hover:text-primary"
-      >
-        info@daivexo.com
-      </a>
-    </div>
-  </div>
-</div>
+                  {/* Telefoon */}
+                  <div className="flex items-start gap-4">
+                    <div>
+                      <p className="mb-1 text-sm uppercase tracking-widest text-white/70">
+                        Telefoon
+                      </p>
 
+                      <a
+                        href="tel:+32480673786"
+                        className="text-white transition-colors hover:text-primary"
+                      >
+                        +32 480 67 37 86
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* E-mail */}
+                  <div className="flex items-start gap-4">
+                    <div>
+                      <p className="mb-1 text-sm uppercase tracking-widest text-white/70">
+                        E-mail
+                      </p>
+
+                      <a
+                        href="mailto:info@daivexo.com"
+                        className="text-white transition-colors hover:text-primary"
+                      >
+                        info@daivexo.com
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Contactformulier */}
               <form
                 onSubmit={handleSubmit}
                 className="space-y-6 border border-primary/30 bg-black/20 p-8 lg:p-12"
