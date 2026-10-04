@@ -107,25 +107,53 @@ export default function ContactPage() {
                   het formulier rechtstreeks contact met ons opnemen.
                 </p>
 
-                <div className="flex items-start gap-4">
-                  <div className="border border-primary/30 p-3">
-                    <Mail className="h-5 w-5 text-primary" />
-                  </div>
+              <div className="space-y-6">
+  {/* Adres */}
+  <div className="flex items-start gap-4">
+    <div>
+      <p className="mb-1 text-sm uppercase tracking-widest text-white/70">
+        Bedrijfsadres
+      </p>
+      <address className="not-italic leading-7 text-white">
+        DAIVEXO
+        <br />
+        Leernsesteenweg 124A
+        <br />
+        9800 Deinze, België
+      </address>
+    </div>
+  </div>
 
-                  <div>
-                    <p className="mb-1 text-sm uppercase tracking-widest text-white/70">
-                      E-mail
-                    </p>
+  {/* Telefoon */}
+  <div className="flex items-start gap-4">
+    <div>
+      <p className="mb-1 text-sm uppercase tracking-widest text-white/70">
+        Telefoon
+      </p>
+      <a
+        href="tel:+32480673786"
+        className="text-white transition-colors hover:text-primary"
+      >
+        +32 480 67 37 86
+      </a>
+    </div>
+  </div>
 
-                    <a
-                      href="mailto:info@daivexo.com"
-                      className="text-white transition-colors hover:text-primary"
-                    >
-                      info@daivexo.com
-                    </a>
-                  </div>
-                </div>
-              </div>
+  {/* E-mail */}
+  <div className="flex items-start gap-4">
+    <div>
+      <p className="mb-1 text-sm uppercase tracking-widest text-white/70">
+        E-mail
+      </p>
+      <a
+        href="mailto:info@daivexo.com"
+        className="text-white transition-colors hover:text-primary"
+      >
+        info@daivexo.com
+      </a>
+    </div>
+  </div>
+</div>
 
               <form
                 onSubmit={handleSubmit}
