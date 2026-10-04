@@ -107,6 +107,23 @@ export const viewport: Viewport = {
   themeColor: "#0f0f0f",
 }
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.daivexo.com/#business",
+  name: "DAIVEXO",
+  url: "https://www.daivexo.com/",
+  email: "info@daivexo.com",
+  telephone: "+32480673786",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Leernsesteenweg 124A",
+    postalCode: "9800",
+    addressLocality: "Deinze",
+    addressCountry: "BE",
+  },
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -118,7 +135,15 @@ export default function RootLayout({
       className={`${inter.variable} ${playfair.variable} bg-background`}
     >
       <body className="font-sans antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema).replace(/</g, "\\u003c"),
+          }}
+        />
+
         {children}
+
         {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>
