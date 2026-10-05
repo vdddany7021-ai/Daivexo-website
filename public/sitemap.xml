@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://www.daivexo.com/</loc>
   </url>
 
   <url>
     <loc>https://www.daivexo.com/statafel-huren/</loc>
+  </url>
+
+  <url>
+    <loc>https://www.daivexo.com/en/statafel-huren/</loc>
+  </url>
+
+  <url>
+    <loc>https://www.daivexo.com/fr/statafel-huren/</loc>
+  </url>
+
+  <url>
+    <loc>https://www.daivexo.com/de/statafel-huren/</loc>
   </url>
 
   <url>
@@ -23,4 +36,5 @@
   <url>
     <loc>https://www.daivexo.com/contact/</loc>
   </url>
+
 </urlset>
