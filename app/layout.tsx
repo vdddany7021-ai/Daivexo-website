@@ -111,10 +111,20 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "@id": "https://www.daivexo.com/#business",
+
   name: "DAIVEXO",
   url: "https://www.daivexo.com/",
+
+  image: [
+    "https://www.daivexo.com/images/light-cube-green.jpeg",
+    "https://www.daivexo.com/images/light-cubes-inspiratie/light-cubes-luxe-tuin-leie-blauw.jpg",
+    "https://www.daivexo.com/images/light-cubes-inspiratie/bar-blauw-wit.jpg",
+    "https://www.daivexo.com/images/light-cubes-inspiratie/lightwall-multicolor.jpg",
+  ],
+
   email: "info@daivexo.com",
   telephone: "+32480673786",
+
   address: {
     "@type": "PostalAddress",
     streetAddress: "Leernsesteenweg 124A",
