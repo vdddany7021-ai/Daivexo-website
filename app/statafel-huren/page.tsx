@@ -268,7 +268,73 @@ export default function StatafelHurenPage() {
           </div>
         </div>
       </section>
+      {/* MEER LIGHT CUBE TOEPASSINGEN */}
+      <section className="border-t border-white/10 bg-black">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
+              Meer dan een LED statafel
+            </p>
 
+            <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
+              Van verlichte bar tot indrukwekkende Light Wall
+            </h2>
+
+            <p className="mt-6 text-lg leading-8 text-white/70">
+              DAIVEXO Light Cubes zijn modulair. Naast individuele LED
+              statafels en verlichte staantafels kunnen meerdere Cubes worden
+              gecombineerd tot grotere verlichte opstellingen voor feesten,
+              recepties en evenementen.
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2">
+            {/* Verlichte bar */}
+            <article>
+              <div className="relative min-h-[420px] overflow-hidden rounded-[28px] border border-white/10">
+                <Image
+                  src="/images/light-cubes-inspiratie/bar-blauw-wit.jpg"
+                  alt="Verlichte LED bar opgebouwd met DAIVEXO Light Cubes voor evenementen"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+
+              <h3 className="mt-6 text-2xl font-semibold text-white">
+                Verlichte eventbar
+              </h3>
+
+              <p className="mt-3 leading-7 text-white/70">
+                Combineer meerdere Light Cubes tot een opvallende verlichte bar
+                voor feesten, recepties en professionele evenementen.
+              </p>
+            </article>
+
+            {/* Light Wall */}
+            <article>
+              <div className="relative min-h-[420px] overflow-hidden rounded-[28px] border border-white/10">
+                <Image
+                  src="/images/light-cubes-inspiratie/lightwall-multicolor.jpg"
+                  alt="Multicolor verlichte Light Wall opgebouwd met DAIVEXO Light Cubes"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+
+              <h3 className="mt-6 text-2xl font-semibold text-white">
+                Light Wall
+              </h3>
+
+              <p className="mt-3 leading-7 text-white/70">
+                Bouw met meerdere Light Cubes een grote verlichte blikvanger als
+                achtergrond, decoratie of opvallend element voor jouw evenement.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
       {/* SEARCH / COMMERCIAL CONTENT */}
       <section className="border-y border-white/10 bg-neutral-950">
         <div className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
