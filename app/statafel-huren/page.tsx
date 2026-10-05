@@ -6,9 +6,20 @@ export const metadata: Metadata = {
   title: "Statafel Huren | LED Statafels & Staantafels | DAIVEXO",
   description:
     "Statafel of staantafel huren voor een feest of evenement? Ontdek LED statafels, lichtgevende staantafels en Light Cubes van DAIVEXO voor feesten, recepties en bedrijfsevents.",
-  alternates: {
-    canonical: "https://www.daivexo.com/statafel-huren/",
+alternates: {
+  canonical: "https://www.daivexo.com/statafel-huren/",
+  languages: {
+    "nl-BE": "https://www.daivexo.com/statafel-huren/",
+    "nl-NL": "https://www.daivexo.com/statafel-huren/",
+    "fr-BE": "https://www.daivexo.com/fr/statafel-huren/",
+    "fr-FR": "https://www.daivexo.com/fr/statafel-huren/",
+    "fr-LU": "https://www.daivexo.com/fr/statafel-huren/",
+    "de-DE": "https://www.daivexo.com/de/statafel-huren/",
+    "de-LU": "https://www.daivexo.com/de/statafel-huren/",
+    "en": "https://www.daivexo.com/en/statafel-huren/",
+    "x-default": "https://www.daivexo.com/en/statafel-huren/",
   },
+},
   robots: {
     index: true,
     follow: true,
