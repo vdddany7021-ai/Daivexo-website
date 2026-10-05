@@ -284,7 +284,75 @@ export default function LedStehtischePage() {
           </div>
         </div>
       </section>
+      {/* WEITERE LIGHT CUBE ANWENDUNGEN */}
+      <section className="border-t border-white/10 bg-black">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
+              Mehr als nur ein LED Stehtisch
+            </p>
 
+            <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
+              Von der beleuchteten Bar bis zur beeindruckenden Light Wall
+            </h2>
+
+            <p className="mt-6 text-lg leading-8 text-white/70">
+              DAIVEXO Light Cubes sind modular. Neben einzelnen LED Stehtischen
+              und beleuchteten Stehtischen können mehrere Cubes zu größeren
+              beleuchteten Installationen für Partys, Empfänge und
+              Veranstaltungen kombiniert werden.
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2">
+            {/* Beleuchtete Bar */}
+            <article>
+              <div className="relative min-h-[420px] overflow-hidden rounded-[28px] border border-white/10">
+                <Image
+                  src="/images/light-cubes-inspiratie/bar-blauw-wit.jpg"
+                  alt="Beleuchtete LED Bar aus DAIVEXO Light Cubes für Veranstaltungen"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+
+              <h3 className="mt-6 text-2xl font-semibold text-white">
+                Beleuchtete Eventbar
+              </h3>
+
+              <p className="mt-3 leading-7 text-white/70">
+                Kombinieren Sie mehrere Light Cubes zu einer auffälligen
+                beleuchteten Bar für Partys, Empfänge und professionelle
+                Veranstaltungen.
+              </p>
+            </article>
+
+            {/* Light Wall */}
+            <article>
+              <div className="relative min-h-[420px] overflow-hidden rounded-[28px] border border-white/10">
+                <Image
+                  src="/images/light-cubes-inspiratie/lightwall-multicolor.jpg"
+                  alt="Mehrfarbige beleuchtete Light Wall aus DAIVEXO Light Cubes"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+
+              <h3 className="mt-6 text-2xl font-semibold text-white">
+                Light Wall
+              </h3>
+
+              <p className="mt-3 leading-7 text-white/70">
+                Kombinieren Sie mehrere Light Cubes zu einer großen
+                beleuchteten Installation als auffällige Kulisse oder
+                Blickfang für Ihre Veranstaltung.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
       {/* SEARCH / COMMERCIAL CONTENT */}
       <section className="border-y border-white/10 bg-neutral-950">
         <div className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
