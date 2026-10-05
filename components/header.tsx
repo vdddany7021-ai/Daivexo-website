@@ -14,39 +14,74 @@ const navLinks = [
   { href: "/#contact", label: "Contact" },
 ]
 
+const languageLinks = [
+  { href: "/statafel-huren/", label: "NL", title: "Nederlands" },
+  { href: "/en/statafel-huren/", label: "EN", title: "English" },
+  { href: "/fr/statafel-huren/", label: "FR", title: "Français" },
+  { href: "/de/statafel-huren/", label: "DE", title: "Deutsch" },
+]
+
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-primary/20">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-primary/20 bg-black/90 backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link
             href="/#home"
-            className="font-serif text-2xl md:text-3xl tracking-[0.18em] text-primary hover:brightness-110 transition-all duration-300"
+            className="font-serif text-2xl tracking-[0.18em] text-primary transition-all duration-300 hover:brightness-110 md:text-3xl"
           >
             DAIVEXO
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-7 lg:gap-9">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-xs lg:text-sm tracking-widest uppercase text-primary hover:text-white transition-colors duration-300 whitespace-nowrap"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+          <div className="hidden items-center gap-5 md:flex lg:gap-7">
+            <nav className="flex items-center gap-5 lg:gap-7">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="whitespace-nowrap text-xs uppercase tracking-widest text-primary transition-colors duration-300 hover:text-white lg:text-sm"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+
+            {/* Desktop Language Selector */}
+            <div
+              className="ml-1 flex items-center gap-2 border-l border-primary/30 pl-4"
+              aria-label="Taal kiezen"
+            >
+              {languageLinks.map((language) => (
+                <Link
+                  key={language.label}
+                  href={language.href}
+                  title={language.title}
+                  hrefLang={
+                    language.label === "NL"
+                      ? "nl"
+                      : language.label === "EN"
+                        ? "en"
+                        : language.label === "FR"
+                          ? "fr"
+                          : "de"
+                  }
+                  className="text-[11px] font-semibold tracking-wider text-primary/70 transition-colors duration-300 hover:text-white"
+                >
+                  {language.label}
+                </Link>
+              ))}
+            </div>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
             type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-primary p-2 hover:text-white transition-colors duration-300"
+            className="p-2 text-primary transition-colors duration-300 hover:text-white md:hidden"
             aria-label={isOpen ? "Menu sluiten" : "Menu openen"}
             aria-expanded={isOpen}
           >
@@ -60,18 +95,48 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <nav className="md:hidden py-6 border-t border-primary/20">
+          <nav className="border-t border-primary/20 py-6 md:hidden">
             <div className="flex flex-col gap-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-sm tracking-widest uppercase text-primary hover:text-white transition-colors duration-300"
+                  className="text-sm uppercase tracking-widest text-primary transition-colors duration-300 hover:text-white"
                 >
                   {link.label}
                 </Link>
               ))}
+
+              {/* Mobile Language Selector */}
+              <div className="mt-2 border-t border-primary/20 pt-5">
+                <p className="mb-4 text-xs uppercase tracking-[0.25em] text-white/50">
+                  Taal
+                </p>
+
+                <div className="flex items-center gap-5">
+                  {languageLinks.map((language) => (
+                    <Link
+                      key={language.label}
+                      href={language.href}
+                      title={language.title}
+                      hrefLang={
+                        language.label === "NL"
+                          ? "nl"
+                          : language.label === "EN"
+                            ? "en"
+                            : language.label === "FR"
+                              ? "fr"
+                              : "de"
+                      }
+                      onClick={() => setIsOpen(false)}
+                      className="text-sm font-semibold tracking-wider text-primary transition-colors duration-300 hover:text-white"
+                    >
+                      {language.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
           </nav>
         )}
