@@ -10,7 +10,9 @@ export const metadata: Metadata = {
   description:
     "SCANMIJ QR-stickers helpen verloren voorwerpen terug te vinden. Voor schoolspullen, bagage, sleutels en meer. Geen app of tracking nodig.",
   alternates: {
-    canonical: "https://www.daivexo.com/qr-labels/",
+    
+canonical: "https://www.daivexo.com/qr-labels",
+
   },
 }
 
