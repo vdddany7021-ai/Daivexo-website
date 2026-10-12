@@ -1,3 +1,4 @@
+
 import type { Metadata, Viewport } from "next"
 import { Inter, Playfair_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
@@ -49,9 +50,8 @@ export const metadata: Metadata = {
     "Light Wall huren",
   ],
 
-  alternates: {
-    canonical: "/",
-  },
+  // Canonical URLs worden per pagina ingesteld.
+  // Geen globale canonical om verkeerde overerving te vermijden.
 
   openGraph: {
     title: "Statafel Huren | LED Statafels & Staantafels | DAIVEXO",
