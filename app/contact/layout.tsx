@@ -5,7 +5,9 @@ export const metadata: Metadata = {
   description:
     "Contacteer DAIVEXO voor informatie of een vrijblijvende offerte voor LED statafels, lichtgevende staantafels, Light Cubes, eventmeubilair en SCANMIJ QR-labels.",
   alternates: {
-    canonical: "https://www.daivexo.com/contact/",
+  
+canonical: "https://www.daivexo.com/contact",
+  
   },
   robots: {
     index: true,
@@ -15,7 +17,9 @@ export const metadata: Metadata = {
     title: "Contact & Offerte LED Statafels | DAIVEXO",
     description:
       "Vraag informatie of een vrijblijvende offerte aan voor LED statafels, staantafels, Light Cubes, eventmeubilair en SCANMIJ QR-labels.",
-    url: "https://www.daivexo.com/contact/",
+    
+url: "https://www.daivexo.com/contact",
+
     siteName: "DAIVEXO",
     locale: "nl_BE",
     type: "website",
