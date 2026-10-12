@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
@@ -6,20 +7,22 @@ export const metadata: Metadata = {
   title: "Statafel Huren | LED Statafels & Staantafels | DAIVEXO",
   description:
     "Statafel of staantafel huren voor een feest of evenement? Ontdek LED statafels, lichtgevende staantafels en Light Cubes van DAIVEXO voor feesten, recepties en bedrijfsevents.",
-alternates: {
-  canonical: "https://www.daivexo.com/statafel-huren/",
-  languages: {
-    "nl-BE": "https://www.daivexo.com/statafel-huren/",
-    "nl-NL": "https://www.daivexo.com/statafel-huren/",
-    "fr-BE": "https://www.daivexo.com/fr/statafel-huren/",
-    "fr-FR": "https://www.daivexo.com/fr/statafel-huren/",
-    "fr-LU": "https://www.daivexo.com/fr/statafel-huren/",
-    "de-DE": "https://www.daivexo.com/de/statafel-huren/",
-    "de-LU": "https://www.daivexo.com/de/statafel-huren/",
-    "en": "https://www.daivexo.com/en/statafel-huren/",
-    "x-default": "https://www.daivexo.com/en/statafel-huren/",
+
+  alternates: {
+    canonical: "https://www.daivexo.com/statafel-huren",
+    languages: {
+      "nl-BE": "https://www.daivexo.com/statafel-huren",
+      "nl-NL": "https://www.daivexo.com/statafel-huren",
+      "fr-BE": "https://www.daivexo.com/fr/statafel-huren",
+      "fr-FR": "https://www.daivexo.com/fr/statafel-huren",
+      "fr-LU": "https://www.daivexo.com/fr/statafel-huren",
+      "de-DE": "https://www.daivexo.com/de/statafel-huren",
+      "de-LU": "https://www.daivexo.com/de/statafel-huren",
+      en: "https://www.daivexo.com/en/statafel-huren",
+      "x-default": "https://www.daivexo.com/en/statafel-huren",
+    },
   },
-},
+
   robots: {
     index: true,
     follow: true,
@@ -31,15 +34,17 @@ alternates: {
       "max-video-preview": -1,
     },
   },
+
   openGraph: {
     title: "Statafel Huren | LED Statafels & Staantafels | DAIVEXO",
     description:
       "Huur verlichte LED statafels, staantafels en Light Cubes voor feesten, recepties, bedrijfsevents en evenementen.",
-    url: "https://www.daivexo.com/statafel-huren/",
+    url: "https://www.daivexo.com/statafel-huren",
     siteName: "DAIVEXO",
     locale: "nl_BE",
     type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Statafel Huren | LED Statafels & Staantafels | DAIVEXO",
@@ -132,14 +137,14 @@ export default function StatafelHurenPage() {
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
-                href="/contact/"
+                href="/contact"
                 className="rounded-full bg-primary px-7 py-4 text-center font-semibold text-black transition hover:brightness-110"
               >
                 Offerte voor statafels aanvragen
               </Link>
 
               <Link
-                href="/light-cubes-inspiratie/"
+                href="/light-cubes-inspiratie"
                 className="rounded-full border border-primary px-7 py-4 text-center font-semibold text-primary transition hover:bg-primary hover:text-black"
               >
                 Bekijk LED statafels
@@ -260,7 +265,7 @@ export default function StatafelHurenPage() {
             </p>
 
             <Link
-              href="/light-cubes-inspiratie/"
+              href="/light-cubes-inspiratie"
               className="mt-8 inline-block font-semibold text-primary underline underline-offset-4"
             >
               Bekijk voorbeelden van onze Light Cubes en LED statafels
@@ -268,6 +273,7 @@ export default function StatafelHurenPage() {
           </div>
         </div>
       </section>
+
       {/* MEER LIGHT CUBE TOEPASSINGEN */}
       <section className="border-t border-white/10 bg-black">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
@@ -288,7 +294,7 @@ export default function StatafelHurenPage() {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="mt-10 grid gap-8 md:grid-cols-2">
             {/* Verlichte bar */}
             <article>
               <div className="relative min-h-[420px] overflow-hidden rounded-[28px] border border-white/10">
@@ -335,6 +341,7 @@ export default function StatafelHurenPage() {
           </div>
         </div>
       </section>
+
       {/* SEARCH / COMMERCIAL CONTENT */}
       <section className="border-y border-white/10 bg-neutral-950">
         <div className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
@@ -408,7 +415,7 @@ export default function StatafelHurenPage() {
           </p>
 
           <Link
-            href="/contact/"
+            href="/contact"
             className="mt-8 inline-block rounded-full bg-primary px-8 py-4 font-semibold text-black transition hover:brightness-110"
           >
             Vraag een offerte aan
