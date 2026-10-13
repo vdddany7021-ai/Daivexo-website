@@ -8,8 +8,10 @@ export const metadata: Metadata = {
   title: {
     absolute: "Statafel Huren | LED Statafels & Staantafels",
   },
-  description:
-    "LED statafels en lichtgevende staantafels huren voor je feest, receptie of bedrijfsevent? Ontdek de Light Cubes van DAIVEXO en vraag een offerte aan.",
+ 
+description:
+  "Statafel huren voor je feest of evenement? Ontdek de LED statafels en lichtgevende staantafels van DAIVEXO. Vraag vrijblijvend een offerte aan.",
+
   alternates: {
     canonical: "https://www.daivexo.com/statafel-huren",
     languages: {
