@@ -442,6 +442,44 @@ export default function StatafelHurenPage() {
         </div>
       </section>
 
+      {/* INTERNATIONALE VERHUUR */}
+      <section className="border-t border-white/10 bg-neutral-950">
+        <div className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
+          <h2 className="text-3xl font-semibold md:text-4xl">
+            LED statafels huren in België en Europa
+          </h2>
+
+          <div className="mt-7 space-y-5 text-lg leading-8 text-white/75">
+            <p>
+              DAIVEXO bereidt de lancering voor van zijn unieke
+              LED statafels, lichtgevende staantafels en modulaire
+              Light Cubes. Binnenkort richten we ons op evenementen
+              in België, Nederland, Duitsland, Frankrijk en Luxemburg.
+            </p>
+
+            <p>
+              Onze verlichte Light Cubes zijn ontworpen voor
+              trouwfeesten, recepties, bedrijfsevenementen,
+              beurzen en andere bijzondere gelegenheden.
+            </p>
+
+            <p>
+              Wil je als een van de eersten kennismaken met onze
+              LED statafels? Neem vrijblijvend contact op met
+              DAIVEXO en informeer naar de geplande lancering,
+              beschikbaarheid en mogelijkheden voor jouw evenement.
+            </p>
+          </div>
+
+          <Link
+            href="/contact"
+            className="mt-8 inline-block rounded-full bg-primary px-8 py-4 font-semibold text-black transition hover:brightness-110"
+          >
+            Informeer naar de verhuurmogelijkheden
+          </Link>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
         <h2 className="text-3xl font-semibold md:text-4xl">
