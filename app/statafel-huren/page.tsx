@@ -3,12 +3,13 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 
+
 export const metadata: Metadata = {
   title: {
     absolute: "Statafel Huren | LED Statafels & Staantafels",
   },
   description:
-    "LED statafels en lichtgevende staantafels huren voor je feest, receptie of bedrijfsevent? Ontdek de unieke Light Cubes van DAIVEXO en vraag een offerte aan.",
+    "LED statafels en lichtgevende staantafels huren voor je feest, receptie of bedrijfsevent? Ontdek de Light Cubes van DAIVEXO en vraag een offerte aan.",
   alternates: {
     canonical: "https://www.daivexo.com/statafel-huren",
     languages: {
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Statafel Huren | LED Statafels & Staantafels | DAIVEXO",
     description:
-      "Ontdek de verlichte LED statafels en modulaire Light Cubes van DAIVEXO voor feesten, recepties en evenementen.",
+      "Ontdek lichtgevende LED statafels en modulaire Light Cubes van DAIVEXO voor feesten, recepties en evenementen.",
     url: "https://www.daivexo.com/statafel-huren",
     siteName: "DAIVEXO",
     locale: "nl_BE",
@@ -50,6 +51,7 @@ export const metadata: Metadata = {
       "Lichtgevende LED statafels en Light Cubes huren voor feesten en evenementen.",
   },
 }
+
 
 const faq = [
   {
