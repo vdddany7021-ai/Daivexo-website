@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
   title: {
     default: "Statafel Huren | LED Statafels & Staantafels Huren | DAIVEXO",
-    template: "%s | DAIVEXO",
+    template: "%s",
   },
 
   description:
