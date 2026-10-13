@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   },
  
 description:
-  "Statafel huren voor je feest of evenement? Ontdek de LED statafels en lichtgevende staantafels van DAIVEXO. Vraag vrijblijvend een offerte aan.",
+    "LED statafel huren? Ontdek lichtgevende statafels, LED eventmeubilair en sfeerverlichting voor feesten en evenementen. DAIVEXO Light Cubes: binnenkort beschikbaar.",
 
   alternates: {
     canonical: "https://www.daivexo.com/statafel-huren",
@@ -40,7 +40,7 @@ description:
   openGraph: {
     title: "Statafel Huren | LED Statafels & Staantafels | DAIVEXO",
     description:
-      "Ontdek lichtgevende LED statafels en modulaire Light Cubes van DAIVEXO voor feesten, recepties en evenementen.",
+      "Ontdek lichtgevende LED statafels, LED eventmeubilair en sfeerverlichting voor feesten en evenementen. Verhuur binnenkort beschikbaar.",
     url: "https://www.daivexo.com/statafel-huren",
     siteName: "DAIVEXO",
     locale: "nl_BE",
@@ -50,7 +50,7 @@ description:
     card: "summary_large_image",
     title: "Statafel Huren | LED Statafels & Staantafels | DAIVEXO",
     description:
-      "Lichtgevende LED statafels en Light Cubes huren voor feesten en evenementen.",
+      "Lichtgevende LED statafels, sfeerverlichting en eventmeubilair van DAIVEXO. Verhuur binnenkort beschikbaar.",
   },
 }
 
@@ -59,7 +59,7 @@ const faq = [
   {
     question: "Kan ik een statafel huren bij DAIVEXO?",
     answer:
-      "Ja. DAIVEXO verhuurt lichtgevende LED statafels en Light Cubes voor feesten, recepties, bedrijfsevenementen en andere events.",
+      "DAIVEXO bereidt de verhuur van lichtgevende LED statafels en Light Cubes voor. Neem contact op om te informeren naar de lancering en beschikbaarheid voor jouw evenement.",
   },
   {
     question: "Wat is het verschil tussen een gewone statafel en een LED statafel?",
@@ -69,7 +69,7 @@ const faq = [
   {
     question: "Kan ik meerdere LED statafels huren?",
     answer:
-      "Ja. Meerdere Light Cubes kunnen afzonderlijk als staantafel worden gebruikt of samen een grotere verlichte opstelling vormen.",
+      "De Light Cubes zijn modulair ontworpen: meerdere exemplaren kunnen afzonderlijk als staantafel worden ingezet of samen een grotere verlichte opstelling vormen. Informeer naar de geplande verhuurmogelijkheden.",
   },
   {
     question: "Voor welke evenementen zijn de LED statafels geschikt?",
@@ -84,7 +84,7 @@ const faq = [
   {
     question: "Hoe vraag ik een offerte aan voor LED statafels?",
     answer:
-      "Via de contactpagina van DAIVEXO kun je aangeven hoeveel statafels je nodig hebt en voor welk type evenement. Op basis daarvan kunnen de mogelijkheden worden besproken.",
+      "Via de contactpagina van DAIVEXO kun je aangeven hoeveel LED statafels je zoekt, voor welk evenement en op welke datum. We informeren je over de geplande lancering en de mogelijkheden.",
   },
 ]
 
@@ -105,7 +105,7 @@ const applications = [
   {
     title: "Feesten",
     description:
-      "Lichtgevende staantafels als sfeervolle ontmoetingsplek voor gasten.",
+      "Lichtgevende statafels en LED sfeerverlichting voor een feestelijke ontmoetingsplek.",
   },
   {
     title: "Recepties",
@@ -115,7 +115,7 @@ const applications = [
   {
     title: "Bedrijfsevenementen",
     description:
-      "Opvallend eventmeubilair voor zakelijke bijeenkomsten en presentaties.",
+      "LED eventmeubilair voor zakelijke bijeenkomsten en productpresentaties.",
   },
   {
     title: "Horeca en events",
@@ -218,7 +218,7 @@ export default function StatafelHurenPage() {
           </p>
 
           <p>
-            Onze verlichte staantafels passen bij uiteenlopende
+            Onze lichtgevende statafels en verlichte staantafels passen bij uiteenlopende
             gelegenheden, waaronder verjaardagsfeesten,
             trouwfeesten, recepties, bedrijfsevents,
             productpresentaties en horecagelegenheden.
@@ -440,6 +440,47 @@ export default function StatafelHurenPage() {
             </p>
           </div>
         </div>
+      </section>
+
+      {/* LED SFEERVERLICHTING EN EVENTMEUBILAIR */}
+      <section className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
+        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
+          Sfeer en eventinrichting
+        </p>
+
+        <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
+          LED sfeerverlichting en eventmeubilair voor feesten
+        </h2>
+
+        <div className="mt-7 space-y-5 text-lg leading-8 text-white/75">
+          <p>
+            Zoek je LED verlichting voor evenementen die meer doet dan
+            alleen een ruimte verlichten? De DAIVEXO Light Cubes
+            combineren functioneel meubilair met LED sfeerverlichting
+            voor een feest, receptie of bedrijfsevenement.
+          </p>
+
+          <p>
+            Dit LED eventmeubilair kan worden ingezet als lichtgevende
+            statafel of als onderdeel van een grotere decoratieve
+            opstelling. Zo vormen de Cubes een alternatief voor wie
+            sfeer en een praktische ontmoetingsplek wil combineren.
+          </p>
+
+          <p>
+            Of je nu lichtgevende statafels zoekt, verlichte statafels
+            wilt huren of ideeën verzamelt voor de aankleding van je
+            evenement: bekijk onze Light Cubes en informeer naar de
+            verhuur die binnenkort van start gaat.
+          </p>
+        </div>
+
+        <Link
+          href="/light-cubes-inspiratie"
+          className="mt-8 inline-block font-semibold text-primary underline underline-offset-4"
+        >
+          Ontdek inspiratie voor LED eventmeubilair
+        </Link>
       </section>
 
       {/* INTERNATIONALE VERHUUR */}
