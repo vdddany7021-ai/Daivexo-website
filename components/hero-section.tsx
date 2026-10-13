@@ -48,7 +48,7 @@ export function HeroSection() {
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a
-  href="/statafel-huren/"
+  href="/statafel-huren"
   className="inline-flex items-center justify-center gap-3 rounded-full bg-primary px-8 py-4 text-sm font-semibold text-black transition-all duration-300 hover:brightness-110"
 >
   Statafels & staantafels huren
