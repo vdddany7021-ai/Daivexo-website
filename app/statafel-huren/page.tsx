@@ -4,7 +4,9 @@ import Image from "next/image"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Statafel Huren | LED Statafels & Staantafels",
+  title: {
+    absolute: "Statafel Huren | LED Statafels & Staantafels",
+  },
   description:
     "LED statafels en lichtgevende staantafels huren voor je feest, receptie of bedrijfsevent? Ontdek de unieke Light Cubes van DAIVEXO en vraag een offerte aan.",
   alternates: {
@@ -491,4 +493,3 @@ export default function StatafelHurenPage() {
     </main>
   )
 }
-
