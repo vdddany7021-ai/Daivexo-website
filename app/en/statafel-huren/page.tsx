@@ -330,7 +330,7 @@ export default function LedCocktailTablesPage() {
             <article>
               <div className="relative min-h-[420px] overflow-hidden rounded-[28px] border border-white/10">
                 <Image
-                  src="/images/light-cubes-inspiratie/lightwall-multicolor.webp
+                  src="/images/light-cubes-inspiratie/lightwall-multicolor.webp"
                   alt="Multicolour illuminated Light Wall made with DAIVEXO Light Cubes"
                   fill
                   className="object-cover"
