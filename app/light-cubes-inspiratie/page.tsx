@@ -40,7 +40,7 @@ const galleryImages = [
 
   // DJ BOOTHS
   {
-    src: "/images/light-cubes-inspiratie/dj-warmwit.jpg",
+    src: "/images/light-cubes-inspiratie/dj-warmwit.webp",
     alt: "DAIVEXO Light Cube DJ Booth warm wit",
   },
   {
