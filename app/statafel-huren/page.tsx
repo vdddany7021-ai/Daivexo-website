@@ -371,7 +371,7 @@ export default function StatafelHurenPage() {
             <article>
               <div className="relative min-h-[420px] overflow-hidden rounded-[28px] border border-white/10">
                 <Image
-                  src="/images/light-cubes-inspiratie/lightwall-multicolor.jpg"
+                  src="/images/light-cubes-inspiratie/lightwall-multicolor.webp
                   alt="Meerkleurige verlichte Light Wall opgebouwd uit DAIVEXO Light Cubes"
                   fill
                   className="object-cover"
