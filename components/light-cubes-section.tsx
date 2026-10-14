@@ -25,7 +25,7 @@ const lightCubes = [
   {
     id: 4,
     title: "LIGHT WALL",
-    image: "/images/light-cubes-inspiratie/lightwall-multicolor.jpg",
+   image: "/images/light-cubes-inspiratie/lightwall-multicolor.webp",
     alt: "DAIVEXO Light Wall multicolor",
   },
 ]
