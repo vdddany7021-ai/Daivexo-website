@@ -180,7 +180,7 @@ export function HeroSection() {
             {/* YELLOW DJ BOOTH */}
             <article className="group relative min-h-[330px] overflow-hidden rounded-[26px] border border-white/15 bg-neutral-950">
               <Image
-                src="/images/light-cubes-inspiratie/dj-geel.jpg"
+                src="/images/light-cubes-inspiratie/dj-geel.webp"
                 alt="Verlichte LED DJ Booth huren voor feest of evenement"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
