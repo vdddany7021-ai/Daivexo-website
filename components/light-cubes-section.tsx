@@ -19,7 +19,7 @@ const lightCubes = [
   {
     id: 3,
     title: "DJ BOOTH",
-    image: "/images/light-cubes-inspiratie/dj-warmwit.jpg",
+    image: "/images/light-cubes-inspiratie/dj-warmwit.webp",
     alt: "DAIVEXO Light Cube DJ Booth warm wit",
   },
   {
