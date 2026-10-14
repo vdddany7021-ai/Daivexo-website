@@ -124,7 +124,7 @@ export function HeroSection() {
             {/* BLUE COLLECTION */}
             <article className="group relative min-h-[500px] overflow-hidden rounded-[28px] border border-white/15 bg-neutral-950">
               <Image
-                src="/images/light-cubes-inspiratie/light-cubes-luxe-tuin-leie-blauw.jpg"
+                src="/images/light-cubes-inspiratie/light-cubes-luxe-tuin-leie-blauw.webp"
                 alt="Blauwe LED staantafels en verlichte statafels voor verhuur"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
