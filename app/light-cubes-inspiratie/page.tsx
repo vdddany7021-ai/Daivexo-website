@@ -54,7 +54,7 @@ const galleryImages = [
 
   // LIGHT WALLS
   {
-    src: "/images/light-cubes-inspiratie/lightwall-multicolor.jpg",
+    src: "/images/light-cubes-inspiratie/lightwall-multicolor.webp
     alt: "DAIVEXO Light Wall in verschillende RGBW kleuren",
   },
   {
