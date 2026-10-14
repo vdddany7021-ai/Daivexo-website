@@ -3,9 +3,9 @@ import Image from "next/image"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "LED Cocktail Tables for Hire | Event Furniture | DAIVEXO",
+  title: "LED Cocktail Tables for Hire | Illuminated Event Furniture | DAIVEXO",
   description:
-    "Hire illuminated LED cocktail tables, standing tables and Light Cubes for parties, receptions, corporate events and professional events. Discover DAIVEXO event furniture.",
+    "Discover LED cocktail tables for hire, illuminated standing tables, LED event furniture and atmospheric event lighting. DAIVEXO Light Cubes: coming soon.",
 
   alternates: {
     canonical: "https://www.daivexo.com/en/statafel-huren",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "LED Cocktail Tables for Hire | DAIVEXO",
     description:
-      "Hire illuminated LED cocktail tables, standing tables and Light Cubes for parties, receptions, corporate events and professional events.",
+      "Discover illuminated cocktail tables, LED event furniture and atmospheric LED event lighting. DAIVEXO Light Cubes: coming soon.",
     url: "https://www.daivexo.com/en/statafel-huren",
     siteName: "DAIVEXO",
     locale: "en_GB",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "LED Cocktail Tables for Hire | DAIVEXO",
     description:
-      "Illuminated LED cocktail tables and Light Cubes for parties, receptions and events.",
+      "Illuminated cocktail tables, LED event furniture and event lighting. Coming soon.",
   },
 }
 
@@ -54,7 +54,7 @@ const faq = [
   {
     question: "Can I hire LED cocktail tables from DAIVEXO?",
     answer:
-      "Yes. DAIVEXO offers illuminated cocktail tables and Light Cubes for parties, receptions, corporate events and other events.",
+      "DAIVEXO is preparing to launch Light Cube hire for parties, receptions and corporate events. Contact us to ask about planned availability.",
   },
   {
     question: "What is an LED cocktail table?",
@@ -64,7 +64,7 @@ const faq = [
   {
     question: "Can I hire several LED standing tables?",
     answer:
-      "Yes. Multiple Light Cubes can be used as individual illuminated standing tables or combined as part of a larger event setup.",
+      "The modular concept allows multiple Light Cubes to be used as individual illuminated standing tables or combined into larger event setups. Ask about upcoming hire options.",
   },
   {
     question: "Are the tables suitable for parties and receptions?",
@@ -74,7 +74,7 @@ const faq = [
   {
     question: "Can DAIVEXO create larger event installations?",
     answer:
-      "Yes. In addition to individual LED cocktail tables, multiple Light Cubes can be combined to create larger installations such as illuminated bars, DJ booths and Light Walls.",
+      "The Light Cube concept supports larger arrangements, including illuminated bars, DJ booths and Light Walls. Contact DAIVEXO to discuss the planned options.",
   },
 ]
 
@@ -120,11 +120,11 @@ export default function LedCocktailTablesPage() {
               Looking for a{" "}
               <strong className="text-white">cocktail table</strong> or{" "}
               <strong className="text-white">standing table to hire</strong> for
-              a party, reception or event? DAIVEXO offers distinctive{" "}
+              a party, reception or event? DAIVEXO is developing distinctive{" "}
               <strong className="text-white">LED cocktail tables</strong>,{" "}
               <strong className="text-white">illuminated standing tables</strong>{" "}
               and Light Cubes that combine lighting, functionality and modern
-              event design.
+              event design. Hire availability is coming soon.
             </p>
 
             <p className="mt-5 max-w-2xl leading-7 text-white/70">
@@ -138,7 +138,7 @@ export default function LedCocktailTablesPage() {
                 href="/contact/"
                 className="rounded-full bg-primary px-7 py-4 text-center font-semibold text-black transition hover:brightness-110"
               >
-                Request a quote
+                Ask about availability
               </Link>
 
               <Link
@@ -186,7 +186,7 @@ export default function LedCocktailTablesPage() {
           </p>
 
           <p>
-            When hiring several{" "}
+            For events using several{" "}
             <strong className="text-white">LED cocktail tables</strong>, the
             Light Cubes can be used individually or combined to create a larger
             visual event installation.
@@ -370,7 +370,7 @@ export default function LedCocktailTablesPage() {
             </p>
 
             <p>
-              Our <strong className="text-white">LED cocktail tables</strong>{" "}
+              DAIVEXO <strong className="text-white">LED cocktail tables</strong>{" "}
               are particularly suited to events where conventional furniture
               does not provide enough visual impact. The integrated lighting
               makes the tables part of the atmosphere and overall event design.
@@ -385,6 +385,51 @@ export default function LedCocktailTablesPage() {
             </p>
           </div>
         </div>
+      </section>
+
+      {/* LED EVENT LIGHTING & FURNITURE */}
+      <section className="border-y border-white/10 bg-neutral-950">
+        <div className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
+            Lighting and event atmosphere
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
+            LED event lighting and illuminated event furniture
+          </h2>
+          <div className="mt-7 space-y-5 text-lg leading-8 text-white/75">
+            <p>
+              Looking for <strong className="text-white">LED event lighting</strong>
+              {" "}that also serves a practical purpose? DAIVEXO Light Cubes bring
+              together <strong className="text-white">illuminated event furniture</strong>
+              {" "}and atmospheric lighting for parties, weddings, receptions and
+              corporate events.
+            </p>
+            <p>
+              Use the modular cubes as <strong className="text-white">LED cocktail tables</strong>,
+              {" "}<strong className="text-white">illuminated standing tables</strong>
+              {" "}or part of a decorative installation. Their integrated lighting
+              adds <strong className="text-white">LED mood lighting for parties</strong>
+              {" "}without requiring separate decorative tables and lighting features.
+            </p>
+            <p>
+              The DAIVEXO Light Cubes are being prepared for hire. Contact us
+              to discuss future availability and event possibilities.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* INTERNATIONAL HIRE PLANS */}
+      <section className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
+        <h2 className="text-3xl font-semibold md:text-4xl">
+          LED cocktail table hire in Belgium and across Europe
+        </h2>
+        <p className="mt-6 text-lg leading-8 text-white/75">
+          DAIVEXO is preparing its Light Cube hire offering for events in
+          Belgium, the Netherlands, Germany, France and Luxembourg. If you are
+          planning an event, contact us to enquire about the launch and
+          availability in your area.
+        </p>
       </section>
 
       {/* FAQ */}
@@ -420,15 +465,15 @@ export default function LedCocktailTablesPage() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/70">
-            Tell us how many tables you need and what type of event you are
-            organising. We will help you find a suitable Light Cube setup.
+            Tell us how many tables you may need and what type of event you are
+            organising. Ask about the upcoming launch and planned Light Cube hire options.
           </p>
 
           <Link
             href="/contact/"
             className="mt-8 inline-block rounded-full bg-primary px-8 py-4 font-semibold text-black transition hover:brightness-110"
           >
-            Request a quote
+            Ask about availability
           </Link>
         </div>
       </section>
