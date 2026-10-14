@@ -48,7 +48,7 @@ const galleryImages = [
     alt: "DAIVEXO Light Cube DJ Booth blauw",
   },
   {
-    src: "/images/light-cubes-inspiratie/dj-geel.jpg",
+    src: "/images/light-cubes-inspiratie/dj-geel.webp",
     alt: "DAIVEXO Light Cube DJ Booth geel",
   },
 
