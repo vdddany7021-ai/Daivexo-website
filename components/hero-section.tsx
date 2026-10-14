@@ -157,7 +157,7 @@ export function HeroSection() {
             {/* LIGHT BAR */}
             <article className="group relative min-h-[330px] overflow-hidden rounded-[26px] border border-white/15 bg-neutral-950">
               <Image
-                src="/images/light-cubes-inspiratie/bar-blauw-wit.jpg"
+                src="/images/light-cubes-inspiratie/bar-blauw-wit.webp"
                 alt="Verlichte LED bar huren opgebouwd uit DAIVEXO Light Cubes"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
