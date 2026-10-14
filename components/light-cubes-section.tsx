@@ -13,7 +13,7 @@ const lightCubes = [
   {
     id: 2,
     title: "LIGHT CUBE BAR",
-    image: "/images/light-cubes-inspiratie/bar-warmwit-blauw.jpg",
+    image: "/images/light-cubes-inspiratie/bar-warmwit-blauw.webp",
     alt: "DAIVEXO Light Cube Bar warm wit met diepblauwe achterwand",
   },
   {
