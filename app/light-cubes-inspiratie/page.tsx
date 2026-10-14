@@ -26,7 +26,7 @@ const galleryImages = [
 
   // BARS
   {
-    src: "/images/light-cubes-inspiratie/bar-warmwit-blauw.jpg",
+   src: "/images/light-cubes-inspiratie/bar-warmwit-blauw.webp",
     alt: "DAIVEXO Light Cube Bar warm wit met diepblauwe achterwand",
   },
   {
