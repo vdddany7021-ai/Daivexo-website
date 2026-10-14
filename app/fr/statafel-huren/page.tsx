@@ -3,9 +3,11 @@ import Image from "next/image"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Location Mange-Debout LED | Tables Hautes Lumineuses | DAIVEXO",
+  title: {
+    absolute: "Location Mange-Debout LED | Tables Lumineuses | DAIVEXO",
+  },
   description:
-    "Location de mange-debout LED, tables hautes lumineuses et Light Cubes pour fêtes, réceptions, événements d'entreprise et événements professionnels.",
+    "Location de mange-debout LED et tables hautes lumineuses : mobilier événementiel et éclairage LED pour vos fêtes. Light Cubes DAIVEXO bientôt disponibles.",
 
   alternates: {
     canonical: "https://www.daivexo.com/fr/statafel-huren",
@@ -36,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Location Mange-Debout LED | DAIVEXO",
     description:
-      "Louez des mange-debout LED, tables hautes lumineuses et Light Cubes pour fêtes, réceptions et événements professionnels.",
+      "Découvrez les mange-debout LED, tables lumineuses et Light Cubes DAIVEXO pour vos événements. Location prochainement disponible.",
     
 url: "https://www.daivexo.com/fr/statafel-huren",
 
@@ -48,7 +50,7 @@ url: "https://www.daivexo.com/fr/statafel-huren",
     card: "summary_large_image",
     title: "Location Mange-Debout LED | DAIVEXO",
     description:
-      "Mange-debout LED et tables hautes lumineuses à louer pour fêtes, réceptions et événements.",
+      "Mange-debout LED et mobilier lumineux pour événements : location prochainement disponible chez DAIVEXO.",
   },
 }
 
@@ -56,7 +58,7 @@ const faq = [
   {
     question: "Puis-je louer des mange-debout LED chez DAIVEXO ?",
     answer:
-      "Oui. DAIVEXO propose des mange-debout lumineux et des Light Cubes pour les fêtes, réceptions, événements d'entreprise et autres événements.",
+      "La location des mange-debout lumineux et Light Cubes DAIVEXO sera lancée prochainement. Contactez-nous pour connaître les possibilités prévues pour votre événement.",
   },
   {
     question: "Qu'est-ce qu'un mange-debout LED ?",
@@ -66,7 +68,7 @@ const faq = [
   {
     question: "Puis-je louer plusieurs tables hautes LED ?",
     answer:
-      "Oui. Plusieurs Light Cubes peuvent être utilisés comme tables hautes lumineuses individuelles ou combinés pour créer une installation événementielle plus importante.",
+      "Plusieurs Light Cubes peuvent être utilisés individuellement comme tables hautes lumineuses ou assemblés pour former une installation plus importante. Renseignez-vous sur la disponibilité prévue.",
   },
   {
     question: "Les mange-debout conviennent-ils aux fêtes et réceptions ?",
@@ -76,7 +78,7 @@ const faq = [
   {
     question: "DAIVEXO peut-il créer de plus grandes installations ?",
     answer:
-      "Oui. En plus des mange-debout lumineux individuels, plusieurs Light Cubes peuvent être combinés pour créer un bar lumineux, un DJ booth ou un Light Wall.",
+      "Les Light Cubes sont conçus pour être combinés en différentes configurations, notamment un bar lumineux, un espace DJ ou un Light Wall. Les possibilités dépendront du projet.",
   },
 ]
 
@@ -123,11 +125,11 @@ export default function LocationMangeDeboutPage() {
               <strong className="text-white">mange-debout à louer</strong> ou
               une{" "}
               <strong className="text-white">table haute lumineuse</strong>{" "}
-              pour une fête, une réception ou un événement ? DAIVEXO propose
+              pour une fête, une réception ou un événement ? DAIVEXO développe
               des <strong className="text-white">mange-debout LED</strong>, des{" "}
               <strong className="text-white">tables hautes lumineuses</strong>{" "}
               et des Light Cubes qui associent fonctionnalité, éclairage et
-              design événementiel.
+              design événementiel. La location sera lancée prochainement.
             </p>
 
             <p className="mt-5 max-w-2xl leading-7 text-white/70">
@@ -190,7 +192,7 @@ export default function LocationMangeDeboutPage() {
           </p>
 
           <p>
-            Lorsque vous louez plusieurs{" "}
+            Avec plusieurs{" "}
             <strong className="text-white">mange-debout LED</strong>, les Light
             Cubes peuvent être utilisés individuellement ou combinés pour créer
             une installation événementielle plus importante.
@@ -245,6 +247,39 @@ export default function LocationMangeDeboutPage() {
                 <p className="mt-3 leading-7 text-white/70">{text}</p>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ÉCLAIRAGE LED ET MOBILIER ÉVÉNEMENTIEL */}
+      <section className="border-y border-white/10 bg-neutral-950">
+        <div className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
+            Ambiance et scénographie événementielle
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
+            Éclairage LED et mobilier lumineux pour vos événements
+          </h2>
+          <div className="mt-7 space-y-5 text-lg leading-8 text-white/75">
+            <p>
+              Vous recherchez un <strong className="text-white">éclairage LED pour événement</strong>
+              {" "}ou un <strong className="text-white">éclairage d'ambiance pour une fête</strong> ?
+              Les Light Cubes DAIVEXO associent des tables hautes fonctionnelles
+              à une lumière décorative intégrée, idéale pour mettre en valeur
+              une réception, un mariage ou un événement d'entreprise.
+            </p>
+            <p>
+              Ce <strong className="text-white">mobilier événementiel lumineux</strong>
+              {" "}peut servir de mange-debout LED, de table haute lumineuse ou
+              d'élément d'une installation modulaire. Il apporte une ambiance
+              lumineuse sans se présenter comme un service de location
+              d'éclairage de scène ou de projecteurs.
+            </p>
+            <p>
+              La <strong className="text-white">location de mobilier lumineux</strong>
+              {" "}DAIVEXO est en préparation. Contactez-nous pour vous informer
+              sur le lancement et les configurations envisagées.
+            </p>
           </div>
         </div>
       </section>
@@ -391,7 +426,7 @@ export default function LocationMangeDeboutPage() {
             </p>
 
             <p>
-              Que vous souhaitiez louer un seul{" "}
+              Que vous envisagiez de louer un seul{" "}
               <strong className="text-white">mange-debout lumineux</strong> ou
               plusieurs{" "}
               <strong className="text-white">tables hautes LED</strong>,
@@ -399,6 +434,33 @@ export default function LocationMangeDeboutPage() {
               événement.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* LANCEMENT INTERNATIONAL */}
+      <section className="border-t border-white/10 bg-neutral-950">
+        <div className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
+          <h2 className="text-3xl font-semibold md:text-4xl">
+            Location de tables lumineuses en Belgique et en Europe
+          </h2>
+          <div className="mt-7 space-y-5 text-lg leading-8 text-white/75">
+            <p>
+              DAIVEXO prépare le lancement de ses mange-debout LED, tables hautes
+              lumineuses et Light Cubes pour les événements en Belgique, en France,
+              au Luxembourg, aux Pays-Bas et en Allemagne.
+            </p>
+            <p>
+              Pour une réception, un mariage, un salon ou un événement
+              professionnel, renseignez-vous sur les futures possibilités
+              de location et la disponibilité dans votre région.
+            </p>
+          </div>
+          <Link
+            href="/contact/"
+            className="mt-8 inline-block rounded-full bg-primary px-8 py-4 font-semibold text-black transition hover:brightness-110"
+          >
+            Se renseigner sur la location
+          </Link>
         </div>
       </section>
 
@@ -431,7 +493,7 @@ export default function LocationMangeDeboutPage() {
           </p>
 
           <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
-            Vous souhaitez louer des mange-debout LED pour votre événement ?
+            Envie de louer des mange-debout LED pour votre événement ?
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/70">
