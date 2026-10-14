@@ -119,7 +119,7 @@ const organizationSchema = {
     "https://www.daivexo.com/images/light-cube-green.jpeg",
     "https://www.daivexo.com/images/light-cubes-inspiratie/light-cubes-luxe-tuin-leie-blauw.jpg",
     "https://www.daivexo.com/images/light-cubes-inspiratie/bar-blauw-wit.jpg",
-    "https://www.daivexo.com/images/light-cubes-inspiratie/lightwall-multicolor.jpg",
+    "https://www.daivexo.com/images/light-cubes-inspiratie/lightwall-multicolor.webp",
   ],
 
   email: "info@daivexo.com",
