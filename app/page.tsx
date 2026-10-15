@@ -12,23 +12,32 @@ import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "Statafel Huren | LED Statafels & Staantafels Huren | DAIVEXO",
+  title: {
+    absolute: "Staantafels & Statafels Huren | LED Staantafels | DAIVEXO",
+  },
 
   description:
-    "Statafel of staantafel huren voor een feest of evenement? Ontdek de LED statafels, lichtgevende staantafels en Light Cubes van DAIVEXO. Ook verlichte bars, DJ Booths en Light Walls.",
+    "Staantafel huren of statafel huren? Ontdek LED staantafels, LED statafels en verlichte Light Cubes voor feesten en evenementen. Reserveer nu bij DAIVEXO.",
 
   alternates: {
     canonical: "https://www.daivexo.com/",
   },
 
   openGraph: {
-    title: "LED Statafels & Staantafels Huren | DAIVEXO",
+    title: "Staantafels & Statafels Huren | LED Staantafels | DAIVEXO",
     description:
-      "Ontdek LED statafels, lichtgevende staantafels en Light Cubes voor feesten, recepties en bedrijfsevenementen.",
+      "Ontdek LED staantafels, LED statafels en verlichte Light Cubes voor feesten, recepties en bedrijfsevenementen. Vraag nu een reservatie aan.",
     url: "https://www.daivexo.com/",
     siteName: "DAIVEXO",
     locale: "nl_BE",
     type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Staantafels & Statafels Huren | DAIVEXO",
+    description:
+      "LED staantafel of statafel huren? Ontdek de verlichte Light Cubes van DAIVEXO voor jouw evenement.",
   },
 }
 
