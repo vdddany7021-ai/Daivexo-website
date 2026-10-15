@@ -17,7 +17,7 @@ export function HeroSection() {
           <div className="relative mx-auto w-full max-w-[520px] overflow-hidden rounded-2xl border border-primary/20 bg-black lg:mx-0 lg:h-full lg:max-w-none">
             <div className="relative aspect-[3/2] lg:aspect-auto lg:h-full">
               <Image
-                src="/images/daivexo-led-statafels-homepage..webp"
+                src="/images/daivexo-led-statafels-homepage.webp"
                 alt="DAIVEXO LED statafels in groen, blauw en warm wit tijdens een sfeervol evenement"
                 fill
                 priority
