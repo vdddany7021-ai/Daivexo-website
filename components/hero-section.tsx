@@ -21,6 +21,7 @@ export function HeroSection() {
                 alt="DAIVEXO LED statafels in groen, blauw en warm wit tijdens een sfeervol evenement"
                 fill
                 priority
+                fetchPriority="high"
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 90vw, 45vw"
               />
