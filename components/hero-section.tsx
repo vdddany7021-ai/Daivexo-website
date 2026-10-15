@@ -257,10 +257,10 @@ export function HeroSection() {
 
             <div className="mt-8">
               <a
-                href="#contact"
+                href="/statafel-huren"
                 className="inline-flex items-center justify-center gap-3 rounded-full bg-primary px-8 py-4 text-sm font-semibold text-black transition-all duration-300 hover:brightness-110"
               >
-                Prijs voor statafels huren aanvragen
+                Bekijk LED staantafels &amp; vraag een reservatie aan
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>
