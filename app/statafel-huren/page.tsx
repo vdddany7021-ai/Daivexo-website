@@ -6,11 +6,10 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Statafel Huren | LED Statafels & Staantafels",
+    absolute: "Staantafel Huren & Statafel Huren | DAIVEXO",
   },
- 
-description:
-    "LED statafel huren? Ontdek lichtgevende statafels, LED eventmeubilair en sfeerverlichting voor feesten en evenementen. DAIVEXO Light Cubes: binnenkort beschikbaar.",
+  description:
+    "Staantafel huren of statafel huren? Reserveer LED staantafels en Light Cubes voor je feest of evenement. Vraag nu beschikbaarheid en een offerte aan bij DAIVEXO.",
 
   alternates: {
     canonical: "https://www.daivexo.com/statafel-huren",
@@ -38,9 +37,9 @@ description:
     },
   },
   openGraph: {
-    title: "Statafel Huren | LED Statafels & Staantafels | DAIVEXO",
+    title: "Staantafel Huren & Statafel Huren | DAIVEXO",
     description:
-      "Ontdek lichtgevende LED statafels, LED eventmeubilair en sfeerverlichting voor feesten en evenementen. Verhuur binnenkort beschikbaar.",
+      "Staantafel huren of statafel huren? Vraag nu een reservatie aan voor LED staantafels en Light Cubes voor jouw evenement.",
     url: "https://www.daivexo.com/statafel-huren",
     siteName: "DAIVEXO",
     locale: "nl_BE",
@@ -48,28 +47,28 @@ description:
   },
   twitter: {
     card: "summary_large_image",
-    title: "Statafel Huren | LED Statafels & Staantafels | DAIVEXO",
+    title: "Staantafel Huren & Statafel Huren | DAIVEXO",
     description:
-      "Lichtgevende LED statafels, sfeerverlichting en eventmeubilair van DAIVEXO. Verhuur binnenkort beschikbaar.",
+      "LED staantafels en statafels huren voor je evenement? Vraag nu een reservatie en offerte aan bij DAIVEXO.",
   },
 }
 
 
 const faq = [
   {
-    question: "Kan ik een statafel huren bij DAIVEXO?",
+    question: "Kan ik een staantafel huren of een statafel huren bij DAIVEXO?",
     answer:
-      "DAIVEXO bereidt de verhuur van lichtgevende LED statafels en Light Cubes voor. Neem contact op om te informeren naar de lancering en beschikbaarheid voor jouw evenement.",
+      "Ja. Je kunt nu een reservatieaanvraag indienen voor een toekomstige evenementdatum. Geef je datum, locatie en het gewenste aantal LED staantafels door. DAIVEXO bevestigt de beschikbaarheid en voorwaarden.",
   },
   {
-    question: "Wat is het verschil tussen een gewone statafel en een LED statafel?",
+    question: "Wat is het verschil tussen een gewone staantafel en een LED staantafel?",
     answer:
-      "Een gewone statafel biedt vooral een praktische plek om te staan. Een LED statafel combineert die functie met verlichting en wordt daardoor ook onderdeel van de aankleding van je evenement.",
+      "Een gewone staantafel of statafel biedt vooral een praktische plek om te staan. Een LED staantafel combineert die functie met verlichting en wordt daardoor ook onderdeel van de aankleding van je evenement.",
   },
   {
     question: "Kan ik meerdere LED statafels huren?",
     answer:
-      "De Light Cubes zijn modulair ontworpen: meerdere exemplaren kunnen afzonderlijk als staantafel worden ingezet of samen een grotere verlichte opstelling vormen. Informeer naar de geplande verhuurmogelijkheden.",
+      "Ja. Geef bij je aanvraag aan hoeveel LED staantafels je nodig hebt. DAIVEXO bekijkt welke aantallen en opstellingen voor jouw datum mogelijk zijn.",
   },
   {
     question: "Voor welke evenementen zijn de LED statafels geschikt?",
@@ -82,9 +81,9 @@ const faq = [
       "De modulaire Light Cubes kunnen naast statafels ook worden gecombineerd tot grotere concepten, zoals een verlichte bar, DJ Booth of Light Wall. Vraag naar de mogelijkheden voor jouw evenement.",
   },
   {
-    question: "Hoe vraag ik een offerte aan voor LED statafels?",
+    question: "Hoe kan ik een LED staantafel huren of een offerte aanvragen?",
     answer:
-      "Via de contactpagina van DAIVEXO kun je aangeven hoeveel LED statafels je zoekt, voor welk evenement en op welke datum. We informeren je over de geplande lancering en de mogelijkheden.",
+      "Via de contactpagina van DAIVEXO kun je een reservatieaanvraag of offerteaanvraag indienen. Vermeld de datum, locatie, het soort evenement en het gewenste aantal tafels. Een reservatie is pas definitief na bevestiging door DAIVEXO.",
   },
 ]
 
@@ -139,19 +138,20 @@ export default function StatafelHurenPage() {
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-28">
           <div>
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-primary">
-              LED statafels voor feesten en evenementen
+              LED staantafels en statafels voor feesten en evenementen
             </p>
 
             <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">
-              Statafel huren?
+              Staantafel huren of statafel huren?
               <span className="mt-2 block text-primary">
-                Ontdek onze LED staantafels
+                Ontdek onze LED Light Cubes
               </span>
             </h1>
 
             <p className="mt-7 max-w-2xl text-lg leading-8 text-white/80">
               Wil je een{" "}
-              <strong className="text-white">statafel huren</strong>{" "}
+              <strong className="text-white">staantafel huren</strong>{" "}
+              of een <strong className="text-white">statafel huren</strong>{" "}
               die meer biedt dan een gewone tafel?
               DAIVEXO combineert de praktische functie van een
               staantafel met sfeervolle verlichting.
@@ -162,10 +162,9 @@ export default function StatafelHurenPage() {
             </p>
 
             <p className="mt-5 max-w-2xl leading-7 text-white/70">
-              Van één lichtgevende staantafel tot meerdere
-              modulaire Light Cubes: ontdek hoe verlicht
-              eventmeubilair onderdeel kan worden van de
-              volledige aankleding van jouw evenement.
+              Reserveer tijdig voor een feest of evenement dat pas over enkele
+              maanden plaatsvindt. Vraag vrijblijvend beschikbaarheid
+              aan voor één of meerdere modulaire Light Cubes.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -173,7 +172,7 @@ export default function StatafelHurenPage() {
                 href="/contact"
                 className="rounded-full bg-primary px-7 py-4 text-center font-semibold text-black transition hover:brightness-110"
               >
-                Offerte voor statafels aanvragen
+                Vraag je reservatie aan
               </Link>
 
               <Link
@@ -201,7 +200,7 @@ export default function StatafelHurenPage() {
       {/* INTRO */}
       <section className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
         <h2 className="text-3xl font-semibold md:text-4xl">
-          LED statafels en staantafels huren
+          Staantafel huren: ontdek LED staantafels en statafels
         </h2>
 
         <div className="mt-7 space-y-5 text-lg leading-8 text-white/75">
@@ -225,10 +224,10 @@ export default function StatafelHurenPage() {
           </p>
 
           <p>
-            Je kunt één{" "}
-            <strong className="text-white">LED statafel huren</strong>{" "}
-            als blikvanger of meerdere Light Cubes combineren
-            tot een grotere opstelling.
+            Wie een{" "}
+            <strong className="text-white">LED staantafel wil huren</strong>,{" "}
+            kan nu een reservatieaanvraag indienen voor één Light Cube
+            als blikvanger, of van meerdere Light Cubes voor een grotere opstelling.
             Zo wordt het meubilair niet alleen functioneel,
             maar ook een zichtbaar onderdeel van de aankleding.
           </p>
@@ -244,7 +243,7 @@ export default function StatafelHurenPage() {
             </p>
 
             <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-              Staantafels huren voor feesten, recepties en bedrijfsevents
+              LED staantafels huren voor feesten, recepties en bedrijfsevents
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-white/70">
@@ -431,7 +430,7 @@ export default function StatafelHurenPage() {
             <p>
               Zoek je{" "}
               <strong className="text-white">
-                staantafels om te huren
+                een staantafel om te huren
               </strong>{" "}
               voor een receptie, feest of bedrijfsevent?
               Dan is een verlichte Light Cube een
@@ -471,7 +470,7 @@ export default function StatafelHurenPage() {
             Of je nu lichtgevende statafels zoekt, verlichte statafels
             wilt huren of ideeën verzamelt voor de aankleding van je
             evenement: bekijk onze Light Cubes en informeer naar de
-            verhuur die binnenkort van start gaat.
+            mogelijkheden om nu al te reserveren voor jouw evenementdatum.
           </p>
         </div>
 
@@ -492,10 +491,10 @@ export default function StatafelHurenPage() {
 
           <div className="mt-7 space-y-5 text-lg leading-8 text-white/75">
             <p>
-              DAIVEXO bereidt de lancering voor van zijn unieke
-              LED statafels, lichtgevende staantafels en modulaire
-              Light Cubes. Binnenkort richten we ons op evenementen
-              in België, Nederland, Duitsland, Frankrijk en Luxemburg.
+              Bij DAIVEXO kun je nu een verhuur- of reservatieaanvraag indienen
+              voor LED statafels, lichtgevende staantafels en modulaire
+              Light Cubes. Vermeld je evenementlocatie zodat we de
+              mogelijkheden en eventuele levering kunnen beoordelen.
             </p>
 
             <p>
@@ -505,10 +504,10 @@ export default function StatafelHurenPage() {
             </p>
 
             <p>
-              Wil je als een van de eersten kennismaken met onze
-              LED statafels? Neem vrijblijvend contact op met
-              DAIVEXO en informeer naar de geplande lancering,
-              beschikbaarheid en mogelijkheden voor jouw evenement.
+              Organiseer je binnenkort of over enkele maanden een evenement?
+              Vraag nu vrijblijvend de beschikbaarheid en een offerte
+              aan. Je reservatie wordt pas definitief nadat DAIVEXO
+              de datum en de voorwaarden heeft bevestigd.
             </p>
           </div>
 
@@ -516,7 +515,7 @@ export default function StatafelHurenPage() {
             href="/contact"
             className="mt-8 inline-block rounded-full bg-primary px-8 py-4 font-semibold text-black transition hover:brightness-110"
           >
-            Informeer naar de verhuurmogelijkheden
+            Vraag beschikbaarheid aan
           </Link>
         </div>
       </section>
@@ -524,7 +523,7 @@ export default function StatafelHurenPage() {
       {/* FAQ */}
       <section className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
         <h2 className="text-3xl font-semibold md:text-4xl">
-          Veelgestelde vragen over statafels huren
+          Veelgestelde vragen over staantafel huren en statafel huren
         </h2>
 
         <div className="mt-10 space-y-4">
@@ -553,23 +552,23 @@ export default function StatafelHurenPage() {
           </p>
 
           <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
-            LED statafels huren voor jouw evenement?
+            Een LED staantafel huren voor jouw evenement?
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/70">
             Op zoek naar één of meerdere lichtgevende
             statafels voor je feest, receptie of
             bedrijfsevenement?
-            Vertel ons wat je zoekt en ontdek welke
-            DAIVEXO Light Cube-opstelling bij
-            jouw plannen past.
+            Geef de datum, locatie en het gewenste aantal tafels door.
+            DAIVEXO bekijkt de beschikbaarheid en bezorgt je
+            de mogelijkheden voor jouw evenement.
           </p>
 
           <Link
             href="/contact"
             className="mt-8 inline-block rounded-full bg-primary px-8 py-4 font-semibold text-black transition hover:brightness-110"
           >
-            Vraag een vrijblijvende offerte aan
+            Vraag je offerte of reservatie aan
           </Link>
         </div>
       </section>
