@@ -96,6 +96,7 @@ export function HeroSection() {
             <article className="group relative min-h-[500px] overflow-hidden rounded-[28px] border border-white/15 bg-neutral-950">
               <Image
                 src="/images/light-cube-green.jpeg"
+                loading="lazy"
                 alt="Groene LED statafel huren voor feest of evenement"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
@@ -126,6 +127,7 @@ export function HeroSection() {
             <article className="group relative min-h-[500px] overflow-hidden rounded-[28px] border border-white/15 bg-neutral-950">
               <Image
                 src="/images/light-cubes-inspiratie/light-cubes-luxe-tuin-leie-blauw.webp"
+                loading="lazy"
                 alt="Blauwe LED staantafels en verlichte statafels voor verhuur"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
@@ -159,6 +161,7 @@ export function HeroSection() {
             <article className="group relative min-h-[330px] overflow-hidden rounded-[26px] border border-white/15 bg-neutral-950">
               <Image
                 src="/images/light-cubes-inspiratie/bar-blauw-wit.webp"
+                loading="lazy"
                 alt="Verlichte LED bar huren opgebouwd uit DAIVEXO Light Cubes"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
@@ -182,6 +185,7 @@ export function HeroSection() {
             <article className="group relative min-h-[330px] overflow-hidden rounded-[26px] border border-white/15 bg-neutral-950">
               <Image
                 src="/images/light-cubes-inspiratie/dj-geel.webp"
+                loading="lazy"
                 alt="Verlichte LED DJ Booth huren voor feest of evenement"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
@@ -203,10 +207,12 @@ export function HeroSection() {
 
             {/* RED LIGHT WALL */}
             <article className="group relative min-h-[330px] overflow-hidden rounded-[26px] border border-white/15 bg-neutral-950">
-              <img
-                loading="lazy"
+              <Image
                 src="/images/light-cubes-inspiratie/lightwall-rode-piramide.webp"
                 alt="Verlichte Light Wall voor feesten en evenementen opgebouwd uit LED Light Cubes"
+                fill
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 33vw"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
               />
 
