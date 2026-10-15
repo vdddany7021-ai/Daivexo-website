@@ -151,6 +151,8 @@ export function AegisSection() {
               <div className="relative overflow-hidden bg-black">
                 <img
                   src={premiumImage.image}
+                  loading="lazy"
+                  decoding="async"
                   alt={premiumImage.title}
                   className="w-full max-h-[950px] object-contain group-hover:scale-[1.015] transition-transform duration-700"
                 />
@@ -180,6 +182,8 @@ export function AegisSection() {
                 <div className="relative aspect-[4/3] overflow-hidden bg-black">
                   <img
                     src={item.image}
+                    loading="lazy"
+                    decoding="async"
                     alt={item.title}
                     className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
@@ -456,6 +460,7 @@ export function AegisSection() {
           >
             <img
               src={selectedImage.image}
+              decoding="async"
               alt={selectedImage.title}
               className="max-h-[82vh] max-w-[95vw] object-contain border border-primary/40 shadow-[0_0_40px_rgba(212,175,55,0.18)]"
             />
