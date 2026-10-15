@@ -204,6 +204,7 @@ export function HeroSection() {
             {/* RED LIGHT WALL */}
             <article className="group relative min-h-[330px] overflow-hidden rounded-[26px] border border-white/15 bg-neutral-950">
               <img
+                loading="lazy"
                 src="/images/light-cubes-inspiratie/lightwall-rode-piramide.webp"
                 alt="Verlichte Light Wall voor feesten en evenementen opgebouwd uit LED Light Cubes"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
