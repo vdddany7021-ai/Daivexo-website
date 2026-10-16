@@ -4,10 +4,10 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Location Mange-Debout LED | Tables Lumineuses | DAIVEXO",
+    absolute: "Location Mange-Debout LED & Tables Hautes Lumineuses | DAIVEXO",
   },
   description:
-    "Location de mange-debout LED et tables hautes lumineuses : mobilier événementiel et éclairage LED pour vos fêtes. Light Cubes DAIVEXO bientôt disponibles.",
+    "Location de mange-debout LED et tables hautes lumineuses pour fêtes et événements. Réservez dès maintenant vos Light Cubes DAIVEXO pour une date future.",
 
   alternates: {
     canonical: "https://www.daivexo.com/fr/statafel-huren",
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Location Mange-Debout LED | DAIVEXO",
     description:
-      "Découvrez les mange-debout LED, tables lumineuses et Light Cubes DAIVEXO pour vos événements. Location prochainement disponible.",
+      "Découvrez les mange-debout LED, tables lumineuses et Light Cubes DAIVEXO. Demandez dès maintenant une réservation pour votre événement.",
     
-url: "https://www.daivexo.com/fr/statafel-huren",
+    url: "https://www.daivexo.com/fr/statafel-huren",
 
     siteName: "DAIVEXO",
     locale: "fr_FR",
@@ -50,7 +50,7 @@ url: "https://www.daivexo.com/fr/statafel-huren",
     card: "summary_large_image",
     title: "Location Mange-Debout LED | DAIVEXO",
     description:
-      "Mange-debout LED et mobilier lumineux pour événements : location prochainement disponible chez DAIVEXO.",
+      "Location de mange-debout LED et mobilier lumineux pour événements. Demandez une réservation ou un devis chez DAIVEXO.",
   },
 }
 
@@ -58,7 +58,7 @@ const faq = [
   {
     question: "Puis-je louer des mange-debout LED chez DAIVEXO ?",
     answer:
-      "La location des mange-debout lumineux et Light Cubes DAIVEXO sera lancée prochainement. Contactez-nous pour connaître les possibilités prévues pour votre événement.",
+      "Oui. Vous pouvez dès maintenant envoyer une demande de réservation pour une date future. Indiquez la date, le lieu et le nombre de Light Cubes souhaités. DAIVEXO confirmera la disponibilité et les conditions.",
   },
   {
     question: "Qu'est-ce qu'un mange-debout LED ?",
@@ -68,7 +68,7 @@ const faq = [
   {
     question: "Puis-je louer plusieurs tables hautes LED ?",
     answer:
-      "Plusieurs Light Cubes peuvent être utilisés individuellement comme tables hautes lumineuses ou assemblés pour former une installation plus importante. Renseignez-vous sur la disponibilité prévue.",
+      "Oui. Plusieurs Light Cubes peuvent être utilisés comme tables hautes lumineuses ou assemblés pour une installation plus importante. Précisez la quantité souhaitée dans votre demande : nous vérifierons les possibilités pour votre date.",
   },
   {
     question: "Les mange-debout conviennent-ils aux fêtes et réceptions ?",
@@ -129,13 +129,14 @@ export default function LocationMangeDeboutPage() {
               des <strong className="text-white">mange-debout LED</strong>, des{" "}
               <strong className="text-white">tables hautes lumineuses</strong>{" "}
               et des Light Cubes qui associent fonctionnalité, éclairage et
-              design événementiel. La location sera lancée prochainement.
+              design événementiel. Vous pouvez déjà demander une réservation pour une date future.
             </p>
 
             <p className="mt-5 max-w-2xl leading-7 text-white/70">
               D'un seul mange-debout lumineux à plusieurs Light Cubes pour une
               installation complète, la configuration peut être adaptée au
-              type d'événement.
+              type d'événement. Vous pouvez nous contacter dès aujourd'hui,
+              même si votre événement a lieu dans plusieurs mois.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -143,7 +144,7 @@ export default function LocationMangeDeboutPage() {
                 href="/contact/"
                 className="rounded-full bg-primary px-7 py-4 text-center font-semibold text-black transition hover:brightness-110"
               >
-                Demander un devis
+                Demander une réservation
               </Link>
 
               <Link
@@ -276,9 +277,10 @@ export default function LocationMangeDeboutPage() {
               d'éclairage de scène ou de projecteurs.
             </p>
             <p>
-              La <strong className="text-white">location de mobilier lumineux</strong>
-              {" "}DAIVEXO est en préparation. Contactez-nous pour vous informer
-              sur le lancement et les configurations envisagées.
+              Pour la <strong className="text-white">location de mobilier lumineux</strong>
+              {" "}DAIVEXO, envoyez dès maintenant votre demande avec la date,
+              le lieu et le nombre de tables souhaité. Nous vous confirmerons
+              la disponibilité et les conditions avant toute réservation définitive.
             </p>
           </div>
         </div>
@@ -437,7 +439,7 @@ export default function LocationMangeDeboutPage() {
         </div>
       </section>
 
-      {/* LANCEMENT INTERNATIONAL */}
+      {/* DEMANDES DE RÉSERVATION INTERNATIONALES */}
       <section className="border-t border-white/10 bg-neutral-950">
         <div className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
           <h2 className="text-3xl font-semibold md:text-4xl">
@@ -445,21 +447,23 @@ export default function LocationMangeDeboutPage() {
           </h2>
           <div className="mt-7 space-y-5 text-lg leading-8 text-white/75">
             <p>
-              DAIVEXO prépare le lancement de ses mange-debout LED, tables hautes
-              lumineuses et Light Cubes pour les événements en Belgique, en France,
-              au Luxembourg, aux Pays-Bas et en Allemagne.
+              DAIVEXO accepte les demandes de réservation pour ses mange-debout LED,
+              tables hautes lumineuses et Light Cubes. Indiquez le lieu de votre
+              événement afin que nous puissions examiner les possibilités de
+              livraison, notamment en Belgique et dans les pays voisins.
             </p>
             <p>
               Pour une réception, un mariage, un salon ou un événement
-              professionnel, renseignez-vous sur les futures possibilités
-              de location et la disponibilité dans votre région.
+              professionnel, demandez dès maintenant la disponibilité et un devis,
+              même si votre événement a lieu dans plusieurs mois. La réservation
+              devient définitive uniquement après confirmation par DAIVEXO.
             </p>
           </div>
           <Link
             href="/contact/"
             className="mt-8 inline-block rounded-full bg-primary px-8 py-4 font-semibold text-black transition hover:brightness-110"
           >
-            Se renseigner sur la location
+            Demander une réservation
           </Link>
         </div>
       </section>
@@ -497,8 +501,8 @@ export default function LocationMangeDeboutPage() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/70">
-            Indiquez-nous le nombre de tables dont vous avez besoin et le type
-            d'événement que vous organisez. Nous étudierons avec vous la
+            Indiquez-nous la date, le lieu, le nombre de tables souhaité et le type
+            d'événement. Nous examinerons la disponibilité, la livraison et la
             configuration Light Cube la plus adaptée.
           </p>
 
