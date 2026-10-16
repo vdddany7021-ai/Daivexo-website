@@ -3,9 +3,9 @@ import Image from "next/image"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "LED Cocktail Tables for Hire | Illuminated Event Furniture | DAIVEXO",
+  title: "Standing Table Hire | LED Cocktail Tables for Events | DAIVEXO",
   description:
-    "Discover LED cocktail tables for hire, illuminated standing tables, LED event furniture and atmospheric event lighting. DAIVEXO Light Cubes: coming soon.",
+    "Looking for standing table hire or LED cocktail tables for your event? Request a reservation for DAIVEXO illuminated tables and Light Cubes, even months in advance.",
 
   alternates: {
     canonical: "https://www.daivexo.com/en/statafel-huren",
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "LED Cocktail Tables for Hire | DAIVEXO",
+    title: "Standing Tables & LED Cocktail Tables for Hire | DAIVEXO",
     description:
-      "Discover illuminated cocktail tables, LED event furniture and atmospheric LED event lighting. DAIVEXO Light Cubes: coming soon.",
+      "Request LED cocktail tables, illuminated standing tables and Light Cubes for future parties, receptions and corporate events.",
     url: "https://www.daivexo.com/en/statafel-huren",
     siteName: "DAIVEXO",
     locale: "en_GB",
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "LED Cocktail Tables for Hire | DAIVEXO",
+    title: "Standing Tables & LED Cocktail Tables for Hire | DAIVEXO",
     description:
-      "Illuminated cocktail tables, LED event furniture and event lighting. Coming soon.",
+      "Reserve illuminated standing tables and LED cocktail tables for future events.",
   },
 }
 
@@ -54,7 +54,7 @@ const faq = [
   {
     question: "Can I hire LED cocktail tables from DAIVEXO?",
     answer:
-      "DAIVEXO is preparing to launch Light Cube hire for parties, receptions and corporate events. Contact us to ask about planned availability.",
+      "You can already submit a reservation enquiry for a future party, reception or corporate event, including events several months away. Availability and hire arrangements are confirmed individually.",
   },
   {
     question: "What is an LED cocktail table?",
@@ -64,7 +64,7 @@ const faq = [
   {
     question: "Can I hire several LED standing tables?",
     answer:
-      "The modular concept allows multiple Light Cubes to be used as individual illuminated standing tables or combined into larger event setups. Ask about upcoming hire options.",
+      "Yes. You can request several Light Cubes for use as individual illuminated standing tables or a larger modular event setup. Tell us your event date and the number of tables required.",
   },
   {
     question: "Are the tables suitable for parties and receptions?",
@@ -74,7 +74,7 @@ const faq = [
   {
     question: "Can DAIVEXO create larger event installations?",
     answer:
-      "The Light Cube concept supports larger arrangements, including illuminated bars, DJ booths and Light Walls. Contact DAIVEXO to discuss the planned options.",
+      "The modular Light Cube concept allows larger arrangements, including illuminated bars, DJ booths and Light Walls. Contact DAIVEXO to discuss your event and the possibilities.",
   },
 ]
 
@@ -110,7 +110,7 @@ export default function LedCocktailTablesPage() {
             </p>
 
             <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">
-              LED cocktail tables for hire
+              LED cocktail tables and standing tables for hire
               <span className="mt-2 block text-primary">
                 Discover DAIVEXO Light Cubes
               </span>
@@ -124,13 +124,13 @@ export default function LedCocktailTablesPage() {
               <strong className="text-white">LED cocktail tables</strong>,{" "}
               <strong className="text-white">illuminated standing tables</strong>{" "}
               and Light Cubes that combine lighting, functionality and modern
-              event design. Hire availability is coming soon.
+              event design. You can already request a reservation for a future event.
             </p>
 
             <p className="mt-5 max-w-2xl leading-7 text-white/70">
-              From a single illuminated table to multiple Light Cubes for a
-              complete event setting, the setup can be adapted to suit your
-              event.
+              From one illuminated table to multiple Light Cubes for a complete
+              event setting, you can enquire now for an event taking place
+              several months from today.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -138,7 +138,7 @@ export default function LedCocktailTablesPage() {
                 href="/contact/"
                 className="rounded-full bg-primary px-7 py-4 text-center font-semibold text-black transition hover:brightness-110"
               >
-                Ask about availability
+                Request a reservation
               </Link>
 
               <Link
@@ -412,8 +412,9 @@ export default function LedCocktailTablesPage() {
               {" "}without requiring separate decorative tables and lighting features.
             </p>
             <p>
-              The DAIVEXO Light Cubes are being prepared for hire. Contact us
-              to discuss future availability and event possibilities.
+              Planning ahead? Submit a reservation enquiry now, even if your event
+              is several months away. We will discuss availability and
+              practical arrangements with you.
             </p>
           </div>
         </div>
@@ -425,10 +426,10 @@ export default function LedCocktailTablesPage() {
           LED cocktail table hire in Belgium and across Europe
         </h2>
         <p className="mt-6 text-lg leading-8 text-white/75">
-          DAIVEXO is preparing its Light Cube hire offering for events in
-          Belgium, the Netherlands, Germany, France and Luxembourg. If you are
-          planning an event, contact us to enquire about the launch and
-          availability in your area.
+          Planning an event in Belgium, the Netherlands, Germany, France or
+          Luxembourg? You can already enquire about reserving DAIVEXO Light
+          Cubes for a future date. Delivery and availability depend on the
+          event location and will be confirmed individually.
         </p>
       </section>
 
@@ -465,15 +466,16 @@ export default function LedCocktailTablesPage() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/70">
-            Tell us how many tables you may need and what type of event you are
-            organising. Ask about the upcoming launch and planned Light Cube hire options.
+            Tell us your event date, location and how many tables you need.
+            You can request a reservation months in advance; we will confirm
+            availability and arrangements with you.
           </p>
 
           <Link
             href="/contact/"
             className="mt-8 inline-block rounded-full bg-primary px-8 py-4 font-semibold text-black transition hover:brightness-110"
           >
-            Ask about availability
+            Request a reservation
           </Link>
         </div>
       </section>
