@@ -40,19 +40,19 @@ const features = [
 const visuals = [
   {
     title: "SCANMIJ op brooddoos",
-    image: "/images/Brooddoos met scanmij qr code.png",
+    image: "/images/Brooddoos met scanmij qr code.webp",
   },
   {
     title: "SCANMIJ op drinkfles",
-    image: "/images/Drinkfles met scanmij sticker.png",
+    image: "/images/Drinkfles met scanmij sticker.webp",
   },
   {
     title: "SCANMIJ op laptop",
-    image: "/images/Laptop met scanmij sticker.png",
+    image: "/images/Laptop met scanmij sticker.webp",
   },
   {
     title: "SCANMIJ QR-code",
-    image: "/images/Luxe moderne qr code afbeelding.png",
+    image: "/images/Luxe moderne qr code afbeelding.webp",
   },
 ]
 
