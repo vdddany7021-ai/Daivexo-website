@@ -136,6 +136,10 @@ export function QRLabelsSection() {
                   <img
                     src={visual.image}
                     alt={visual.title}
+                    loading="lazy"
+                    decoding="async"
+                    width={800}
+                    height={600}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
