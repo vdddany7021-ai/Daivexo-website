@@ -29,7 +29,7 @@ export function HeroSection() {
     height={735}
     fetchPriority="high"
     decoding="async"
-   className="absolute inset-0 h-full w-full object-contain object-center"
+   className="absolute inset-0 h-full w-full object-cover object-center"
   />
 </picture>
             </div>
