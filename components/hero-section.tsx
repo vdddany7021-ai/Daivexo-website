@@ -95,7 +95,7 @@ export function HeroSection() {
             {/* GREEN LIGHT CUBE */}
             <article className="group relative min-h-[500px] overflow-hidden rounded-[28px] border border-white/15 bg-neutral-950">
               <Image
-                src="/images/light-cube-green.jpeg"
+                src="/images/light-cube-green.webp"
                 loading="lazy"
                 alt="Groene LED statafel huren voor feest of evenement"
                 fill
