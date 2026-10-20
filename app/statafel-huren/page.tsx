@@ -6,10 +6,10 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Staantafel Huren & Statafel Huren | DAIVEXO",
+    absolute: "Statafel Huren & Staantafel Huren | LED Statafels",
   },
   description:
-    "Staantafel huren of statafel huren? Reserveer LED staantafels en Light Cubes voor je feest of evenement. Vraag nu beschikbaarheid en een offerte aan bij DAIVEXO.",
+    "Statafel of staantafel huren? Ontdek verlichte LED statafels en Light Cubes voor feesten en evenementen in heel België. Vraag vrijblijvend een offerte aan.",
 
   alternates: {
     canonical: "https://www.daivexo.com/statafel-huren",
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Staantafel Huren & Statafel Huren | DAIVEXO",
+    title: "Statafel Huren & Staantafel Huren | LED Statafels",
     description:
-      "Staantafel huren of statafel huren? Vraag nu een reservatie aan voor LED staantafels en Light Cubes voor jouw evenement.",
+      "Statafel of staantafel huren? Ontdek verlichte LED statafels en Light Cubes voor evenementen in heel België. Vraag een offerte aan bij DAIVEXO.",
     url: "https://www.daivexo.com/statafel-huren",
     siteName: "DAIVEXO",
     locale: "nl_BE",
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Staantafel Huren & Statafel Huren | DAIVEXO",
+    title: "Statafel Huren & Staantafel Huren | LED Statafels",
     description:
-      "LED staantafels en statafels huren voor je evenement? Vraag nu een reservatie en offerte aan bij DAIVEXO.",
+      "Statafel of staantafel huren? Ontdek LED statafels voor evenementen in heel België en vraag vrijblijvend een offerte aan bij DAIVEXO.",
   },
 }
 
@@ -142,7 +142,7 @@ export default function StatafelHurenPage() {
             </p>
 
             <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">
-              Staantafel huren of statafel huren?
+              Statafel huren of staantafel huren?
               <span className="mt-2 block text-primary">
                 Ontdek onze LED Light Cubes
               </span>
@@ -162,8 +162,8 @@ export default function StatafelHurenPage() {
             </p>
 
             <p className="mt-5 max-w-2xl leading-7 text-white/70">
-              Reserveer tijdig voor een feest of evenement dat pas over enkele
-              maanden plaatsvindt. Vraag vrijblijvend beschikbaarheid
+              Plan je een feest of evenement dat pas over enkele
+              maanden plaatsvindt? Vraag vrijblijvend beschikbaarheid
               aan voor één of meerdere modulaire Light Cubes.
             </p>
 
@@ -486,14 +486,14 @@ export default function StatafelHurenPage() {
       <section className="border-t border-white/10 bg-neutral-950">
         <div className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
           <h2 className="text-3xl font-semibold md:text-4xl">
-            LED statafels huren in België en Europa
+            LED statafels huren in heel België
           </h2>
 
           <div className="mt-7 space-y-5 text-lg leading-8 text-white/75">
             <p>
-              Bij DAIVEXO kun je nu een verhuur- of reservatieaanvraag indienen
+              Bij DAIVEXO kun je een offerte- of reservatieaanvraag indienen
               voor LED statafels, lichtgevende staantafels en modulaire
-              Light Cubes. Vermeld je evenementlocatie zodat we de
+              Light Cubes voor evenementen in heel België. Vermeld je locatie zodat we de
               mogelijkheden en eventuele levering kunnen beoordelen.
             </p>
 
