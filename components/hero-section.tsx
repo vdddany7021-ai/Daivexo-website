@@ -16,15 +16,22 @@ export function HeroSection() {
           {/* LED STATAFELS HERO IMAGE */}
           <div className="relative mx-auto w-full max-w-[520px] overflow-hidden rounded-2xl border border-primary/20 bg-black lg:mx-0 lg:h-full lg:max-w-none">
             <div className="relative aspect-[3/2] lg:aspect-auto lg:h-full">
-              <Image
-                src="/images/daivexo-led-statafels-homepage.webp"
-                alt="DAIVEXO LED statafels in groen, blauw en warm wit tijdens een sfeervol evenement"
-                fill
-                priority
-                fetchPriority="high"
-                className="object-cover object-center"
-                sizes="(max-width: 1024px) 90vw, 45vw"
-              />
+              <picture>
+  <source
+    media="(max-width: 767px)"
+    srcSet="/images/daivexo-led-statafels-homepage-mobile.webp"
+    type="image/webp"
+  />
+  <img
+    src="/images/daivexo-led-statafels-homepage.webp"
+    alt="DAIVEXO LED statafels in groen, blauw en warm wit tijdens een sfeervol evenement"
+    width={1100}
+    height={735}
+    fetchPriority="high"
+    decoding="async"
+    className="absolute inset-0 h-full w-full object-cover object-center"
+  />
+</picture>
             </div>
           </div>
 
