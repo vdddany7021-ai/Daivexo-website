@@ -135,7 +135,7 @@ export default function StatafelHurenPage() {
 
       {/* HERO */}
       <section className="border-b border-white/10">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-28">
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-28 [&>div:first-child]:lg:order-2 [&>div:last-child]:lg:order-1">
           <div>
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-primary">
               LED staantafels en statafels voor feesten en evenementen
