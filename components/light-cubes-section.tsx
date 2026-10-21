@@ -7,7 +7,7 @@ const lightCubes = [
   {
     id: 1,
     title: "STATAFEL",
-    image: "/images/light-cube-green.jpeg",
+    image: "/images/light-cube-yellow.webp",
     alt: "DAIVEXO Light Cube statafel groen",
   },
   {
