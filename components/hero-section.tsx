@@ -100,19 +100,21 @@ export function HeroSection() {
           <div className="grid gap-5 lg:grid-cols-2">
 
             {/* GREEN LIGHT CUBE */}
-            <article className="group relative min-h-[500px] overflow-hidden rounded-[28px] border border-white/15 bg-neutral-950">
+            <article className="group relative flex flex-col overflow-hidden rounded-[28px] border border-white/15 bg-neutral-950 md:block md:min-h-[500px]">
+              <div className="relative aspect-[4/3] w-full bg-black md:absolute md:inset-0 md:aspect-auto">
               <Image
                 src="/images/light-cube-green.webp"
                 loading="lazy"
                 alt="Groene LED statafel huren voor feest of evenement"
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                className="object-contain transition-transform duration-700 group-hover:scale-[1.03] md:object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
+              </div>
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
+              <div className="hidden md:absolute md:inset-0 md:block md:bg-gradient-to-t md:from-black md:via-black/10 md:to-transparent" />
 
-              <div className="absolute inset-x-0 bottom-0 p-8 md:p-10">
+              <div className="relative bg-black p-6 md:absolute md:inset-x-0 md:bottom-0 md:bg-transparent md:p-10">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
                   Individueel te huren
                 </p>
@@ -131,19 +133,21 @@ export function HeroSection() {
             </article>
 
             {/* BLUE COLLECTION */}
-            <article className="group relative min-h-[500px] overflow-hidden rounded-[28px] border border-white/15 bg-neutral-950">
+            <article className="group relative flex flex-col overflow-hidden rounded-[28px] border border-white/15 bg-neutral-950 md:block md:min-h-[500px]">
+              <div className="relative aspect-[4/3] w-full bg-black md:absolute md:inset-0 md:aspect-auto">
               <Image
                 src="/images/light-cubes-inspiratie/light-cubes-luxe-tuin-leie-blauw.webp"
                 loading="lazy"
                 alt="Blauwe LED staantafels en verlichte statafels voor verhuur"
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                className="object-contain transition-transform duration-700 group-hover:scale-[1.03] md:object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
+              </div>
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
+              <div className="hidden md:absolute md:inset-0 md:block md:bg-gradient-to-t md:from-black md:via-black/10 md:to-transparent" />
 
-              <div className="absolute inset-x-0 bottom-0 p-8 md:p-10">
+              <div className="relative bg-black p-6 md:absolute md:inset-x-0 md:bottom-0 md:bg-transparent md:p-10">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
                   Combineer & creëer
                 </p>
