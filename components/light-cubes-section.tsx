@@ -131,7 +131,7 @@ export function LightCubesSection() {
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent" />
 
-                <div className="absolute bottom-0 left-0 right-0 p-6">
+                <div className="absolute bottom-0 left-0 right-0 px-6 pb-2 pt-6 md:p-6">
                   <span className="text-primary text-xs md:text-sm tracking-[0.32em] uppercase block">
                     DAIVEXO — {cube.title}
                   </span>
