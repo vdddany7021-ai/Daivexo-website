@@ -70,6 +70,23 @@ export function LightCubesCtaSection() {
   const [sendSuccess, setSendSuccess] = useState(false)
   const [sendError, setSendError] = useState("")
 
+  // Open het bestaande formulier bij aankomst vanaf /statafel-huren.
+  useEffect(() => {
+    const url = new URL(window.location.href)
+    const requestedForm = url.searchParams.get("lightcubes")
+
+    if (requestedForm !== "reservation" && requestedForm !== "quote") return
+
+    setFormType(requestedForm)
+    setFormData(initialFormData)
+    setSendSuccess(false)
+    setSendError("")
+
+    // Verwijder de parameter zodat verversen het formulier niet opnieuw opent.
+    url.searchParams.delete("lightcubes")
+    window.history.replaceState(window.history.state, "", url.pathname + url.search + url.hash)
+  }, [])
+
   useEffect(() => {
     if (!formType) return
 
