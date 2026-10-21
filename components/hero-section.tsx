@@ -169,19 +169,21 @@ export function HeroSection() {
           <div className="mt-5 grid gap-5 md:grid-cols-3">
 
             {/* LIGHT BAR */}
-            <article className="group relative min-h-[330px] overflow-hidden rounded-[26px] border border-white/15 bg-neutral-950">
-              <Image
-                src="/images/light-cubes-inspiratie/bar-blauw-wit.webp"
-                loading="lazy"
-                alt="Verlichte LED bar huren opgebouwd uit DAIVEXO Light Cubes"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
+            <article className="group relative flex flex-col overflow-hidden rounded-[26px] border border-white/15 bg-neutral-950 md:block md:min-h-[330px]">
+              <div className="relative aspect-[4/3] w-full bg-black md:absolute md:inset-0 md:aspect-auto">
+                <Image
+                  src="/images/light-cubes-inspiratie/bar-blauw-wit.webp"
+                  loading="lazy"
+                  alt="Verlichte LED bar huren opgebouwd uit DAIVEXO Light Cubes"
+                  fill
+                  className="object-contain transition-transform duration-700 group-hover:scale-[1.04] md:object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/5 to-transparent" />
+              <div className="hidden md:absolute md:inset-0 md:block md:bg-gradient-to-t md:from-black md:via-black/5 md:to-transparent" />
 
-              <div className="absolute inset-x-0 bottom-0 p-6">
+              <div className="relative bg-black p-6 md:absolute md:inset-x-0 md:bottom-0 md:bg-transparent">
                 <p className="mb-2 text-xs font-semibold uppercase tracking-[0.28em] text-primary">
                   Eventmeubilair huren
                 </p>
@@ -193,21 +195,23 @@ export function HeroSection() {
             </article>
 
             {/* YELLOW DJ BOOTH */}
-            <article className="group relative min-h-[330px] overflow-hidden rounded-[26px] border border-white/15 bg-neutral-950">
-              <Image
-                src="/images/light-cubes-inspiratie/dj-geel.webp"
-                loading="lazy"
-                alt="Verlichte LED DJ Booth huren voor feest of evenement"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
+            <article className="group relative flex flex-col overflow-hidden rounded-[26px] border border-white/15 bg-neutral-950 md:block md:min-h-[330px]">
+              <div className="relative aspect-[4/3] w-full bg-black md:absolute md:inset-0 md:aspect-auto">
+                <Image
+                  src="/images/light-cubes-inspiratie/dj-geel.webp"
+                  loading="lazy"
+                  alt="Verlichte LED DJ Booth huren voor feest of evenement"
+                  fill
+                  className="object-contain transition-transform duration-700 group-hover:scale-[1.04] md:object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/5 to-transparent" />
+              <div className="hidden md:absolute md:inset-0 md:block md:bg-gradient-to-t md:from-black md:via-black/5 md:to-transparent" />
 
-              <div className="absolute inset-x-0 bottom-0 p-6">
+              <div className="relative bg-black p-6 md:absolute md:inset-x-0 md:bottom-0 md:bg-transparent">
                 <p className="mb-2 text-xs font-semibold uppercase tracking-[0.28em] text-primary">
-                  Feesten & evenementen
+                  Feesten &amp; evenementen
                 </p>
 
                 <h3 className="text-2xl font-semibold text-white">
@@ -217,19 +221,21 @@ export function HeroSection() {
             </article>
 
             {/* RED LIGHT WALL */}
-            <article className="group relative min-h-[330px] overflow-hidden rounded-[26px] border border-white/15 bg-neutral-950">
-              <Image
-                src="/images/light-cubes-inspiratie/lightwall-rode-piramide.webp"
-                alt="Verlichte Light Wall voor feesten en evenementen opgebouwd uit LED Light Cubes"
-                fill
-                loading="lazy"
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-              />
+            <article className="group relative flex flex-col overflow-hidden rounded-[26px] border border-white/15 bg-neutral-950 md:block md:min-h-[330px]">
+              <div className="relative aspect-[4/3] w-full bg-black md:absolute md:inset-0 md:aspect-auto">
+                <Image
+                  src="/images/light-cubes-inspiratie/lightwall-rode-piramide.webp"
+                  alt="Verlichte Light Wall voor feesten en evenementen opgebouwd uit LED Light Cubes"
+                  fill
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-contain transition-transform duration-700 group-hover:scale-[1.04] md:object-cover"
+                />
+              </div>
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/5 to-transparent" />
+              <div className="hidden md:absolute md:inset-0 md:block md:bg-gradient-to-t md:from-black md:via-black/5 md:to-transparent" />
 
-              <div className="absolute inset-x-0 bottom-0 p-6">
+              <div className="relative bg-black p-6 md:absolute md:inset-x-0 md:bottom-0 md:bg-transparent">
                 <p className="mb-2 text-xs font-semibold uppercase tracking-[0.28em] text-primary">
                   Event decoratie
                 </p>
