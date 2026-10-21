@@ -136,7 +136,7 @@ export function LightCubesSection() {
                     DAIVEXO — {cube.title}
                   </span>
 
-                  <span className="mt-2 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="mt-2 hidden md:inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <ZoomIn className="h-4 w-4" />
                     Klik om te vergroten
                   </span>
