@@ -217,7 +217,8 @@ export default function LightCubesInspiratiePage() {
                 </p>
               </div>
 
-              <button
+              <div className="min-w-0">
+                <button
                 type="button"
                 onClick={() => openImage(0)}
                 className="group relative block w-full overflow-hidden border border-primary/60 bg-black text-left cursor-zoom-in"
@@ -228,31 +229,33 @@ export default function LightCubesInspiratiePage() {
                   className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.015]"
                 />
 
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/65 to-transparent px-6 pb-7 pt-28 md:px-10 md:pb-10 md:pt-40">
-                  <span className="text-primary text-xs tracking-[0.3em] uppercase">
-                    Light Cube Statafel
-                  </span>
 
-                  <h3 className="font-serif text-2xl md:text-4xl mt-2">
-                    Helder geel
-                  </h3>
-
-                  <p className="mt-3 max-w-2xl text-sm md:text-base text-stone-300 leading-7">
-                    Een warme en opvallende kleur die meteen sfeer brengt en
-                    de Light Cube tot een herkenbaar ontmoetingspunt maakt.
-                  </p>
-                </div>
-
-                <div className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center border border-primary bg-black/75 text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                <div className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
                   <ZoomIn className="h-5 w-5" />
                 </div>
 
                 <div className="absolute top-4 left-4 w-9 h-9 border-t-2 border-l-2 border-primary" />
                 <div className="absolute bottom-4 right-4 w-9 h-9 border-b-2 border-r-2 border-primary" />
-              </button>
+                </button>
+                <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                    <span className="text-primary text-xs tracking-[0.3em] uppercase">
+                      Light Cube Statafel
+                    </span>
+
+                    <h3 className="font-serif text-2xl md:text-4xl mt-2">
+                      Helder geel
+                    </h3>
+
+                    <p className="mt-3 max-w-2xl text-sm md:text-base text-stone-300 leading-7">
+                      Een warme en opvallende kleur die meteen sfeer brengt en
+                      de Light Cube tot een herkenbaar ontmoetingspunt maakt.
+                    </p>
+                </div>
+              </div>
 
               <div className="mt-8 grid gap-8 md:grid-cols-2">
-                <button
+                <div className="min-w-0">
+                  <button
                   type="button"
                   onClick={() => openImage(1)}
                   className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
@@ -260,25 +263,27 @@ export default function LightCubesInspiratiePage() {
                   <img
                     src={galleryImages[1].src}
                     alt={galleryImages[1].alt}
-                    className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent px-6 pb-6 pt-20">
-                    <span className="text-primary text-xs tracking-[0.25em] uppercase">
-                      Light Cube Statafel
-                    </span>
 
-                    <h3 className="font-serif text-2xl md:text-3xl mt-2">
-                      Intens blauw
-                    </h3>
-                  </div>
-
-                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
                     <ZoomIn className="h-5 w-5" />
                   </div>
-                </button>
+                  </button>
+                  <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                      <span className="text-primary text-xs tracking-[0.25em] uppercase">
+                        Light Cube Statafel
+                      </span>
 
-                <button
+                      <h3 className="font-serif text-2xl md:text-3xl mt-2">
+                        Intens blauw
+                      </h3>
+                  </div>
+                </div>
+
+                <div className="min-w-0">
+                  <button
                   type="button"
                   onClick={() => openImage(2)}
                   className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
@@ -286,23 +291,24 @@ export default function LightCubesInspiratiePage() {
                   <img
                     src={galleryImages[2].src}
                     alt={galleryImages[2].alt}
-                    className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent px-6 pb-6 pt-20">
-                    <span className="text-primary text-xs tracking-[0.25em] uppercase">
-                      Light Cube Statafel
-                    </span>
 
-                    <h3 className="font-serif text-2xl md:text-3xl mt-2">
-                      Warm wit
-                    </h3>
-                  </div>
-
-                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
                     <ZoomIn className="h-5 w-5" />
                   </div>
-                </button>
+                  </button>
+                  <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                      <span className="text-primary text-xs tracking-[0.25em] uppercase">
+                        Light Cube Statafel
+                      </span>
+
+                      <h3 className="font-serif text-2xl md:text-3xl mt-2">
+                        Warm wit
+                      </h3>
+                  </div>
+                </div>
               </div>
             </section>
 
@@ -331,7 +337,8 @@ export default function LightCubesInspiratiePage() {
                 </p>
               </div>
 
-              <button
+              <div className="min-w-0">
+                <button
                 type="button"
                 onClick={() => openImage(3)}
                 className="group relative block w-full overflow-hidden border border-primary/60 bg-black text-left cursor-zoom-in"
@@ -342,31 +349,33 @@ export default function LightCubesInspiratiePage() {
                   className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.015]"
                 />
 
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent px-6 pb-7 pt-28 md:px-10 md:pb-10 md:pt-40">
-                  <span className="text-primary text-xs tracking-[0.3em] uppercase">
-                    Light Cube Bar
-                  </span>
 
-                  <h3 className="font-serif text-2xl md:text-4xl mt-2">
-                    Warm wit &amp; diepblauw
-                  </h3>
-
-                  <p className="mt-3 max-w-2xl text-sm md:text-base text-stone-300 leading-7">
-                    Een stijlvolle combinatie met een warme,
-                    uitnodigende bar en een krachtige blauwe achterwand.
-                  </p>
-                </div>
-
-                <div className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center border border-primary bg-black/75 text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                <div className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
                   <ZoomIn className="h-5 w-5" />
                 </div>
 
                 <div className="absolute top-4 left-4 w-9 h-9 border-t-2 border-l-2 border-primary" />
                 <div className="absolute bottom-4 right-4 w-9 h-9 border-b-2 border-r-2 border-primary" />
-              </button>
+                </button>
+                <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                    <span className="text-primary text-xs tracking-[0.3em] uppercase">
+                      Light Cube Bar
+                    </span>
+
+                    <h3 className="font-serif text-2xl md:text-4xl mt-2">
+                      Warm wit &amp; diepblauw
+                    </h3>
+
+                    <p className="mt-3 max-w-2xl text-sm md:text-base text-stone-300 leading-7">
+                      Een stijlvolle combinatie met een warme,
+                      uitnodigende bar en een krachtige blauwe achterwand.
+                    </p>
+                </div>
+              </div>
 
               <div className="mt-8 grid gap-8 md:grid-cols-2">
-                <button
+                <div className="min-w-0">
+                  <button
                   type="button"
                   onClick={() => openImage(4)}
                   className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
@@ -374,25 +383,27 @@ export default function LightCubesInspiratiePage() {
                   <img
                     src={galleryImages[4].src}
                     alt={galleryImages[4].alt}
-                    className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent px-6 pb-6 pt-20">
-                    <span className="text-primary text-xs tracking-[0.25em] uppercase">
-                      Conceptopstelling
-                    </span>
 
-                    <h3 className="font-serif text-2xl md:text-3xl mt-2">
-                      Blauw &amp; helder wit
-                    </h3>
-                  </div>
-
-                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
                     <ZoomIn className="h-5 w-5" />
                   </div>
-                </button>
+                  </button>
+                  <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                      <span className="text-primary text-xs tracking-[0.25em] uppercase">
+                        Conceptopstelling
+                      </span>
 
-                <button
+                      <h3 className="font-serif text-2xl md:text-3xl mt-2">
+                        Blauw &amp; helder wit
+                      </h3>
+                  </div>
+                </div>
+
+                <div className="min-w-0">
+                  <button
                   type="button"
                   onClick={() => openImage(5)}
                   className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
@@ -400,23 +411,24 @@ export default function LightCubesInspiratiePage() {
                   <img
                     src={galleryImages[5].src}
                     alt={galleryImages[5].alt}
-                    className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent px-6 pb-6 pt-20">
-                    <span className="text-primary text-xs tracking-[0.25em] uppercase">
-                      Conceptopstelling
-                    </span>
 
-                    <h3 className="font-serif text-2xl md:text-3xl mt-2">
-                      Helder wit &amp; rood
-                    </h3>
-                  </div>
-
-                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
                     <ZoomIn className="h-5 w-5" />
                   </div>
-                </button>
+                  </button>
+                  <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                      <span className="text-primary text-xs tracking-[0.25em] uppercase">
+                        Conceptopstelling
+                      </span>
+
+                      <h3 className="font-serif text-2xl md:text-3xl mt-2">
+                        Helder wit &amp; rood
+                      </h3>
+                  </div>
+                </div>
               </div>
             </section>
 
@@ -445,7 +457,8 @@ export default function LightCubesInspiratiePage() {
                 </p>
               </div>
 
-              <button
+              <div className="min-w-0">
+                <button
                 type="button"
                 onClick={() => openImage(6)}
                 className="group relative block w-full overflow-hidden border border-primary/60 bg-black text-left cursor-zoom-in"
@@ -456,32 +469,34 @@ export default function LightCubesInspiratiePage() {
                   className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.015]"
                 />
 
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/65 to-transparent px-6 pb-7 pt-28 md:px-10 md:pb-10 md:pt-40">
-                  <span className="text-primary text-xs tracking-[0.3em] uppercase">
-                    DJ Booth
-                  </span>
 
-                  <h3 className="font-serif text-2xl md:text-4xl mt-2">
-                    Warm wit
-                  </h3>
-
-                  <p className="mt-3 max-w-2xl text-sm md:text-base text-stone-300 leading-7">
-                    Een elegante en warme uitvoering die bijzonder goed
-                    past bij stijlvolle feesten, recepties en
-                    avondconcepten.
-                  </p>
-                </div>
-
-                <div className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center border border-primary bg-black/75 text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                <div className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
                   <ZoomIn className="h-5 w-5" />
                 </div>
 
                 <div className="absolute top-4 left-4 w-9 h-9 border-t-2 border-l-2 border-primary" />
                 <div className="absolute bottom-4 right-4 w-9 h-9 border-b-2 border-r-2 border-primary" />
-              </button>
+                </button>
+                <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                    <span className="text-primary text-xs tracking-[0.3em] uppercase">
+                      DJ Booth
+                    </span>
+
+                    <h3 className="font-serif text-2xl md:text-4xl mt-2">
+                      Warm wit
+                    </h3>
+
+                    <p className="mt-3 max-w-2xl text-sm md:text-base text-stone-300 leading-7">
+                      Een elegante en warme uitvoering die bijzonder goed
+                      past bij stijlvolle feesten, recepties en
+                      avondconcepten.
+                    </p>
+                </div>
+              </div>
 
               <div className="mt-8 grid gap-8 md:grid-cols-2">
-                <button
+                <div className="min-w-0">
+                  <button
                   type="button"
                   onClick={() => openImage(7)}
                   className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
@@ -489,25 +504,27 @@ export default function LightCubesInspiratiePage() {
                   <img
                     src={galleryImages[7].src}
                     alt={galleryImages[7].alt}
-                    className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent px-6 pb-6 pt-20">
-                    <span className="text-primary text-xs tracking-[0.25em] uppercase">
-                      DJ Booth
-                    </span>
 
-                    <h3 className="font-serif text-2xl md:text-3xl mt-2">
-                      Intens blauw
-                    </h3>
-                  </div>
-
-                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
                     <ZoomIn className="h-5 w-5" />
                   </div>
-                </button>
+                  </button>
+                  <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                      <span className="text-primary text-xs tracking-[0.25em] uppercase">
+                        DJ Booth
+                      </span>
 
-                <button
+                      <h3 className="font-serif text-2xl md:text-3xl mt-2">
+                        Intens blauw
+                      </h3>
+                  </div>
+                </div>
+
+                <div className="min-w-0">
+                  <button
                   type="button"
                   onClick={() => openImage(8)}
                   className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
@@ -515,23 +532,24 @@ export default function LightCubesInspiratiePage() {
                   <img
                     src={galleryImages[8].src}
                     alt={galleryImages[8].alt}
-                    className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent px-6 pb-6 pt-20">
-                    <span className="text-primary text-xs tracking-[0.25em] uppercase">
-                      DJ Booth
-                    </span>
 
-                    <h3 className="font-serif text-2xl md:text-3xl mt-2">
-                      Helder geel
-                    </h3>
-                  </div>
-
-                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
                     <ZoomIn className="h-5 w-5" />
                   </div>
-                </button>
+                  </button>
+                  <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                      <span className="text-primary text-xs tracking-[0.25em] uppercase">
+                        DJ Booth
+                      </span>
+
+                      <h3 className="font-serif text-2xl md:text-3xl mt-2">
+                        Helder geel
+                      </h3>
+                  </div>
+                </div>
               </div>
             </section>
 
@@ -559,7 +577,8 @@ export default function LightCubesInspiratiePage() {
                 </p>
               </div>
 
-              <button
+              <div className="min-w-0">
+                <button
                 type="button"
                 onClick={() => openImage(9)}
                 className="group relative block w-full overflow-hidden border border-primary/60 bg-black text-left cursor-zoom-in"
@@ -570,32 +589,34 @@ export default function LightCubesInspiratiePage() {
                   className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.015]"
                 />
 
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/65 to-transparent px-6 pb-7 pt-28 md:px-10 md:pb-10 md:pt-40">
-                  <span className="text-primary text-xs tracking-[0.3em] uppercase">
-                    Light Wall
-                  </span>
 
-                  <h3 className="font-serif text-2xl md:text-4xl mt-2">
-                    Multicolor lichtshow
-                  </h3>
-
-                  <p className="mt-3 max-w-2xl text-sm md:text-base text-stone-300 leading-7">
-                    Meerdere kleuren in één opstelling creëren een
-                    indrukwekkend lichtspektakel en laten de mogelijkheden
-                    van RGBW-verlichting maximaal tot hun recht komen.
-                  </p>
-                </div>
-
-                <div className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center border border-primary bg-black/75 text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                <div className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
                   <ZoomIn className="h-5 w-5" />
                 </div>
 
                 <div className="absolute top-4 left-4 w-9 h-9 border-t-2 border-l-2 border-primary" />
                 <div className="absolute bottom-4 right-4 w-9 h-9 border-b-2 border-r-2 border-primary" />
-              </button>
+                </button>
+                <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                    <span className="text-primary text-xs tracking-[0.3em] uppercase">
+                      Light Wall
+                    </span>
+
+                    <h3 className="font-serif text-2xl md:text-4xl mt-2">
+                      Multicolor lichtshow
+                    </h3>
+
+                    <p className="mt-3 max-w-2xl text-sm md:text-base text-stone-300 leading-7">
+                      Meerdere kleuren in één opstelling creëren een
+                      indrukwekkend lichtspektakel en laten de mogelijkheden
+                      van RGBW-verlichting maximaal tot hun recht komen.
+                    </p>
+                </div>
+              </div>
 
               <div className="mt-8 grid gap-8 md:grid-cols-2">
-                <button
+                <div className="min-w-0">
+                  <button
                   type="button"
                   onClick={() => openImage(10)}
                   className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
@@ -603,25 +624,27 @@ export default function LightCubesInspiratiePage() {
                   <img
                     src={galleryImages[10].src}
                     alt={galleryImages[10].alt}
-                    className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent px-6 pb-6 pt-20">
-                    <span className="text-primary text-xs tracking-[0.25em] uppercase">
-                      Light Wall
-                    </span>
 
-                    <h3 className="font-serif text-2xl md:text-3xl mt-2">
-                      Volledig blauw
-                    </h3>
-                  </div>
-
-                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
                     <ZoomIn className="h-5 w-5" />
                   </div>
-                </button>
+                  </button>
+                  <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                      <span className="text-primary text-xs tracking-[0.25em] uppercase">
+                        Light Wall
+                      </span>
 
-                <button
+                      <h3 className="font-serif text-2xl md:text-3xl mt-2">
+                        Volledig blauw
+                      </h3>
+                  </div>
+                </div>
+
+                <div className="min-w-0">
+                  <button
                   type="button"
                   onClick={() => openImage(11)}
                   className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
@@ -629,23 +652,24 @@ export default function LightCubesInspiratiePage() {
                   <img
                     src={galleryImages[11].src}
                     alt={galleryImages[11].alt}
-                    className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent px-6 pb-6 pt-20">
-                    <span className="text-primary text-xs tracking-[0.25em] uppercase">
-                      Light Wall
-                    </span>
 
-                    <h3 className="font-serif text-2xl md:text-3xl mt-2">
-                      Volledig groen
-                    </h3>
-                  </div>
-
-                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
                     <ZoomIn className="h-5 w-5" />
                   </div>
-                </button>
+                  </button>
+                  <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                      <span className="text-primary text-xs tracking-[0.25em] uppercase">
+                        Light Wall
+                      </span>
+
+                      <h3 className="font-serif text-2xl md:text-3xl mt-2">
+                        Volledig groen
+                      </h3>
+                  </div>
+                </div>
               </div>
             </section>
 
@@ -681,7 +705,8 @@ export default function LightCubesInspiratiePage() {
                 </p>
               </div>
 
-              <button
+              <div className="min-w-0">
+                <button
                 type="button"
                 onClick={() => openImage(12)}
                 className="group relative block w-full overflow-hidden border border-primary/60 bg-black text-left cursor-zoom-in"
@@ -692,32 +717,34 @@ export default function LightCubesInspiratiePage() {
                   className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.015]"
                 />
 
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/65 to-transparent px-6 pb-7 pt-28 md:px-10 md:pb-10 md:pt-40">
-                  <span className="text-primary text-xs tracking-[0.3em] uppercase">
-                    Tuin &amp; Outdoor
-                  </span>
 
-                  <h3 className="font-serif text-2xl md:text-4xl mt-2">
-                    Luxe tuin aan het water
-                  </h3>
-
-                  <p className="mt-3 max-w-2xl text-sm md:text-base text-stone-300 leading-7">
-                    Blauwe Light Cubes creëren een krachtig contrast met de
-                    warme tuinverlichting en geven een exclusieve buitenruimte
-                    een moderne, luxueuze uitstraling.
-                  </p>
-                </div>
-
-                <div className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center border border-primary bg-black/75 text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                <div className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
                   <ZoomIn className="h-5 w-5" />
                 </div>
 
                 <div className="absolute top-4 left-4 w-9 h-9 border-t-2 border-l-2 border-primary" />
                 <div className="absolute bottom-4 right-4 w-9 h-9 border-b-2 border-r-2 border-primary" />
-              </button>
+                </button>
+                <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                    <span className="text-primary text-xs tracking-[0.3em] uppercase">
+                      Tuin &amp; Outdoor
+                    </span>
+
+                    <h3 className="font-serif text-2xl md:text-4xl mt-2">
+                      Luxe tuin aan het water
+                    </h3>
+
+                    <p className="mt-3 max-w-2xl text-sm md:text-base text-stone-300 leading-7">
+                      Blauwe Light Cubes creëren een krachtig contrast met de
+                      warme tuinverlichting en geven een exclusieve buitenruimte
+                      een moderne, luxueuze uitstraling.
+                    </p>
+                </div>
+              </div>
 
               <div className="mt-8 grid gap-8 md:grid-cols-2">
-                <button
+                <div className="min-w-0">
+                  <button
                   type="button"
                   onClick={() => openImage(13)}
                   className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
@@ -725,30 +752,32 @@ export default function LightCubesInspiratiePage() {
                   <img
                     src={galleryImages[13].src}
                     alt={galleryImages[13].alt}
-                    className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent px-6 pb-6 pt-20">
-                    <span className="text-primary text-xs tracking-[0.25em] uppercase">
-                      Tuin &amp; Outdoor
-                    </span>
 
-                    <h3 className="font-serif text-2xl md:text-3xl mt-2">
-                      Exclusief geel
-                    </h3>
-
-                    <p className="mt-3 text-sm md:text-base text-stone-300 leading-7">
-                      Een warme, uitgesproken kleur voor moderne tuinen,
-                      terrassen en architecturale buitenruimtes.
-                    </p>
-                  </div>
-
-                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
                     <ZoomIn className="h-5 w-5" />
                   </div>
-                </button>
+                  </button>
+                  <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                      <span className="text-primary text-xs tracking-[0.25em] uppercase">
+                        Tuin &amp; Outdoor
+                      </span>
 
-                <button
+                      <h3 className="font-serif text-2xl md:text-3xl mt-2">
+                        Exclusief geel
+                      </h3>
+
+                      <p className="mt-3 text-sm md:text-base text-stone-300 leading-7">
+                        Een warme, uitgesproken kleur voor moderne tuinen,
+                        terrassen en architecturale buitenruimtes.
+                      </p>
+                  </div>
+                </div>
+
+                <div className="min-w-0">
+                  <button
                   type="button"
                   onClick={() => openImage(14)}
                   className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
@@ -756,28 +785,29 @@ export default function LightCubesInspiratiePage() {
                   <img
                     src={galleryImages[14].src}
                     alt={galleryImages[14].alt}
-                    className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent px-6 pb-6 pt-20">
-                    <span className="text-primary text-xs tracking-[0.25em] uppercase">
-                      Tuin &amp; Outdoor
-                    </span>
 
-                    <h3 className="font-serif text-2xl md:text-3xl mt-2">
-                      Warm wit &amp; kunst
-                    </h3>
-
-                    <p className="mt-3 text-sm md:text-base text-stone-300 leading-7">
-                      Warm wit licht laat kunstobjecten, sculpturen en
-                      bijzondere tuinelementen extra tot hun recht komen.
-                    </p>
-                  </div>
-
-                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
                     <ZoomIn className="h-5 w-5" />
                   </div>
-                </button>
+                  </button>
+                  <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                      <span className="text-primary text-xs tracking-[0.25em] uppercase">
+                        Tuin &amp; Outdoor
+                      </span>
+
+                      <h3 className="font-serif text-2xl md:text-3xl mt-2">
+                        Warm wit &amp; kunst
+                      </h3>
+
+                      <p className="mt-3 text-sm md:text-base text-stone-300 leading-7">
+                        Warm wit licht laat kunstobjecten, sculpturen en
+                        bijzondere tuinelementen extra tot hun recht komen.
+                      </p>
+                  </div>
+                </div>
               </div>
 
               <div className="mt-10 border border-primary/35 bg-primary/[0.03] px-6 py-7 md:px-8">
