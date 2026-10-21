@@ -83,7 +83,7 @@ const faq = [
   {
     question: "Hoe kan ik een LED staantafel huren of een offerte aanvragen?",
     answer:
-      "Via de contactpagina van DAIVEXO kun je een reservatieaanvraag of offerteaanvraag indienen. Vermeld de datum, locatie, het soort evenement en het gewenste aantal tafels. Een reservatie is pas definitief na bevestiging door DAIVEXO.",
+      "Via de reservatieknoppen op deze pagina kun je het DAIVEXO-reservatieformulier openen. Vermeld de datum, locatie, het soort evenement en het gewenste aantal tafels. Een reservatie is pas definitief na bevestiging door DAIVEXO.",
   },
 ]
 
@@ -169,7 +169,7 @@ export default function StatafelHurenPage() {
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
-                href="/contact"
+                href="/?lightcubes=reservation"
                 className="rounded-full bg-primary px-7 py-4 text-center font-semibold text-black transition hover:brightness-110"
               >
                 Vraag je reservatie aan
@@ -512,7 +512,7 @@ export default function StatafelHurenPage() {
           </div>
 
           <Link
-            href="/contact"
+            href="/?lightcubes=reservation"
             className="mt-8 inline-block rounded-full bg-primary px-8 py-4 font-semibold text-black transition hover:brightness-110"
           >
             Vraag beschikbaarheid aan
@@ -565,7 +565,7 @@ export default function StatafelHurenPage() {
           </p>
 
           <Link
-            href="/contact"
+            href="/?lightcubes=reservation"
             className="mt-8 inline-block rounded-full bg-primary px-8 py-4 font-semibold text-black transition hover:brightness-110"
           >
             Vraag je offerte of reservatie aan
