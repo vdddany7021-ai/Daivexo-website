@@ -111,44 +111,41 @@ export function LightCubesSection() {
             </p>
           </div>
 
-          {/* Vier toepassingen */}
-          <div className="grid md:grid-cols-2 gap-6">
+          {/* Vier toepassingen: foto's vrij van tekst, titels eronder */}
+          <div className="grid gap-6 md:grid-cols-2">
             {lightCubes.map((cube) => (
-              <button
-                type="button"
+              <div
                 key={cube.id}
-                onClick={() => setSelectedCube(cube)}
-                className="group relative aspect-[4/3] bg-card border border-primary/20 hover:border-primary/70 transition-all duration-500 overflow-hidden cursor-zoom-in text-left"
-                aria-label={`Vergroot ${cube.title}`}
+                className="overflow-hidden border border-primary/20 bg-black transition-colors duration-500 hover:border-primary/70"
               >
-                <img
-                  src={cube.image}
-                  alt={cube.alt}
-                  loading="lazy"
-                  decoding="async"
-                  className="absolute inset-0 h-full w-full object-cover opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700"
-                />
+                <button
+                  type="button"
+                  onClick={() => setSelectedCube(cube)}
+                  className="group relative block aspect-[4/3] w-full cursor-zoom-in overflow-hidden bg-card text-left"
+                  aria-label={`Vergroot ${cube.title}`}
+                >
+                  <img
+                    src={cube.image}
+                    alt={cube.alt}
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent" />
+                  <span className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary/60 bg-black/70 text-primary opacity-80 transition-opacity duration-300 group-hover:opacity-100">
+                    <ZoomIn className="h-5 w-5" aria-hidden="true" />
+                  </span>
+                </button>
 
-                <div className="absolute bottom-0 left-0 right-0 px-6 pb-2 pt-6 md:p-6">
-                  <span className="text-primary text-xs md:text-sm tracking-[0.32em] uppercase block">
+                <div className="px-6 py-5 text-center">
+                  <h3 className="text-sm uppercase tracking-[0.25em] text-primary md:text-base">
                     DAIVEXO — {cube.title}
-                  </span>
-
-                  <span className="mt-2 hidden md:inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <ZoomIn className="h-4 w-4" />
-                    Klik om te vergroten
-                  </span>
+                  </h3>
+                  <p className="mt-2 text-xs text-stone-400">
+                    Tik of klik op de afbeelding om te vergroten
+                  </p>
                 </div>
-
-                <div className="absolute top-4 right-4 flex h-11 w-11 items-center justify-center border border-primary/60 bg-black/70 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <ZoomIn className="h-5 w-5" />
-                </div>
-
-                <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-primary/40 group-hover:border-primary transition-colors duration-500" />
-                <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-primary/40 group-hover:border-primary transition-colors duration-500" />
-              </button>
+              </div>
             ))}
           </div>
 
