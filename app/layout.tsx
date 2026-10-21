@@ -1,4 +1,3 @@
-
 import type { Metadata, Viewport } from "next"
 import { Inter, Playfair_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
@@ -86,20 +85,10 @@ export const metadata: Metadata = {
 
   icons: {
     icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
+      { url: "/daivexo-cube-favicon.ico", sizes: "any", type: "image/x-icon" },
+      { url: "/daivexo-cube-512.png", sizes: "512x512", type: "image/png" },
     ],
-    apple: "/apple-icon.png",
+    apple: "/daivexo-cube-180.png",
   },
 }
 
