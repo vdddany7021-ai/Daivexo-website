@@ -1,9 +1,23 @@
 "use client"
 
 import Image from "next/image"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, X } from "lucide-react"
+import { useEffect, useState } from "react"
+
+type GalleryPhoto = { src: string; alt: string; title: string }
 
 export function HeroSection() {
+  const [selectedPhoto, setSelectedPhoto] = useState<GalleryPhoto | null>(null)
+
+  useEffect(() => {
+    if (!selectedPhoto) return
+    const onEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setSelectedPhoto(null)
+    }
+    window.addEventListener("keydown", onEscape)
+    return () => window.removeEventListener("keydown", onEscape)
+  }, [selectedPhoto])
+
   return (
     <section
       id="home"
@@ -96,155 +110,93 @@ export function HeroSection() {
             </p>
           </div>
 
-          {/* TWO LARGE CARDS */}
+          {/* TWO LARGE CARDS - titles and descriptions below images on all screens */}
           <div className="grid gap-5 lg:grid-cols-2">
-
-            {/* GREEN LIGHT CUBE */}
-            <article className="group relative flex flex-col overflow-hidden rounded-[28px] border border-white/15 bg-neutral-950 md:block md:min-h-[500px]">
-              <div className="relative aspect-[4/3] w-full bg-black md:absolute md:inset-0 md:aspect-auto">
-              <Image
-                src="/images/light-cube-green.webp"
-                loading="lazy"
-                alt="Groene LED statafel huren voor feest of evenement"
-                fill
-                className="object-contain transition-transform duration-700 group-hover:scale-[1.03] md:object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              </div>
-
-              <div className="hidden md:absolute md:inset-0 md:block md:bg-gradient-to-t md:from-black md:via-black/10 md:to-transparent" />
-
-              <div className="relative bg-black p-6 md:absolute md:inset-x-0 md:bottom-0 md:bg-transparent md:p-10">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
-                  Individueel te huren
-                </p>
-
-                <h3 className="text-3xl font-semibold text-white md:text-4xl">
-                  LED statafel huren
-                </h3>
-
-                <p className="mt-3 max-w-lg text-base leading-7 text-white/90">
-                  Huur een unieke lichtgevende statafel of staantafel voor
-                  recepties, trouwfeesten, bedrijfsfeesten en andere evenementen.
-                  De DAIVEXO Light Cube combineert verlichting en eventmeubilair
-                  in één opvallende statafel.
-                </p>
-              </div>
-            </article>
-
-            {/* BLUE COLLECTION */}
-            <article className="group relative flex flex-col overflow-hidden rounded-[28px] border border-white/15 bg-neutral-950 md:block md:min-h-[500px]">
-              <div className="relative aspect-[4/3] w-full bg-black md:absolute md:inset-0 md:aspect-auto">
-              <Image
-                src="/images/light-cubes-inspiratie/light-cubes-luxe-tuin-leie-blauw.webp"
-                loading="lazy"
-                alt="Blauwe LED staantafels en verlichte statafels voor verhuur"
-                fill
-                className="object-contain transition-transform duration-700 group-hover:scale-[1.03] md:object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              </div>
-
-              <div className="hidden md:absolute md:inset-0 md:block md:bg-gradient-to-t md:from-black md:via-black/10 md:to-transparent" />
-
-              <div className="relative bg-black p-6 md:absolute md:inset-x-0 md:bottom-0 md:bg-transparent md:p-10">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
-                  Combineer & creëer
-                </p>
-
-                <h3 className="text-3xl font-semibold text-white md:text-4xl">
-                  Verlichte staantafels huren
-                </h3>
-
-                <p className="mt-3 max-w-lg text-base leading-7 text-white/90">
-                  Combineer meerdere LED statafels of lichtgevende staantafels
-                  voor grotere feesten, recepties en bedrijfsevents. De kleuren
-                  en opstelling zorgen voor een opvallende en exclusieve eventsfeer.
-                </p>
-              </div>
-            </article>
+            {[
+              {
+                src: "/images/light-cube-green.webp",
+                alt: "Groene LED statafel huren voor feest of evenement",
+                eyebrow: "Individueel te huren",
+                title: "LED statafel huren",
+                description: "Huur een unieke lichtgevende statafel of staantafel voor recepties, trouwfeesten, bedrijfsfeesten en andere evenementen. De DAIVEXO Light Cube combineert verlichting en eventmeubilair in één opvallende statafel.",
+              },
+              {
+                src: "/images/light-cubes-inspiratie/light-cubes-luxe-tuin-leie-blauw.webp",
+                alt: "Blauwe LED staantafels en verlichte statafels voor verhuur",
+                eyebrow: "Combineer & creëer",
+                title: "Verlichte staantafels huren",
+                description: "Combineer meerdere LED statafels of lichtgevende staantafels voor grotere feesten, recepties en bedrijfsevents. De kleuren en opstelling zorgen voor een opvallende en exclusieve eventsfeer.",
+              },
+            ].map((photo) => (
+              <article key={photo.src} className="overflow-hidden rounded-[28px] border border-white/15 bg-neutral-950">
+                <button
+                  type="button"
+                  onClick={() => setSelectedPhoto(photo)}
+                  aria-label={`Vergroot foto: ${photo.title}`}
+                  className="group relative block aspect-[4/3] w-full cursor-zoom-in overflow-hidden bg-black"
+                >
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                </button>
+                <div className="p-6 md:p-8">
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-primary">{photo.eyebrow}</p>
+                  <h3 className="text-3xl font-semibold text-white md:text-4xl">{photo.title}</h3>
+                  <p className="mt-3 max-w-lg text-base leading-7 text-white/90">{photo.description}</p>
+                </div>
+              </article>
+            ))}
           </div>
 
           {/* THREE SMALL CARDS */}
           <div className="mt-5 grid gap-5 md:grid-cols-3">
-
-            {/* LIGHT BAR */}
-            <article className="group relative flex flex-col overflow-hidden rounded-[26px] border border-white/15 bg-neutral-950 md:block md:min-h-[330px]">
-              <div className="relative aspect-[4/3] w-full bg-black md:absolute md:inset-0 md:aspect-auto">
-                <Image
-                  src="/images/light-cubes-inspiratie/bar-blauw-wit.webp"
-                  loading="lazy"
-                  alt="Verlichte LED bar huren opgebouwd uit DAIVEXO Light Cubes"
-                  fill
-                  className="object-contain transition-transform duration-700 group-hover:scale-[1.04] md:object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-
-              <div className="hidden md:absolute md:inset-0 md:block md:bg-gradient-to-t md:from-black md:via-black/5 md:to-transparent" />
-
-              <div className="relative bg-black p-6 md:absolute md:inset-x-0 md:bottom-0 md:bg-transparent">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.28em] text-primary">
-                  Eventmeubilair huren
-                </p>
-
-                <h3 className="text-2xl font-semibold text-white">
-                  Verlichte LED Bar
-                </h3>
-              </div>
-            </article>
-
-            {/* YELLOW DJ BOOTH */}
-            <article className="group relative flex flex-col overflow-hidden rounded-[26px] border border-white/15 bg-neutral-950 md:block md:min-h-[330px]">
-              <div className="relative aspect-[4/3] w-full bg-black md:absolute md:inset-0 md:aspect-auto">
-                <Image
-                  src="/images/light-cubes-inspiratie/dj-geel.webp"
-                  loading="lazy"
-                  alt="Verlichte LED DJ Booth huren voor feest of evenement"
-                  fill
-                  className="object-contain transition-transform duration-700 group-hover:scale-[1.04] md:object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-
-              <div className="hidden md:absolute md:inset-0 md:block md:bg-gradient-to-t md:from-black md:via-black/5 md:to-transparent" />
-
-              <div className="relative bg-black p-6 md:absolute md:inset-x-0 md:bottom-0 md:bg-transparent">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.28em] text-primary">
-                  Feesten &amp; evenementen
-                </p>
-
-                <h3 className="text-2xl font-semibold text-white">
-                  Verlichte DJ Booth
-                </h3>
-              </div>
-            </article>
-
-            {/* RED LIGHT WALL */}
-            <article className="group relative flex flex-col overflow-hidden rounded-[26px] border border-white/15 bg-neutral-950 md:block md:min-h-[330px]">
-              <div className="relative aspect-[4/3] w-full bg-black md:absolute md:inset-0 md:aspect-auto">
-                <Image
-                  src="/images/light-cubes-inspiratie/lightwall-rode-piramide.webp"
-                  alt="Verlichte Light Wall voor feesten en evenementen opgebouwd uit LED Light Cubes"
-                  fill
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-contain transition-transform duration-700 group-hover:scale-[1.04] md:object-cover"
-                />
-              </div>
-
-              <div className="hidden md:absolute md:inset-0 md:block md:bg-gradient-to-t md:from-black md:via-black/5 md:to-transparent" />
-
-              <div className="relative bg-black p-6 md:absolute md:inset-x-0 md:bottom-0 md:bg-transparent">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.28em] text-primary">
-                  Event decoratie
-                </p>
-
-                <h3 className="text-2xl font-semibold text-white">
-                  Verlichte Light Wall
-                </h3>
-              </div>
-            </article>
+            {[
+              {
+                src: "/images/light-cubes-inspiratie/bar-blauw-wit.webp",
+                alt: "Verlichte LED bar huren opgebouwd uit DAIVEXO Light Cubes",
+                eyebrow: "Eventmeubilair huren",
+                title: "Verlichte LED Bar",
+              },
+              {
+                src: "/images/light-cubes-inspiratie/dj-geel.webp",
+                alt: "Verlichte LED DJ Booth huren voor feest of evenement",
+                eyebrow: "Feesten & evenementen",
+                title: "Verlichte DJ Booth",
+              },
+              {
+                src: "/images/light-cubes-inspiratie/lightwall-rode-piramide.webp",
+                alt: "Verlichte Light Wall voor feesten en evenementen opgebouwd uit LED Light Cubes",
+                eyebrow: "Event decoratie",
+                title: "Verlichte Light Wall",
+              },
+            ].map((photo) => (
+              <article key={photo.src} className="overflow-hidden rounded-[26px] border border-white/15 bg-neutral-950">
+                <button
+                  type="button"
+                  onClick={() => setSelectedPhoto(photo)}
+                  aria-label={`Vergroot foto: ${photo.title}`}
+                  className="group relative block aspect-[4/3] w-full cursor-zoom-in overflow-hidden bg-black"
+                >
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                </button>
+                <div className="p-6">
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.28em] text-primary">{photo.eyebrow}</p>
+                  <h3 className="text-2xl font-semibold text-white">{photo.title}</h3>
+                </div>
+              </article>
+            ))}
           </div>
 
           {/* SEO / COMMERCIAL SUPPORTING TEXT */}
@@ -284,6 +236,37 @@ export function HeroSection() {
           </div>
         </div>
       </div>
+
+      {selectedPhoto && (
+        <div
+          role="presentation"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4"
+          onClick={() => setSelectedPhoto(null)}
+        >
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label={selectedPhoto.title}
+            className="relative flex max-h-[95dvh] w-full max-w-6xl flex-col items-center"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setSelectedPhoto(null)}
+              aria-label="Sluit vergrote foto"
+              className="absolute right-0 top-0 z-10 rounded-full bg-black/80 p-3 text-white hover:text-primary"
+            >
+              <X className="h-7 w-7" />
+            </button>
+            <img
+              src={selectedPhoto.src}
+              alt={selectedPhoto.alt}
+              className="max-h-[80dvh] w-auto max-w-full object-contain"
+            />
+            <p className="mt-4 text-center text-lg font-semibold text-white">{selectedPhoto.title}</p>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
