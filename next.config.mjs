@@ -3,6 +3,16 @@
 const nextConfig = {
   trailingSlash: false,
 
+  async redirects() {
+    return [
+      {
+        source: "/foundscan/",
+        destination: "/foundscan",
+        permanent: true,
+      },
+    ]
+  },
+
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -12,7 +22,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "hebbkx1anhila5yf.public.blob.vercel-storage.com",
+        hostname: "nebbxxlannila5yf.public.blob.vercel-storage.com",
       },
     ],
   },
