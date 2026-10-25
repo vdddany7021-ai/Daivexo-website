@@ -19,18 +19,9 @@ const nextConfig = {
         source: "/",
         has: [
           {
-            type: "host",
-            value: "scanmij.com",
-          },
-        ],
-        destination: "/scanmij",
-      },
-      {
-        source: "/",
-        has: [
-          {
-            type: "host",
-            value: "www.scanmij.com",
+            type: "header",
+            key: "host",
+            value: "(www\\.)?scanmij\\.com",
           },
         ],
         destination: "/scanmij",
