@@ -13,6 +13,31 @@ const nextConfig = {
     ]
   },
 
+  async rewrites() {
+    return [
+      {
+        source: "/",
+        has: [
+          {
+            type: "host",
+            value: "scanmij.com",
+          },
+        ],
+        destination: "/scanmij",
+      },
+      {
+        source: "/",
+        has: [
+          {
+            type: "host",
+            value: "www.scanmij.com",
+          },
+        ],
+        destination: "/scanmij",
+      },
+    ]
+  },
+
   typescript: {
     ignoreBuildErrors: true,
   },
