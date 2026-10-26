@@ -13,16 +13,23 @@ export function proxy(request: NextRequest) {
     hostname === "scanmij.com" ||
     hostname === "www.scanmij.com"
 
-  if (isScanmij && pathname === "/") {
+  if (isScanmij) {
     const url = request.nextUrl.clone()
-    url.pathname = "/scanmij"
 
-    return NextResponse.rewrite(url)
+    if (pathname === "/") {
+      url.pathname = "/scanmij"
+      return NextResponse.rewrite(url)
+    }
+
+    if (pathname === "/bestellen") {
+      url.pathname = "/scanmij/bestellen"
+      return NextResponse.rewrite(url)
+    }
   }
 
   return NextResponse.next()
 }
 
 export const config = {
-  matcher: ["/"],
+  matcher: ["/", "/bestellen"],
 }
