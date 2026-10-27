@@ -32,7 +32,7 @@ export default function ScanmijBestellen() {
   const [selected, setSelected] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [cart, setCart] = useState<CartItem[]>([]);
-  const [paymentMethod, setPaymentMethod] = useState("bancontact");
+  const [submitting, setSubmitting] = useState(false);
   const [message, setMessage] = useState("");
 
   const [customer, setCustomer] = useState({
@@ -72,8 +72,23 @@ export default function ScanmijBestellen() {
   function addProduct() {
     const product = products.find((item) => item.key === selected);
 
-    if (!product || !Number.isInteger(quantity) || quantity < 1) {
+    if (!product || !Number.isInteger(quantity) || quantity < 1 || quantity > 100) {
       setMessage("Kies een pakket en geef een geldig aantal in.");
+      return;
+    }
+
+    if (cart.length >= 30 && !cart.some((item) => item.key === product.key)) {
+      setMessage("Je kunt maximaal 30 verschillende artikelen toevoegen.");
+      return;
+    }
+
+    if (cart.some((item) => item.key === product.key && item.aantal + quantity > 100)) {
+      setMessage("Je kunt maximaal 100 stuks per pakket bestellen.");
+      return;
+    }
+
+    if (Math.round((total + product.prijs * quantity) * 100) > 10000000) {
+      setMessage("Het maximale bestelbedrag is overschreden.");
       return;
     }
 
@@ -108,17 +123,49 @@ export default function ScanmijBestellen() {
     }));
   }
 
-  function submitOrder(event: React.FormEvent<HTMLFormElement>) {
+  async function submitOrder(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    if (submitting) return;
 
     if (cart.length === 0) {
       setMessage("Voeg minstens één pakket toe aan je bestelling.");
       return;
     }
 
-    setMessage(
-      "De bestelpagina is voorbereid. De beveiligde Mollie-betaling wordt nog gekoppeld."
-    );
+    setSubmitting(true);
+    setMessage("");
+
+    try {
+      const response = await fetch("/api/scanmij/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          artikelen: cart.map(({ naam, aantal }) => ({ naam, aantal })),
+          klant: customer,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result?.ok || typeof result.checkout_url !== "string") {
+        throw new Error(result?.message || "De betaling kon niet worden gestart.");
+      }
+
+      const checkoutUrl = new URL(result.checkout_url);
+      if (checkoutUrl.protocol !== "https:") {
+        throw new Error("Ongeldige betaalpagina ontvangen.");
+      }
+
+      window.location.assign(checkoutUrl.toString());
+    } catch (error) {
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : "Er ging iets mis. Probeer het opnieuw."
+      );
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -138,7 +185,7 @@ export default function ScanmijBestellen() {
 
             <p>
               Kies je pakket, vul je gegevens in en betaal
-              binnenkort veilig via Mollie.
+              veilig via Mollie.
             </p>
           </header>
 
@@ -226,6 +273,7 @@ export default function ScanmijBestellen() {
                   <input
                     type="number"
                     min="1"
+                    max="100"
                     step="1"
                     value={quantity}
                     onChange={(e) =>
@@ -301,34 +349,8 @@ export default function ScanmijBestellen() {
             </div>
 
             <div className="payment-section">
-              <h2>Kies je betaalmethode</h2>
-
-              <div className="payment-grid">
-                {[
-                  ["bancontact", "Bancontact"],
-                  ["belfius", "Belfius"],
-                  ["kbc", "KBC / CBC"],
-                  ["other", "Andere methode"],
-                ].map(([value, label]) => (
-                  <label
-                    key={value}
-                    className={
-                      paymentMethod === value
-                        ? "payment-option active"
-                        : "payment-option"
-                    }
-                  >
-                    <input
-                      type="radio"
-                      name="paymentMethod"
-                      value={value}
-                      checked={paymentMethod === value}
-                      onChange={() => setPaymentMethod(value)}
-                    />
-                    {label}
-                  </label>
-                ))}
-              </div>
+              <h2>Veilig betalen</h2>
+              <p>Je kiest je beschikbare betaalmethode op de beveiligde betaalpagina van Mollie.</p>
             </div>
 
             <p className="trust">
@@ -336,8 +358,12 @@ export default function ScanmijBestellen() {
               Eénmalige aankoop
             </p>
 
-            <button type="submit" className="checkout-button">
-              Ga veilig naar betaling
+            <button
+              type="submit"
+              className="checkout-button"
+              disabled={submitting}
+            >
+              {submitting ? "Betaling voorbereiden..." : "Ga veilig naar betaling"}
             </button>
 
             {message && (
@@ -545,30 +571,6 @@ export default function ScanmijBestellen() {
           margin: 25px 0;
         }
 
-        .payment-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 12px;
-        }
-
-        .payment-option {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 7px;
-          padding: 15px 10px;
-          border: 1px solid #ddd;
-          border-radius: 10px;
-          text-align: center;
-          cursor: pointer;
-          margin: 0;
-        }
-
-        .payment-option.active {
-          background: #fff8df;
-          border-color: #d8b94f;
-        }
-
         .trust {
           background: #eef8f2;
           color: #22623c;
@@ -577,6 +579,11 @@ export default function ScanmijBestellen() {
           padding: 16px;
           font-weight: bold;
           line-height: 1.5;
+        }
+
+        .checkout-button:disabled {
+          opacity: 0.6;
+          cursor: wait;
         }
 
         .checkout-button {
@@ -609,10 +616,6 @@ export default function ScanmijBestellen() {
           .form-grid,
           .product-controls {
             grid-template-columns: 1fr;
-          }
-
-          .payment-grid {
-            grid-template-columns: 1fr 1fr;
           }
 
           .cart-item {
