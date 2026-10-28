@@ -1,5 +1,6 @@
 
 import { NextRequest, NextResponse } from "next/server";
+import { neon } from "@neondatabase/serverless";
 
 export const runtime = "nodejs";
 
@@ -23,7 +24,7 @@ type Customer = {
   email: string;
   gsm: string;
   adres: string;
-  opmerking: string;
+  opmerking?: string;
 };
 
 function error(message: string, status = 400) {
@@ -36,9 +37,15 @@ function error(message: string, status = 400) {
 export async function POST(request: NextRequest) {
   try {
     const apiKey = process.env.MOLLIE_API_KEY;
+    const databaseUrl =
+      process.env.SCANMIJ_DATABASE_DATABASE_URL;
 
-    if (!apiKey) {
-      return error("De betaalconfiguratie ontbreekt.", 503);
+    if (!apiKey || !databaseUrl) {
+      console.error("SCANMIJ: configuratie ontbreekt");
+      return error(
+        "De betaalconfiguratie is niet beschikbaar.",
+        503
+      );
     }
 
     const body = await request.json();
@@ -68,7 +75,9 @@ export async function POST(request: NextRequest) {
       !klant.gsm.trim() ||
       !klant.adres.trim()
     ) {
-      return error("Vul alle verplichte klantgegevens correct in.");
+      return error(
+        "Vul alle verplichte klantgegevens correct in."
+      );
     }
 
     let totalCents = 0;
@@ -107,6 +116,18 @@ export async function POST(request: NextRequest) {
       return error("Het totaalbedrag is ongeldig.");
     }
 
+    const cleanCustomer = {
+      voornaam: klant.voornaam.trim().slice(0, 100),
+      naam: klant.naam.trim().slice(0, 100),
+      email: klant.email.trim().slice(0, 254),
+      gsm: klant.gsm.trim().slice(0, 50),
+      adres: klant.adres.trim().slice(0, 500),
+      opmerking:
+        typeof klant.opmerking === "string"
+          ? klant.opmerking.trim().slice(0, 1000)
+          : "",
+    };
+
     const orderId =
       "SCANMIJ-" +
       new Date().toISOString().replace(/\D/g, "").slice(0, 14) +
@@ -119,31 +140,22 @@ export async function POST(request: NextRequest) {
         .map((item) => `${item.aantal}x ${item.naam}`)
         .join(", ");
 
+    const totalAmount = (totalCents / 100).toFixed(2);
     const baseUrl = "https://www.scanmij.com";
 
     const payload = {
       amount: {
         currency: "EUR",
-        value: (totalCents / 100).toFixed(2),
+        value: totalAmount,
       },
       description: description.slice(0, 255),
       redirectUrl: `${baseUrl}/bedankt`,
       webhookUrl: `${baseUrl}/api/scanmij/webhook`,
       metadata: {
         order_id: orderId,
-        klant: {
-          voornaam: klant.voornaam.trim().slice(0, 100),
-          naam: klant.naam.trim().slice(0, 100),
-          email: klant.email.trim().slice(0, 254),
-          gsm: klant.gsm.trim().slice(0, 50),
-          adres: klant.adres.trim().slice(0, 500),
-          opmerking:
-            typeof klant.opmerking === "string"
-              ? klant.opmerking.trim().slice(0, 1000)
-              : "",
-        },
+        klant: cleanCustomer,
         artikelen: cleanItems,
-        totaal: (totalCents / 100).toFixed(2),
+        totaal: totalAmount,
       },
     };
 
@@ -165,6 +177,8 @@ export async function POST(request: NextRequest) {
 
     if (
       !response.ok ||
+      typeof result?.id !== "string" ||
+      !/^tr_[a-zA-Z0-9]+$/.test(result.id) ||
       typeof result?._links?.checkout?.href !== "string"
     ) {
       console.error(
@@ -176,6 +190,77 @@ export async function POST(request: NextRequest) {
       return error(
         "De betaling kon niet worden aangemaakt.",
         502
+      );
+    }
+
+    const allowedStatuses = [
+      "open",
+      "pending",
+      "authorized",
+      "paid",
+      "failed",
+      "canceled",
+      "expired",
+    ];
+
+    if (!allowedStatuses.includes(result.status)) {
+      console.error(
+        "SCANMIJ: onbekende Mollie-status",
+        result.status
+      );
+
+      return error(
+        "De betalingsstatus kon niet worden verwerkt.",
+        502
+      );
+    }
+
+    const sql = neon(databaseUrl);
+
+    try {
+      await sql`
+        INSERT INTO scanmij_orders (
+          order_id,
+          mollie_payment_id,
+          payment_status,
+          customer_first_name,
+          customer_last_name,
+          customer_email,
+          customer_phone,
+          customer_address,
+          customer_note,
+          items,
+          total_amount,
+          currency,
+          updated_at
+        )
+        VALUES (
+          ${orderId},
+          ${result.id},
+          ${result.status},
+          ${cleanCustomer.voornaam},
+          ${cleanCustomer.naam},
+          ${cleanCustomer.email},
+          ${cleanCustomer.gsm},
+          ${cleanCustomer.adres},
+          ${cleanCustomer.opmerking},
+          ${JSON.stringify(cleanItems)}::jsonb,
+          ${Number(totalAmount)},
+          ${"EUR"},
+          NOW()
+        )
+        ON CONFLICT (mollie_payment_id)
+        DO NOTHING
+      `;
+    } catch (databaseError) {
+      console.error(
+        "SCANMIJ: bestelling opslaan mislukt",
+        databaseError
+      );
+
+      return error(
+        "De bestelling kon niet worden opgeslagen. Probeer het later opnieuw.",
+        503
       );
     }
 
