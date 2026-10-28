@@ -25,11 +25,16 @@ export function proxy(request: NextRequest) {
       url.pathname = "/scanmij/bestellen"
       return NextResponse.rewrite(url)
     }
+
+    if (pathname === "/bedankt") {
+      url.pathname = "/scanmij/bedankt"
+      return NextResponse.rewrite(url)
+    }
   }
 
   return NextResponse.next()
 }
 
 export const config = {
-  matcher: ["/", "/bestellen"],
+  matcher: ["/", "/bestellen", "/bedankt"],
 }
