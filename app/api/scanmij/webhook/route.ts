@@ -139,7 +139,10 @@ export async function POST(request: NextRequest) {
     `;
 
     // Een niet-betaalde bestelling krijgt geen bestelmelding.
-    if (payment.status !== "paid") {
+    if (
+  payment.status !== "paid" ||
+  process.env.VERCEL_ENV !== "production"
+) {
       return reply("OK", 200);
     }
 
