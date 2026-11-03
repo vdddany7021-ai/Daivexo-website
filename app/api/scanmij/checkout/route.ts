@@ -36,7 +36,11 @@ function error(message: string, status = 400) {
 
 export async function POST(request: NextRequest) {
   try {
-    const apiKey = process.env.MOLLIE_API_KEY;
+  const apiKey =
+  process.env.VERCEL_ENV === "production" ||
+  process.env.VERCEL_ENV === "preview"
+    ? process.env.MOLLIE_API_KEY
+    : undefined;
     const databaseUrl =
       process.env.SCANMIJ_DATABASE_DATABASE_URL;
 
@@ -141,7 +145,10 @@ export async function POST(request: NextRequest) {
         .join(", ");
 
     const totalAmount = (totalCents / 100).toFixed(2);
-    const baseUrl = "https://www.scanmij.com";
+   const baseUrl =
+  process.env.VERCEL_ENV === "preview" && process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "https://www.scanmij.com";
 
     const payload = {
       amount: {
