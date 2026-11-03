@@ -13,7 +13,11 @@ export function proxy(request: NextRequest) {
     hostname === "scanmij.com" ||
     hostname === "www.scanmij.com"
 
-  if (isScanmij) {
+  const isScanmijPreview =
+    hostname?.endsWith(".vercel.app") &&
+    hostname.includes("git-scanmij-")
+
+  if (isScanmij || isScanmijPreview) {
     const url = request.nextUrl.clone()
 
     if (pathname === "/") {
