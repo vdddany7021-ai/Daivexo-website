@@ -145,9 +145,9 @@ export async function POST(request: NextRequest) {
         .join(", ");
 
     const totalAmount = (totalCents / 100).toFixed(2);
-   const baseUrl =
-  process.env.VERCEL_ENV === "preview" && process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
+  const baseUrl =
+  process.env.VERCEL_ENV === "preview"
+    ? "https://v0-daivexo-website-git-scanmi-e21a41-vdddany7021-2155s-projects.vercel.app"
     : "https://www.scanmij.com";
 
     const payload = {
