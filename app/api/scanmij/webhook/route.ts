@@ -139,12 +139,9 @@ export async function POST(request: NextRequest) {
     `;
 
     // Een niet-betaalde bestelling krijgt geen bestelmelding.
-    if (
-  payment.status !== "paid" ||
-  process.env.VERCEL_ENV !== "production"
-) {
-      return reply("OK", 200);
-    }
+  if (payment.status !== "paid") {
+  return reply("OK", 200);
+}
 
     const resendApiKey = process.env.RESEND_API_KEY;
 
