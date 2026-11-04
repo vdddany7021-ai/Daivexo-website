@@ -158,6 +158,15 @@ export default function LightCubesInspiratiePage() {
               </a>
             </div>
 
+<div className="mb-14">
+  <a
+    href="/?lightcubes=reservation"
+    className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-4 text-center font-semibold text-black transition hover:brightness-110"
+  >
+    Vraag je reservatie aan
+  </a>
+</div>
+
             <div className="mx-auto max-w-6xl text-center">
               <span className="text-primary text-sm tracking-[0.35em] uppercase">
                 DAIVEXO LIGHT CUBES
