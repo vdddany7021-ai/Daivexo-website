@@ -843,6 +843,23 @@ export default function LightCubesInspiratiePage() {
             </div>
           </div>
         </section>
+        
+{/* RESERVATIEKNOP ONDERAAN */}
+<section className="bg-black px-6 py-16 text-center">
+  <h2 className="mb-6 text-3xl font-semibold text-white">
+    Light Cubes huren voor jouw evenement?
+  </h2>
+  <p className="mb-8 text-lg text-gray-300">
+    Vraag vrijblijvend de beschikbaarheid aan.
+  </p>
+  <a
+    href="/?lightcubes=reservation"
+    className="inline-block rounded-full bg-primary px-8 py-4 font-semibold text-black transition hover:brightness-110"
+  >
+    Vraag je reservatie aan
+  </a>
+</section>
+
       </main>
 
       {/* FULLSCREEN GALERIJ */}
