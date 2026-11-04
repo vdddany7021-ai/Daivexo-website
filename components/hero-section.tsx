@@ -1,230 +1,839 @@
 "use client"
 
-import Image from "next/image"
-import { ArrowRight, X } from "lucide-react"
 import { useEffect, useState } from "react"
+import {
+  ArrowLeft,
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  X,
+  ZoomIn,
+} from "lucide-react"
 
-type GalleryPhoto = { src: string; alt: string; title: string }
+const galleryImages = [
+  // STATAFELS
+  {
+    src: "/images/light-cube-yellow.jpeg",
+    alt: "DAIVEXO Light Cube statafel geel",
+  },
+  {
+    src: "/images/light-cube-blue.jpeg",
+    alt: "DAIVEXO Light Cube statafel blauw",
+  },
+  {
+    src: "/images/light-cube-warm-white.jpeg",
+    alt: "DAIVEXO Light Cube statafel warm wit",
+  },
 
-export function HeroSection() {
-  const [selectedPhoto, setSelectedPhoto] = useState<GalleryPhoto | null>(null)
+  // BARS
+  {
+   src: "/images/light-cubes-inspiratie/bar-warmwit-blauw.webp",
+    alt: "DAIVEXO Light Cube Bar warm wit met diepblauwe achterwand",
+  },
+  {
+    src: "/images/light-cubes-inspiratie/bar-blauw-wit.jpg",
+    alt: "DAIVEXO Light Cube Bar blauw met witte achterwand",
+  },
+  {
+    src: "/images/light-cubes-inspiratie/bar-wit-rood.jpg",
+    alt: "DAIVEXO Light Cube Bar wit met rode achterwand",
+  },
+
+  // DJ BOOTHS
+  {
+    src: "/images/light-cubes-inspiratie/dj-warmwit.webp",
+    alt: "DAIVEXO Light Cube DJ Booth warm wit",
+  },
+  {
+    src: "/images/light-cubes-inspiratie/dj-blauw.jpg",
+    alt: "DAIVEXO Light Cube DJ Booth blauw",
+  },
+  {
+    src: "/images/light-cubes-inspiratie/dj-geel.webp",
+    alt: "DAIVEXO Light Cube DJ Booth geel",
+  },
+
+  // LIGHT WALLS
+  {
+    src: "/images/light-cubes-inspiratie/lightwall-multicolor.webp",
+    alt: "DAIVEXO Light Wall in verschillende RGBW kleuren",
+  },
+  {
+    src: "/images/light-cubes-inspiratie/lightwall-blauw.jpg",
+    alt: "DAIVEXO Light Wall volledig blauw verlicht",
+  },
+  {
+    src: "/images/light-cubes-inspiratie/lightwall-groen.jpg",
+    alt: "DAIVEXO Light Wall volledig groen verlicht",
+  },
+
+  // TUIN & OUTDOOR
+  {
+    src: "/images/light-cubes-inspiratie/light-cubes-luxe-tuin-leie-blauw.jpg",
+    alt: "DAIVEXO Light Cubes in blauw in een luxe moderne tuin aan de Leie",
+  },
+  {
+    src: "/images/light-cubes-inspiratie/light-cubes-luxe-tuin-geel.jpg",
+    alt: "DAIVEXO Light Cubes in geel in een exclusieve moderne tuin",
+  },
+  {
+    src: "/images/light-cubes-inspiratie/light-cubes-tuin-standbeelden-warm-wit.jpg",
+    alt: "DAIVEXO Light Cubes warm wit naast standbeelden in een luxe tuin",
+  },
+]
+
+export default function LightCubesInspiratiePage() {
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
+
+  const openImage = (index: number) => {
+    setSelectedIndex(index)
+  }
+
+  const closeImage = () => {
+    setSelectedIndex(null)
+  }
+
+  const showPreviousImage = () => {
+    setSelectedIndex((current) => {
+      if (current === null) return null
+
+      return current === 0
+        ? galleryImages.length - 1
+        : current - 1
+    })
+  }
+
+  const showNextImage = () => {
+    setSelectedIndex((current) => {
+      if (current === null) return null
+
+      return current === galleryImages.length - 1
+        ? 0
+        : current + 1
+    })
+  }
 
   useEffect(() => {
-    if (!selectedPhoto) return
-    const onEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setSelectedPhoto(null)
+    if (selectedIndex === null) return
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        closeImage()
+      }
+
+      if (event.key === "ArrowLeft") {
+        showPreviousImage()
+      }
+
+      if (event.key === "ArrowRight") {
+        showNextImage()
+      }
     }
-    window.addEventListener("keydown", onEscape)
-    return () => window.removeEventListener("keydown", onEscape)
-  }, [selectedPhoto])
+
+    document.addEventListener("keydown", handleKeyDown)
+    document.body.style.overflow = "hidden"
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown)
+      document.body.style.overflow = ""
+    }
+  }, [selectedIndex])
+
+  const selectedImage =
+    selectedIndex !== null ? galleryImages[selectedIndex] : null
 
   return (
-    <section
-      id="home"
-      className="relative overflow-hidden bg-black text-white"
-    >
-      {/* HERO */}
-      <div className="mx-auto max-w-7xl px-6 pb-24 pt-28 lg:px-8 lg:pb-28 lg:pt-32">
-        <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-stretch lg:gap-16">
-
-          {/* LED STATAFELS HERO IMAGE */}
-          <div className="relative mx-auto w-full max-w-[520px] overflow-hidden rounded-2xl border border-primary/20 bg-black lg:mx-0 lg:h-full lg:max-w-none">
-            <div className="relative aspect-[3/2] lg:aspect-auto lg:h-full">
-              <picture>
-  <source
-    media="(max-width: 767px)"
-    srcSet="/images/daivexo-led-statafels-homepage-mobile.webp"
-    type="image/webp"
-  />
-  <img
-    src="/images/daivexo-led-statafels-homepage.webp"
-    alt="DAIVEXO LED statafels in groen, blauw en warm wit tijdens een sfeervol evenement"
-    width={1100}
-    height={735}
-    fetchPriority="high"
-    decoding="async"
-   className="absolute inset-0 h-full w-full object-cover object-center"
-  />
-</picture>
-            </div>
-          </div>
-
-          {/* HERO TEXT */}
-          <div className="max-w-2xl">
-            <p className="mb-5 text-sm font-semibold uppercase tracking-[0.35em] text-primary md:text-base">
-              Verlichte statafels & premium eventmeubilair
-            </p>
-
-            <h1 className="text-5xl font-semibold uppercase leading-[0.95] tracking-tight md:text-6xl lg:text-7xl">
-              <span className="block text-white">LED statafels</span>
-              <span className="mt-2 block text-primary">huren voor uw event</span>
-            </h1>
-
-            <p className="mt-8 max-w-xl text-lg leading-8 text-white/85 md:text-xl">
-              Op zoek naar een <strong className="font-semibold text-white">statafel of staantafel om te huren</strong>?
-              DAIVEXO verhuurt unieke <strong className="font-semibold text-white">LED statafels,
-              verlichte staantafels en Light Cubes</strong> voor feesten, recepties,
-              bedrijfsevents en evenementen. Van één lichtgevende statafel tot
-              complete bars, DJ Booths en indrukwekkende Light Walls.
-            </p>
-
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <a
-  href="/?lightcubes=reservation"
-  className="inline-flex items-center justify-center gap-3 rounded-full bg-primary px-8 py-4 text-sm font-semibold text-black transition-all duration-300 hover:brightness-110"
->
-  Vraag je reservatie aan
-  <ArrowRight className="h-4 w-4" />
-</a>
-
+    <>
+      <main className="min-h-screen bg-black text-white">
+        {/* INTRO */}
+        <section className="px-6 pt-28 pb-24 md:pt-32 md:pb-32">
+          <div className="mx-auto max-w-7xl">
+            {/* TERUG KNOP */}
+            <div className="mb-14">
               <a
-                href="/statafel-huren"
-                className="inline-flex items-center justify-center rounded-full border border-primary/70 px-8 py-4 text-sm font-semibold text-primary transition-all duration-300 hover:bg-primary hover:text-black"
+                href="/#light-cubes"
+                className="group inline-flex items-center justify-center gap-3 border-2 border-primary bg-primary px-7 py-4 text-sm md:text-base font-bold uppercase tracking-[0.16em] text-black shadow-[0_0_25px_rgba(212,175,55,0.25)] transition-all duration-300 hover:bg-black hover:text-primary hover:shadow-[0_0_40px_rgba(212,175,55,0.45)]"
               >
-                Bekijk onze LED-statafels
+                <ArrowLeft className="h-5 w-5 transition-transform duration-300 group-hover:-translate-x-1" />
+                Terug naar Light Cubes
               </a>
             </div>
+
+            <div className="mx-auto max-w-6xl text-center">
+              <span className="text-primary text-sm tracking-[0.35em] uppercase">
+                DAIVEXO LIGHT CUBES
+              </span>
+
+              <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl mt-5">
+                DAIVEXO Light Cubes – LED statafels voor events
+              </h1>
+
+              <p className="mt-6 font-serif text-2xl md:text-3xl text-primary/90 italic">
+                Eén Cube. Eindeloos veel toepassingen.
+              </p>
+
+              <div className="flex items-center justify-center gap-4 mt-8">
+                <div className="h-px w-16 bg-primary" />
+                <div className="h-2 w-2 rotate-45 bg-primary" />
+                <div className="h-px w-16 bg-primary" />
+              </div>
+
+              <p className="mt-10 mx-auto max-w-3xl text-lg md:text-xl leading-8 text-stone-300">
+                Van stijlvolle statafels en complete bars tot DJ-booths,
+                indrukwekkende verlichte wanden en exclusieve toepassingen in
+                tuin en buitenruimte. Met DAIVEXO Light Cubes creëer je sfeer,
+                structuur en licht op maat van iedere setting.
+              </p>
+
+              <p className="mt-5 mx-auto max-w-3xl text-base md:text-lg leading-8 text-stone-500">
+                Ontdek verschillende opstellingen, kleurcombinaties en
+                toepassingen voor feesten, bedrijfsevents, horeca én
+                permanente plaatsing in een moderne tuin of buitenomgeving.
+              </p>
+              <div className="mt-10 flex justify-center">
+              <a
+                href="/?lightcubes=reservation"
+                className="inline-flex items-center justify-center gap-3 rounded-full bg-primary px-8 py-4 text-sm font-semibold text-black transition-all duration-300 hover:brightness-110"
+              >
+                Vraag je reservatie aan
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      {/* COLLECTION */}
-      <div
-        id="daivexo-collection"
-        className="border-t border-primary/20 bg-black"
-      >
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-24">
-          <div className="mb-12 text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-primary md:text-sm">
-              LED statafels & staantafels huren
-            </p>
+        <section className="px-6 pb-24 md:pb-32">
+          <div className="mx-auto max-w-7xl">
 
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white md:text-4xl">
-              Statafels en staantafels huren voor feesten en evenementen
-            </h2>
+            {/* ===================================================== */}
+            {/* STATAFELS */}
+            {/* ===================================================== */}
+            <section>
+              <div className="mb-10">
+                <span className="text-primary text-sm md:text-base tracking-[0.3em] uppercase font-semibold">
+                  Statafels
+                </span>
 
-            <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-white/75 md:text-lg">
-              Ontdek onze verlichte statafels en LED staantafels voor verhuur.
-              Gebruik één Light Cube als opvallende statafel of combineer
-              meerdere Light Cubes tot een complete eventsetting.
-            </p>
-          </div>
+                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mt-4">
+  LED Light Cube Statafels
+</h2>
 
-          {/* TWO LARGE CARDS - titles and descriptions below images on all screens */}
-          <div className="grid gap-5 lg:grid-cols-2">
-            {[
-              {
-                src: "/images/light-cube-green.webp",
-                alt: "Groene LED statafel huren voor feest of evenement",
-                eyebrow: "Individueel te huren",
-                title: "LED statafel huren",
-                description: "Huur een unieke lichtgevende statafel of staantafel voor recepties, trouwfeesten, bedrijfsfeesten en andere evenementen. De DAIVEXO Light Cube combineert verlichting en eventmeubilair in één opvallende statafel.",
-              },
-              {
-                src: "/images/light-cubes-inspiratie/light-cubes-luxe-tuin-leie-blauw.webp",
-                alt: "Blauwe LED staantafels en verlichte statafels voor verhuur",
-                eyebrow: "Combineer & creëer",
-                title: "Verlichte staantafels huren",
-                description: "Combineer meerdere LED statafels of lichtgevende staantafels voor grotere feesten, recepties en bedrijfsevents. De kleuren en opstelling zorgen voor een opvallende en exclusieve eventsfeer.",
-              },
-            ].map((photo) => (
-              <article key={photo.src} className="overflow-hidden rounded-[28px] border border-white/15 bg-neutral-950">
+                <p className="mt-5 max-w-3xl text-base md:text-lg text-stone-400 leading-8">
+                  Gebruik individuele Light Cubes als opvallende statafels en
+                  ontmoetingspunten. Dankzij de RGBW-verlichting kan de kleur
+                  worden afgestemd op de sfeer, huisstijl of het thema van het
+                  evenement.
+                </p>
+              </div>
+
+              <div className="min-w-0">
                 <button
-                  type="button"
-                  onClick={() => setSelectedPhoto(photo)}
-                  aria-label={`Vergroot foto: ${photo.title}`}
-                  className="group relative block aspect-[4/3] w-full cursor-zoom-in overflow-hidden bg-black"
-                >
-                  <Image
-                    src={photo.src}
-                    alt={photo.alt}
-                    fill
-                    loading="lazy"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
-                  />
-                </button>
-                <div className="p-6 md:p-8">
-                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-primary">{photo.eyebrow}</p>
-                  <h3 className="text-3xl font-semibold text-white md:text-4xl">{photo.title}</h3>
-                  <p className="mt-3 max-w-lg text-base leading-7 text-white/90">{photo.description}</p>
-                </div>
-              </article>
-            ))}
-          </div>
+                type="button"
+                onClick={() => openImage(0)}
+                className="group relative block w-full overflow-hidden border border-primary/60 bg-black text-left cursor-zoom-in"
+              >
+                <img
+                  src={galleryImages[0].src}
+                  alt={galleryImages[0].alt}
+                  className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.015]"
+                />
 
-          {/* THREE SMALL CARDS */}
-          <div className="mt-5 grid gap-5 md:grid-cols-3">
-            {[
-              {
-                src: "/images/light-cubes-inspiratie/bar-blauw-wit.webp",
-                alt: "Verlichte LED bar huren opgebouwd uit DAIVEXO Light Cubes",
-                eyebrow: "Eventmeubilair huren",
-                title: "Verlichte LED Bar",
-              },
-              {
-                src: "/images/light-cubes-inspiratie/dj-geel.webp",
-                alt: "Verlichte LED DJ Booth huren voor feest of evenement",
-                eyebrow: "Feesten & evenementen",
-                title: "Verlichte DJ Booth",
-              },
-              {
-                src: "/images/light-cubes-inspiratie/lightwall-rode-piramide.webp",
-                alt: "Verlichte Light Wall voor feesten en evenementen opgebouwd uit LED Light Cubes",
-                eyebrow: "Event decoratie",
-                title: "Verlichte Light Wall",
-              },
-            ].map((photo) => (
-              <article key={photo.src} className="overflow-hidden rounded-[26px] border border-white/15 bg-neutral-950">
+
+                <div className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
+                  <ZoomIn className="h-5 w-5" />
+                </div>
+
+                <div className="absolute top-4 left-4 w-9 h-9 border-t-2 border-l-2 border-primary" />
+                <div className="absolute bottom-4 right-4 w-9 h-9 border-b-2 border-r-2 border-primary" />
+                </button>
+                <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                    <span className="text-primary text-xs tracking-[0.3em] uppercase">
+                      Light Cube Statafel
+                    </span>
+
+                    <h3 className="font-serif text-2xl md:text-4xl mt-2">
+                      Helder geel
+                    </h3>
+
+                    <p className="mt-3 max-w-2xl text-sm md:text-base text-stone-300 leading-7">
+                      Een warme en opvallende kleur die meteen sfeer brengt en
+                      de Light Cube tot een herkenbaar ontmoetingspunt maakt.
+                    </p>
+                </div>
+              </div>
+
+              <div className="mt-8 grid gap-8 md:grid-cols-2">
+                <div className="min-w-0">
+                  <button
+                  type="button"
+                  onClick={() => openImage(1)}
+                  className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
+                >
+                  <img
+                    src={galleryImages[1].src}
+                    alt={galleryImages[1].alt}
+                    className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+
+
+                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
+                    <ZoomIn className="h-5 w-5" />
+                  </div>
+                  </button>
+                  <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                      <span className="text-primary text-xs tracking-[0.25em] uppercase">
+                        Light Cube Statafel
+                      </span>
+
+                      <h3 className="font-serif text-2xl md:text-3xl mt-2">
+                        Intens blauw
+                      </h3>
+                  </div>
+                </div>
+
+                <div className="min-w-0">
+                  <button
+                  type="button"
+                  onClick={() => openImage(2)}
+                  className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
+                >
+                  <img
+                    src={galleryImages[2].src}
+                    alt={galleryImages[2].alt}
+                    className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+
+
+                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
+                    <ZoomIn className="h-5 w-5" />
+                  </div>
+                  </button>
+                  <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                      <span className="text-primary text-xs tracking-[0.25em] uppercase">
+                        Light Cube Statafel
+                      </span>
+
+                      <h3 className="font-serif text-2xl md:text-3xl mt-2">
+                        Warm wit
+                      </h3>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <div className="my-24 flex items-center justify-center gap-4">
+              <div className="h-px w-24 bg-primary/40" />
+              <div className="h-2 w-2 rotate-45 bg-primary" />
+              <div className="h-px w-24 bg-primary/40" />
+            </div>
+
+            {/* BARS */}
+            <section>
+              <div className="mb-10">
+                <span className="text-primary text-sm md:text-base tracking-[0.3em] uppercase font-semibold">
+                  Bars
+                </span>
+
+                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mt-4">
+  LED Light Cube Bars voor Events
+</h2>
+
+                <p className="mt-5 max-w-3xl text-base md:text-lg text-stone-400 leading-8">
+                  Van een compacte drankbar tot een volledige professionele
+                  eventbar. Combineer verschillende kleuren tussen bar en
+                  achterwand en creëer een totaal andere sfeer voor ieder
+                  evenement.
+                </p>
+              </div>
+
+              <div className="min-w-0">
                 <button
-                  type="button"
-                  onClick={() => setSelectedPhoto(photo)}
-                  aria-label={`Vergroot foto: ${photo.title}`}
-                  className="group relative block aspect-[4/3] w-full cursor-zoom-in overflow-hidden bg-black"
-                >
-                  <Image
-                    src={photo.src}
-                    alt={photo.alt}
-                    fill
-                    loading="lazy"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
-                  />
-                </button>
-                <div className="p-6">
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.28em] text-primary">{photo.eyebrow}</p>
-                  <h3 className="text-2xl font-semibold text-white">{photo.title}</h3>
+                type="button"
+                onClick={() => openImage(3)}
+                className="group relative block w-full overflow-hidden border border-primary/60 bg-black text-left cursor-zoom-in"
+              >
+                <img
+                  src={galleryImages[3].src}
+                  alt={galleryImages[3].alt}
+                  className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.015]"
+                />
+
+
+                <div className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
+                  <ZoomIn className="h-5 w-5" />
                 </div>
-              </article>
-            ))}
-          </div>
 
-          {/* SEO / COMMERCIAL SUPPORTING TEXT */}
-          <div className="mx-auto mt-16 max-w-4xl text-center">
-            <h2 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">
-              Statafel huren? Kies voor een verlichte LED statafel
-            </h2>
+                <div className="absolute top-4 left-4 w-9 h-9 border-t-2 border-l-2 border-primary" />
+                <div className="absolute bottom-4 right-4 w-9 h-9 border-b-2 border-r-2 border-primary" />
+                </button>
+                <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                    <span className="text-primary text-xs tracking-[0.3em] uppercase">
+                      Light Cube Bar
+                    </span>
 
-            <p className="mt-5 text-base leading-8 text-white/70 md:text-lg">
-              Wilt u <strong className="font-semibold text-white">statafels huren
-              of staantafels huren</strong> voor een feest, receptie,
-              bedrijfsevenement of andere gelegenheid? DAIVEXO verhuurt
-              moderne <strong className="font-semibold text-white">LED statafels,
-              LED staantafels, lichtgevende statafels en verlichte
-              staantafels</strong>. Onze Light Cubes kunnen afzonderlijk als
-              statafel worden gebruikt of gecombineerd worden tot verlichte
-              bars, DJ Booths en Light Walls.
-            </p>
+                    <h3 className="font-serif text-2xl md:text-4xl mt-2">
+                      Warm wit &amp; diepblauw
+                    </h3>
 
-            <p className="mt-5 text-base leading-8 text-white/70 md:text-lg">
-              De verlichte statafels zijn geschikt voor onder andere
-              trouwfeesten, verjaardagsfeesten, recepties, bedrijfsfeesten,
-              beurzen, horeca en professionele evenementen. Zo krijgt u niet
-              alleen een praktische staantafel, maar ook opvallend verlicht
-              eventmeubilair dat mee de sfeer van uw evenement bepaalt.
-            </p>
+                    <p className="mt-3 max-w-2xl text-sm md:text-base text-stone-300 leading-7">
+                      Een stijlvolle combinatie met een warme,
+                      uitnodigende bar en een krachtige blauwe achterwand.
+                    </p>
+                </div>
+              </div>
 
-            <div className="mt-8">
+              <div className="mt-8 grid gap-8 md:grid-cols-2">
+                <div className="min-w-0">
+                  <button
+                  type="button"
+                  onClick={() => openImage(4)}
+                  className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
+                >
+                  <img
+                    src={galleryImages[4].src}
+                    alt={galleryImages[4].alt}
+                    className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+
+
+                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
+                    <ZoomIn className="h-5 w-5" />
+                  </div>
+                  </button>
+                  <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                      <span className="text-primary text-xs tracking-[0.25em] uppercase">
+                        Conceptopstelling
+                      </span>
+
+                      <h3 className="font-serif text-2xl md:text-3xl mt-2">
+                        Blauw &amp; helder wit
+                      </h3>
+                  </div>
+                </div>
+
+                <div className="min-w-0">
+                  <button
+                  type="button"
+                  onClick={() => openImage(5)}
+                  className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
+                >
+                  <img
+                    src={galleryImages[5].src}
+                    alt={galleryImages[5].alt}
+                    className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+
+
+                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
+                    <ZoomIn className="h-5 w-5" />
+                  </div>
+                  </button>
+                  <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                      <span className="text-primary text-xs tracking-[0.25em] uppercase">
+                        Conceptopstelling
+                      </span>
+
+                      <h3 className="font-serif text-2xl md:text-3xl mt-2">
+                        Helder wit &amp; rood
+                      </h3>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <div className="my-24 flex items-center justify-center gap-4">
+              <div className="h-px w-24 bg-primary/40" />
+              <div className="h-2 w-2 rotate-45 bg-primary" />
+              <div className="h-px w-24 bg-primary/40" />
+            </div>
+
+            {/* DJ */}
+            <section>
+              <div className="mb-10">
+                <span className="text-primary text-sm md:text-base tracking-[0.3em] uppercase font-semibold">
+                  DJ
+                </span>
+
+               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mt-4">
+  Verlichte LED DJ Booths
+</h2>
+
+                <p className="mt-5 max-w-3xl text-base md:text-lg text-stone-400 leading-8">
+                  Maak van de DJ zelf een onderdeel van de lichtbeleving.
+                  Verschillende Cubes vormen samen een opvallende
+                  DJ-booth die volledig kan worden afgestemd op de gewenste
+                  sfeer.
+                </p>
+              </div>
+
+              <div className="min-w-0">
+                <button
+                type="button"
+                onClick={() => openImage(6)}
+                className="group relative block w-full overflow-hidden border border-primary/60 bg-black text-left cursor-zoom-in"
+              >
+                <img
+                  src={galleryImages[6].src}
+                  alt={galleryImages[6].alt}
+                  className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.015]"
+                />
+
+
+                <div className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
+                  <ZoomIn className="h-5 w-5" />
+                </div>
+
+                <div className="absolute top-4 left-4 w-9 h-9 border-t-2 border-l-2 border-primary" />
+                <div className="absolute bottom-4 right-4 w-9 h-9 border-b-2 border-r-2 border-primary" />
+                </button>
+                <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                    <span className="text-primary text-xs tracking-[0.3em] uppercase">
+                      DJ Booth
+                    </span>
+
+                    <h3 className="font-serif text-2xl md:text-4xl mt-2">
+                      Warm wit
+                    </h3>
+
+                    <p className="mt-3 max-w-2xl text-sm md:text-base text-stone-300 leading-7">
+                      Een elegante en warme uitvoering die bijzonder goed
+                      past bij stijlvolle feesten, recepties en
+                      avondconcepten.
+                    </p>
+                </div>
+              </div>
+
+              <div className="mt-8 grid gap-8 md:grid-cols-2">
+                <div className="min-w-0">
+                  <button
+                  type="button"
+                  onClick={() => openImage(7)}
+                  className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
+                >
+                  <img
+                    src={galleryImages[7].src}
+                    alt={galleryImages[7].alt}
+                    className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+
+
+                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
+                    <ZoomIn className="h-5 w-5" />
+                  </div>
+                  </button>
+                  <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                      <span className="text-primary text-xs tracking-[0.25em] uppercase">
+                        DJ Booth
+                      </span>
+
+                      <h3 className="font-serif text-2xl md:text-3xl mt-2">
+                        Intens blauw
+                      </h3>
+                  </div>
+                </div>
+
+                <div className="min-w-0">
+                  <button
+                  type="button"
+                  onClick={() => openImage(8)}
+                  className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
+                >
+                  <img
+                    src={galleryImages[8].src}
+                    alt={galleryImages[8].alt}
+                    className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+
+
+                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
+                    <ZoomIn className="h-5 w-5" />
+                  </div>
+                  </button>
+                  <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                      <span className="text-primary text-xs tracking-[0.25em] uppercase">
+                        DJ Booth
+                      </span>
+
+                      <h3 className="font-serif text-2xl md:text-3xl mt-2">
+                        Helder geel
+                      </h3>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <div className="my-24 flex items-center justify-center gap-4">
+              <div className="h-px w-24 bg-primary/40" />
+              <div className="h-2 w-2 rotate-45 bg-primary" />
+              <div className="h-px w-24 bg-primary/40" />
+            </div>
+
+            {/* WALLS */}
+            <section>
+              <div className="mb-10">
+                <span className="text-primary text-sm md:text-base tracking-[0.3em] uppercase font-semibold">
+                  Walls
+                </span>
+
+               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mt-4">
+  LED Light Walls voor Events
+</h2>
+
+                <p className="mt-5 max-w-3xl text-base md:text-lg text-stone-400 leading-8">
+                  Stapel meerdere Light Cubes tot een grote verlichte wand.
+                  Ideaal als decoratieve blikvanger, achtergrond,
+                  afscherming of onderdeel van een complete eventsetting.
+                </p>
+              </div>
+
+              <div className="min-w-0">
+                <button
+                type="button"
+                onClick={() => openImage(9)}
+                className="group relative block w-full overflow-hidden border border-primary/60 bg-black text-left cursor-zoom-in"
+              >
+                <img
+                  src={galleryImages[9].src}
+                  alt={galleryImages[9].alt}
+                  className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.015]"
+                />
+
+
+                <div className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
+                  <ZoomIn className="h-5 w-5" />
+                </div>
+
+                <div className="absolute top-4 left-4 w-9 h-9 border-t-2 border-l-2 border-primary" />
+                <div className="absolute bottom-4 right-4 w-9 h-9 border-b-2 border-r-2 border-primary" />
+                </button>
+                <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                    <span className="text-primary text-xs tracking-[0.3em] uppercase">
+                      Light Wall
+                    </span>
+
+                    <h3 className="font-serif text-2xl md:text-4xl mt-2">
+                      Multicolor lichtshow
+                    </h3>
+
+                    <p className="mt-3 max-w-2xl text-sm md:text-base text-stone-300 leading-7">
+                      Meerdere kleuren in één opstelling creëren een
+                      indrukwekkend lichtspektakel en laten de mogelijkheden
+                      van RGBW-verlichting maximaal tot hun recht komen.
+                    </p>
+                </div>
+              </div>
+
+              <div className="mt-8 grid gap-8 md:grid-cols-2">
+                <div className="min-w-0">
+                  <button
+                  type="button"
+                  onClick={() => openImage(10)}
+                  className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
+                >
+                  <img
+                    src={galleryImages[10].src}
+                    alt={galleryImages[10].alt}
+                    className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+
+
+                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
+                    <ZoomIn className="h-5 w-5" />
+                  </div>
+                  </button>
+                  <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                      <span className="text-primary text-xs tracking-[0.25em] uppercase">
+                        Light Wall
+                      </span>
+
+                      <h3 className="font-serif text-2xl md:text-3xl mt-2">
+                        Volledig blauw
+                      </h3>
+                  </div>
+                </div>
+
+                <div className="min-w-0">
+                  <button
+                  type="button"
+                  onClick={() => openImage(11)}
+                  className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
+                >
+                  <img
+                    src={galleryImages[11].src}
+                    alt={galleryImages[11].alt}
+                    className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+
+
+                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
+                    <ZoomIn className="h-5 w-5" />
+                  </div>
+                  </button>
+                  <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                      <span className="text-primary text-xs tracking-[0.25em] uppercase">
+                        Light Wall
+                      </span>
+
+                      <h3 className="font-serif text-2xl md:text-3xl mt-2">
+                        Volledig groen
+                      </h3>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <div className="my-24 flex items-center justify-center gap-4">
+              <div className="h-px w-24 bg-primary/40" />
+              <div className="h-2 w-2 rotate-45 bg-primary" />
+              <div className="h-px w-24 bg-primary/40" />
+            </div>
+
+            {/* TUIN & OUTDOOR */}
+            <section>
+              <div className="mb-10">
+                <span className="text-primary text-sm md:text-base tracking-[0.3em] uppercase font-semibold">
+                  Tuin &amp; Outdoor
+                </span>
+
+                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mt-4">
+  LED Light Cubes voor buiten
+</h2>
+
+                <p className="mt-5 max-w-3xl text-base md:text-lg text-stone-300 leading-8">
+  DAIVEXO Light Cubes zijn niet alleen geschikt voor events.
+  Ook in een exclusieve tuin, langs een terras, bij een
+  wandelpad of aan het water vormen ze een opvallend
+  lichtobject met een moderne architecturale uitstraling.
+</p>
+
+                <p className="mt-4 max-w-3xl text-base md:text-lg text-stone-300 leading-8">
+                  Deze toepassingen tonen hoe Light Cubes permanent kunnen
+                  worden geïntegreerd in een buitenomgeving. Ook verkrijgbaar
+                  voor aankoop en permanente plaatsing in tuin, terras of
+                  buitenruimte.
+                </p>
+              </div>
+
+              <div className="min-w-0">
+                <button
+                type="button"
+                onClick={() => openImage(12)}
+                className="group relative block w-full overflow-hidden border border-primary/60 bg-black text-left cursor-zoom-in"
+              >
+                <img
+                  src={galleryImages[12].src}
+                  alt={galleryImages[12].alt}
+                  className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.015]"
+                />
+
+
+                <div className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
+                  <ZoomIn className="h-5 w-5" />
+                </div>
+
+                <div className="absolute top-4 left-4 w-9 h-9 border-t-2 border-l-2 border-primary" />
+                <div className="absolute bottom-4 right-4 w-9 h-9 border-b-2 border-r-2 border-primary" />
+                </button>
+                <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                    <span className="text-primary text-xs tracking-[0.3em] uppercase">
+                      Tuin &amp; Outdoor
+                    </span>
+
+                    <h3 className="font-serif text-2xl md:text-4xl mt-2">
+                      Luxe tuin aan het water
+                    </h3>
+
+                    <p className="mt-3 max-w-2xl text-sm md:text-base text-stone-300 leading-7">
+                      Blauwe Light Cubes creëren een krachtig contrast met de
+                      warme tuinverlichting en geven een exclusieve buitenruimte
+                      een moderne, luxueuze uitstraling.
+                    </p>
+                </div>
+              </div>
+
+              <div className="mt-8 grid gap-8 md:grid-cols-2">
+                <div className="min-w-0">
+                  <button
+                  type="button"
+                  onClick={() => openImage(13)}
+                  className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
+                >
+                  <img
+                    src={galleryImages[13].src}
+                    alt={galleryImages[13].alt}
+                    className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+
+
+                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
+                    <ZoomIn className="h-5 w-5" />
+                  </div>
+                  </button>
+                  <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                      <span className="text-primary text-xs tracking-[0.25em] uppercase">
+                        Tuin &amp; Outdoor
+                      </span>
+
+                      <h3 className="font-serif text-2xl md:text-3xl mt-2">
+                        Exclusief geel
+                      </h3>
+
+                      <p className="mt-3 text-sm md:text-base text-stone-300 leading-7">
+                        Een warme, uitgesproken kleur voor moderne tuinen,
+                        terrassen en architecturale buitenruimtes.
+                      </p>
+                  </div>
+                </div>
+
+                <div className="min-w-0">
+                  <button
+                  type="button"
+                  onClick={() => openImage(14)}
+                  className="group relative overflow-hidden border border-primary/40 bg-black text-left cursor-zoom-in"
+                >
+                  <img
+                    src={galleryImages[14].src}
+                    alt={galleryImages[14].alt}
+                    className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+
+
+                  <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-primary bg-black/75 text-primary opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100">
+                    <ZoomIn className="h-5 w-5" />
+                  </div>
+                  </button>
+                  <div className="border border-t-0 border-primary/40 bg-black px-6 py-6 md:px-8 md:py-7">
+                      <span className="text-primary text-xs tracking-[0.25em] uppercase">
+                        Tuin &amp; Outdoor
+                      </span>
+
+                      <h3 className="font-serif text-2xl md:text-3xl mt-2">
+                        Warm wit &amp; kunst
+                      </h3>
+
+                      <p className="mt-3 text-sm md:text-base text-stone-300 leading-7">
+                        Warm wit licht laat kunstobjecten, sculpturen en
+                        bijzondere tuinelementen extra tot hun recht komen.
+                      </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-10 border border-primary/35 bg-primary/[0.03] px-6 py-7 md:px-8">
+                <p className="text-center text-base md:text-lg text-stone-300 leading-8">
+                  <span className="font-semibold text-primary">
+                    Ook te koop voor permanente plaatsing.
+                  </span>{" "}
+                  Vraag naar de mogelijkheden voor jouw tuin, terras,
+                  buitenruimte of project.
+                </p>
+              </div>
+            </section>
+
+       
+
+            <div className="mt-14 flex justify-center">
               <a
                 href="/?lightcubes=reservation"
                 className="inline-flex items-center justify-center gap-3 rounded-full bg-primary px-8 py-4 text-sm font-semibold text-black transition-all duration-300 hover:brightness-110"
@@ -233,40 +842,84 @@ export function HeroSection() {
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>
-          </div>
-        </div>
-      </div>
 
-      {selectedPhoto && (
+            {/* DISCLAIMER */}
+            <div className="mt-14 text-center">
+              <p className="text-sm md:text-base text-stone-500 max-w-3xl mx-auto leading-7">
+                De getoonde beelden zijn conceptvisualisaties ter
+                illustratie van mogelijke toepassingen. Definitieve
+                opstelling, kleuren, aantallen en beschikbaarheid kunnen
+                variëren.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      {/* FULLSCREEN GALERIJ */}
+      {selectedImage && selectedIndex !== null && (
         <div
-          role="presentation"
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4"
-          onClick={() => setSelectedPhoto(null)}
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 p-3 md:p-8"
+          onClick={closeImage}
+          role="dialog"
+          aria-modal="true"
+          aria-label="DAIVEXO Light Cubes fotogalerij"
         >
+          <button
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation()
+              closeImage()
+            }}
+            className="absolute right-4 top-4 md:right-8 md:top-8 z-30 flex h-14 w-14 items-center justify-center border-2 border-primary bg-black text-primary shadow-[0_0_25px_rgba(212,175,55,0.35)] transition-all duration-300 hover:bg-primary hover:text-black"
+            aria-label="Afbeelding sluiten"
+          >
+            <X className="h-8 w-8" strokeWidth={1.8} />
+          </button>
+
+          <button
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation()
+              showPreviousImage()
+            }}
+            className="absolute left-3 md:left-8 top-1/2 z-30 flex h-14 w-14 md:h-16 md:w-16 -translate-y-1/2 items-center justify-center border-2 border-primary bg-black/85 text-primary shadow-[0_0_25px_rgba(212,175,55,0.25)] transition-all duration-300 hover:bg-primary hover:text-black"
+            aria-label="Vorige afbeelding"
+          >
+            <ChevronLeft className="h-8 w-8 md:h-10 md:w-10" />
+          </button>
+
+          <button
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation()
+              showNextImage()
+            }}
+            className="absolute right-3 md:right-8 top-1/2 z-30 flex h-14 w-14 md:h-16 md:w-16 -translate-y-1/2 items-center justify-center border-2 border-primary bg-black/85 text-primary shadow-[0_0_25px_rgba(212,175,55,0.25)] transition-all duration-300 hover:bg-primary hover:text-black"
+            aria-label="Volgende afbeelding"
+          >
+            <ChevronRight className="h-8 w-8 md:h-10 md:w-10" />
+          </button>
+
           <div
-            role="dialog"
-            aria-modal="true"
-            aria-label={selectedPhoto.title}
-            className="relative flex max-h-[95dvh] w-full max-w-6xl flex-col items-center"
+            className="relative flex h-full w-full items-center justify-center px-14 md:px-24"
             onClick={(event) => event.stopPropagation()}
           >
-            <button
-              type="button"
-              onClick={() => setSelectedPhoto(null)}
-              aria-label="Sluit vergrote foto"
-              className="absolute right-0 top-0 z-10 rounded-full bg-black/80 p-3 text-white hover:text-primary"
-            >
-              <X className="h-7 w-7" />
-            </button>
             <img
-              src={selectedPhoto.src}
-              alt={selectedPhoto.alt}
-              className="max-h-[80dvh] w-auto max-w-full object-contain"
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              className="max-h-[90vh] max-w-[92vw] object-contain border border-primary/40 shadow-[0_0_50px_rgba(212,175,55,0.18)]"
             />
-            <p className="mt-4 text-center text-lg font-semibold text-white">{selectedPhoto.title}</p>
+          </div>
+
+          <div
+            className="absolute bottom-5 left-1/2 z-30 -translate-x-1/2 border border-primary/60 bg-black/85 px-5 py-2 text-sm md:text-base font-semibold tracking-[0.18em] text-primary"
+            onClick={(event) => event.stopPropagation()}
+          >
+            {selectedIndex + 1} / {galleryImages.length}
           </div>
         </div>
       )}
-    </section>
+    </>
   )
 }
