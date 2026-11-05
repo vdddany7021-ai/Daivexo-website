@@ -1,28 +1,27 @@
-
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 
+const siteUrl = "https://www.daivexo.com"
+const pageUrl = `${siteUrl}/statafel-huren`
+const reservationUrl = "/?lightcubes=reservation"
 
 export const metadata: Metadata = {
-  title: {
-    absolute: "Statafel Huren & Staantafel Huren | LED Statafels",
-  },
+  title: { absolute: "Statafel huren | LED Staantafels & Light Cubes | DAIVEXO" },
   description:
-    "Statafel of staantafel huren? Ontdek verlichte LED statafels en Light Cubes voor feesten en evenementen in heel België. Vraag vrijblijvend een offerte aan.",
-
+    "LED statafel of verlichte staantafel huren voor een feest, receptie of bedrijfsevent? Ontdek DAIVEXO Light Cubes en vraag vrijblijvend een offerte aan.",
   alternates: {
-    canonical: "https://www.daivexo.com/statafel-huren",
+    canonical: pageUrl,
     languages: {
-      "nl-BE": "https://www.daivexo.com/statafel-huren",
-      "nl-NL": "https://www.daivexo.com/statafel-huren",
-      "fr-BE": "https://www.daivexo.com/fr/statafel-huren",
-      "fr-FR": "https://www.daivexo.com/fr/statafel-huren",
-      "fr-LU": "https://www.daivexo.com/fr/statafel-huren",
-      "de-DE": "https://www.daivexo.com/de/statafel-huren",
-      "de-LU": "https://www.daivexo.com/de/statafel-huren",
-      en: "https://www.daivexo.com/en/statafel-huren",
-      "x-default": "https://www.daivexo.com/en/statafel-huren",
+      "nl-BE": pageUrl,
+      "nl-NL": pageUrl,
+      "fr-BE": `${siteUrl}/fr/statafel-huren`,
+      "fr-FR": `${siteUrl}/fr/statafel-huren`,
+      "fr-LU": `${siteUrl}/fr/statafel-huren`,
+      "de-DE": `${siteUrl}/de/statafel-huren`,
+      "de-LU": `${siteUrl}/de/statafel-huren`,
+      en: `${siteUrl}/en/statafel-huren`,
+      "x-default": `${siteUrl}/en/statafel-huren`,
     },
   },
   robots: {
@@ -37,157 +36,104 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Statafel Huren & Staantafel Huren | LED Statafels",
+    title: "LED statafels en staantafels huren | DAIVEXO",
     description:
-      "Statafel of staantafel huren? Ontdek verlichte LED statafels en Light Cubes voor evenementen in heel België. Vraag een offerte aan bij DAIVEXO.",
-    url: "https://www.daivexo.com/statafel-huren",
+      "Verlichte Light Cubes voor feesten, recepties en bedrijfsevenementen. Vraag vrijblijvend beschikbaarheid en een offerte aan.",
+    url: pageUrl,
     siteName: "DAIVEXO",
     locale: "nl_BE",
     type: "website",
+    images: [{ url: `${siteUrl}/images/light-cube-green.jpeg`, alt: "Groene DAIVEXO LED Light Cube" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Statafel Huren & Staantafel Huren | LED Statafels",
-    description:
-      "Statafel of staantafel huren? Ontdek LED statafels voor evenementen in heel België en vraag vrijblijvend een offerte aan bij DAIVEXO.",
+    title: "LED statafels huren | DAIVEXO Light Cubes",
+    description: "Ontdek verlichte staantafels voor jouw evenement en vraag een offerte aan.",
   },
 }
 
-
-const faq = [
+const benefits = [
   {
-    question: "Kan ik een staantafel huren of een statafel huren bij DAIVEXO?",
-    answer:
-      "Ja. Je kunt nu een reservatieaanvraag indienen voor een toekomstige evenementdatum. Geef je datum, locatie en het gewenste aantal LED staantafels door. DAIVEXO bevestigt de beschikbaarheid en voorwaarden.",
+    title: "Statafel én sfeerverlichting",
+    description: "Een ontmoetingsplek voor gasten die tegelijk een lichtaccent aan je evenement toevoegt.",
   },
   {
-    question: "Wat is het verschil tussen een gewone staantafel en een LED staantafel?",
-    answer:
-      "Een gewone staantafel of statafel biedt vooral een praktische plek om te staan. Een LED staantafel combineert die functie met verlichting en wordt daardoor ook onderdeel van de aankleding van je evenement.",
+    title: "Van één Cube tot een opstelling",
+    description: "Vraag één blikvanger of meerdere Light Cubes aan, afgestemd op je evenement.",
   },
   {
-    question: "Kan ik meerdere LED statafels huren?",
-    answer:
-      "Ja. Geef bij je aanvraag aan hoeveel LED staantafels je nodig hebt. DAIVEXO bekijkt welke aantallen en opstellingen voor jouw datum mogelijk zijn.",
-  },
-  {
-    question: "Voor welke evenementen zijn de LED statafels geschikt?",
-    answer:
-      "De verlichte statafels zijn bedoeld voor onder andere recepties, verjaardagsfeesten, trouwfeesten, bedrijfsevenementen, horeca en professionele events.",
-  },
-  {
-    question: "Kunnen Light Cubes ook als bar of DJ Booth worden gebruikt?",
-    answer:
-      "De modulaire Light Cubes kunnen naast statafels ook worden gecombineerd tot grotere concepten, zoals een verlichte bar, DJ Booth of Light Wall. Vraag naar de mogelijkheden voor jouw evenement.",
-  },
-  {
-    question: "Hoe kan ik een LED staantafel huren of een offerte aanvragen?",
-    answer:
-      "Via de reservatieknoppen op deze pagina kun je het DAIVEXO-reservatieformulier openen. Vermeld de datum, locatie, het soort evenement en het gewenste aantal tafels. Een reservatie is pas definitief na bevestiging door DAIVEXO.",
+    title: "Voor privé- en bedrijfsevents",
+    description: "Geschikt als concept voor recepties, trouwfeesten, verjaardagen en zakelijke bijeenkomsten.",
   },
 ]
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faq.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer,
-    },
-  })),
-}
-
-const applications = [
+const faq = [
   {
-    title: "Feesten",
-    description:
-      "Lichtgevende statafels en LED sfeerverlichting voor een feestelijke ontmoetingsplek.",
+    question: "Kan ik een LED statafel huren bij DAIVEXO?",
+    answer:
+      "Je kunt een offerte- of reservatieaanvraag indienen voor een toekomstige evenementdatum. DAIVEXO bevestigt vervolgens de beschikbaarheid en voorwaarden.",
   },
   {
-    title: "Recepties",
-    description:
-      "LED statafels die ontvangst, gezelligheid en verlichting combineren.",
+    question: "Kan ik meerdere verlichte staantafels aanvragen?",
+    answer:
+      "Ja. Vermeld het gewenste aantal Light Cubes in je aanvraag. DAIVEXO bekijkt welke aantallen en opstellingen mogelijk zijn.",
   },
   {
-    title: "Bedrijfsevenementen",
-    description:
-      "LED eventmeubilair voor zakelijke bijeenkomsten en productpresentaties.",
+    question: "Voor welke evenementen zijn Light Cubes bedoeld?",
+    answer:
+      "Onder meer voor recepties, trouwfeesten, verjaardagsfeesten, bedrijfsevenementen, productpresentaties en andere events.",
   },
   {
-    title: "Horeca en events",
-    description:
-      "Modulaire Light Cubes voor uiteenlopende evenementen en opstellingen.",
+    question: "Wat kost het om een LED statafel te huren?",
+    answer:
+      "Vraag een vrijblijvende offerte aan met je evenementdatum, locatie en gewenste aantal tafels. DAIVEXO kan je dan informeren over de toepasselijke prijs en voorwaarden.",
+  },
+  {
+    question: "Kan ik levering aanvragen?",
+    answer:
+      "Vermeld de evenementlocatie in je aanvraag. DAIVEXO bekijkt of levering mogelijk is en welke voorwaarden daarvoor gelden.",
+  },
+  {
+    question: "Is mijn reservatie meteen definitief?",
+    answer:
+      "Nee. Een aanvraag is pas een definitieve reservatie nadat DAIVEXO de beschikbaarheid en voorwaarden heeft bevestigd.",
   },
 ]
 
 export default function StatafelHurenPage() {
   return (
     <main className="min-h-screen bg-black text-white">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
-        }}
-      />
-
-      {/* HERO */}
       <section className="border-b border-white/10">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-28 [&>div:first-child]:lg:order-2 [&>div:last-child]:lg:order-1">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-24">
           <div>
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-primary">
-              LED staantafels en statafels voor feesten en evenementen
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+              DAIVEXO Light Cubes · Verhuur voor evenementen
             </p>
-
             <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">
-              Statafel huren of staantafel huren?
-              <span className="mt-2 block text-primary">
-                Ontdek onze LED Light Cubes
-              </span>
+              LED statafels en staantafels huren
+              <span className="mt-3 block text-primary">voor een sfeervol evenement</span>
             </h1>
-
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/80">
-              Wil je een{" "}
-              <strong className="text-white">staantafel huren</strong>{" "}
-              of een <strong className="text-white">statafel huren</strong>{" "}
-              die meer biedt dan een gewone tafel?
-              DAIVEXO combineert de praktische functie van een
-              staantafel met sfeervolle verlichting.
-              Onze{" "}
-              <strong className="text-white">LED statafels</strong>{" "}
-              en Light Cubes geven feesten, recepties en
-              bedrijfsevenementen een bijzondere uitstraling.
+            <p className="mt-7 max-w-xl text-lg leading-8 text-white/80">
+              Op zoek naar een bijzondere statafel voor je feest, receptie of bedrijfsevent?
+              De verlichte Light Cubes van DAIVEXO combineren een praktische ontmoetingsplek
+              met een opvallend lichteffect. Vraag vrijblijvend de mogelijkheden aan voor jouw datum.
             </p>
-
-            <p className="mt-5 max-w-2xl leading-7 text-white/70">
-              Plan je een feest of evenement dat pas over enkele
-              maanden plaatsvindt? Vraag vrijblijvend beschikbaarheid
-              aan voor één of meerdere modulaire Light Cubes.
-            </p>
-
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="/?lightcubes=reservation"
-                className="rounded-full bg-primary px-7 py-4 text-center font-semibold text-black transition hover:brightness-110"
-              >
-                Vraag je reservatie aan
+              <Link href={reservationUrl} className="rounded-full bg-primary px-7 py-4 text-center font-semibold text-black transition hover:brightness-110">
+                Vraag vrijblijvend een offerte aan
               </Link>
-
-              <Link
-                href="/light-cubes-inspiratie"
-                className="rounded-full border border-primary px-7 py-4 text-center font-semibold text-primary transition hover:bg-primary hover:text-black"
-              >
-                Bekijk onze LED statafels
+              <Link href="/light-cubes-inspiratie" className="rounded-full border border-primary px-7 py-4 text-center font-semibold text-primary transition hover:bg-primary hover:text-black">
+                Bekijk de Light Cubes
               </Link>
             </div>
+            <p className="mt-4 text-sm leading-6 text-white/60">
+              Vermeld je datum, locatie en gewenst aantal. Een aanvraag is nog geen definitieve reservatie.
+            </p>
           </div>
-
-          <div className="relative min-h-[420px] overflow-hidden rounded-[28px] border border-white/10">
+          <div className="relative min-h-[360px] overflow-hidden rounded-[28px] border border-white/10 sm:min-h-[460px]">
             <Image
               src="/images/light-cube-green.jpeg"
-              alt="Groene lichtgevende LED statafel van DAIVEXO voor evenementen"
+              alt="Groene lichtgevende LED statafel van DAIVEXO voor een evenement"
               fill
               priority
               className="object-cover"
@@ -197,378 +143,128 @@ export default function StatafelHurenPage() {
         </div>
       </section>
 
-      {/* INTRO */}
-      <section className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
-        <h2 className="text-3xl font-semibold md:text-4xl">
-          Staantafel huren: ontdek LED staantafels en statafels
-        </h2>
-
-        <div className="mt-7 space-y-5 text-lg leading-8 text-white/75">
-          <p>
-            Een traditionele statafel is vooral praktisch.
-            Een{" "}
-            <strong className="text-white">
-              lichtgevende statafel
-            </strong>{" "}
-            voegt daar iets extra's aan toe: verlichting,
-            sfeer en een moderne uitstraling.
-            De DAIVEXO Light Cube combineert deze eigenschappen
-            in één opvallend eventmeubel.
-          </p>
-
-          <p>
-            Onze lichtgevende statafels en verlichte staantafels passen bij uiteenlopende
-            gelegenheden, waaronder verjaardagsfeesten,
-            trouwfeesten, recepties, bedrijfsevents,
-            productpresentaties en horecagelegenheden.
-          </p>
-
-          <p>
-            Wie een{" "}
-            <strong className="text-white">LED staantafel wil huren</strong>,{" "}
-            kan nu een reservatieaanvraag indienen voor één Light Cube
-            als blikvanger, of van meerdere Light Cubes voor een grotere opstelling.
-            Zo wordt het meubilair niet alleen functioneel,
-            maar ook een zichtbaar onderdeel van de aankleding.
+      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
+        <div className="max-w-3xl">
+          <h2 className="text-3xl font-semibold md:text-4xl">Waarom een verlichte statafel huren?</h2>
+          <p className="mt-5 text-lg leading-8 text-white/75">
+            Een gewone staantafel is praktisch. Een LED staantafel voegt daar sfeer en uitstraling
+            aan toe. De Light Cube is daardoor zowel meubilair als een zichtbaar onderdeel van
+            je evenementaankleding.
           </p>
         </div>
-      </section>
-
-      {/* TOEPASSINGEN */}
-      <section className="border-y border-white/10 bg-neutral-950">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
-              Voor verschillende evenementen
-            </p>
-
-            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-              LED staantafels huren voor feesten, recepties en bedrijfsevents
-            </h2>
-
-            <p className="mt-6 text-lg leading-8 text-white/70">
-              Lichtgevende statafels zorgen voor een combinatie
-              van praktisch gebruik en visuele uitstraling.
-              Ontdek hoe DAIVEXO Light Cubes kunnen worden
-              ingezet bij verschillende soorten evenementen.
-            </p>
-          </div>
-
-          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {applications.map((item) => (
-              <article
-                key={item.title}
-                className="rounded-2xl border border-white/10 bg-black p-6"
-              >
-                <h3 className="text-xl font-semibold text-primary">
-                  {item.title}
-                </h3>
-
-                <p className="mt-3 leading-7 text-white/70">
-                  {item.description}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PRODUCT */}
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div className="relative min-h-[440px] overflow-hidden rounded-[28px]">
-            <Image
-              src="/images/light-cubes-inspiratie/light-cubes-luxe-tuin-leie-blauw.jpg"
-              alt="Blauwe lichtgevende LED statafels en Light Cubes in een eventopstelling"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-
-          <div>
-            <h2 className="text-3xl font-semibold md:text-4xl">
-              Van één LED statafel tot een complete eventopstelling
-            </h2>
-
-            <p className="mt-6 text-lg leading-8 text-white/75">
-              De DAIVEXO Light Cube is ontworpen als een
-              modulair element dat op verschillende manieren
-              kan worden ingezet.
-              Als individuele staantafel vormt hij een
-              lichtgevend ontmoetingspunt voor gasten.
-            </p>
-
-            <p className="mt-5 text-lg leading-8 text-white/75">
-              Door meerdere Cubes te combineren ontstaan
-              grotere visuele opstellingen.
-              Denk aan een reeks verlichte statafels,
-              een Light Bar, DJ Booth of Light Wall.
-            </p>
-
-            <p className="mt-5 text-lg leading-8 text-white/75">
-              Welke opstelling geschikt is, hangt af van
-              het type evenement, de beschikbare ruimte
-              en het gewenste resultaat.
-            </p>
-
-            <Link
-              href="/light-cubes-inspiratie"
-              className="mt-8 inline-block font-semibold text-primary underline underline-offset-4"
-            >
-              Bekijk inspiratie met onze Light Cubes
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ANDERE TOEPASSINGEN */}
-      <section className="border-t border-white/10 bg-black">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div className="mx-auto mb-12 max-w-3xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
-              Meer dan een gewone staantafel
-            </p>
-
-            <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
-              Van verlichte eventbar tot indrukwekkende Light Wall
-            </h2>
-
-            <p className="mt-6 text-lg leading-8 text-white/70">
-              De modulaire opbouw van DAIVEXO Light Cubes
-              maakt verschillende creatieve toepassingen
-              mogelijk. Naast individuele LED statafels
-              kunnen de Cubes samen grotere verlichte
-              elementen vormen.
-            </p>
-          </div>
-
-          <div className="mt-10 grid gap-8 md:grid-cols-2">
-            <article>
-              <div className="relative min-h-[420px] overflow-hidden rounded-[28px] border border-white/10">
-                <Image
-                  src="/images/light-cubes-inspiratie/bar-blauw-wit.jpg"
-                  alt="Blauw-witte verlichte eventbar met DAIVEXO Light Cubes"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-
-              <h3 className="mt-6 text-2xl font-semibold text-white">
-                Verlichte eventbar
-              </h3>
-
-              <p className="mt-3 leading-7 text-white/70">
-                Meerdere Light Cubes kunnen samen een
-                opvallende verlichte baropstelling vormen.
-                Een creatief concept voor feesten,
-                recepties en professionele evenementen.
-              </p>
-            </article>
-
-            <article>
-              <div className="relative min-h-[420px] overflow-hidden rounded-[28px] border border-white/10">
-                <Image
-                  src="/images/light-cubes-inspiratie/lightwall-multicolor.webp"
-                  alt="Meerkleurige verlichte Light Wall opgebouwd uit DAIVEXO Light Cubes"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-
-              <h3 className="mt-6 text-2xl font-semibold text-white">
-                Light Wall
-              </h3>
-
-              <p className="mt-3 leading-7 text-white/70">
-                Een combinatie van meerdere verlichte
-                Cubes kan dienen als opvallende achtergrond,
-                decoratief element of blikvanger
-                tijdens een evenement.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      {/* WAAROM DAIVEXO */}
-      <section className="border-y border-white/10 bg-neutral-950">
-        <div className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
-          <h2 className="text-3xl font-semibold md:text-4xl">
-            Waarom kiezen voor lichtgevende statafels?
-          </h2>
-
-          <div className="mt-7 space-y-5 text-lg leading-8 text-white/75">
-            <p>
-              Bij de organisatie van een feest of evenement
-              speelt het meubilair een belangrijke rol.
-              Gasten moeten comfortabel kunnen samenkomen,
-              terwijl de inrichting aansluit bij de
-              gewenste sfeer.
-            </p>
-
-            <p>
-              Een gewone statafel vervult vooral een
-              praktische functie. Met de{" "}
-              <strong className="text-white">
-                LED staantafels van DAIVEXO
-              </strong>{" "}
-              krijgt datzelfde meubel een extra visuele
-              functie dankzij de geïntegreerde verlichting.
-            </p>
-
-            <p>
-              De Light Cubes combineren een moderne vormgeving
-              met verschillende toepassingsmogelijkheden.
-              Daardoor kunnen ze zowel afzonderlijk
-              worden gebruikt als onderdeel van
-              een grotere eventopstelling.
-            </p>
-
-            <p>
-              Zoek je{" "}
-              <strong className="text-white">
-                een staantafel om te huren
-              </strong>{" "}
-              voor een receptie, feest of bedrijfsevent?
-              Dan is een verlichte Light Cube een
-              opvallend alternatief voor traditioneel
-              eventmeubilair.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* LED SFEERVERLICHTING EN EVENTMEUBILAIR */}
-      <section className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
-        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
-          Sfeer en eventinrichting
-        </p>
-
-        <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-          LED sfeerverlichting en eventmeubilair voor feesten
-        </h2>
-
-        <div className="mt-7 space-y-5 text-lg leading-8 text-white/75">
-          <p>
-            Zoek je LED verlichting voor evenementen die meer doet dan
-            alleen een ruimte verlichten? De DAIVEXO Light Cubes
-            combineren functioneel meubilair met LED sfeerverlichting
-            voor een feest, receptie of bedrijfsevenement.
-          </p>
-
-          <p>
-            Dit LED eventmeubilair kan worden ingezet als lichtgevende
-            statafel of als onderdeel van een grotere decoratieve
-            opstelling. Zo vormen de Cubes een alternatief voor wie
-            sfeer en een praktische ontmoetingsplek wil combineren.
-          </p>
-
-          <p>
-            Of je nu lichtgevende statafels zoekt, verlichte statafels
-            wilt huren of ideeën verzamelt voor de aankleding van je
-            evenement: bekijk onze Light Cubes en informeer naar de
-            mogelijkheden om nu al te reserveren voor jouw evenementdatum.
-          </p>
-        </div>
-
-        <Link
-          href="/light-cubes-inspiratie"
-          className="mt-8 inline-block font-semibold text-primary underline underline-offset-4"
-        >
-          Ontdek inspiratie voor LED eventmeubilair
-        </Link>
-      </section>
-
-      {/* INTERNATIONALE VERHUUR */}
-      <section className="border-t border-white/10 bg-neutral-950">
-        <div className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
-          <h2 className="text-3xl font-semibold md:text-4xl">
-            LED statafels huren in heel België
-          </h2>
-
-          <div className="mt-7 space-y-5 text-lg leading-8 text-white/75">
-            <p>
-              Bij DAIVEXO kun je een offerte- of reservatieaanvraag indienen
-              voor LED statafels, lichtgevende staantafels en modulaire
-              Light Cubes voor evenementen in heel België. Vermeld je locatie zodat we de
-              mogelijkheden en eventuele levering kunnen beoordelen.
-            </p>
-
-            <p>
-              Onze verlichte Light Cubes zijn ontworpen voor
-              trouwfeesten, recepties, bedrijfsevenementen,
-              beurzen en andere bijzondere gelegenheden.
-            </p>
-
-            <p>
-              Organiseer je binnenkort of over enkele maanden een evenement?
-              Vraag nu vrijblijvend de beschikbaarheid en een offerte
-              aan. Je reservatie wordt pas definitief nadat DAIVEXO
-              de datum en de voorwaarden heeft bevestigd.
-            </p>
-          </div>
-
-          <Link
-            href="/?lightcubes=reservation"
-            className="mt-8 inline-block rounded-full bg-primary px-8 py-4 font-semibold text-black transition hover:brightness-110"
-          >
-            Vraag beschikbaarheid aan
-          </Link>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
-        <h2 className="text-3xl font-semibold md:text-4xl">
-          Veelgestelde vragen over staantafel huren en statafel huren
-        </h2>
-
-        <div className="mt-10 space-y-4">
-          {faq.map((item) => (
-            <article
-              key={item.question}
-              className="rounded-2xl border border-white/10 bg-neutral-950 p-6"
-            >
-              <h3 className="text-xl font-semibold text-white">
-                {item.question}
-              </h3>
-
-              <p className="mt-3 leading-7 text-white/70">
-                {item.answer}
-              </p>
+        <div className="mt-9 grid gap-5 md:grid-cols-3">
+          {benefits.map((benefit) => (
+            <article key={benefit.title} className="rounded-2xl border border-white/10 bg-neutral-950 p-7">
+              <h3 className="text-xl font-semibold text-primary">{benefit.title}</h3>
+              <p className="mt-3 leading-7 text-white/70">{benefit.description}</p>
             </article>
           ))}
         </div>
       </section>
 
-      {/* CTA */}
+      <section className="border-y border-white/10 bg-neutral-950">
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-20">
+          <div className="relative min-h-[360px] overflow-hidden rounded-[28px] sm:min-h-[440px]">
+            <Image
+              src="/images/light-cubes-inspiratie/light-cubes-luxe-tuin-leie-blauw.jpg"
+              alt="Blauwe verlichte Light Cubes als LED statafels in een sfeervolle opstelling"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Voor elk type evenement</p>
+            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Van receptie tot bedrijfsevent</h2>
+            <p className="mt-6 text-lg leading-8 text-white/75">
+              Verlichte staantafels zijn een blikvanger op een trouwfeest, verjaardag,
+              receptie of zakelijke bijeenkomst. Je kunt informeren naar één Light Cube
+              of naar meerdere tafels voor een grotere opstelling.
+            </p>
+            <p className="mt-5 leading-7 text-white/70">
+              Wil je weten welke opstelling bij je ruimte en aantal gasten past?
+              Geef die informatie mee in je offerteaanvraag.
+            </p>
+            <Link href={reservationUrl} className="mt-8 inline-block rounded-full bg-primary px-7 py-4 font-semibold text-black transition hover:brightness-110">
+              Informeer naar beschikbaarheid
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
+        <div className="max-w-3xl">
+          <h2 className="text-3xl font-semibold md:text-4xl">Meer inspiratie met DAIVEXO Light Cubes</h2>
+          <p className="mt-5 text-lg leading-8 text-white/75">
+            Naast afzonderlijke LED statafels zijn er creatieve concepten met meerdere
+            Light Cubes mogelijk. Bekijk de voorbeelden en bespreek wat haalbaar is voor jouw evenement.
+          </p>
+        </div>
+        <div className="mt-9 grid gap-8 md:grid-cols-2">
+          <article>
+            <div className="relative min-h-[300px] overflow-hidden rounded-[28px] border border-white/10 sm:min-h-[390px]">
+              <Image src="/images/light-cubes-inspiratie/bar-blauw-wit.jpg" alt="Concept voor een blauw-witte verlichte eventbar met Light Cubes" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+            </div>
+            <h3 className="mt-5 text-2xl font-semibold">Verlichte eventbar</h3>
+            <p className="mt-3 leading-7 text-white/70">Een mogelijke combinatie van Light Cubes voor een grotere eventopstelling.</p>
+          </article>
+          <article>
+            <div className="relative min-h-[300px] overflow-hidden rounded-[28px] border border-white/10 sm:min-h-[390px]">
+              <Image src="/images/light-cubes-inspiratie/lightwall-multicolor.webp" alt="Meerkleurige Light Wall als decoratief concept met Light Cubes" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+            </div>
+            <h3 className="mt-5 text-2xl font-semibold">Light Wall</h3>
+            <p className="mt-3 leading-7 text-white/70">Een lichtgevende achtergrond of blikvanger als onderdeel van de aankleding.</p>
+          </article>
+        </div>
+        <Link href="/light-cubes-inspiratie" className="mt-8 inline-block font-semibold text-primary underline underline-offset-4">
+          Bekijk alle Light Cubes-inspiratie
+        </Link>
+      </section>
+
+      <section className="border-y border-white/10 bg-neutral-950">
+        <div className="mx-auto max-w-5xl px-6 py-16 lg:px-8 lg:py-20">
+          <h2 className="text-3xl font-semibold md:text-4xl">LED staantafels aanvragen voor jouw locatie</h2>
+          <p className="mt-6 text-lg leading-8 text-white/75">
+            DAIVEXO behandelt aanvragen voor evenementen in België. Vermeld je evenementlocatie,
+            zodat de mogelijkheden en eventuele levering kunnen worden beoordeeld.
+            Beschikbaarheid, prijs en voorwaarden worden per aanvraag bevestigd.
+          </p>
+          <div className="mt-8 rounded-2xl border border-white/10 bg-black p-7">
+            <h3 className="text-xl font-semibold">Wat vermeld je in je aanvraag?</h3>
+            <ul className="mt-4 list-disc space-y-2 pl-5 leading-7 text-white/75">
+              <li>Datum en locatie van je evenement</li>
+              <li>Gewenst aantal LED statafels of Light Cubes</li>
+              <li>Type evenement en eventuele wensen voor de opstelling</li>
+            </ul>
+            <Link href={reservationUrl} className="mt-7 inline-block rounded-full bg-primary px-7 py-4 font-semibold text-black transition hover:brightness-110">
+              Vraag je offerte aan
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-6 py-16 lg:px-8 lg:py-20">
+        <h2 className="text-3xl font-semibold md:text-4xl">Veelgestelde vragen over statafels huren</h2>
+        <div className="mt-9 space-y-4">
+          {faq.map((item) => (
+            <article key={item.question} className="rounded-2xl border border-white/10 bg-neutral-950 p-6">
+              <h3 className="text-xl font-semibold">{item.question}</h3>
+              <p className="mt-3 leading-7 text-white/70">{item.answer}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="border-t border-primary/20">
-        <div className="mx-auto max-w-5xl px-6 py-20 text-center lg:px-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
-            DAIVEXO Light Cubes
+        <div className="mx-auto max-w-5xl px-6 py-16 text-center lg:px-8 lg:py-20">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">DAIVEXO Light Cubes</p>
+          <h2 className="mt-4 text-3xl font-semibold md:text-5xl">Maak van je evenement een blikvanger</h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/75">
+            Vraag vrijblijvend een offerte aan voor één of meerdere verlichte statafels.
+            We bekijken de mogelijkheden voor jouw datum en locatie.
           </p>
-
-          <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
-            Een LED staantafel huren voor jouw evenement?
-          </h2>
-
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/70">
-            Op zoek naar één of meerdere lichtgevende
-            statafels voor je feest, receptie of
-            bedrijfsevenement?
-            Geef de datum, locatie en het gewenste aantal tafels door.
-            DAIVEXO bekijkt de beschikbaarheid en bezorgt je
-            de mogelijkheden voor jouw evenement.
-          </p>
-
-          <Link
-            href="/?lightcubes=reservation"
-            className="mt-8 inline-block rounded-full bg-primary px-8 py-4 font-semibold text-black transition hover:brightness-110"
-          >
-            Vraag je offerte of reservatie aan
+          <Link href={reservationUrl} className="mt-8 inline-block rounded-full bg-primary px-8 py-4 font-semibold text-black transition hover:brightness-110">
+            Vraag vrijblijvend een offerte aan
           </Link>
         </div>
       </section>
