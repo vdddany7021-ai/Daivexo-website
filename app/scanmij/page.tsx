@@ -114,7 +114,7 @@ export default function ScanmijHome() {
           </p>
 
           <Link
-            href="/#pakketten"
+           href="#pakketten"
             className="mt-10 inline-flex min-h-12 items-center justify-center border border-[#d6b15b] bg-[#d6b15b] px-10 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-black transition-colors hover:bg-black hover:text-[#d6b15b]"
           >
             Ontdek onze pakketten
