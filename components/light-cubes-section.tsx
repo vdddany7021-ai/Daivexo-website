@@ -234,6 +234,7 @@ export function LightCubesSection() {
 
                 <div className="absolute top-4 left-4 w-7 h-7 border-t-2 border-l-2 border-primary" />
                 <div className="absolute bottom-4 right-4 w-7 h-7 border-b-2 border-r-2 border-primary" />
+                <a href="/?lightcubes=reservation" className="relative z-10 mt-8 inline-flex w-full items-center justify-center border border-primary bg-primary px-5 py-4 text-center font-semibold text-black transition hover:bg-black hover:text-primary">Huur voor 1 dag</a>
               </div>
 
               {/* WEEKEND */}
@@ -281,6 +282,7 @@ export function LightCubesSection() {
 
                 <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-primary" />
                 <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-primary" />
+                <a href="/?lightcubes=reservation" className="relative z-10 mt-8 inline-flex w-full items-center justify-center border border-primary bg-primary px-5 py-4 text-center font-semibold text-black transition hover:bg-black hover:text-primary">Reserveer een weekend</a>
               </div>
 
               {/* KOPEN */}
@@ -320,6 +322,7 @@ export function LightCubesSection() {
 
                 <div className="absolute top-4 left-4 w-7 h-7 border-t-2 border-l-2 border-primary" />
                 <div className="absolute bottom-4 right-4 w-7 h-7 border-b-2 border-r-2 border-primary" />
+                <a href="/?lightcubes=reservation" className="relative z-10 mt-8 inline-flex w-full items-center justify-center border border-primary bg-primary px-5 py-4 text-center font-semibold text-black transition hover:bg-black hover:text-primary">Vraag aankoop aan</a>
               </div>
             </div>
 
