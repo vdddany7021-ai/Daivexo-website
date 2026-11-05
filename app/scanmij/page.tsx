@@ -326,7 +326,7 @@ export default function ScanmijHome() {
       >
         {pakket.aantal === 250 && (
           <span className="mb-6 bg-[#d6b15b] px-5 py-2 text-xs font-bold uppercase tracking-widest text-black">
-            Voordeliger per sticker
+            Aanbevolen
           </span>
         )}
 
