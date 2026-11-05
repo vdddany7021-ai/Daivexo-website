@@ -250,19 +250,30 @@ export async function POST(request: NextRequest) {
         throw new Error("Resend rejected email");
       }
 
-      // Registreer dat Resend de e-mail heeft aanvaard.
-      await sql`
-        UPDATE scanmij_orders
-        SET
-          notification_sent_at = NOW(),
-          notification_processing_at = NULL,
-          updated_at = NOW()
-        WHERE mollie_payment_id = ${payment.id}
-          AND notification_sent_at IS NULL
-          AND notification_processing_at =
-            ${processingAt}
-      `;
+   // Registreer dat Resend de e-mail heeft aanvaard.
+const updated = await sql`
+  UPDATE scanmij_orders
+  SET
+    notification_sent_at = NOW(),
+    notification_processing_at = NULL,
+    updated_at = NOW()
+  WHERE mollie_payment_id = ${payment.id}
+    AND notification_sent_at IS NULL
+    AND notification_processing_at =
+      ${processingAt}
+  RETURNING order_id
+`;
 
+if (updated.length !== 1) {
+  console.error(
+    "SCANMIJ: bestelmelding niet geregistreerd",
+    payment.id
+  );
+
+  throw new Error(
+    "Notification database update failed"
+  );
+}
       return reply("OK", 200);
     } catch (emailError) {
       console.error(
