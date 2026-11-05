@@ -349,7 +349,7 @@ export default function ScanmijHome() {
         </p>
 
         <Link
-          href="/bestellen"
+          href={`/bestellen?pack=b2b${pakket.aantal}`}
           className={`inline-flex min-h-12 w-full items-center justify-center border border-[#d6b15b] px-6 py-4 text-sm font-bold uppercase tracking-widest transition-colors ${
             pakket.aantal === 250
               ? "bg-[#d6b15b] text-black hover:bg-[#e8c875]"
