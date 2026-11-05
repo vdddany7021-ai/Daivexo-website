@@ -156,7 +156,7 @@ export async function POST(request: NextRequest) {
         value: totalAmount,
       },
       description: description.slice(0, 255),
-      redirectUrl: `${baseUrl}/bedankt`,
+      redirectUrl: `${baseUrl}/scanmij/bedankt`,
       webhookUrl: `${baseUrl}/api/scanmij/webhook`,
       metadata: {
         order_id: orderId,
