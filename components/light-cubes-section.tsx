@@ -229,12 +229,12 @@ export function LightCubesSection() {
                 </p>
 
                 <p className="mt-2 text-sm md:text-base text-stone-400 leading-relaxed">
-                  Elke extra dag: €12,50 per Cube
+                  Elke extra dag: €29,95 per Cube
                 </p>
 
                 <div className="absolute top-4 left-4 w-7 h-7 border-t-2 border-l-2 border-primary" />
                 <div className="absolute bottom-4 right-4 w-7 h-7 border-b-2 border-r-2 border-primary" />
-                <a href="/?lightcubes=reservation" className="relative z-10 mt-8 inline-flex w-full items-center justify-center border border-primary bg-primary px-5 py-4 text-center font-semibold text-black transition hover:bg-black hover:text-primary">Huur voor 1 dag</a>
+                <a href="/?lightcubes=reservation" className="relative z-10 mt-auto inline-flex w-full items-center justify-center border border-primary bg-primary px-5 py-4 text-center font-semibold text-black transition hover:bg-black hover:text-primary">Huur voor 1 dag</a>
               </div>
 
               {/* WEEKEND */}
@@ -277,12 +277,12 @@ export function LightCubesSection() {
                 </p>
 
                 <p className="mt-2 text-sm md:text-base text-stone-400 leading-relaxed">
-                  Elke extra dag: €12,50 per Cube
+                  Elke extra dag: €29,95 per Cube
                 </p>
 
                 <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-primary" />
                 <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-primary" />
-                <a href="/?lightcubes=reservation" className="relative z-10 mt-8 inline-flex w-full items-center justify-center border border-primary bg-primary px-5 py-4 text-center font-semibold text-black transition hover:bg-black hover:text-primary">Reserveer een weekend</a>
+                <a href="/?lightcubes=reservation" className="relative z-10 mt-auto inline-flex w-full items-center justify-center border border-primary bg-primary px-5 py-4 text-center font-semibold text-black transition hover:bg-black hover:text-primary">Reserveer een weekend</a>
               </div>
 
               {/* KOPEN */}
@@ -322,8 +322,22 @@ export function LightCubesSection() {
 
                 <div className="absolute top-4 left-4 w-7 h-7 border-t-2 border-l-2 border-primary" />
                 <div className="absolute bottom-4 right-4 w-7 h-7 border-b-2 border-r-2 border-primary" />
-                <a href="/?lightcubes=reservation" className="relative z-10 mt-8 inline-flex w-full items-center justify-center border border-primary bg-primary px-5 py-4 text-center font-semibold text-black transition hover:bg-black hover:text-primary">Vraag aankoop aan</a>
+                <a href="/?lightcubes=reservation" className="relative z-10 mt-auto inline-flex w-full items-center justify-center border border-primary bg-primary px-5 py-4 text-center font-semibold text-black transition hover:bg-black hover:text-primary">Vraag aankoop aan</a>
               </div>
+            </div>
+
+            {/* VERLENGING VAN DE HUURPERIODE */}
+            <div className="mt-8 border border-primary/50 bg-black p-6 text-center md:p-8">
+              <h4 className="font-serif text-xl text-primary md:text-2xl">
+                Verlenging van de huurperiode
+              </h4>
+              <p className="mx-auto mt-4 max-w-4xl text-sm leading-7 text-stone-300 md:text-base">
+                Een verlenging is uitsluitend mogelijk na voorafgaande goedkeuring door
+                DAIVEXO en afhankelijk van de beschikbaarheid. Elke bijkomende huurdag
+                kost €29,95 per Cube, inclusief btw. Een verlenging is pas geldig na
+                schriftelijke bevestiging door DAIVEXO. Zonder die bevestiging blijven
+                de oorspronkelijk afgesproken ophaaldatum en het ophaaltijdstip gelden.
+              </p>
             </div>
 
             {/* INBEGREPEN BIJ VERHUUR */}
