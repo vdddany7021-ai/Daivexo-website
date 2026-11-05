@@ -294,6 +294,69 @@ export default function ScanmijHome() {
         </div>
       </section>
 
+{/* B2B PAKKETTEN */}
+<section className="mx-auto max-w-7xl px-6 py-24">
+  <div className="mb-14 text-center">
+    <p className="mb-4 text-xs uppercase tracking-[0.3em] text-[#d6b15b]">
+      SCANMIJ ZAKELIJK
+    </p>
+    <h2 className="font-serif text-3xl text-white md:text-5xl">
+      Voor bedrijven, scholen en organisaties
+    </h2>
+    <p className="mx-auto mt-6 max-w-2xl text-gray-400">
+      Bescherm grotere aantallen voorwerpen met unieke
+      SCANMIJ QR-stickers. Hoe groter je bestelling,
+      hoe voordeliger de prijs per sticker.
+    </p>
+  </div>
+
+  <div className="grid gap-8 md:grid-cols-3">
+    {[
+      { aantal: 100, prijs: "€ 220,00", stuk: "€ 2,20" },
+      { aantal: 250, prijs: "€ 487,50", stuk: "€ 1,95" },
+      { aantal: 500, prijs: "€ 850,00", stuk: "€ 1,70" },
+    ].map((pakket) => (
+      <div
+        key={pakket.aantal}
+        className={`flex flex-col items-center border px-7 py-12 text-center ${
+          pakket.aantal === 250
+            ? "border-2 border-[#d6b15b] bg-[#1c170d]"
+            : "border-[#b99343]/40 bg-[#0b0b0b]"
+        }`}
+      >
+        {pakket.aantal === 250 && (
+          <span className="mb-6 bg-[#d6b15b] px-5 py-2 text-xs font-bold uppercase tracking-widest text-black">
+            Voordeliger per sticker
+          </span>
+        )}
+
+        <h3 className="font-serif text-3xl text-white">
+          {pakket.aantal} stickers
+        </h3>
+
+        <p className="my-7 font-serif text-4xl text-[#d6b15b]">
+          {pakket.prijs}
+        </p>
+
+        <p className="mb-10 flex-1 text-gray-400">
+          {pakket.stuk} per sticker
+        </p>
+
+        <Link
+          href="/bestellen"
+          className={`inline-flex min-h-12 w-full items-center justify-center border border-[#d6b15b] px-6 py-4 text-sm font-bold uppercase tracking-widest transition-colors ${
+            pakket.aantal === 250
+              ? "bg-[#d6b15b] text-black hover:bg-[#e8c875]"
+              : "text-[#d6b15b] hover:bg-[#d6b15b] hover:text-black"
+          }`}
+        >
+          Bestellen
+        </Link>
+      </div>
+    ))}
+  </div>
+</section>
+
       <footer className="border-t border-[#b99343]/30 px-6 py-12 text-center">
         <p className="font-serif text-2xl tracking-[0.2em] text-[#d6b15b]">
           SCANMIJ
