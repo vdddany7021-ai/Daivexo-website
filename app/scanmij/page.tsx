@@ -267,7 +267,13 @@ export default function ScanmijHome() {
               </p>
 
               <Link
-                href="/bestellen"
+                href={
+  pakket.naam === "Start Pack"
+    ? "/bestellen?pack=start"
+    : pakket.naam === "Family Pack"
+      ? "/bestellen?pack=family"
+      : "/bestellen?pack=pro"
+}
                 className={
   pakket.naam === "Family Pack"
     ? "inline-flex min-h-12 w-full items-center justify-center border-2 border-[#d6b15b] bg-[#d6b15b] px-6 py-4 text-sm font-bold uppercase tracking-[0.15em] text-black transition-colors hover:bg-[#f0ce79]"
