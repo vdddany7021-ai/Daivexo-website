@@ -243,8 +243,17 @@ export default function ScanmijHome() {
           {pakketten.map((pakket) => (
             <div
               key={pakket.naam}
-              className="flex flex-col items-center border border-[#b99343]/40 bg-[#0b0b0b] px-7 py-12 text-center"
+              className={
+  pakket.naam === "Family Pack"
+    ? "relative flex flex-col items-center border-2 border-[#d6b15b] bg-[#1b160b] px-7 py-12 text-center shadow-[0_0_35px_rgba(214,177,91,0.22)]"
+    : "flex flex-col items-center border border-[#b99343]/40 bg-[#0b0b0b] px-7 py-12 text-center"
+}
             >
+          {pakket.naam === "Family Pack" && (
+  <div className="mb-6 border border-[#d6b15b] bg-[#d6b15b] px-6 py-2 text-xs font-bold uppercase tracking-[0.2em] text-black">
+    AANBEVOLEN
+  </div>
+)}    
               <h3 className="font-serif text-3xl">
                 {pakket.naam}
               </h3>
@@ -259,7 +268,11 @@ export default function ScanmijHome() {
 
               <Link
                 href="/bestellen"
-                className="inline-flex min-h-12 w-full items-center justify-center border border-[#d6b15b] px-6 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#d6b15b] transition-colors hover:bg-[#d6b15b] hover:text-black"
+                className={
+  pakket.naam === "Family Pack"
+    ? "inline-flex min-h-12 w-full items-center justify-center border-2 border-[#d6b15b] bg-[#d6b15b] px-6 py-4 text-sm font-bold uppercase tracking-[0.15em] text-black transition-colors hover:bg-[#f0ce79]"
+    : "inline-flex min-h-12 w-full items-center justify-center border border-[#d6b15b] px-6 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#d6b15b] transition-colors hover:bg-[#d6b15b] hover:text-black"
+}
               >
                 Bestellen
               </Link>
