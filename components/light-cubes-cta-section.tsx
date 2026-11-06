@@ -123,7 +123,15 @@ const translations = {
     "successQuote": "Bedankt. Je offerteaanvraag voor de DAIVEXO Light Cubes werd succesvol verzonden.",
     "successInfo": "We nemen zo snel mogelijk contact met je op om beschikbaarheid, levering en verdere afspraken te bevestigen.",
     "close": "Sluiten",
-    "error": "De aanvraag kon momenteel niet worden verstuurd. Probeer het later opnieuw of neem contact op via info@daivexo.com."
+    "error": "De aanvraag kon momenteel niet worden verstuurd. Probeer het later opnieuw of neem contact op via info@daivexo.com.",
+    "estimateTitle": "Jouw voorlopige kostenoverzicht",
+    "estimateRent": "Huurprijs (incl. 21% btw)",
+    "estimateDeposit": "Terugbetaalbare waarborg",
+    "estimateTotal": "Voorlopig totaal",
+    "estimateDelivery": "Leveringskosten zijn niet inbegrepen en worden vooraf meegedeeld.",
+    "estimateDates": "Selecteer een geldige start- en einddatum (minstens 2 huurdagen).",
+    "estimateSelect": "Kies een huurformule en vul een geldig aantal Cubes in.",
+    "estimateDisclaimer": "Dit is een prijsindicatie, geen definitieve reservatie.",
   },
   "en": {
     "ctaTitle": "Ready to light up your event?",
@@ -189,7 +197,15 @@ const translations = {
     "successQuote": "Thank you. Your DAIVEXO Light Cubes quote request has been sent successfully.",
     "successInfo": "We will contact you as soon as possible to confirm availability, delivery and the next steps.",
     "close": "Close",
-    "error": "Your request could not be sent. Please try again later or contact info@daivexo.com."
+    "error": "Your request could not be sent. Please try again later or contact info@daivexo.com.",
+    "estimateTitle": "Your estimated cost breakdown",
+    "estimateRent": "Rental price (incl. 21% VAT)",
+    "estimateDeposit": "Refundable deposit",
+    "estimateTotal": "Estimated total",
+    "estimateDelivery": "Delivery costs are not included and will be communicated in advance.",
+    "estimateDates": "Select valid start and end dates (at least 2 rental days).",
+    "estimateSelect": "Choose a rental option and enter a valid number of Cubes.",
+    "estimateDisclaimer": "This is an estimate, not a confirmed booking.",
   },
   "fr": {
     "ctaTitle": "Prêt à illuminer votre événement ?",
@@ -255,7 +271,15 @@ const translations = {
     "successQuote": "Merci. Votre demande de devis pour les Light Cubes DAIVEXO a bien été envoyée.",
     "successInfo": "Nous vous contacterons dès que possible pour confirmer la disponibilité, la livraison et les modalités.",
     "close": "Fermer",
-    "error": "Votre demande n’a pas pu être envoyée. Réessayez plus tard ou contactez info@daivexo.com."
+    "error": "Votre demande n’a pas pu être envoyée. Réessayez plus tard ou contactez info@daivexo.com.",
+    "estimateTitle": "Votre récapitulatif estimatif",
+    "estimateRent": "Location (TVA de 21 % incluse)",
+    "estimateDeposit": "Caution remboursable",
+    "estimateTotal": "Total estimé",
+    "estimateDelivery": "Les frais de livraison ne sont pas inclus et seront communiqués à l’avance.",
+    "estimateDates": "Choisissez des dates de début et de fin valides (au moins 2 jours de location).",
+    "estimateSelect": "Choisissez une formule et un nombre de Cubes valide.",
+    "estimateDisclaimer": "Il s’agit d’une estimation, pas d’une réservation confirmée.",
   },
   "de": {
     "ctaTitle": "Bereit, Ihr Event zum Leuchten zu bringen?",
@@ -321,9 +345,43 @@ const translations = {
     "successQuote": "Vielen Dank. Ihre Angebotsanfrage für DAIVEXO Light Cubes wurde erfolgreich gesendet.",
     "successInfo": "Wir melden uns schnellstmöglich, um Verfügbarkeit, Lieferung und weitere Einzelheiten zu bestätigen.",
     "close": "Schließen",
-    "error": "Ihre Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es später erneut oder kontaktieren Sie info@daivexo.com."
+    "error": "Ihre Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es später erneut oder kontaktieren Sie info@daivexo.com.",
+    "estimateTitle": "Ihre voraussichtliche Kostenübersicht",
+    "estimateRent": "Mietpreis (inkl. 21 % MwSt.)",
+    "estimateDeposit": "Erstattbare Kaution",
+    "estimateTotal": "Voraussichtlicher Gesamtbetrag",
+    "estimateDelivery": "Lieferkosten sind nicht enthalten und werden vorab mitgeteilt.",
+    "estimateDates": "Wählen Sie gültige Anfangs- und Enddaten (mindestens 2 Miettage).",
+    "estimateSelect": "Wählen Sie eine Mietoption und eine gültige Anzahl Cubes.",
+    "estimateDisclaimer": "Dies ist eine Schätzung, keine bestätigte Buchung."
   }
 } as const
+
+// Monetary calculations use integer cents to avoid floating-point rounding errors.
+const rentalEstimate = (data: FormData) => {
+  const quantity = Number(data.quantity)
+  if (!Number.isSafeInteger(quantity) || quantity < 1 || quantity > 10000) return null
+  let pricePerCubeCents: number
+  if (data.rentalType === "1 dag") pricePerCubeCents = 5995
+  else if (data.rentalType === "Weekend") pricePerCubeCents = 7995
+  else if (data.rentalType === "Meerdere dagen") {
+    if (!data.eventDate || !data.endDate) return null
+    const start = Date.parse(`${data.eventDate}T00:00:00Z`)
+    const end = Date.parse(`${data.endDate}T00:00:00Z`)
+    if (!Number.isFinite(start) || !Number.isFinite(end)) return null
+    const days = Math.round((end - start) / 86400000) + 1
+    if (days < 2) return null
+    pricePerCubeCents = 5995 + (days - 1) * 2995
+  } else return null // Purchase and custom quotes have no fixed rental price.
+  const rentCents = quantity * pricePerCubeCents
+  const depositCents = quantity * 2500
+  return { rentCents, depositCents, totalCents: rentCents + depositCents }
+}
+
+const formatEuro = (cents: number, language: Language) =>
+  new Intl.NumberFormat(({ nl: "nl-BE", en: "en-GB", fr: "fr-BE", de: "de-DE" })[language], {
+    style: "currency", currency: "EUR"
+  }).format(cents / 100)
 
 const inputClass = "w-full border border-stone-700 bg-black px-4 py-3.5 text-white placeholder:text-stone-600 outline-none transition-colors focus:border-primary"
 
@@ -339,6 +397,7 @@ export function LightCubesCtaSection() {
   const [sendSuccess, setSendSuccess] = useState(false)
   const [sendError, setSendError] = useState("")
   const t = translations[language]
+  const estimate = rentalEstimate(formData)
 
   useEffect(() => {
     const url = new URL(window.location.href)
@@ -393,6 +452,11 @@ export function LightCubesCtaSection() {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     if (!formType) return
+    const currentEstimate = rentalEstimate(formData)
+    if (formData.rentalType === "Meerdere dagen" && !currentEstimate) {
+      setSendError(t.estimateDates)
+      return
+    }
     setIsSending(true); setSendError(""); setSendSuccess(false)
     const isReservation = formType === "reservation"
     // Keep the original Dutch email structure and canonical option values.
@@ -422,6 +486,13 @@ LIGHT CUBES
 Formule: ${formData.rentalType}
 Aantal Cubes: ${formData.quantity}
 Gewenste kleur(en): ${formData.colors || "Nog te bespreken"}
+
+VOORLOPIGE KOSTENRAMING
+${currentEstimate ? `Huurprijs incl. 21% btw: ${formatEuro(currentEstimate.rentCents, "nl")}
+Terugbetaalbare waarborg: ${formatEuro(currentEstimate.depositCents, "nl")}
+Voorlopig totaal exclusief levering: ${formatEuro(currentEstimate.totalCents, "nl")}` : "Prijs op aanvraag (aankoop / offerte op maat)"}
+Leveringskosten: afzonderlijk volgens afstand, vooraf mee te delen.
+De reservatie is pas definitief na bevestiging door DAIVEXO.
 
 LEVERING / OPSTELLING
 ${formData.deliveryAddress}
@@ -554,7 +625,7 @@ body: JSON.stringify({
                       <option value="Weekend">{t.weekend}</option>
                       {formType === "quote" && <><option value="Aankoop">{t.purchase}</option><option value="Offerte op maat">{t.customQuote}</option></>}
                     </select></FormField>
-                    {formData.rentalType === "Meerdere dagen" && <FormField label={t.endDate}><input required type="date" min={formData.eventDate || undefined} value={formData.endDate} onChange={e=>updateField("endDate",e.target.value)} className={inputClass}/></FormField>}
+                    {formData.rentalType === "Meerdere dagen" && <FormField label={t.endDate}><input required type="date" min={formData.eventDate ? new Date(Date.parse(`${formData.eventDate}T00:00:00Z`) + 86400000).toISOString().slice(0, 10) : undefined} value={formData.endDate} onChange={e=>updateField("endDate",e.target.value)} className={inputClass}/></FormField>}
                     <FormField label={t.quantity}><input required min="1" type="number" value={formData.quantity} onChange={e=>updateField("quantity",e.target.value)} className={inputClass}/></FormField>
                     <FormField label={t.colors}><select value={formData.colors} onChange={e=>updateField("colors",e.target.value)} className={inputClass}>
                       <option value="">{t.colorsLater}</option><option value="Green LED">Green LED</option><option value="Yellow LED">Yellow LED</option><option value="Blue LED">Blue LED</option><option value="Warm White LED">Warm White LED</option><option value="Meerdere kleuren">{t.multipleColors}</option>
@@ -572,6 +643,20 @@ body: JSON.stringify({
                   <label className="mt-5 flex items-start gap-4 cursor-pointer"><input required type="checkbox" checked={formData.powerConfirmed} onChange={e=>updateField("powerConfirmed",e.target.checked)} className="mt-1 h-5 w-5 accent-yellow-500"/><span className="text-sm md:text-base text-stone-200 leading-7">{t.powerConfirm}</span></label>
                 </fieldset>
                 <fieldset><legend className="text-primary text-xs tracking-[0.3em] uppercase mb-5">{t.extra}</legend><FormField label={t.remarks}><textarea rows={4} value={formData.remarks} onChange={e=>updateField("remarks",e.target.value)} placeholder={t.remarksPlaceholder} className={`${inputClass} resize-none`}/></FormField></fieldset>
+                 {formData.rentalType !== "Aankoop" && formData.rentalType !== "Offerte op maat" && (
+                   <div className="border border-primary p-5 md:p-6 space-y-3" aria-live="polite">
+                     <h4 className="text-primary font-medium text-lg">{t.estimateTitle}</h4>
+                     {estimate ? (
+                       <>
+                         <div className="flex justify-between gap-4 text-stone-200"><span>{t.estimateRent}</span><strong>{formatEuro(estimate.rentCents, language)}</strong></div>
+                         <div className="flex justify-between gap-4 text-stone-200"><span>{t.estimateDeposit}</span><strong>{formatEuro(estimate.depositCents, language)}</strong></div>
+                         <div className="border-t border-primary/30 pt-3 flex justify-between gap-4 text-white"><strong>{t.estimateTotal}</strong><strong className="text-primary">{formatEuro(estimate.totalCents, language)}</strong></div>
+                       </>
+                     ) : <p className="text-stone-300">{formData.rentalType === "Meerdere dagen" ? t.estimateDates : t.estimateSelect}</p>}
+                     <p className="text-sm text-stone-300">{t.estimateDelivery}</p>
+                     <p className="text-sm text-stone-400">{t.estimateDisclaimer}</p>
+                   </div>
+                 )}
                  <div className="border border-primary/40 p-5 md:p-6 space-y-3" aria-label={t.pricingTitle}>
                    <h4 className="text-primary font-medium text-lg">{t.pricingTitle}</h4>
                    <ul className="list-disc pl-5 space-y-2 text-sm md:text-base text-stone-200 leading-7">
