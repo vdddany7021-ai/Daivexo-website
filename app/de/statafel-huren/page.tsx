@@ -2,10 +2,12 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 
+const reservationUrl = "/?lightcubes=reservation"
+
 export const metadata: Metadata = {
-  title: "LED Stehtische Mieten | Beleuchtete Stehtische | DAIVEXO",
+  title: "LED-Stehtische mieten in Deutschland & Europa | DAIVEXO",
   description:
-    "LED Stehtische, beleuchtete Stehtische und Light Cubes für Partys, Empfänge, Firmenveranstaltungen und professionelle Events mieten.",
+    "LED-Stehtische und Light Cubes mieten: DAIVEXO aus Deinze liefert nach Deutschland, Belgien, in die Niederlande, nach Frankreich, Luxemburg und Großbritannien. Angebot anfragen.",
 
   alternates: {
     canonical: "https://www.daivexo.com/de/statafel-huren",
@@ -34,9 +36,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "LED Stehtische Mieten | DAIVEXO",
+    title: "LED-Stehtische mieten in Deutschland & Europa | DAIVEXO",
     description:
-      "Beleuchtete LED Stehtische und Light Cubes für Partys, Empfänge, Firmenveranstaltungen und Events mieten.",
+      "DAIVEXO vermietet LED-Stehtische und Light Cubes für Events in Deutschland, Belgien und weiteren europäischen Ländern. Lieferung ab Deinze auf Anfrage.",
    
 url: "https://www.daivexo.com/de/statafel-huren",
 
@@ -46,9 +48,9 @@ url: "https://www.daivexo.com/de/statafel-huren",
   },
   twitter: {
     card: "summary_large_image",
-    title: "LED Stehtische Mieten | DAIVEXO",
+    title: "LED-Stehtische mieten in Deutschland & Europa | DAIVEXO",
     description:
-      "LED Stehtische und beleuchtete Eventmöbel für Partys, Empfänge und Veranstaltungen mieten.",
+      "LED-Stehtische und Light Cubes für Veranstaltungen mieten. DAIVEXO liefert aus Belgien auch nach Deutschland und in weitere Länder.",
   },
 }
 
@@ -77,6 +79,11 @@ const faq = [
     question: "Kann DAIVEXO auch größere Eventaufbauten realisieren?",
     answer:
       "Ja. Neben einzelnen beleuchteten Stehtischen können mehrere Light Cubes zu größeren Installationen wie beleuchteten Bars, DJ-Booths und Light Walls kombiniert werden.",
+  },
+  {
+    question: "In welche Länder liefert DAIVEXO die LED-Stehtische?",
+    answer:
+      "DAIVEXO hat seinen Sitz in Deinze (Belgien) und liefert nach Belgien, Deutschland, in die Niederlande, nach Frankreich, Luxemburg und in das Vereinigte Königreich. Verfügbarkeit, Transportkosten und Mietbedingungen werden für den Veranstaltungsort vorab bestätigt.",
   },
 ]
 
@@ -128,21 +135,25 @@ export default function LedStehtischePage() {
               <strong className="text-white">LED Stehtische</strong>,{" "}
               <strong className="text-white">leuchtende Stehtische</strong>{" "}
               und Light Cubes, die Funktionalität, Beleuchtung und modernes
-              Eventdesign miteinander verbinden.
+              Eventdesign miteinander verbinden. DAIVEXO hat seinen Sitz in
+              Deinze (Belgien) und liefert nach Deutschland, Belgien, in die
+              Niederlande, nach Frankreich, Luxemburg und in das Vereinigte Königreich.
             </p>
 
             <p className="mt-5 max-w-2xl leading-7 text-white/70">
               Vom einzelnen beleuchteten Stehtisch bis zu mehreren Light Cubes
               für eine komplette Eventgestaltung kann der Aufbau an Ihre
-              Veranstaltung angepasst werden.
+              Veranstaltung angepasst werden. Teilen Sie uns Veranstaltungsdatum,
+              Lieferadresse und gewünschte Stückzahl mit. Wir bestätigen
+              Verfügbarkeit, Transportkosten und Mietbedingungen vorab.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
-                href="/contact/"
+                href={reservationUrl}
                 className="rounded-full bg-primary px-7 py-4 text-center font-semibold text-black transition hover:brightness-110"
               >
-                Angebot anfragen
+                Unverbindliches Angebot anfragen
               </Link>
 
               <Link
@@ -397,6 +408,33 @@ export default function LedStehtischePage() {
         </div>
       </section>
 
+      {/* LIEFERGEBIET */}
+      <section className="border-y border-white/10 bg-neutral-950">
+        <div className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
+          <h2 className="text-3xl font-semibold md:text-4xl">
+            LED-Stehtische mieten in Deutschland, Belgien und Europa
+          </h2>
+          <p className="mt-6 text-lg leading-8 text-white/75">
+            DAIVEXO ist in Deinze (Belgien) ansässig. Wir vermieten beleuchtete
+            Stehtische und Light Cubes für Veranstaltungen in Belgien,
+            Deutschland, den Niederlanden, Frankreich, Luxemburg und dem
+            Vereinigten Königreich.
+          </p>
+          <p className="mt-5 leading-7 text-white/70">
+            Bitte geben Sie Datum, Veranstaltungsort und die gewünschte Anzahl
+            an Light Cubes an. Wir prüfen die Verfügbarkeit und teilen Ihnen
+            die Transportkosten und Mietbedingungen vor einer verbindlichen
+            Buchung mit.
+          </p>
+          <Link
+            href={reservationUrl}
+            className="mt-8 inline-block rounded-full bg-primary px-8 py-4 font-semibold text-black transition hover:brightness-110"
+          >
+            Angebot für Ihre Veranstaltung anfragen
+          </Link>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
         <h2 className="text-3xl font-semibold md:text-4xl">
@@ -430,16 +468,16 @@ export default function LedStehtischePage() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/70">
-            Teilen Sie uns mit, wie viele Stehtische Sie benötigen und welche
-            Art von Veranstaltung Sie planen. Gemeinsam finden wir die passende
-            Light-Cube-Konfiguration.
+            Teilen Sie uns Datum, Veranstaltungsort und die gewünschte Anzahl
+            an LED-Stehtischen mit. Wir bestätigen Verfügbarkeit, Lieferung
+            und Mietbedingungen individuell.
           </p>
 
           <Link
-            href="/contact/"
+            href={reservationUrl}
             className="mt-8 inline-block rounded-full bg-primary px-8 py-4 font-semibold text-black transition hover:brightness-110"
           >
-            Angebot anfragen
+            Unverbindliches Angebot anfragen
           </Link>
         </div>
       </section>
