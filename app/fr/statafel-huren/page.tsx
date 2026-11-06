@@ -2,12 +2,14 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 
+const reservationUrl = "/?lightcubes=reservation"
+
 export const metadata: Metadata = {
   title: {
-    absolute: "Location Mange-Debout LED & Tables Hautes Lumineuses | DAIVEXO",
+    absolute: "Location de mange-debout LED en Belgique et en France | DAIVEXO",
   },
   description:
-    "Location de mange-debout LED et tables hautes lumineuses pour fêtes et événements. Réservez dès maintenant vos Light Cubes DAIVEXO pour une date future.",
+    "Louez des mange-debout LED et Light Cubes DAIVEXO. Basés à Deinze, nous livrons en Belgique, France, Pays-Bas, Allemagne, Luxembourg et au Royaume-Uni. Demandez un devis.",
 
   alternates: {
     canonical: "https://www.daivexo.com/fr/statafel-huren",
@@ -45,6 +47,7 @@ export const metadata: Metadata = {
     siteName: "DAIVEXO",
     locale: "fr_FR",
     type: "website",
+    images: [{ url: "https://www.daivexo.com/images/light-cube-green.jpeg", alt: "Mange-debout LED lumineux DAIVEXO" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -74,6 +77,11 @@ const faq = [
     question: "Les mange-debout conviennent-ils aux fêtes et réceptions ?",
     answer:
       "Oui. Les tables lumineuses conviennent notamment aux fêtes, réceptions, événements d'entreprise et événements professionnels.",
+  },
+  {
+    question: "Dans quels pays DAIVEXO livre-t-il ses mange-debout LED ?",
+    answer:
+      "DAIVEXO est basé à Deinze, en Belgique, et peut livrer en Belgique, en France, aux Pays-Bas, en Allemagne, au Luxembourg et au Royaume-Uni. Les frais de livraison et les conditions sont précisés dans le devis.",
   },
   {
     question: "DAIVEXO peut-il créer de plus grandes installations ?",
@@ -125,11 +133,11 @@ export default function LocationMangeDeboutPage() {
               <strong className="text-white">mange-debout à louer</strong> ou
               une{" "}
               <strong className="text-white">table haute lumineuse</strong>{" "}
-              pour une fête, une réception ou un événement ? DAIVEXO développe
+              pour une fête, une réception ou un événement ? DAIVEXO propose
               des <strong className="text-white">mange-debout LED</strong>, des{" "}
               <strong className="text-white">tables hautes lumineuses</strong>{" "}
               et des Light Cubes qui associent fonctionnalité, éclairage et
-              design événementiel. Vous pouvez déjà demander une réservation pour une date future.
+              design événementiel. Basé à Deinze, en Belgique, DAIVEXO livre en Belgique, en France, aux Pays-Bas, en Allemagne, au Luxembourg et au Royaume-Uni. Demandez un devis pour votre événement.
             </p>
 
             <p className="mt-5 max-w-2xl leading-7 text-white/70">
@@ -141,7 +149,7 @@ export default function LocationMangeDeboutPage() {
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
-                href="/contact/"
+                href={reservationUrl}
                 className="rounded-full bg-primary px-7 py-4 text-center font-semibold text-black transition hover:brightness-110"
               >
                 Demander une réservation
@@ -374,7 +382,7 @@ export default function LocationMangeDeboutPage() {
             <article>
               <div className="relative min-h-[420px] overflow-hidden rounded-[28px] border border-white/10">
                 <Image
-                  src="/images/light-cubes-inspiratie/lightwall-multicolor.jpg"
+                  src="/images/light-cubes-inspiratie/lightwall-multicolor.webp"
                   alt="Light Wall multicolore lumineux composé de Light Cubes DAIVEXO"
                   fill
                   className="object-cover"
@@ -447,20 +455,21 @@ export default function LocationMangeDeboutPage() {
           </h2>
           <div className="mt-7 space-y-5 text-lg leading-8 text-white/75">
             <p>
-              DAIVEXO accepte les demandes de réservation pour ses mange-debout LED,
-              tables hautes lumineuses et Light Cubes. Indiquez le lieu de votre
-              événement afin que nous puissions examiner les possibilités de
-              livraison, notamment en Belgique et dans les pays voisins.
+              DAIVEXO est basé à Deinze, en Belgique, et propose la location de mange-debout LED,
+              de tables hautes lumineuses et de Light Cubes avec livraison en Belgique,
+              en France, aux Pays-Bas, en Allemagne, au Luxembourg et au Royaume-Uni.
+              Précisez le lieu et la date de votre événement pour obtenir un devis adapté.
             </p>
             <p>
               Pour une réception, un mariage, un salon ou un événement
               professionnel, demandez dès maintenant la disponibilité et un devis,
-              même si votre événement a lieu dans plusieurs mois. La réservation
-              devient définitive uniquement après confirmation par DAIVEXO.
+              même si votre événement a lieu dans plusieurs mois. Les disponibilités, les frais de transport et les conditions de location
+              sont confirmés individuellement. La réservation devient définitive
+              uniquement après confirmation par DAIVEXO.
             </p>
           </div>
           <Link
-            href="/contact/"
+            href={reservationUrl}
             className="mt-8 inline-block rounded-full bg-primary px-8 py-4 font-semibold text-black transition hover:brightness-110"
           >
             Demander une réservation
@@ -507,7 +516,7 @@ export default function LocationMangeDeboutPage() {
           </p>
 
           <Link
-            href="/contact/"
+            href={reservationUrl}
             className="mt-8 inline-block rounded-full bg-primary px-8 py-4 font-semibold text-black transition hover:brightness-110"
           >
             Demander un devis
