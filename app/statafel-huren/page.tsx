@@ -7,9 +7,9 @@ const pageUrl = `${siteUrl}/statafel-huren`
 const reservationUrl = "/?lightcubes=reservation"
 
 export const metadata: Metadata = {
-  title: { absolute: "Statafel huren | LED Staantafels & Light Cubes | DAIVEXO" },
+  title: { absolute: "LED-statafels huren in België | DAIVEXO Deinze" },
   description:
-    "LED statafel of verlichte staantafel huren voor een feest, receptie of bedrijfsevent? Ontdek DAIVEXO Light Cubes en vraag vrijblijvend een offerte aan.",
+    "LED-statafels en Light Cubes huren? DAIVEXO uit Deinze levert in België, Nederland, Frankrijk, Duitsland, Luxemburg en het VK. Vraag een offerte aan.",
   alternates: {
     canonical: pageUrl,
     languages: {
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "LED statafels en staantafels huren | DAIVEXO",
+    title: "LED-statafels huren in België en Europa | DAIVEXO",
     description:
-      "Verlichte Light Cubes voor feesten, recepties en bedrijfsevenementen. Vraag vrijblijvend beschikbaarheid en een offerte aan.",
+      "DAIVEXO verhuurt LED-statafels vanuit Deinze, met levering in België en vijf andere Europese landen. Vraag vrijblijvend een offerte aan.",
     url: pageUrl,
     siteName: "DAIVEXO",
     locale: "nl_BE",
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "LED statafels huren | DAIVEXO Light Cubes",
-    description: "Ontdek verlichte staantafels voor jouw evenement en vraag een offerte aan.",
+    title: "LED-statafels huren | DAIVEXO Deinze",
+    description: "LED-statafels en Light Cubes huren in België of daarbuiten? Vraag DAIVEXO vrijblijvend een offerte aan.",
   },
 }
 
@@ -89,9 +89,9 @@ const faq = [
       "Vraag een vrijblijvende offerte aan met je evenementdatum, locatie en gewenste aantal tafels. DAIVEXO kan je dan informeren over de toepasselijke prijs en voorwaarden.",
   },
   {
-    question: "Kan ik levering aanvragen?",
+    question: "In welke landen levert DAIVEXO LED-statafels?",
     answer:
-      "Vermeld de evenementlocatie in je aanvraag. DAIVEXO bekijkt of levering mogelijk is en welke voorwaarden daarvoor gelden.",
+      "DAIVEXO levert vanuit Deinze in heel België en ook in Nederland, Frankrijk, Duitsland, Luxemburg en het Verenigd Koninkrijk. Geef de evenementlocatie door voor een offerte met de toepasselijke leveringskosten en voorwaarden.",
   },
   {
     question: "Is mijn reservatie meteen definitief?",
@@ -114,9 +114,10 @@ export default function StatafelHurenPage() {
               <span className="mt-3 block text-primary">voor een sfeervol evenement</span>
             </h1>
             <p className="mt-7 max-w-xl text-lg leading-8 text-white/80">
-              Op zoek naar een bijzondere statafel voor je feest, receptie of bedrijfsevent?
-              De verlichte Light Cubes van DAIVEXO combineren een praktische ontmoetingsplek
-              met een opvallend lichteffect. Vraag vrijblijvend de mogelijkheden aan voor jouw datum.
+              DAIVEXO is gevestigd in Deinze en verhuurt LED-statafels, verlichte staantafels
+              en Light Cubes voor feesten, huwelijken, recepties en bedrijfsevenementen.
+              Wij leveren in heel België en ook in Nederland, Frankrijk, Duitsland, Luxemburg
+              en het Verenigd Koninkrijk. Vraag vrijblijvend een offerte aan voor jouw locatie en datum.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link href={reservationUrl} className="rounded-full bg-primary px-7 py-4 text-center font-semibold text-black transition hover:brightness-110">
@@ -223,17 +224,17 @@ export default function StatafelHurenPage() {
 
       <section className="border-y border-white/10 bg-neutral-950">
         <div className="mx-auto max-w-5xl px-6 py-16 lg:px-8 lg:py-20">
-          <h2 className="text-3xl font-semibold md:text-4xl">LED-statafels huren in Deinze en omgeving</h2>
+          <h2 className="text-3xl font-semibold md:text-4xl">LED-statafels huren vanuit Deinze, in België en Europa</h2>
           <p className="mt-6 text-lg leading-8 text-white/75">
-            DAIVEXO is gevestigd in Deinze en verhuurt verlichte statafels en Light Cubes
-            voor feesten, huwelijken, recepties en bedrijfsevenementen. Ook voor evenementen
-            in Gent, Aalter, Tielt en Waregem kun je een vrijblijvende aanvraag indienen.
+            DAIVEXO is gevestigd in Deinze (België). Onze verlichte statafels en Light Cubes
+            zijn te huur voor feesten, huwelijken, recepties en bedrijfsevenementen in heel België.
+            Daarnaast verzorgen we ook leveringen in Nederland, Frankrijk, Duitsland, Luxemburg
+            en het Verenigd Koninkrijk.
           </p>
           <p className="mt-5 leading-7 text-white/70">
-            Onze LED-staantafels combineren een praktische ontmoetingsplek met sfeervolle
-            RGBW-verlichting. Vermeld de locatie, datum en het gewenste aantal Light Cubes,
-            zodat we de beschikbaarheid, leveringsmogelijkheden en voorwaarden kunnen bevestigen.
-            Aanvragen uit andere plaatsen in België zijn eveneens welkom; levering wordt per aanvraag bekeken.
+            Elke evenementlocatie is anders. Vermeld daarom je datum, adres en het gewenste aantal
+            Light Cubes in je aanvraag. Wij bevestigen de beschikbaarheid, transportmogelijkheden,
+            eventuele bijkomende leveringskosten en huurvoorwaarden vooraf in de offerte.
           </p>
           <div className="mt-8 rounded-2xl border border-white/10 bg-black p-7">
             <h3 className="text-xl font-semibold">Wat vermeld je in je aanvraag?</h3>
