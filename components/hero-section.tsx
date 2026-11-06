@@ -52,20 +52,26 @@ export function HeroSection() {
           {/* HERO TEXT */}
           <div className="max-w-2xl">
             <p className="mb-5 text-sm font-semibold uppercase tracking-[0.35em] text-primary md:text-base">
-              Verlichte statafels & premium eventmeubilair
+              DAIVEXO · Gevestigd in Deinze, België
             </p>
 
             <h1 className="text-5xl font-semibold uppercase leading-[0.95] tracking-tight md:text-6xl lg:text-7xl">
-              <span className="block text-white">LED statafels</span>
-              <span className="mt-2 block text-primary">huren voor uw event</span>
+              <span className="block text-white">LED statafels huren</span>
+              <span className="mt-2 block text-primary">in België en Europa</span>
             </h1>
 
             <p className="mt-8 max-w-xl text-lg leading-8 text-white/85 md:text-xl">
               Op zoek naar een <strong className="font-semibold text-white">statafel of staantafel om te huren</strong>?
-              DAIVEXO verhuurt unieke <strong className="font-semibold text-white">LED statafels,
-              verlichte staantafels en Light Cubes</strong> voor feesten, recepties,
-              bedrijfsevents en evenementen. Van één lichtgevende statafel tot
-              complete bars, DJ Booths en indrukwekkende Light Walls.
+              DAIVEXO verhuurt vanuit <strong className="font-semibold text-white">Deinze</strong> exclusieve
+              <strong className="font-semibold text-white"> LED statafels, verlichte staantafels en Light Cubes</strong>
+              voor feesten, huwelijken, recepties en bedrijfsevenementen.
+              Van één lichtgevende statafel tot opstellingen met meerdere Light Cubes.
+            </p>
+
+            <p className="mt-5 max-w-xl text-base leading-7 text-white/75 md:text-lg">
+              <strong className="font-semibold text-white">Levering in België, Nederland, Frankrijk,
+              Duitsland, Luxemburg en het Verenigd Koninkrijk.</strong> Vermeld de locatie en datum
+              van je evenement in je aanvraag; beschikbaarheid, transport en voorwaarden worden vooraf bevestigd.
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -104,9 +110,9 @@ export function HeroSection() {
             </h2>
 
             <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-white/75 md:text-lg">
-              Ontdek onze verlichte statafels en LED staantafels voor verhuur.
-              Gebruik één Light Cube als opvallende statafel of combineer
-              meerdere Light Cubes tot een complete eventsetting.
+              Ontdek de DAIVEXO Light Cubes: verlichte statafels voor evenementen in België
+              en daarbuiten. Gebruik één Light Cube als opvallende staantafel of combineer
+              meerdere exemplaren tot een sfeervolle eventopstelling.
             </p>
           </div>
 
