@@ -11,22 +11,26 @@ import { AegisSection } from "@/components/aegis-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 
+const seoTitle =
+  "LED Statafels Huren in België & Europa | DAIVEXO"
+
+const seoDescription =
+  "LED-statafels en Light Cubes huren? DAIVEXO levert vanuit Deinze in België, Nederland, Frankrijk, Duitsland, Luxemburg en het VK. Vraag een offerte aan."
+
 export const metadata: Metadata = {
   title: {
-    absolute: "LED Statafels & Staantafels Huren | DAIVEXO",
+    absolute: seoTitle,
   },
 
-  description:
-    "LED statafels en verlichte staantafels huren in heel België? Ontdek de Light Cubes voor feesten, recepties en bedrijfsevenementen. Vraag vrijblijvend een offerte aan.",
+  description: seoDescription,
 
   alternates: {
     canonical: "https://www.daivexo.com/",
   },
 
   openGraph: {
-    title: "LED Statafels & Staantafels Huren | DAIVEXO",
-    description:
-      "Huur verlichte LED statafels en staantafels voor feesten, recepties en bedrijfsevenementen in heel België. Ontdek de DAIVEXO Light Cubes.",
+    title: seoTitle,
+    description: seoDescription,
     url: "https://www.daivexo.com/",
     siteName: "DAIVEXO",
     locale: "nl_BE",
@@ -35,9 +39,8 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "LED Statafels & Staantafels Huren | DAIVEXO",
-    description:
-      "Verlichte LED statafels en staantafels huren in België? Ontdek de DAIVEXO Light Cubes en vraag vrijblijvend een offerte aan.",
+    title: seoTitle,
+    description: seoDescription,
   },
 }
 
