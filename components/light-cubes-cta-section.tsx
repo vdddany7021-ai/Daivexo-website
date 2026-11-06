@@ -109,6 +109,10 @@ const translations = {
     "extra": "Extra informatie",
     "remarks": "Opmerkingen of bijzondere wensen",
     "remarksPlaceholder": "Vermeld hier alle informatie die voor de aanvraag belangrijk kan zijn.",
+    "pricingTitle": "Huurprijzen en voorwaarden",
+    "vatInfo": "Alle vermelde huurprijzen zijn inclusief 21% btw.",
+    "deliveryCostInfo": "Leveringskosten worden afzonderlijk berekend volgens de afstand en vooraf meegedeeld.",
+    "depositInfo": "Waarborg: € 25 per Light Cube. De waarborg wordt volledig terugbetaald wanneer de Light Cubes na de verhuur onbeschadigd en compleet worden teruggegeven.",
     "conditions": "De aanvraag is pas definitief na bevestiging door DAIVEXO. Beschikbaarheid, transport, bereikbaarheid en eventuele bijkomende voorwaarden worden na ontvangst gecontroleerd.",
     "cancel": "Annuleren",
     "sending": "Aanvraag verzenden...",
@@ -171,6 +175,10 @@ const translations = {
     "extra": "Additional information",
     "remarks": "Comments or special requests",
     "remarksPlaceholder": "Add any information that may be relevant to your request.",
+    "pricingTitle": "Rental prices and conditions",
+    "vatInfo": "All listed rental prices include 21% VAT.",
+    "deliveryCostInfo": "Delivery costs are calculated separately based on distance and communicated in advance.",
+    "depositInfo": "Security deposit: €25 per Light Cube. The deposit is refunded in full when the Light Cubes are returned undamaged and complete after the rental.",
     "conditions": "Your request is not confirmed until DAIVEXO accepts it. Availability, transport, access and any additional conditions will be checked after submission.",
     "cancel": "Cancel",
     "sending": "Sending request...",
@@ -233,6 +241,10 @@ const translations = {
     "extra": "Informations complémentaires",
     "remarks": "Remarques ou demandes particulières",
     "remarksPlaceholder": "Indiquez toute information utile à votre demande.",
+    "pricingTitle": "Tarifs et conditions de location",
+    "vatInfo": "Tous les tarifs de location indiqués comprennent 21 % de TVA.",
+    "deliveryCostInfo": "Les frais de livraison sont calculés séparément en fonction de la distance et communiqués à l’avance.",
+    "depositInfo": "Caution : 25 € par Light Cube. La caution est intégralement remboursée lorsque les Light Cubes sont restitués complets et sans dommages après la location.",
     "conditions": "La demande ne devient définitive qu’après confirmation par DAIVEXO. La disponibilité, le transport, l’accès et les éventuelles conditions supplémentaires seront vérifiés.",
     "cancel": "Annuler",
     "sending": "Envoi de la demande...",
@@ -295,6 +307,10 @@ const translations = {
     "extra": "Zusätzliche Informationen",
     "remarks": "Anmerkungen oder besondere Wünsche",
     "remarksPlaceholder": "Geben Sie hier alle für Ihre Anfrage wichtigen Informationen an.",
+    "pricingTitle": "Mietpreise und Bedingungen",
+    "vatInfo": "Alle angegebenen Mietpreise enthalten 21 % MwSt.",
+    "deliveryCostInfo": "Die Lieferkosten werden je nach Entfernung gesondert berechnet und im Voraus mitgeteilt.",
+    "depositInfo": "Kaution: 25 € pro Light Cube. Die Kaution wird vollständig zurückerstattet, wenn die Light Cubes nach der Miete unbeschädigt und vollständig zurückgegeben werden.",
     "conditions": "Die Anfrage ist erst nach Bestätigung durch DAIVEXO verbindlich. Verfügbarkeit, Transport, Zugang und zusätzliche Bedingungen werden nach Eingang geprüft.",
     "cancel": "Abbrechen",
     "sending": "Anfrage wird gesendet...",
@@ -556,6 +572,17 @@ body: JSON.stringify({
                   <label className="mt-5 flex items-start gap-4 cursor-pointer"><input required type="checkbox" checked={formData.powerConfirmed} onChange={e=>updateField("powerConfirmed",e.target.checked)} className="mt-1 h-5 w-5 accent-yellow-500"/><span className="text-sm md:text-base text-stone-200 leading-7">{t.powerConfirm}</span></label>
                 </fieldset>
                 <fieldset><legend className="text-primary text-xs tracking-[0.3em] uppercase mb-5">{t.extra}</legend><FormField label={t.remarks}><textarea rows={4} value={formData.remarks} onChange={e=>updateField("remarks",e.target.value)} placeholder={t.remarksPlaceholder} className={`${inputClass} resize-none`}/></FormField></fieldset>
+                 <div className="border border-primary/40 p-5 md:p-6 space-y-3" aria-label={t.pricingTitle}>
+                   <h4 className="text-primary font-medium text-lg">{t.pricingTitle}</h4>
+                   <ul className="list-disc pl-5 space-y-2 text-sm md:text-base text-stone-200 leading-7">
+                     <li>{t.oneDay}</li>
+                     <li>{t.multiDay}</li>
+                     <li>{t.weekend}</li>
+                   </ul>
+                   <p className="text-sm md:text-base text-stone-200 leading-7">{t.vatInfo}</p>
+                   <p className="text-sm md:text-base text-stone-200 leading-7">{t.deliveryCostInfo}</p>
+                   <p className="text-sm md:text-base text-stone-200 leading-7">{t.depositInfo}</p>
+                 </div>
                 <div className="border-t border-primary/25 pt-7"><p className="text-sm text-stone-400 leading-7">{t.conditions}</p></div>
                 {sendError && <div className="border border-red-500/40 bg-red-500/5 p-4"><p className="text-sm text-red-300 leading-6">{sendError}</p></div>}
                 <div className="flex flex-col sm:flex-row gap-4 justify-end">
