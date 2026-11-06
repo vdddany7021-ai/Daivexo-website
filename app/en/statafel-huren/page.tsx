@@ -3,9 +3,9 @@ import Image from "next/image"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Standing Table Hire | LED Cocktail Tables for Events | DAIVEXO",
+  title: { absolute: "LED Cocktail Table Hire in Belgium & Europe | DAIVEXO" },
   description:
-    "Looking for standing table hire or LED cocktail tables for your event? Request a reservation for DAIVEXO illuminated tables and Light Cubes, even months in advance.",
+    "Hire illuminated LED cocktail tables and standing tables from DAIVEXO in Deinze, Belgium. Delivery to Belgium, the Netherlands, France, Germany, Luxembourg and the UK. Request a quote.",
 
   alternates: {
     canonical: "https://www.daivexo.com/en/statafel-huren",
@@ -67,6 +67,11 @@ const faq = [
       "Yes. You can request several Light Cubes for use as individual illuminated standing tables or a larger modular event setup. Tell us your event date and the number of tables required.",
   },
   {
+    question: "Where can DAIVEXO deliver LED cocktail tables?",
+    answer:
+      "DAIVEXO is based in Deinze, Belgium, and can deliver to Belgium, the Netherlands, France, Germany, Luxembourg and the United Kingdom. Availability and delivery charges depend on your event location and are confirmed in the quote.",
+  },
+  {
     question: "Are the tables suitable for parties and receptions?",
     answer:
       "Yes. The illuminated tables are suitable for parties, receptions, corporate events and other professional events.",
@@ -120,25 +125,28 @@ export default function LedCocktailTablesPage() {
               Looking for a{" "}
               <strong className="text-white">cocktail table</strong> or{" "}
               <strong className="text-white">standing table to hire</strong> for
-              a party, reception or event? DAIVEXO is developing distinctive{" "}
+              a party, reception or event? DAIVEXO offers distinctive{" "}
               <strong className="text-white">LED cocktail tables</strong>,{" "}
               <strong className="text-white">illuminated standing tables</strong>{" "}
               and Light Cubes that combine lighting, functionality and modern
-              event design. You can already request a reservation for a future event.
+              event design. Based in Deinze, Belgium, we deliver to Belgium,
+              the Netherlands, France, Germany, Luxembourg and the United Kingdom.
+              Request a quote for your event date and location.
             </p>
 
             <p className="mt-5 max-w-2xl leading-7 text-white/70">
               From one illuminated table to multiple Light Cubes for a complete
-              event setting, you can enquire now for an event taking place
-              several months from today.
+              event setting, you can enquire for an upcoming event, including
+              events planned several months in advance. Availability, transport
+              costs and hire conditions are confirmed individually.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
-                href="/contact/"
+                href="/?lightcubes=reservation"
                 className="rounded-full bg-primary px-7 py-4 text-center font-semibold text-black transition hover:brightness-110"
               >
-                Request a reservation
+                Request a quote
               </Link>
 
               <Link
@@ -423,13 +431,14 @@ export default function LedCocktailTablesPage() {
       {/* INTERNATIONAL HIRE PLANS */}
       <section className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
         <h2 className="text-3xl font-semibold md:text-4xl">
-          LED cocktail table hire in Belgium and across Europe
+          LED cocktail table hire from Deinze across Belgium and Europe
         </h2>
         <p className="mt-6 text-lg leading-8 text-white/75">
-          Planning an event in Belgium, the Netherlands, Germany, France or
-          Luxembourg? You can already enquire about reserving DAIVEXO Light
-          Cubes for a future date. Delivery and availability depend on the
-          event location and will be confirmed individually.
+          DAIVEXO is based in Deinze, Belgium, and offers delivery for events in
+          Belgium, the Netherlands, France, Germany, Luxembourg and the
+          United Kingdom. Tell us your event date, location and the number
+          of Light Cubes you need. We will confirm availability, delivery
+          options, any additional transport costs and hire conditions in your quote.
         </p>
       </section>
 
@@ -467,15 +476,15 @@ export default function LedCocktailTablesPage() {
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/70">
             Tell us your event date, location and how many tables you need.
-            You can request a reservation months in advance; we will confirm
-            availability and arrangements with you.
+            We will confirm availability, delivery arrangements and hire
+            conditions before any reservation becomes final.
           </p>
 
           <Link
-            href="/contact/"
+            href="/?lightcubes=reservation"
             className="mt-8 inline-block rounded-full bg-primary px-8 py-4 font-semibold text-black transition hover:brightness-110"
           >
-            Request a reservation
+            Request a quote
           </Link>
         </div>
       </section>
