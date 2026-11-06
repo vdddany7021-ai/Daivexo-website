@@ -113,6 +113,7 @@ const translations = {
     "vatInfo": "Alle vermelde huurprijzen zijn inclusief 21% btw.",
     "deliveryCostInfo": "Leveringskosten worden afzonderlijk berekend volgens de afstand en vooraf meegedeeld.",
     "depositInfo": "Waarborg: € 25 per Light Cube. De waarborg wordt volledig terugbetaald wanneer de Light Cubes na de verhuur onbeschadigd en compleet worden teruggegeven.",
+    "extraDayApproval": "Extra huurdagen zijn uitsluitend mogelijk na voorafgaand overleg en uitdrukkelijke goedkeuring door DAIVEXO. Neem hiervoor rechtstreeks contact met ons op via info@daivexo.com.",
     "conditions": "De aanvraag is pas definitief na bevestiging door DAIVEXO. Beschikbaarheid, transport, bereikbaarheid en eventuele bijkomende voorwaarden worden na ontvangst gecontroleerd.",
     "cancel": "Annuleren",
     "sending": "Aanvraag verzenden...",
@@ -187,6 +188,7 @@ const translations = {
     "vatInfo": "All listed rental prices include 21% VAT.",
     "deliveryCostInfo": "Delivery costs are calculated separately based on distance and communicated in advance.",
     "depositInfo": "Security deposit: €25 per Light Cube. The deposit is refunded in full when the Light Cubes are returned undamaged and complete after the rental.",
+    "extraDayApproval": "Additional rental days are only possible following prior consultation and express approval by DAIVEXO. Please contact us directly at info@daivexo.com.",
     "conditions": "Your request is not confirmed until DAIVEXO accepts it. Availability, transport, access and any additional conditions will be checked after submission.",
     "cancel": "Cancel",
     "sending": "Sending request...",
@@ -261,6 +263,7 @@ const translations = {
     "vatInfo": "Tous les tarifs de location indiqués comprennent 21 % de TVA.",
     "deliveryCostInfo": "Les frais de livraison sont calculés séparément en fonction de la distance et communiqués à l’avance.",
     "depositInfo": "Caution : 25 € par Light Cube. La caution est intégralement remboursée lorsque les Light Cubes sont restitués complets et sans dommages après la location.",
+    "extraDayApproval": "Les jours de location supplémentaires ne sont possibles qu’après concertation préalable et accord explicite de DAIVEXO. Veuillez nous contacter directement à info@daivexo.com.",
     "conditions": "La demande ne devient définitive qu’après confirmation par DAIVEXO. La disponibilité, le transport, l’accès et les éventuelles conditions supplémentaires seront vérifiés.",
     "cancel": "Annuler",
     "sending": "Envoi de la demande...",
@@ -335,6 +338,7 @@ const translations = {
     "vatInfo": "Alle angegebenen Mietpreise enthalten 21 % MwSt.",
     "deliveryCostInfo": "Die Lieferkosten werden je nach Entfernung gesondert berechnet und im Voraus mitgeteilt.",
     "depositInfo": "Kaution: 25 € pro Light Cube. Die Kaution wird vollständig zurückerstattet, wenn die Light Cubes nach der Miete unbeschädigt und vollständig zurückgegeben werden.",
+    "extraDayApproval": "Zusätzliche Miettage sind nur nach vorheriger Absprache und ausdrücklicher Zustimmung von DAIVEXO möglich. Bitte kontaktieren Sie uns hierzu direkt unter info@daivexo.com.",
     "conditions": "Die Anfrage ist erst nach Bestätigung durch DAIVEXO verbindlich. Verfügbarkeit, Transport, Zugang und zusätzliche Bedingungen werden nach Eingang geprüft.",
     "cancel": "Abbrechen",
     "sending": "Anfrage wird gesendet...",
@@ -667,6 +671,7 @@ body: JSON.stringify({
                    <p className="text-sm md:text-base text-stone-200 leading-7">{t.vatInfo}</p>
                    <p className="text-sm md:text-base text-stone-200 leading-7">{t.deliveryCostInfo}</p>
                    <p className="text-sm md:text-base text-stone-200 leading-7">{t.depositInfo}</p>
+                   <p className="text-sm text-stone-400 leading-7">{t.extraDayApproval}</p>
                  </div>
                 <div className="border-t border-primary/25 pt-7"><p className="text-sm text-stone-400 leading-7">{t.conditions}</p></div>
                 {sendError && <div className="border border-red-500/40 bg-red-500/5 p-4"><p className="text-sm text-red-300 leading-6">{sendError}</p></div>}
