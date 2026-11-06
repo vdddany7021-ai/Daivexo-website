@@ -430,8 +430,18 @@ Aanvraag verstuurd via www.daivexo.com
     try {
       const response = await fetch("/api/contact", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: formData.name, email: formData.email, subject, message,
-          source: isReservation ? "DAIVEXO Light Cubes - Reservatie" : "DAIVEXO Light Cubes - Offerte" })
+      
+body: JSON.stringify({
+  name: formData.name,
+  email: formData.email,
+  subject,
+  message,
+  language,
+  source: isReservation
+    ? "DAIVEXO Light Cubes - Reservatie"
+    : "DAIVEXO Light Cubes - Offerte",
+}),
+  
       })
       const result = await response.json()
       if (!response.ok || !result.success) throw new Error(result.error || "Sending failed")
