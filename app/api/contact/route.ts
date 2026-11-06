@@ -1,6 +1,9 @@
 
 import { NextResponse } from "next/server"
 
+type Language = "NL" | "EN" | "FR" | "DE"
+type RequestType = "reservation" | "quote" | "message"
+
 function escapeHtml(value: string) {
   return value
     .replace(/&/g, "&amp;")
@@ -10,11 +13,136 @@ function escapeHtml(value: string) {
     .replace(/'/g, "&#39;")
 }
 
+function getLanguage(value: unknown, message: string): Language {
+  if (typeof value === "string") {
+    const code = value.trim().toUpperCase().split(/[-_]/)[0]
+    if (code === "NL" || code === "EN" || code === "FR" || code === "DE") {
+      return code
+    }
+  }
+
+  // Ondersteunt ook oudere formulieren zonder language-veld.
+  const match = message.match(/Taal bezoeker:\s*(NL|EN|FR|DE)\b/i)
+  if (match) return match[1].toUpperCase() as Language
+
+  return "NL"
+}
+
+const translations = {
+  NL: {
+    lang: "nl",
+    received: "Aanvraag ontvangen",
+    greeting: "Beste",
+    thanks: "Bedankt voor je interesse in DAIVEXO.",
+    receivedRequest: "We hebben je aanvraag goed ontvangen.",
+    overview: "Overzicht van je aanvraag",
+    questions: "Heb je nog vragen?",
+    email: "E-mail",
+    phone: "Telefoon",
+    regards: "Met vriendelijke groeten",
+    automatic: "Dit is een automatisch verzonden bericht.",
+    noReply: "Je hoeft hier niet op te antwoorden.",
+    subjects: {
+      reservation: "Ontvangst reservatieaanvraag – DAIVEXO",
+      quote: "Ontvangst offerteaanvraag – DAIVEXO",
+      message: "Ontvangst van je bericht – DAIVEXO",
+    },
+    notices: {
+      reservation:
+        "BELANGRIJK – JE RESERVATIE IS NOG NIET DEFINITIEF\n\nDit is uitsluitend een ontvangstbevestiging van je reservatieaanvraag.\n\nJe reservatie is pas definitief nadat DAIVEXO de beschikbaarheid heeft gecontroleerd en je reservatie uitdrukkelijk heeft bevestigd.\n\nWij nemen zo snel mogelijk contact met je op voor de verdere afspraken.",
+      quote:
+        "BELANGRIJK – JE OFFERTE IS NOG NIET DEFINITIEF\n\nDit is uitsluitend een ontvangstbevestiging van je offerteaanvraag.\n\nWij bekijken je aanvraag en nemen zo snel mogelijk contact met je op.",
+      message:
+        "Wij hebben je bericht goed ontvangen en nemen zo snel mogelijk contact met je op.",
+    },
+  },
+  EN: {
+    lang: "en",
+    received: "Request received",
+    greeting: "Dear",
+    thanks: "Thank you for your interest in DAIVEXO.",
+    receivedRequest: "We have successfully received your request.",
+    overview: "Summary of your request",
+    questions: "Do you have any questions?",
+    email: "Email",
+    phone: "Phone",
+    regards: "Kind regards",
+    automatic: "This is an automatically generated email.",
+    noReply: "You do not need to reply to this message.",
+    subjects: {
+      reservation: "Reservation request received – DAIVEXO",
+      quote: "Quotation request received – DAIVEXO",
+      message: "Message received – DAIVEXO",
+    },
+    notices: {
+      reservation:
+        "IMPORTANT – YOUR RESERVATION IS NOT YET CONFIRMED\n\nThis email only acknowledges receipt of your reservation request.\n\nYour reservation will only become final after DAIVEXO has checked availability and explicitly confirmed your reservation.\n\nWe will contact you as soon as possible to discuss the next steps.",
+      quote:
+        "IMPORTANT – YOUR QUOTATION IS NOT YET FINAL\n\nThis email only acknowledges receipt of your quotation request.\n\nWe will review your request and contact you as soon as possible.",
+      message:
+        "We have received your message and will contact you as soon as possible.",
+    },
+  },
+  FR: {
+    lang: "fr",
+    received: "Demande reçue",
+    greeting: "Bonjour",
+    thanks: "Merci de votre intérêt pour DAIVEXO.",
+    receivedRequest: "Nous avons bien reçu votre demande.",
+    overview: "Récapitulatif de votre demande",
+    questions: "Vous avez des questions ?",
+    email: "E-mail",
+    phone: "Téléphone",
+    regards: "Cordialement",
+    automatic: "Ceci est un message envoyé automatiquement.",
+    noReply: "Vous n'avez pas besoin de répondre à ce message.",
+    subjects: {
+      reservation: "Réception de votre demande de réservation – DAIVEXO",
+      quote: "Réception de votre demande de devis – DAIVEXO",
+      message: "Réception de votre message – DAIVEXO",
+    },
+    notices: {
+      reservation:
+        "IMPORTANT – VOTRE RÉSERVATION N'EST PAS ENCORE CONFIRMÉE\n\nCet e-mail confirme uniquement la réception de votre demande de réservation.\n\nVotre réservation ne sera définitive qu'après vérification des disponibilités et confirmation expresse de DAIVEXO.\n\nNous vous contacterons dès que possible pour convenir des prochaines étapes.",
+      quote:
+        "IMPORTANT – VOTRE DEVIS N'EST PAS ENCORE DÉFINITIF\n\nCet e-mail confirme uniquement la réception de votre demande de devis.\n\nNous examinerons votre demande et vous contacterons dès que possible.",
+      message:
+        "Nous avons bien reçu votre message et vous contacterons dès que possible.",
+    },
+  },
+  DE: {
+    lang: "de",
+    received: "Anfrage erhalten",
+    greeting: "Guten Tag",
+    thanks: "Vielen Dank für Ihr Interesse an DAIVEXO.",
+    receivedRequest: "Wir haben Ihre Anfrage erfolgreich erhalten.",
+    overview: "Übersicht Ihrer Anfrage",
+    questions: "Haben Sie noch Fragen?",
+    email: "E-Mail",
+    phone: "Telefon",
+    regards: "Mit freundlichen Grüßen",
+    automatic: "Dies ist eine automatisch versendete Nachricht.",
+    noReply: "Sie müssen auf diese Nachricht nicht antworten.",
+    subjects: {
+      reservation: "Reservierungsanfrage erhalten – DAIVEXO",
+      quote: "Angebotsanfrage erhalten – DAIVEXO",
+      message: "Nachricht erhalten – DAIVEXO",
+    },
+    notices: {
+      reservation:
+        "WICHTIG – IHRE RESERVIERUNG IST NOCH NICHT BESTÄTIGT\n\nDiese E-Mail bestätigt ausschließlich den Eingang Ihrer Reservierungsanfrage.\n\nIhre Reservierung ist erst verbindlich, nachdem DAIVEXO die Verfügbarkeit geprüft und Ihre Reservierung ausdrücklich bestätigt hat.\n\nWir werden uns so schnell wie möglich mit Ihnen in Verbindung setzen, um die weiteren Einzelheiten zu besprechen.",
+      quote:
+        "WICHTIG – IHR ANGEBOT IST NOCH NICHT VERBINDLICH\n\nDiese E-Mail bestätigt ausschließlich den Eingang Ihrer Angebotsanfrage.\n\nWir werden Ihre Anfrage prüfen und uns so schnell wie möglich bei Ihnen melden.",
+      message:
+        "Wir haben Ihre Nachricht erhalten und werden uns so schnell wie möglich bei Ihnen melden.",
+    },
+  },
+} as const
+
 export async function POST(req: Request) {
   try {
     const data = await req.json()
-
-    const { name, email, subject, message, source } = data
+    const { name, email, subject, message, source, language } = data
 
     if (
       typeof name !== "string" ||
@@ -39,7 +167,6 @@ export async function POST(req: Request) {
 
     if (!apiKey) {
       console.error("RESEND_API_KEY ontbreekt.")
-
       return NextResponse.json(
         {
           success: false,
@@ -55,27 +182,34 @@ export async function POST(req: Request) {
       "User-Agent": "DAIVEXO-Website/1.0",
     }
 
-    // 1. Bestaande e-mail naar DAIVEXO
-    const resendResponse = await fetch(
-      "https://api.resend.com/emails",
-      {
-        method: "POST",
-        headers,
-        body: JSON.stringify({
-          from: "DAIVEXO <info@daivexo.com>",
-          to: ["info@daivexo.com"],
-          reply_to: email,
-          subject,
-          text: `
-${typeof source === "string" && source ? `${source}\n\n` : ""}${message}
+    const sourceText = typeof source === "string" ? source : ""
+    const visitorLanguage = getLanguage(language, message)
+    const t = translations[visitorLanguage]
+
+    const requestType: RequestType = sourceText.includes("Reservatie")
+      ? "reservation"
+      : sourceText.includes("Offerte")
+        ? "quote"
+        : "message"
+
+    // 1. E-mail naar DAIVEXO: bestaande werking behouden.
+    const resendResponse = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers,
+      body: JSON.stringify({
+        from: "DAIVEXO <info@daivexo.com>",
+        to: ["info@daivexo.com"],
+        reply_to: email,
+        subject,
+        text: `
+${sourceText ? `${sourceText}\n\n` : ""}${message}
 
 CONTACTPERSOON
 Naam: ${name}
 E-mail: ${email}
-          `.trim(),
-        }),
-      }
-    )
+        `.trim(),
+      }),
+    })
 
     const result = await resendResponse.json()
 
@@ -97,97 +231,59 @@ E-mail: ${email}
       )
     }
 
-    // 2. Automatische ontvangstbevestiging
-    const sourceText =
-      typeof source === "string" ? source : ""
+    // 2. Automatische ontvangstbevestiging in de bezoekerstaal.
+    const confirmationSubject = t.subjects[requestType]
+    const noticeText = t.notices[requestType]
 
-    const isReservation = sourceText.includes("Reservatie")
-    const isQuote = sourceText.includes("Offerte")
-
-    const confirmationSubject = isReservation
-      ? "Ontvangst reservatieaanvraag – DAIVEXO"
-      : isQuote
-        ? "Ontvangst offerteaanvraag – DAIVEXO"
-        : "Ontvangst van je bericht – DAIVEXO"
-
-    const requestType = isReservation
-      ? "reservatieaanvraag"
-      : isQuote
-        ? "offerteaanvraag"
-        : "bericht"
-
-    const noticeText = isReservation
-      ? `BELANGRIJK – JE RESERVATIE IS NOG NIET DEFINITIEF
-
-Dit is uitsluitend een ontvangstbevestiging van je reservatieaanvraag.
-
-Je reservatie is pas definitief nadat DAIVEXO de beschikbaarheid heeft gecontroleerd en je reservatie uitdrukkelijk heeft bevestigd.
-
-Wij nemen zo snel mogelijk contact met je op voor de verdere afspraken.`
-      : isQuote
-        ? `BELANGRIJK – JE OFFERTE IS NOG NIET DEFINITIEF
-
-Dit is uitsluitend een ontvangstbevestiging van je offerteaanvraag.
-
-Wij bekijken je aanvraag en nemen zo snel mogelijk contact met je op.`
-        : `Wij hebben je bericht goed ontvangen en nemen zo snel mogelijk contact met je op.`
-
-    // Tekstversie voor e-mailprogramma's zonder HTML
     const confirmationText = `
-Beste ${name.trim()},
+${t.greeting} ${name.trim()},
 
-Bedankt voor je interesse in DAIVEXO.
-We hebben je ${requestType} goed ontvangen.
+${t.thanks}
+${t.receivedRequest}
 
 ----------------------------------------
 ${noticeText}
 ----------------------------------------
 
-OVERZICHT VAN JE AANVRAAG
+${t.overview.toUpperCase()}
 
 ${message.trim()}
 
 ----------------------------------------
 
-Heb je nog vragen?
+${t.questions}
 
-E-mail: info@daivexo.com
-Telefoon: 0480 67 37 86
+${t.email}: info@daivexo.com
+${t.phone}: +32 480 67 37 86
 
-Met vriendelijke groeten,
+${t.regards},
 
 DAIVEXO
 www.daivexo.com
 
 ----------------------------------------
-Dit is een automatisch verzonden bericht.
-Je hoeft hier niet op te antwoorden.
+${t.automatic}
+${t.noReply}
     `.trim()
 
-    // Veilige HTML-weergave van klantgegevens
     const safeName = escapeHtml(name.trim())
     const safeMessage = escapeHtml(message.trim())
       .replace(/\r\n|\r|\n/g, "<br>")
-
     const safeNotice = escapeHtml(noticeText)
       .replace(/\r\n|\r|\n/g, "<br>")
 
-    const noticeBackground =
-      isReservation || isQuote ? "#fff1f2" : "#f8fafc"
-
-    const noticeBorder =
-      isReservation || isQuote ? "#dc2626" : "#d4af55"
-
-    const noticeColor =
-      isReservation || isQuote ? "#991b1b" : "#333333"
+    const important = requestType !== "message"
+    const noticeBackground = important ? "#fff1f2" : "#f8fafc"
+    const noticeBorder = important ? "#dc2626" : "#d4af55"
+    const noticeColor = important ? "#991b1b" : "#333333"
 
     const confirmationHtml = `
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="${t.lang}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ontvangstbevestiging DAIVEXO</title>
+  <title>${t.received} – DAIVEXO</title>
 </head>
 <body style="margin:0;padding:0;background-color:#f5f5f5;font-family:Arial,Helvetica,sans-serif;color:#222222;">
   <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color:#f5f5f5;">
@@ -207,16 +303,16 @@ Je hoeft hier niet op te antwoorden.
           <tr>
             <td style="padding:28px 24px;">
               <h1 style="margin:0 0 18px;font-size:24px;line-height:1.3;">
-                Aanvraag ontvangen
+                ${t.received}
               </h1>
 
               <p style="font-size:16px;line-height:1.6;">
-                Beste ${safeName},
+                ${t.greeting} ${safeName},
               </p>
 
               <p style="font-size:16px;line-height:1.6;">
-                Bedankt voor je interesse in DAIVEXO.
-                We hebben je ${requestType} goed ontvangen.
+                ${t.thanks}<br>
+                ${t.receivedRequest}
               </p>
 
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin:24px 0;">
@@ -228,7 +324,7 @@ Je hoeft hier niet op te antwoorden.
               </table>
 
               <h2 style="margin:30px 0 14px;font-size:19px;color:#222222;">
-                Overzicht van je aanvraag
+                ${t.overview}
               </h2>
 
               <div style="padding:18px;background-color:#f7f7f7;border:1px solid #dddddd;font-size:15px;line-height:1.7;overflow-wrap:anywhere;">
@@ -236,19 +332,19 @@ Je hoeft hier niet op te antwoorden.
               </div>
 
               <p style="margin-top:28px;font-size:15px;line-height:1.7;">
-                Heb je nog vragen?<br>
-                E-mail:
+                ${t.questions}<br>
+                ${t.email}:
                 <a href="mailto:info@daivexo.com" style="color:#9a741c;">
                   info@daivexo.com
                 </a><br>
-                Telefoon:
+                ${t.phone}:
                 <a href="tel:+32480673786" style="color:#9a741c;">
-                  0480 67 37 86
+                  +32 480 67 37 86
                 </a>
               </p>
 
               <p style="font-size:15px;line-height:1.7;">
-                Met vriendelijke groeten,<br>
+                ${t.regards},<br>
                 <strong>DAIVEXO</strong><br>
                 <a href="https://www.daivexo.com" style="color:#9a741c;">
                   www.daivexo.com
@@ -258,8 +354,8 @@ Je hoeft hier niet op te antwoorden.
           </tr>
           <tr>
             <td style="padding:18px 24px;background-color:#f0f0f0;text-align:center;font-size:12px;line-height:1.6;color:#666666;">
-              Dit is een automatisch verzonden bericht.<br>
-              Je hoeft hier niet op te antwoorden.
+              ${t.automatic}<br>
+              ${t.noReply}
             </td>
           </tr>
         </table>
@@ -270,8 +366,8 @@ Je hoeft hier niet op te antwoorden.
 </html>
     `.trim()
 
-    // Klantbevestiging mag een succesvolle aanvraag
-    // niet ongedaan maken.
+    // Een mislukte klantbevestiging maakt de aanvraag
+    // aan DAIVEXO niet ongedaan.
     try {
       const confirmationResponse = await fetch(
         "https://api.resend.com/emails",
@@ -297,10 +393,7 @@ Je hoeft hier niet op te antwoorden.
         )
       }
     } catch (confirmationError) {
-      console.error(
-        "Fout bij klantbevestiging:",
-        confirmationError
-      )
+      console.error("Fout bij klantbevestiging:", confirmationError)
     }
 
     return NextResponse.json({
