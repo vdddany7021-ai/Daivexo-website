@@ -5,9 +5,9 @@ import Link from "next/link"
 const reservationUrl = "/?lightcubes=reservation"
 
 export const metadata: Metadata = {
-  title: "LED-Stehtische mieten in Deutschland & Europa | DAIVEXO",
+  title: "LED-Stehtische mieten | Beleuchtete Light Cubes – DAIVEXO",
   description:
-    "LED-Stehtische und Light Cubes mieten: DAIVEXO aus Deinze liefert nach Deutschland, Belgien, in die Niederlande, nach Frankreich, Luxemburg und Großbritannien. Angebot anfragen.",
+    "Beleuchtete LED-Stehtische und Light Cubes mieten für Events. Ab 59,95 € inkl. 21 % MwSt. Lieferung nach Absprache. Jetzt unverbindlich anfragen.",
 
   alternates: {
     canonical: "https://www.daivexo.com/de/statafel-huren",
@@ -36,11 +36,10 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "LED-Stehtische mieten in Deutschland & Europa | DAIVEXO",
+    title: "LED-Stehtische mieten | Beleuchtete Light Cubes – DAIVEXO",
     description:
-      "DAIVEXO vermietet LED-Stehtische und Light Cubes für Events in Deutschland, Belgien und weiteren europäischen Ländern. Lieferung ab Deinze auf Anfrage.",
-   
-url: "https://www.daivexo.com/de/statafel-huren",
+      "Beleuchtete LED-Stehtische und Light Cubes für Ihre Veranstaltung mieten. Ab 59,95 € inkl. MwSt.; Lieferung nach Absprache.",
+    url: "https://www.daivexo.com/de/statafel-huren",
 
     siteName: "DAIVEXO",
     locale: "de_DE",
@@ -48,9 +47,9 @@ url: "https://www.daivexo.com/de/statafel-huren",
   },
   twitter: {
     card: "summary_large_image",
-    title: "LED-Stehtische mieten in Deutschland & Europa | DAIVEXO",
+    title: "LED-Stehtische mieten | Beleuchtete Light Cubes – DAIVEXO",
     description:
-      "LED-Stehtische und Light Cubes für Veranstaltungen mieten. DAIVEXO liefert aus Belgien auch nach Deutschland und in weitere Länder.",
+      "LED-Stehtische und Light Cubes für Events mieten. Ab 59,95 € inkl. MwSt. Angebot unverbindlich anfragen.",
   },
 }
 
@@ -79,6 +78,11 @@ const faq = [
     question: "Kann DAIVEXO auch größere Eventaufbauten realisieren?",
     answer:
       "Ja. Neben einzelnen beleuchteten Stehtischen können mehrere Light Cubes zu größeren Installationen wie beleuchteten Bars, DJ-Booths und Light Walls kombiniert werden.",
+  },
+  {
+    question: "Was kostet es, einen DAIVEXO Light Cube zu mieten?",
+    answer:
+      "Ein Light Cube kostet 59,95 € für einen Tag oder 79,95 € für ein Wochenende (Samstag bis Montag), jeweils inklusive 21 % MwSt. Hinzu kommen 25 € rückzahlbare Kaution pro Cube sowie gesondert berechnete Lieferkosten. Zusätzliche Miettage kosten 29,95 € pro Tag und Cube und sind nur nach vorheriger Absprache und ausdrücklicher Zustimmung von DAIVEXO möglich.",
   },
   {
     question: "In welche Länder liefert DAIVEXO die LED-Stehtische?",
@@ -405,6 +409,42 @@ export default function LedStehtischePage() {
               Ihre Veranstaltung zu besprechen.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* MIETPREISE – transparent vor der Anfrage */}
+      <section className="border-y border-white/10 bg-black">
+        <div className="mx-auto max-w-5xl px-6 py-20 lg:px-8">
+          <h2 className="text-3xl font-semibold md:text-4xl">
+            LED-Stehtische mieten: Preise und Konditionen
+          </h2>
+          <p className="mt-5 text-lg leading-8 text-white/75">
+            Die Mietpreise gelten pro DAIVEXO Light Cube und enthalten 21 % MwSt.
+          </p>
+          <ul className="mt-6 list-disc space-y-3 pl-6 text-lg text-white/85">
+            <li>1 Tag: 59,95 € pro Light Cube</li>
+            <li>Wochenende (Sa.–Mo.): 79,95 € pro Light Cube</li>
+            <li>Zusätzlicher Miettag: 29,95 € pro Light Cube, ausschließlich nach vorheriger Vereinbarung</li>
+          </ul>
+          <p className="mt-6 leading-7 text-white/75">
+            Rückzahlbare Kaution: 25 € pro Light Cube. Die Kaution wird bei vollständiger
+            und unbeschädigter Rückgabe vollständig erstattet.
+          </p>
+          <p className="mt-3 leading-7 text-white/75">
+            Lieferkosten werden abhängig von der Entfernung separat berechnet
+            und vorab mitgeteilt.
+          </p>
+          <p className="mt-3 text-sm leading-7 text-white/60">
+            Zusätzliche Miettage sind nur nach vorheriger Absprache und ausdrücklicher
+            Zustimmung von DAIVEXO möglich. Kontaktieren Sie uns hierfür direkt
+            unter info@daivexo.com.
+          </p>
+          <Link
+            href={reservationUrl}
+            className="mt-8 inline-block rounded-full bg-primary px-8 py-4 font-semibold text-black transition hover:brightness-110"
+          >
+            Unverbindliche Reservierungsanfrage senden
+          </Link>
         </div>
       </section>
 
