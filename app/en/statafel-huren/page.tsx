@@ -3,9 +3,9 @@ import Image from "next/image"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: { absolute: "LED Cocktail Table Hire in Belgium & Europe | DAIVEXO" },
+  title: { absolute: "LED Cocktail Tables for Hire | Light Cubes | DAIVEXO" },
   description:
-    "Hire illuminated LED cocktail tables and standing tables from DAIVEXO in Deinze, Belgium. Delivery to Belgium, the Netherlands, France, Germany, Luxembourg and the UK. Request a quote.",
+    "Hire illuminated LED cocktail tables and standing tables for events. DAIVEXO Light Cubes from €59.95 per cube, incl. VAT. Enquire about your date.",
 
   alternates: {
     canonical: "https://www.daivexo.com/en/statafel-huren",
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Standing Tables & LED Cocktail Tables for Hire | DAIVEXO",
+    title: "LED Cocktail Tables for Hire | Light Cubes | DAIVEXO",
     description:
-      "Request LED cocktail tables, illuminated standing tables and Light Cubes for future parties, receptions and corporate events.",
+      "Hire illuminated cocktail tables and DAIVEXO Light Cubes for parties and events. From €59.95 per cube incl. VAT; delivery quoted separately.",
     url: "https://www.daivexo.com/en/statafel-huren",
     siteName: "DAIVEXO",
     locale: "en_GB",
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Standing Tables & LED Cocktail Tables for Hire | DAIVEXO",
+    title: "LED Cocktail Tables for Hire | Light Cubes | DAIVEXO",
     description:
-      "Reserve illuminated standing tables and LED cocktail tables for future events.",
+      "Hire illuminated LED cocktail tables for events from €59.95 per cube incl. VAT. Enquire with DAIVEXO.",
   },
 }
 
@@ -75,6 +75,11 @@ const faq = [
     question: "Are the tables suitable for parties and receptions?",
     answer:
       "Yes. The illuminated tables are suitable for parties, receptions, corporate events and other professional events.",
+  },
+  {
+    question: "How much does it cost to hire a DAIVEXO Light Cube?",
+    answer:
+      "One day costs €59.95 per Light Cube, or €79.95 per Light Cube for a weekend (Saturday–Monday), including 21% VAT. A refundable €25 deposit applies per cube. Delivery is charged separately according to distance and quoted in advance. Additional rental days cost €29.95 per cube per day and require prior consultation and express approval by DAIVEXO.",
   },
   {
     question: "Can DAIVEXO create larger event installations?",
@@ -440,6 +445,37 @@ export default function LedCocktailTablesPage() {
           of Light Cubes you need. We will confirm availability, delivery
           options, any additional transport costs and hire conditions in your quote.
         </p>
+      </section>
+
+      {/* HIRE PRICES AND CONDITIONS */}
+      <section className="border-y border-white/10 bg-neutral-950">
+        <div className="mx-auto max-w-5xl px-6 py-16 lg:px-8">
+          <h2 className="text-3xl font-semibold md:text-4xl">
+            LED cocktail table hire prices
+          </h2>
+          <p className="mt-5 text-lg leading-8 text-white/80">
+            Hire a DAIVEXO Light Cube from €59.95 per cube for one day, or
+            €79.95 per cube for a weekend (Saturday–Monday). All stated hire
+            prices include 21% VAT.
+          </p>
+          <p className="mt-4 leading-7 text-white/75">
+            A refundable security deposit of €25 per Light Cube applies.
+            The deposit is returned in full when the cubes are returned
+            complete and undamaged. Delivery costs are calculated separately
+            according to distance and communicated in advance.
+          </p>
+          <p className="mt-4 text-sm leading-7 text-white/60">
+            Additional rental days cost €29.95 per Light Cube per day and are
+            only possible following prior consultation and express approval
+            by DAIVEXO. Please contact info@daivexo.com directly.
+          </p>
+          <Link
+            href="/?lightcubes=reservation"
+            className="mt-7 inline-block rounded-full bg-primary px-7 py-4 font-semibold text-black transition hover:brightness-110"
+          >
+            Request a reservation
+          </Link>
+        </div>
       </section>
 
       {/* FAQ */}
