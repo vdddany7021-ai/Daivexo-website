@@ -63,14 +63,14 @@ export function HeroSection() {
             <p className="mt-8 max-w-xl text-lg leading-8 text-white/85 md:text-xl">
               Op zoek naar een <strong className="font-semibold text-white">statafel of staantafel om te huren</strong>?
               DAIVEXO verhuurt vanuit <strong className="font-semibold text-white">Deinze</strong> exclusieve
-              <strong className="font-semibold text-white"> LED statafels, verlichte staantafels en Light Cubes</strong>
+              <strong className="font-semibold text-white"> LED statafels, verlichte staantafels en Light Cubes</strong>{" "}
               voor feesten, huwelijken, recepties en bedrijfsevenementen.
               Van één lichtgevende statafel tot opstellingen met meerdere Light Cubes.
             </p>
 
             <p className="mt-5 max-w-xl text-base leading-7 text-white/75 md:text-lg">
               <strong className="font-semibold text-white">Levering in België, Nederland, Frankrijk,
-              Duitsland, Luxemburg en het Verenigd Koninkrijk.</strong> Vermeld de locatie en datum
+              Duitsland.</strong> Vermeld de locatie en datum
               van je evenement in je aanvraag; beschikbaarheid, transport en voorwaarden worden vooraf bevestigd.
             </p>
 
