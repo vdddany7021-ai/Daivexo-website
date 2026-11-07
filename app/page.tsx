@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next"
 
 import { Header } from "@/components/header"
@@ -15,7 +14,7 @@ const seoTitle =
   "LED Statafels Huren in België & Europa | DAIVEXO"
 
 const seoDescription =
-  "LED-statafels en Light Cubes huren? DAIVEXO levert vanuit Deinze in België, Nederland, Frankrijk, Duitsland, Luxemburg en het VK. Vraag een offerte aan."
+  "LED-statafels en Light Cubes huren? DAIVEXO levert vanuit Deinze in België, Nederland, Frankrijk en Duitsland. Vraag een offerte aan."
 
 export const metadata: Metadata = {
   title: {
