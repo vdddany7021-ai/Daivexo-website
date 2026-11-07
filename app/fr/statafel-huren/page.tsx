@@ -6,10 +6,10 @@ const reservationUrl = "/?lightcubes=reservation"
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Location de mange-debout LED en Belgique et en France | DAIVEXO",
+    absolute: "Location Mange-Debout Lumineux & LED | DAIVEXO",
   },
   description:
-    "Louez des mange-debout LED et Light Cubes DAIVEXO. Basés à Deinze, nous livrons en Belgique, France, Pays-Bas, Allemagne, Luxembourg et au Royaume-Uni. Demandez un devis.",
+    "Louez des mange-debout LED lumineux pour vos événements. Light Cubes dès 59,95 € TTC, livraison sur devis. Demandez votre réservation chez DAIVEXO.",
 
   alternates: {
     canonical: "https://www.daivexo.com/fr/statafel-huren",
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Location Mange-Debout LED | DAIVEXO",
+    title: "Location Mange-Debout Lumineux & LED | DAIVEXO",
     description:
-      "Découvrez les mange-debout LED, tables lumineuses et Light Cubes DAIVEXO. Demandez dès maintenant une réservation pour votre événement.",
+      "Location de mange-debout LED et Light Cubes pour événements. Dès 59,95 € TTC par Cube, livraison calculée séparément. Demandez une réservation.",
     
     url: "https://www.daivexo.com/fr/statafel-huren",
 
@@ -51,9 +51,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Location Mange-Debout LED | DAIVEXO",
+    title: "Location Mange-Debout Lumineux & LED | DAIVEXO",
     description:
-      "Location de mange-debout LED et mobilier lumineux pour événements. Demandez une réservation ou un devis chez DAIVEXO.",
+      "Mange-debout LED lumineux et Light Cubes à louer dès 59,95 € TTC. Demandez votre réservation chez DAIVEXO.",
   },
 }
 
@@ -82,6 +82,11 @@ const faq = [
     question: "Dans quels pays DAIVEXO livre-t-il ses mange-debout LED ?",
     answer:
       "DAIVEXO est basé à Deinze, en Belgique, et peut livrer en Belgique, en France, aux Pays-Bas, en Allemagne, au Luxembourg et au Royaume-Uni. Les frais de livraison et les conditions sont précisés dans le devis.",
+  },
+  {
+    question: "Quels sont les tarifs de location des Light Cubes ?",
+    answer:
+      "La location coûte 59,95 € TTC par Light Cube pour une journée ou 79,95 € TTC pour le week-end (samedi à lundi). Une caution remboursable de 25 € par Cube s’ajoute au montant. Les frais de livraison sont calculés séparément selon la distance et communiqués à l’avance. Toute journée supplémentaire nécessite l’accord préalable explicite de DAIVEXO.",
   },
   {
     question: "DAIVEXO peut-il créer de plus grandes installations ?",
@@ -206,6 +211,43 @@ export default function LocationMangeDeboutPage() {
             Cubes peuvent être utilisés individuellement ou combinés pour créer
             une installation événementielle plus importante.
           </p>
+        </div>
+      </section>
+
+      {/* TARIFS DE LOCATION */}
+      <section className="border-y border-primary/20 bg-neutral-950">
+        <div className="mx-auto max-w-5xl px-6 py-16 lg:px-8">
+          <h2 className="text-3xl font-semibold md:text-4xl">
+            Tarifs de location des mange-debout LED
+          </h2>
+          <p className="mt-5 text-lg leading-8 text-white/80">
+            Un tarif clair par Light Cube, avec une estimation pour plusieurs Cubes
+            dans notre formulaire de réservation.
+          </p>
+          <ul className="mt-6 space-y-3 text-lg text-white/85">
+            <li>1 journée : <strong className="text-white">59,95 € par Light Cube</strong></li>
+            <li>Week-end (samedi–lundi) : <strong className="text-white">79,95 € par Light Cube</strong></li>
+          </ul>
+          <p className="mt-6 leading-7 text-white/75">
+            Tous les tarifs de location indiqués comprennent 21 % de TVA.
+            Les frais de livraison sont calculés séparément selon la distance
+            et communiqués à l’avance.
+          </p>
+          <p className="mt-3 leading-7 text-white/75">
+            Caution : 25 € par Light Cube, intégralement remboursée si les Cubes
+            sont restitués complets et sans dommages après la location.
+          </p>
+          <p className="mt-3 text-sm leading-7 text-white/60">
+            Les journées de location supplémentaires sont possibles uniquement après
+            concertation préalable et accord explicite de DAIVEXO. Contactez-nous
+            directement à info@daivexo.com.
+          </p>
+          <Link
+            href={reservationUrl}
+            className="mt-8 inline-block rounded-full bg-primary px-8 py-4 font-semibold text-black transition hover:brightness-110"
+          >
+            Demander une réservation
+          </Link>
         </div>
       </section>
 
