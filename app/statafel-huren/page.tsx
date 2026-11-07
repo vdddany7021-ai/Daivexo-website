@@ -7,9 +7,9 @@ const pageUrl = `${siteUrl}/statafel-huren`
 const reservationUrl = "/?lightcubes=reservation"
 
 export const metadata: Metadata = {
-  title: { absolute: "LED-statafels huren in België | DAIVEXO Deinze" },
+  title: { absolute: "Statafel huren? LED staantafels & Light Cubes | DAIVEXO" },
   description:
-    "LED-statafels en Light Cubes huren? DAIVEXO uit Deinze levert in België, Nederland, Frankrijk, Duitsland, Luxemburg en het VK. Vraag een offerte aan.",
+    "LED statafel of verlichte staantafel huren voor je feest? DAIVEXO Light Cubes vanaf € 59,95 incl. btw. Levering op locatie, offerte vooraf. Vraag je reservatie aan.",
   alternates: {
     canonical: pageUrl,
     languages: {
@@ -86,7 +86,7 @@ const faq = [
   {
     question: "Wat kost het om een LED statafel te huren?",
     answer:
-      "Vraag een vrijblijvende offerte aan met je evenementdatum, locatie en gewenste aantal tafels. DAIVEXO kan je dan informeren over de toepasselijke prijs en voorwaarden.",
+      "Een Light Cube huren kost € 59,95 per dag of € 79,95 voor het weekend (zaterdag tot maandag), inclusief 21% btw. Er geldt een terugbetaalbare waarborg van € 25 per Cube. Leveringskosten worden apart berekend volgens afstand en vooraf meegedeeld. Extra huurdagen uitsluitend na voorafgaand overleg en uitdrukkelijke goedkeuring door DAIVEXO.",
   },
   {
     question: "In welke landen levert DAIVEXO LED-statafels?",
@@ -141,6 +141,19 @@ export default function StatafelHurenPage() {
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pt-14 lg:px-8">
+        <div className="rounded-2xl border border-primary/30 bg-neutral-950 p-7 md:p-9">
+          <h2 className="text-2xl font-semibold text-primary md:text-3xl">LED statafel huren: prijzen en voorwaarden</h2>
+          <div className="mt-5 grid gap-4 sm:grid-cols-2">
+            <p className="text-lg text-white/85"><strong className="text-white">1 dag:</strong> € 59,95 per Light Cube</p>
+            <p className="text-lg text-white/85"><strong className="text-white">Weekend (za–ma):</strong> € 79,95 per Light Cube</p>
+          </div>
+          <p className="mt-5 leading-7 text-white/75">Huurprijzen inclusief 21% btw. Terugbetaalbare waarborg: € 25 per Light Cube bij onbeschadigde en complete teruggave. Leveringskosten worden afzonderlijk berekend volgens de afstand en vooraf meegedeeld.</p>
+          <p className="mt-3 text-sm leading-6 text-white/60">Extra huurdagen zijn uitsluitend mogelijk na voorafgaand overleg en uitdrukkelijke goedkeuring door DAIVEXO. Neem hiervoor rechtstreeks contact met ons op via info@daivexo.com.</p>
+          <Link href={reservationUrl} className="mt-6 inline-block rounded-full bg-primary px-7 py-4 font-semibold text-black transition hover:brightness-110">Vraag je reservatie aan</Link>
         </div>
       </section>
 
