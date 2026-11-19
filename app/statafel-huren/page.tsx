@@ -149,7 +149,9 @@ export default function StatafelHurenPage() {
 
       <section className="mx-auto max-w-7xl px-6 pt-14 lg:px-8">
         <div className="rounded-2xl border border-primary/30 bg-neutral-950 p-7 md:p-9">
-          <h2 className="text-2xl font-semibold text-primary md:text-3xl"Staantafel huren: prijzen en voorwaarden></h2>
+          <h2 className="text-2xl font-semibold text-primary md:text-3xl">
+  Staantafel huren: prijzen en voorwaarden
+</h2>
           <div className="mt-5 grid gap-4 sm:grid-cols-2">
             <p className="text-lg text-white/85"><strong className="text-white">1 dag:</strong> € 59,95 per Light Cube</p>
             <p className="text-lg text-white/85"><strong className="text-white">Weekend (za–ma):</strong> € 79,95 per Light Cube</p>
