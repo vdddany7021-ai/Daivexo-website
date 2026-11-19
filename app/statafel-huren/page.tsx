@@ -7,9 +7,9 @@ const pageUrl = `${siteUrl}/statafel-huren`
 const reservationUrl = "/?lightcubes=reservation"
 
 export const metadata: Metadata = {
-  title: { absolute: "Statafel huren? LED staantafels & Light Cubes | DAIVEXO" },
-  description:
-    "LED statafel of verlichte staantafel huren voor je feest? DAIVEXO Light Cubes vanaf € 59,95 incl. btw. Levering op locatie, offerte vooraf. Vraag je reservatie aan.",
+  title: { absolute: "Staantafel huren of statafel huren? | DAIVEXO" },
+description:
+  "Staantafel huren of statafel huren voor je feest? Ontdek de verlichte staantafels en Light Cubes van DAIVEXO. Vraag vrijblijvend een offerte aan.", 
   alternates: {
     canonical: pageUrl,
     languages: {
@@ -88,11 +88,11 @@ const faq = [
     answer:
       "Een Light Cube huren kost € 59,95 per dag of € 79,95 voor het weekend (zaterdag tot maandag), inclusief 21% btw. Er geldt een terugbetaalbare waarborg van € 25 per Cube. Leveringskosten worden apart berekend volgens afstand en vooraf meegedeeld. Extra huurdagen uitsluitend na voorafgaand overleg en uitdrukkelijke goedkeuring door DAIVEXO.",
   },
-  {
-    question: "In welke landen levert DAIVEXO LED-statafels?",
-    answer:
-      "DAIVEXO levert vanuit Deinze in heel België en ook in Nederland, Frankrijk, Duitsland, Luxemburg en het Verenigd Koninkrijk. Geef de evenementlocatie door voor een offerte met de toepasselijke leveringskosten en voorwaarden.",
-  },
+{
+  question: "In welke landen levert DAIVEXO staantafels?",
+  answer:
+    "DAIVEXO levert verlichte staantafels en Light Cubes vanuit Deinze in heel België en ook in Nederland, Frankrijk, Duitsland en Luxemburg. Geef de evenementlocatie door voor een offerte met de toepasselijke leveringskosten en voorwaarden.",
+},
   {
     question: "Is mijn reservatie meteen definitief?",
     answer:
@@ -110,15 +110,18 @@ export default function StatafelHurenPage() {
               DAIVEXO Light Cubes · Verhuur voor evenementen
             </p>
             <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">
-              LED statafels en staantafels huren
-              <span className="mt-3 block text-primary">voor een sfeervol evenement</span>
-            </h1>
-            <p className="mt-7 max-w-xl text-lg leading-8 text-white/80">
-              DAIVEXO is gevestigd in Deinze en verhuurt LED-statafels, verlichte staantafels
-              en Light Cubes voor feesten, huwelijken, recepties en bedrijfsevenementen.
-              Wij leveren in heel België en ook in Nederland, Frankrijk, Duitsland, Luxemburg
-              en het Verenigd Koninkrijk. Vraag vrijblijvend een offerte aan voor jouw locatie en datum.
-            </p>
+  Staantafels en statafels huren
+  <span className="mt-3 block text-primary">voor een sfeervol evenement</span>
+</h1>
+           <p className="mt-7 max-w-xl text-lg leading-8 text-white/80">
+  Wil je een staantafel huren voor een feest, huwelijk, receptie of
+  bedrijfsevenement? Of wil je meerdere statafels huren voor een
+  grotere gelegenheid? Ontdek dan de verlichte Light Cubes van DAIVEXO:
+  een bijzonder alternatief voor klassieke staantafels.
+  Wij leveren vanuit Deinze in heel België, Nederland, Frankrijk,
+  Duitsland en Luxemburg. Vraag vrijblijvend een offerte aan
+  voor jouw locatie en datum.
+</p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link href={reservationUrl} className="rounded-full bg-primary px-7 py-4 text-center font-semibold text-black transition hover:brightness-110">
                 Vraag vrijblijvend een offerte aan
@@ -146,7 +149,7 @@ export default function StatafelHurenPage() {
 
       <section className="mx-auto max-w-7xl px-6 pt-14 lg:px-8">
         <div className="rounded-2xl border border-primary/30 bg-neutral-950 p-7 md:p-9">
-          <h2 className="text-2xl font-semibold text-primary md:text-3xl">LED statafel huren: prijzen en voorwaarden</h2>
+          <h2 className="text-2xl font-semibold text-primary md:text-3xl"Staantafel huren: prijzen en voorwaarden></h2>
           <div className="mt-5 grid gap-4 sm:grid-cols-2">
             <p className="text-lg text-white/85"><strong className="text-white">1 dag:</strong> € 59,95 per Light Cube</p>
             <p className="text-lg text-white/85"><strong className="text-white">Weekend (za–ma):</strong> € 79,95 per Light Cube</p>
@@ -241,8 +244,7 @@ export default function StatafelHurenPage() {
           <p className="mt-6 text-lg leading-8 text-white/75">
             DAIVEXO is gevestigd in Deinze (België). Onze verlichte statafels en Light Cubes
             zijn te huur voor feesten, huwelijken, recepties en bedrijfsevenementen in heel België.
-            Daarnaast verzorgen we ook leveringen in Nederland, Frankrijk, Duitsland, Luxemburg
-            en het Verenigd Koninkrijk.
+            Daarnaast verzorgen we ook leveringen in Nederland, Frankrijk, Duitsland en Luxemburg.
           </p>
           <p className="mt-5 leading-7 text-white/70">
             Elke evenementlocatie is anders. Vermeld daarom je datum, adres en het gewenste aantal
