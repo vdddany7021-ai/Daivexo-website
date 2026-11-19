@@ -1,292 +1,303 @@
-import type { Metadata } from "next"
-import Image from "next/image"
-import Link from "next/link"
 
-const siteUrl = "https://www.daivexo.com"
-const pageUrl = `${siteUrl}/statafel-huren`
-const reservationUrl = "/?lightcubes=reservation"
+import { NextRequest, NextResponse } from "next/server";
+import { neon } from "@neondatabase/serverless";
 
-export const metadata: Metadata = {
-  title: { absolute: "Staantafel huren of statafel huren? | DAIVEXO" },
-  description:
-    "Staantafel huren of statafel huren? Ontdek verlichte Light Cubes van DAIVEXO vanaf € 59,95 per dag incl. btw. Vraag vrijblijvend een offerte aan.",
-  alternates: {
-    canonical: pageUrl,
-    languages: {
-      "nl-BE": pageUrl,
-      "nl-NL": pageUrl,
-      "fr-BE": `${siteUrl}/fr/statafel-huren`,
-      "fr-FR": `${siteUrl}/fr/statafel-huren`,
-      "fr-LU": `${siteUrl}/fr/statafel-huren`,
-      "de-DE": `${siteUrl}/de/statafel-huren`,
-      "de-LU": `${siteUrl}/de/statafel-huren`,
-      en: `${siteUrl}/en/statafel-huren`,
-      "x-default": `${siteUrl}/en/statafel-huren`,
-    },
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
-  openGraph: {
-    title: "Staantafels en statafels huren | DAIVEXO Light Cubes",
-    description:
-      "DAIVEXO verhuurt verlichte staantafels en Light Cubes vanuit Deinze, met levering in België, Nederland, Frankrijk, Duitsland en Luxemburg.",
-    url: pageUrl,
-    siteName: "DAIVEXO",
-    locale: "nl_BE",
-    type: "website",
-    images: [{ url: `${siteUrl}/images/light-cube-green.jpeg`, alt: "Groene DAIVEXO LED Light Cube" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Staantafels huren | DAIVEXO Light Cubes",
-    description: "Statafels huren voor je evenement? Ontdek de verlichte Light Cubes van DAIVEXO en vraag vrijblijvend een offerte aan.",
-  },
+export const runtime = "nodejs";
+
+const NOTIFICATION_EMAIL = "info@scanmij.com";
+const SENDER_EMAIL = "SCANMIJ <bestellingen@scanmij.com>";
+
+function reply(message: string, status: number) {
+  return new NextResponse(message, { status });
 }
 
-const benefits = [
-  {
-    title: "Statafel én sfeerverlichting",
-    description: "Een ontmoetingsplek voor gasten die tegelijk een lichtaccent aan je evenement toevoegt.",
-  },
-  {
-    title: "Van één Cube tot een opstelling",
-    description: "Vraag één blikvanger of meerdere Light Cubes aan, afgestemd op je evenement.",
-  },
-  {
-    title: "Voor privé- en bedrijfsevents",
-    description: "Geschikt als concept voor recepties, trouwfeesten, verjaardagen en zakelijke bijeenkomsten.",
-  },
-]
+export async function POST(request: NextRequest) {
+  try {
+    const apiKey = process.env.MOLLIE_API_KEY;
+    const databaseUrl =
+      process.env.SCANMIJ_DATABASE_DATABASE_URL;
 
-const faq = [
-  {
-    question: "Kan ik een staantafel huren bij DAIVEXO?",
-    answer:
-      "Ja. DAIVEXO verhuurt verlichte staantafels (Light Cubes), geen klassieke onverlichte statafels. Je kunt een aanvraag indienen voor je evenementdatum. DAIVEXO bevestigt vervolgens de beschikbaarheid en voorwaarden.",
-  },
-  {
-    question: "Kan ik meerdere verlichte staantafels aanvragen?",
-    answer:
-      "Ja. Vermeld het gewenste aantal Light Cubes in je aanvraag. DAIVEXO bekijkt welke aantallen en opstellingen mogelijk zijn.",
-  },
-  {
-    question: "Voor welke evenementen zijn Light Cubes bedoeld?",
-    answer:
-      "Onder meer voor recepties, trouwfeesten, verjaardagsfeesten, bedrijfsevenementen, productpresentaties en andere events.",
-  },
-  {
-    question: "Wat kost het om een statafel te huren bij DAIVEXO?",
-    answer:
-      "Een Light Cube huren kost € 59,95 per dag of € 79,95 voor het weekend (zaterdag tot maandag), inclusief 21% btw. Er geldt een terugbetaalbare waarborg van € 25 per Cube. Leveringskosten worden apart berekend volgens afstand en vooraf meegedeeld. Extra huurdagen uitsluitend na voorafgaand overleg en uitdrukkelijke goedkeuring door DAIVEXO.",
-  },
-  {
-    question: "In welke landen levert DAIVEXO staantafels?",
-    answer:
-      "DAIVEXO levert vanuit Deinze in heel België en ook in Nederland, Frankrijk, Duitsland en Luxemburg. Geef de evenementlocatie door voor een offerte met de toepasselijke leveringskosten en voorwaarden.",
-  },
-  {
-    question: "Is mijn reservatie meteen definitief?",
-    answer:
-      "Nee. Een aanvraag is pas een definitieve reservatie nadat DAIVEXO de beschikbaarheid en voorwaarden heeft bevestigd.",
-  },
-]
+    if (!apiKey || !databaseUrl) {
+      console.error("SCANMIJ: configuratie ontbreekt");
+      return reply("Configuration error", 503);
+    }
 
-export default function StatafelHurenPage() {
-  return (
-    <main className="min-h-screen bg-black text-white">
-      <section className="border-b border-white/10">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-24">
-          <div>
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-              DAIVEXO Light Cubes · Verhuur voor evenementen
-            </p>
-            <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">
-              Staantafels en statafels huren
-              <span className="mt-3 block text-primary">voor een sfeervol evenement</span>
-            </h1>
-            <p className="mt-7 max-w-xl text-lg leading-8 text-white/80">
-              Wil je een staantafel huren voor je feest, huwelijk, receptie of bedrijfsevenement?
-              DAIVEXO verhuurt vanuit Deinze verlichte staantafels: onze Light Cubes.
-              Zo ontdek je een sfeervol alternatief voor een klassieke statafel.
-              Wij leveren in heel België en ook in Nederland, Frankrijk, Duitsland en Luxemburg. Vraag vrijblijvend een offerte aan voor jouw locatie en datum.
-            </p>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Link href={reservationUrl} className="rounded-full bg-primary px-7 py-4 text-center font-semibold text-black transition hover:brightness-110">
-                Vraag vrijblijvend een offerte aan
-              </Link>
-              <Link href="/light-cubes-inspiratie" className="rounded-full border border-primary px-7 py-4 text-center font-semibold text-primary transition hover:bg-primary hover:text-black">
-                Bekijk de Light Cubes
-              </Link>
-            </div>
-            <p className="mt-4 text-sm leading-6 text-white/60">
-              Vermeld je datum, locatie en gewenst aantal. Een aanvraag is nog geen definitieve reservatie.
-            </p>
-          </div>
-          <div className="relative min-h-[360px] overflow-hidden rounded-[28px] border border-white/10 sm:min-h-[460px]">
-            <Image
-              src="/images/light-cube-green.jpeg"
-              alt="Groene lichtgevende LED statafel van DAIVEXO voor een evenement"
-              fill
-              priority
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-        </div>
-      </section>
+    // Ontvang het betalingsnummer van Mollie.
+    const formData = await request.formData();
+    const paymentId = formData.get("id");
 
-      <section className="mx-auto max-w-7xl px-6 pt-14 lg:px-8">
-        <div className="rounded-2xl border border-primary/30 bg-neutral-950 p-7 md:p-9">
-          <h2 className="text-2xl font-semibold text-primary md:text-3xl">Statafel huren: prijzen en voorwaarden</h2>
-          <div className="mt-5 grid gap-4 sm:grid-cols-2">
-            <p className="text-lg text-white/85"><strong className="text-white">1 dag:</strong> € 59,95 per Light Cube</p>
-            <p className="text-lg text-white/85"><strong className="text-white">Weekend (za–ma):</strong> € 79,95 per Light Cube</p>
-          </div>
-          <p className="mt-5 leading-7 text-white/75">Huurprijzen inclusief 21% btw. Terugbetaalbare waarborg: € 25 per Light Cube bij onbeschadigde en complete teruggave. Leveringskosten worden afzonderlijk berekend volgens de afstand en vooraf meegedeeld.</p>
-          <p className="mt-3 text-sm leading-6 text-white/60">Extra huurdagen zijn uitsluitend mogelijk na voorafgaand overleg en uitdrukkelijke goedkeuring door DAIVEXO. Neem hiervoor rechtstreeks contact met ons op via info@daivexo.com.</p>
-          <Link href={reservationUrl} className="mt-6 inline-block rounded-full bg-primary px-7 py-4 font-semibold text-black transition hover:brightness-110">Vraag je reservatie aan</Link>
-        </div>
-      </section>
+    if (
+      typeof paymentId !== "string" ||
+      !/^tr_[a-zA-Z0-9]+$/.test(paymentId)
+    ) {
+      return reply("Invalid payment ID", 400);
+    }
 
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
-        <div className="max-w-3xl">
-          <h2 className="text-3xl font-semibold md:text-4xl">Waarom een verlichte statafel huren?</h2>
-          <p className="mt-5 text-lg leading-8 text-white/75">
-            Wil je statafels huren voor een evenement? Een klassieke staantafel is praktisch,
-            maar een verlichte Light Cube voegt ook sfeer en uitstraling toe.
-            Zo combineer je een ontmoetingsplek voor gasten met sfeerverlichting.
-          </p>
-        </div>
-        <div className="mt-9 grid gap-5 md:grid-cols-3">
-          {benefits.map((benefit) => (
-            <article key={benefit.title} className="rounded-2xl border border-white/10 bg-neutral-950 p-7">
-              <h3 className="text-xl font-semibold text-primary">{benefit.title}</h3>
-              <p className="mt-3 leading-7 text-white/70">{benefit.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+    // Controleer de betaling rechtstreeks bij Mollie.
+    const mollieResponse = await fetch(
+      `https://api.mollie.com/v2/payments/${encodeURIComponent(paymentId)}`,
+      {
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+        },
+        cache: "no-store",
+        signal: AbortSignal.timeout(15000),
+      }
+    );
 
-      <section className="border-y border-white/10 bg-neutral-950">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-20">
-          <div className="relative min-h-[360px] overflow-hidden rounded-[28px] sm:min-h-[440px]">
-            <Image
-              src="/images/light-cubes-inspiratie/light-cubes-luxe-tuin-leie-blauw.jpg"
-              alt="Blauwe verlichte Light Cubes als LED statafels in een sfeervolle opstelling"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Voor elk type evenement</p>
-            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Van receptie tot bedrijfsevent</h2>
-            <p className="mt-6 text-lg leading-8 text-white/75">
-              Verlichte staantafels zijn een blikvanger op een trouwfeest, verjaardag,
-              receptie of zakelijke bijeenkomst. Je kunt informeren naar één Light Cube
-              of naar meerdere tafels voor een grotere opstelling.
-            </p>
-            <p className="mt-5 leading-7 text-white/70">
-              Wil je weten welke opstelling bij je ruimte en aantal gasten past?
-              Geef die informatie mee in je offerteaanvraag.
-            </p>
-            <Link href={reservationUrl} className="mt-8 inline-block rounded-full bg-primary px-7 py-4 font-semibold text-black transition hover:brightness-110">
-              Informeer naar beschikbaarheid
-            </Link>
-          </div>
-        </div>
-      </section>
+    if (!mollieResponse.ok) {
+      console.error(
+        "SCANMIJ: Mollie controle mislukt",
+        mollieResponse.status
+      );
+      return reply("Payment verification failed", 502);
+    }
 
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
-        <div className="max-w-3xl">
-          <h2 className="text-3xl font-semibold md:text-4xl">Meer inspiratie met DAIVEXO Light Cubes</h2>
-          <p className="mt-5 text-lg leading-8 text-white/75">
-            Naast afzonderlijke LED statafels zijn er creatieve concepten met meerdere
-            Light Cubes mogelijk. Bekijk de voorbeelden en bespreek wat haalbaar is voor jouw evenement.
-          </p>
-        </div>
-        <div className="mt-9 grid gap-8 md:grid-cols-2">
-          <article>
-            <div className="relative min-h-[300px] overflow-hidden rounded-[28px] border border-white/10 sm:min-h-[390px]">
-              <Image src="/images/light-cubes-inspiratie/bar-blauw-wit.jpg" alt="Concept voor een blauw-witte verlichte eventbar met Light Cubes" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
-            </div>
-            <h3 className="mt-5 text-2xl font-semibold">Verlichte eventbar</h3>
-            <p className="mt-3 leading-7 text-white/70">Een mogelijke combinatie van Light Cubes voor een grotere eventopstelling.</p>
-          </article>
-          <article>
-            <div className="relative min-h-[300px] overflow-hidden rounded-[28px] border border-white/10 sm:min-h-[390px]">
-              <Image src="/images/light-cubes-inspiratie/lightwall-multicolor.webp" alt="Meerkleurige Light Wall als decoratief concept met Light Cubes" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
-            </div>
-            <h3 className="mt-5 text-2xl font-semibold">Light Wall</h3>
-            <p className="mt-3 leading-7 text-white/70">Een lichtgevende achtergrond of blikvanger als onderdeel van de aankleding.</p>
-          </article>
-        </div>
-        <Link href="/light-cubes-inspiratie" className="mt-8 inline-block font-semibold text-primary underline underline-offset-4">
-          Bekijk alle Light Cubes-inspiratie
-        </Link>
-      </section>
+    const payment = await mollieResponse.json();
 
-      <section className="border-y border-white/10 bg-neutral-950">
-        <div className="mx-auto max-w-5xl px-6 py-16 lg:px-8 lg:py-20">
-          <h2 className="text-3xl font-semibold md:text-4xl">Staantafels huren vanuit Deinze, in België en Europa</h2>
-          <p className="mt-6 text-lg leading-8 text-white/75">
-            DAIVEXO is gevestigd in Deinze (België). Onze verlichte statafels en Light Cubes
-            zijn te huur voor feesten, huwelijken, recepties en bedrijfsevenementen in heel België.
-            Daarnaast verzorgen we ook leveringen in Nederland, Frankrijk, Duitsland en Luxemburg.
-          </p>
-          <p className="mt-5 leading-7 text-white/70">
-            Elke evenementlocatie is anders. Vermeld daarom je datum, adres en het gewenste aantal
-            Light Cubes in je aanvraag. Wij bevestigen de beschikbaarheid, transportmogelijkheden,
-            eventuele bijkomende leveringskosten en huurvoorwaarden vooraf in de offerte.
-          </p>
-          <div className="mt-8 rounded-2xl border border-white/10 bg-black p-7">
-            <h3 className="text-xl font-semibold">Wat vermeld je in je aanvraag?</h3>
-            <ul className="mt-4 list-disc space-y-2 pl-5 leading-7 text-white/75">
-              <li>Datum en locatie van je evenement</li>
-              <li>Gewenst aantal LED statafels of Light Cubes</li>
-              <li>Type evenement en eventuele wensen voor de opstelling</li>
-            </ul>
-            <Link href={reservationUrl} className="mt-7 inline-block rounded-full bg-primary px-7 py-4 font-semibold text-black transition hover:brightness-110">
-              Vraag je offerte aan
-            </Link>
-          </div>
-        </div>
-      </section>
+    if (payment.id !== paymentId) {
+      return reply("Payment ID mismatch", 400);
+    }
 
-      <section className="mx-auto max-w-5xl px-6 py-16 lg:px-8 lg:py-20">
-        <h2 className="text-3xl font-semibold md:text-4xl">Veelgestelde vragen over staantafels en statafels huren</h2>
-        <div className="mt-9 space-y-4">
-          {faq.map((item) => (
-            <article key={item.question} className="rounded-2xl border border-white/10 bg-neutral-950 p-6">
-              <h3 className="text-xl font-semibold">{item.question}</h3>
-              <p className="mt-3 leading-7 text-white/70">{item.answer}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+    const metadata = payment.metadata;
 
-      <section className="border-t border-primary/20">
-        <div className="mx-auto max-w-5xl px-6 py-16 text-center lg:px-8 lg:py-20">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">DAIVEXO Light Cubes</p>
-          <h2 className="mt-4 text-3xl font-semibold md:text-5xl">Maak van je evenement een blikvanger</h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/75">
-            Vraag vrijblijvend een offerte aan voor één of meerdere verlichte statafels.
-            We bekijken de mogelijkheden voor jouw datum en locatie.
-          </p>
-          <Link href={reservationUrl} className="mt-8 inline-block rounded-full bg-primary px-8 py-4 font-semibold text-black transition hover:brightness-110">
-            Vraag vrijblijvend een offerte aan
-          </Link>
-        </div>
-      </section>
-    </main>
-  )
+    if (
+      !metadata ||
+      typeof metadata.order_id !== "string" ||
+      !metadata.order_id.startsWith("SCANMIJ-") ||
+      !metadata.klant ||
+      typeof metadata.klant !== "object" ||
+      Array.isArray(metadata.klant) ||
+      !Array.isArray(metadata.artikelen)
+    ) {
+      return reply("Invalid payment metadata", 400);
+    }
+
+    const allowedStatuses = [
+      "open",
+      "pending",
+      "authorized",
+      "paid",
+      "failed",
+      "canceled",
+      "expired",
+    ];
+
+    if (!allowedStatuses.includes(payment.status)) {
+      return reply("Unsupported payment status", 400);
+    }
+
+    const totalAmount = Number(payment.amount?.value);
+
+    if (
+      payment.amount?.currency !== "EUR" ||
+      !Number.isFinite(totalAmount) ||
+      totalAmount <= 0
+    ) {
+      return reply("Invalid payment amount", 400);
+    }
+
+    const klant = metadata.klant;
+    const sql = neon(databaseUrl);
+
+    // Sla de bestelling op of werk de betaalstatus bij.
+    await sql`
+      INSERT INTO scanmij_orders (
+        order_id,
+        mollie_payment_id,
+        payment_status,
+        customer_first_name,
+        customer_last_name,
+        customer_email,
+        customer_phone,
+        customer_address,
+        customer_note,
+        items,
+        total_amount,
+        currency,
+        updated_at
+      )
+      VALUES (
+        ${metadata.order_id},
+        ${payment.id},
+        ${payment.status},
+        ${String(klant.voornaam ?? "")},
+        ${String(klant.naam ?? "")},
+        ${String(klant.email ?? "")},
+        ${String(klant.gsm ?? "")},
+        ${String(klant.adres ?? "")},
+        ${String(klant.opmerking ?? "")},
+        ${JSON.stringify(metadata.artikelen)}::jsonb,
+        ${totalAmount},
+        ${"EUR"},
+        NOW()
+      )
+      ON CONFLICT (mollie_payment_id)
+      DO UPDATE SET
+        payment_status = EXCLUDED.payment_status,
+        updated_at = NOW()
+    `;
+
+    // Een niet-betaalde bestelling krijgt geen bestelmelding.
+  if (payment.status !== "paid") {
+  return reply("OK", 200);
+}
+
+    const resendApiKey = process.env.RESEND_API_KEY;
+
+    if (!resendApiKey) {
+      console.error("SCANMIJ: RESEND_API_KEY ontbreekt");
+      return reply("Email configuration error", 503);
+    }
+
+    // Reserveer het verzenden op een veilige, atomische manier.
+    // Slechts één webhook kan tegelijk deze bestelling claimen.
+    const claimed = await sql`
+      UPDATE scanmij_orders
+      SET
+        notification_processing_at = NOW(),
+        updated_at = NOW()
+      WHERE mollie_payment_id = ${payment.id}
+        AND payment_status = 'paid'
+        AND notification_sent_at IS NULL
+        AND (
+          notification_processing_at IS NULL
+          OR notification_processing_at <
+            NOW() - INTERVAL '15 minutes'
+        )
+      RETURNING
+        notification_processing_at
+    `;
+
+    if (claimed.length === 0) {
+      // De melding is al verwerkt of wordt momenteel verwerkt.
+      return reply("OK", 200);
+    }
+
+    const processingAt =
+      claimed[0].notification_processing_at;
+
+    const itemsText = metadata.artikelen
+      .map((item: unknown) => {
+        if (!item || typeof item !== "object") {
+          return "";
+        }
+
+        const artikel = item as Record<string, unknown>;
+
+        return [
+          `${String(artikel.aantal ?? "")} x ${String(artikel.naam ?? "")}`,
+          `Prijs: € ${String(artikel.prijs ?? "")}`,
+          `Subtotaal: € ${String(artikel.subtotaal ?? "")}`,
+        ].join("\n");
+      })
+      .filter(Boolean)
+      .join("\n\n");
+
+    const message = [
+      "NIEUWE BETAALDE BESTELLING - SCANMIJ",
+      "",
+      `Bestelnummer: ${metadata.order_id}`,
+      `Mollie betaling: ${payment.id}`,
+      "Betaalstatus: BETAALD",
+      "",
+      "KLANTGEGEVENS",
+      `Voornaam: ${String(klant.voornaam ?? "")}`,
+      `Naam: ${String(klant.naam ?? "")}`,
+      `E-mail: ${String(klant.email ?? "")}`,
+      `GSM: ${String(klant.gsm ?? "")}`,
+      `Adres: ${String(klant.adres ?? "")}`,
+      `Opmerking: ${String(klant.opmerking ?? "")}`,
+      "",
+      "BESTELDE ARTIKELEN",
+      itemsText,
+      "",
+      `TOTAAL BETAALD: € ${totalAmount.toFixed(2)}`,
+      "",
+      "Deze bestelling is bevestigd door Mollie.",
+      "Controleer de bestelling voor verdere verwerking.",
+    ].join("\n");
+
+    try {
+      const resendResponse = await fetch(
+        "https://api.resend.com/emails",
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${resendApiKey}`,
+            "Content-Type": "application/json",
+            "Idempotency-Key":
+              `scanmij-order-${payment.id}`,
+          },
+          body: JSON.stringify({
+            from: SENDER_EMAIL,
+            to: [NOTIFICATION_EMAIL],
+            subject:
+              `Nieuwe betaalde bestelling SCANMIJ - ${metadata.order_id}`,
+            text: message,
+          }),
+          cache: "no-store",
+          signal: AbortSignal.timeout(15000),
+        }
+      );
+
+      if (!resendResponse.ok) {
+        console.error(
+          "SCANMIJ: Resend verzending mislukt",
+          resendResponse.status
+        );
+
+        throw new Error("Resend rejected email");
+      }
+
+   // Registreer dat Resend de e-mail heeft aanvaard.
+const updated = await sql`
+  UPDATE scanmij_orders
+  SET
+    notification_sent_at = NOW(),
+    notification_processing_at = NULL,
+    updated_at = NOW()
+  WHERE mollie_payment_id = ${payment.id}
+    AND notification_sent_at IS NULL
+    AND notification_processing_at =
+      ${processingAt}
+  RETURNING order_id
+`;
+
+if (updated.length !== 1) {
+  console.error(
+    "SCANMIJ: bestelmelding niet geregistreerd",
+    payment.id
+  );
+
+  throw new Error(
+    "Notification database update failed"
+  );
+}
+      return reply("OK", 200);
+    } catch (emailError) {
+      console.error(
+        "SCANMIJ: bestelmelding niet afgerond",
+        emailError
+      );
+
+      // Geef de reservering vrij zodat een nieuwe
+      // webhookpoging de melding opnieuw kan verwerken.
+      await sql`
+        UPDATE scanmij_orders
+        SET
+          notification_processing_at = NULL,
+          updated_at = NOW()
+        WHERE mollie_payment_id = ${payment.id}
+          AND notification_sent_at IS NULL
+          AND notification_processing_at =
+            ${processingAt}
+      `;
+
+      return reply("Email delivery error", 500);
+    }
+  } catch (error) {
+    console.error("SCANMIJ webhook error:", error);
+    return reply("Internal server error", 500);
+  }
 }
